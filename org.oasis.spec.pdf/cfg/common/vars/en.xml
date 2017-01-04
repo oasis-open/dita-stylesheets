@@ -1,116 +1,31 @@
 <?xml version='1.0' encoding='utf-8'?>
 <vars xmlns="http://www.idiominc.com/opentopic/vars">
-    <variable id="#table-continued">Table continued…</variable>
-    <variable id="Body first header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Body odd header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Body even header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Preface odd header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Preface even header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Preface first header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Toc odd header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Toc even header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Index odd header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Index even header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Glossary odd header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Glossary even header">
-        <param ref-name="chapter"/>
-    </variable>
-    <variable id="Body odd footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Body even footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Body first footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Preface odd footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Preface even footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Preface first footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Toc odd footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Toc even footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Index odd footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Index even footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Glossary odd footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Glossary even footer">
-        <param ref-name="pagenum"/>
-    </variable>
-    <variable id="Ordered List Number 1"><param ref-name="number"/>. </variable>
-    <variable id="Ordered List Number 2"><param ref-name="number"/>. </variable>
-    <variable id="Ordered List Number 3"><param ref-name="number"/>. </variable>
-    <variable id="Ordered List Number 4"><param ref-name="number"/>. </variable>
-    <variable id="Ordered List Format 1">1</variable>
-    <variable id="Ordered List Format 2">a</variable>
-    <variable id="Ordered List Format 3">1</variable>
-    <variable id="Ordered List Format 4">1</variable>
-    <variable id="Unordered List bullet 1">&#x25cf;</variable>
-    <variable id="Unordered List bullet 2">&#x2013;</variable>
-    <variable id="Unordered List bullet 3">•</variable>
-    <variable id="Unordered List bullet 4">&#x25cb;</variable>
-    
-    <!-- Image path to use for a note of "note" type. -->
-    <variable id="note Note Image Path">Customization/OpenTopic/common/artwork/note.svg</variable>
-    <!-- Image path to use for a note of "notice" type. -->
-    <variable id="notice Note Image Path">Customization/OpenTopic/common/artwork/important.svg</variable>
-    <!-- Image path to use for a note of "attention" type. -->
-    <variable id="attention Note Image Path">Customization/OpenTopic/common/artwork/important.svg</variable>    
-    <!-- Image path to use for a note of "caution" type. -->
-    <variable id="caution Note Image Path">Customization/OpenTopic/common/artwork/caution.svg</variable>    
-    <!-- Image path to use for a note of "danger" type. -->
-    <variable id="danger Note Image Path">Customization/OpenTopic/common/artwork/danger.svg</variable>
-    <!-- Image path to use for a note of "warning" type. -->
-    <variable id="warning Note Image Path">Customization/OpenTopic/common/artwork/warning.svg</variable>
-    <!-- Image path to use for a note of "fastpath" type. -->
-    <variable id="fastpath Note Image Path">Customization/OpenTopic/common/artwork/tip.svg</variable>    
-    <!-- Image path to use for a note of "important" type. -->
-    <variable id="important Note Image Path">Customization/OpenTopic/common/artwork/important.svg</variable>    
-    <!-- Image path to use for a note of "remember" type. -->
-    <variable id="remember Note Image Path">Customization/OpenTopic/common/artwork/note.svg</variable>    
-    <!-- Image path to use for a note of "restriction" type. -->
-    <variable id="restriction Note Image Path">Customization/OpenTopic/common/artwork/important.svg</variable>    
-    <!-- Image path to use for a note of "tip" type. -->
-    <variable id="tip Note Image Path">Customization/OpenTopic/common/artwork/tip.svg</variable>
-    <variable id="trouble Note Image Path">Customization/OpenTopic/common/artwork/trouble.svg</variable>
-    <!-- Image path to use for a note of "other" type. -->
-    <variable id="other Note Image Path"></variable>
-    
-    <variable id="#note-separator"> </variable>
+
+  <!-- Image path to use for a note of "note" type. -->
+  <variable id="note Note Image Path"/>
+  <!-- Image path to use for a note of "notice" type. -->
+  <variable id="notice Note Image Path"/>
+  <!-- Image path to use for a note of "attention" type. -->
+  <variable id="attention Note Image Path"/>
+  <!-- Image path to use for a note of "caution" type. -->
+  <variable id="caution Note Image Path"/>
+  <!-- Image path to use for a note of "danger" type. -->
+  <variable id="danger Note Image Path"/>
+  <!-- Image path to use for a note of "warning" type. -->
+  <variable id="warning Note Image Path"/>
+  <!-- Image path to use for a note of "fastpath" type. -->
+  <variable id="fastpath Note Image Path"/>
+  <!-- Image path to use for a note of "important" type. -->
+  <variable id="important Note Image Path"/>
+  <!-- Image path to use for a note of "remember" type. -->
+  <variable id="remember Note Image Path"/>
+  <!-- Image path to use for a note of "restriction" type. -->
+  <variable id="restriction Note Image Path"/>
+  <!-- Image path to use for a note of "tip" type. -->
+  <variable id="tip Note Image Path"/>
+  <variable id="trouble Note Image Path"/>
+  <!-- Image path to use for a note of "other" type. -->
+  <variable id="other Note Image Path"/>
+
+  <variable id="#note-separator">: </variable>
 </vars>
