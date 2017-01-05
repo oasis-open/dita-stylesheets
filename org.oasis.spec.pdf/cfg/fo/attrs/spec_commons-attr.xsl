@@ -13,8 +13,6 @@
     <xsl:attribute name="line-height">
       <xsl:value-of select="$default-line-height"/>
     </xsl:attribute>
-    <xsl:attribute name="xml:lang" select="translate($locale, '_', '-')"/>
-    <xsl:attribute name="writing-mode" select="$writing-mode"/>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="__force__page__count">
@@ -52,8 +50,6 @@
   </xsl:attribute-set>
 
   <xsl:attribute-set name="desc">
-    <xsl:attribute name="border-left-width">0pt</xsl:attribute>
-    <xsl:attribute name="border-right-width">0pt</xsl:attribute>
     <xsl:attribute name="font-size">8pt</xsl:attribute>
     <xsl:attribute name="font-style">italic</xsl:attribute>
     <xsl:attribute name="line-height">0.8</xsl:attribute>
@@ -103,7 +99,46 @@
     <xsl:attribute name="space-after">0.6em</xsl:attribute>
     <xsl:attribute name="space-after.optimum">3pt</xsl:attribute>
     <xsl:attribute name="space-before">0.6em</xsl:attribute>
-    <xsl:attribute name="text-indent">0em</xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="note" use-attribute-sets="common.block">
+    <xsl:attribute name="margin-left">
+      <xsl:call-template name="getNoteMargin"/>
+    </xsl:attribute>
+    <xsl:attribute name="margin-right">
+      <xsl:call-template name="getNoteMargin"/>
+    </xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:template name="getNoteMargin">
+    <xsl:choose>
+      <xsl:when
+        test="ancestor::*[contains(@class, ' topic/table ') or contains(@class, ' topic/simpletable ')]"
+        >4pt</xsl:when>
+      <xsl:otherwise>8pt</xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:attribute-set name="pre" use-attribute-sets="base-font common.block">
+    <xsl:attribute name="background-color">#f0f0f0</xsl:attribute>
+    <xsl:attribute name="font-family">
+      <xsl:choose>
+        <xsl:when
+          test="ancestor-or-self::*[contains(@class, ' topic/title ') or contains(@class, ' topic/dt ')]"
+          >inherit</xsl:when>
+        <xsl:otherwise>monospace</xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
+    <xsl:attribute name="font-size">
+      <xsl:choose>
+        <xsl:when
+          test="ancestor-or-self::*[contains(@class, ' topic/title ') or contains(@class, ' topic/dt ')]"
+          >inherit</xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$default-font-size"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="shortdesc">
