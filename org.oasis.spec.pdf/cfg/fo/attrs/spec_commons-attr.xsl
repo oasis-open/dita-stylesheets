@@ -67,7 +67,7 @@
     <xsl:attribute name="border-right-style">none</xsl:attribute>
     <xsl:attribute name="border-top-style">none</xsl:attribute>
     <xsl:attribute name="color">black</xsl:attribute>
-    <xsl:attribute name="font-family">Arial</xsl:attribute>
+    <xsl:attribute name="font-family">Sans</xsl:attribute>
     <xsl:attribute name="font-size">
       <xsl:value-of select="$default-font-size"/>
     </xsl:attribute>
@@ -100,7 +100,7 @@
     <xsl:attribute name="space-after.optimum">3pt</xsl:attribute>
     <xsl:attribute name="space-before">0.6em</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:attribute-set name="note" use-attribute-sets="common.block">
     <xsl:attribute name="margin-left">
       <xsl:call-template name="getNoteMargin"/>
@@ -109,7 +109,7 @@
       <xsl:call-template name="getNoteMargin"/>
     </xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:template name="getNoteMargin">
     <xsl:choose>
       <xsl:when
@@ -118,7 +118,7 @@
       <xsl:otherwise>8pt</xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:attribute-set name="pre" use-attribute-sets="base-font common.block">
     <xsl:attribute name="background-color">#f0f0f0</xsl:attribute>
     <xsl:attribute name="font-family">
@@ -140,15 +140,21 @@
       </xsl:choose>
     </xsl:attribute>
   </xsl:attribute-set>
-
-  <xsl:attribute-set name="shortdesc">
-    <xsl:attribute name="font-size">
-      <xsl:value-of select="$default-font-size"/>
-    </xsl:attribute>
-    <xsl:attribute name="space-after">0.6em</xsl:attribute>
-    <xsl:attribute name="space-after.optimum">3pt</xsl:attribute>
-    <xsl:attribute name="space-before">0.6em</xsl:attribute>
-    <xsl:attribute name="text-indent">0em</xsl:attribute>
+  
+  <xsl:attribute-set name="topic__shortdesc" use-attribute-sets="body">
+    <xsl:attribute name="border-left">none</xsl:attribute>
+    <xsl:attribute name="font-family">Sans</xsl:attribute>
+    <xsl:attribute name="font-style">normal</xsl:attribute>
+    <xsl:attribute name="padding-left">0pt</xsl:attribute>
+    <xsl:attribute name="padding-right">0pt</xsl:attribute>
+    <xsl:attribute name="space-after">0em</xsl:attribute>
+    <xsl:attribute name="space-before">0em</xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="dlentry.dt__content.cover">
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="keep-with-next">always</xsl:attribute>
+    <xsl:attribute name="margin-left">0in</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="dt__block">
@@ -165,32 +171,38 @@
 
   <xsl:attribute-set name="common.title">
     <xsl:attribute name="font-family">Sans</xsl:attribute>
-  </xsl:attribute-set>
-
-  <xsl:attribute-set name="section.title">
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
-    <xsl:attribute name="font-size">11.5pt</xsl:attribute>
     <xsl:attribute name="font-style">normal</xsl:attribute>
     <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="color">
+      <xsl:choose>
+        <!-- Use red the ancestor topic is flagged as revised. -->
+        <xsl:when
+          test="ancestor::*[contains(@class, ' topic/topic ')][1][child::ditaval-startprop[count(preceding-sibling::*) = 0]]">
+          <xsl:text>red</xsl:text>
+        </xsl:when>
+        <!-- Otherwise, use OASIS purple -->
+        <xsl:otherwise>
+          <xsl:text>#66116D</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
+    <xsl:attribute name="padding-top">0pt</xsl:attribute>
     <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="title.color"> </xsl:attribute-set>
+
+  <xsl:attribute-set name="section.title" use-attribute-sets="common.title">
+    <xsl:attribute name="font-size">11.5pt</xsl:attribute>
     <xsl:attribute name="margin-top">10pt</xsl:attribute>
     <xsl:attribute name="space-before.optimum">18pt</xsl:attribute>
   </xsl:attribute-set>
 
   <!-- h1 -->
-  <xsl:attribute-set name="topic.title" use-attribute-sets="horizontal-rule">
+  <xsl:attribute-set name="topic.title" use-attribute-sets="common.title horizontal-rule">
     <xsl:attribute name="border-after-style">none</xsl:attribute>
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Arial</xsl:attribute>
     <xsl:attribute name="font-size">18pt</xsl:attribute>
-    <xsl:attribute name="font-weight">bold</xsl:attribute>
     <xsl:attribute name="border-bottom">none</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">4pt</xsl:attribute>
     <xsl:attribute name="margin-top">0pt</xsl:attribute>
     <xsl:attribute name="padding-top">7pt</xsl:attribute>
@@ -198,128 +210,83 @@
   </xsl:attribute-set>
 
   <!-- h2 -->
-  <xsl:attribute-set name="topic.topic.title">
+  <xsl:attribute-set name="topic.topic.title" use-attribute-sets="common.title">
     <xsl:attribute name="border-bottom-style">none</xsl:attribute>
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
     <xsl:attribute name="font-size">14pt</xsl:attribute>
-    <xsl:attribute name="font-weight">bold</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">4pt</xsl:attribute>
     <xsl:attribute name="margin-top">8pt</xsl:attribute>
-    <xsl:attribute name="padding-top">0pt</xsl:attribute>
     <xsl:attribute name="space-before.optimum">15pt</xsl:attribute>
     <xsl:attribute name="space-before.conditionality">discard</xsl:attribute>
   </xsl:attribute-set>
 
   <!-- h3 -->
-  <xsl:attribute-set name="topic.topic.topic.title">
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
+  <xsl:attribute-set name="topic.topic.topic.title" use-attribute-sets="common.title">
     <xsl:attribute name="font-size">13pt</xsl:attribute>
-    <xsl:attribute name="font-weight">bold</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">2pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
-    <xsl:attribute name="padding-top">0pt</xsl:attribute>
     <xsl:attribute name="space-before.conditionality">discard</xsl:attribute>
   </xsl:attribute-set>
 
   <!-- h4 -->
-  <xsl:attribute-set name="topic.topic.topic.topic.title">
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
+  <xsl:attribute-set name="topic.topic.topic.topic.title" use-attribute-sets="common.title">
     <xsl:attribute name="font-size">12pt</xsl:attribute>
-    <xsl:attribute name="font-weight">bold</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">2pt</xsl:attribute>
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
-    <xsl:attribute name="padding-top">0pt</xsl:attribute>
     <xsl:attribute name="space-before.conditionality">discard</xsl:attribute>
   </xsl:attribute-set>
 
   <!-- h5 -->
-  <xsl:attribute-set name="topic.topic.topic.topic.topic.title">
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
+  <xsl:attribute-set name="topic.topic.topic.topic.topic.title" use-attribute-sets="common.title">
     <xsl:attribute name="font-size">12pt</xsl:attribute>
-    <xsl:attribute name="font-weight">bold</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">2pt</xsl:attribute>
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
-    <xsl:attribute name="padding-top">0pt</xsl:attribute>
   </xsl:attribute-set>
 
   <!-- h6 -->
-  <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.title">
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
+  <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.title"
+    use-attribute-sets="common.title">
     <xsl:attribute name="font-size">11pt</xsl:attribute>
     <xsl:attribute name="font-style">italic</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">2pt</xsl:attribute>
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
-    <xsl:attribute name="padding-top">0pt</xsl:attribute>
   </xsl:attribute-set>
 
   <!-- h7 -->
-  <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.topic.title">
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
+  <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.topic.title"
+    use-attribute-sets="common.title">
     <xsl:attribute name="font-size">11pt</xsl:attribute>
     <xsl:attribute name="font-style">italic</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">2pt</xsl:attribute>
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
-    <xsl:attribute name="padding-top">0pt</xsl:attribute>
   </xsl:attribute-set>
 
   <!-- h8 -->
-  <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.topic.topic.title">
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
+  <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.topic.topic.title"
+    use-attribute-sets="common.title">
     <xsl:attribute name="font-size">11pt</xsl:attribute>
     <xsl:attribute name="font-style">italic</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">2pt</xsl:attribute>
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
-    <xsl:attribute name="padding-top">0pt</xsl:attribute>
   </xsl:attribute-set>
 
   <!-- h9 -->
-  <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.topic.topic.topic.title">
-    <xsl:attribute name="color">
-      <xsl:value-of select="$body-heading-color"/>
-    </xsl:attribute>
-    <xsl:attribute name="font-family">Sans</xsl:attribute>
+  <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.topic.topic.topic.title"
+    use-attribute-sets="common.title">
     <xsl:attribute name="font-size">11pt</xsl:attribute>
     <xsl:attribute name="font-style">italic</xsl:attribute>
-    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     <xsl:attribute name="margin-bottom">2pt</xsl:attribute>
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
-    <xsl:attribute name="padding-top">0pt</xsl:attribute>
   </xsl:attribute-set>
 
 
+  <xsl:attribute-set name="revised">
+    <xsl:attribute name="color">red</xsl:attribute>
+  </xsl:attribute-set>
 
 </xsl:stylesheet>

@@ -35,4 +35,12 @@ See the accompanying LICENSE file for applicable license.
 
   <xsl:attribute-set name="tt" use-attribute-sets="__inline__monospace"/>
   
+  <xsl:attribute-set name="u">
+    <xsl:attribute name="color">green</xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="line-through">
+    <xsl:attribute name="color">red</xsl:attribute>
+  </xsl:attribute-set>
+  
 </xsl:stylesheet>

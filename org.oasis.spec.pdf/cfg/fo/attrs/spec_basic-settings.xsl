@@ -26,6 +26,8 @@
   <xsl:variable name="body-heading-color">#66116D</xsl:variable>
   <xsl:variable name="cover-heading-color">#3B006F</xsl:variable>
   <xsl:variable name="text-color">#000000</xsl:variable>
+  <xsl:variable name="tableHeaderCellHighlightBGColor">#E8E8E8</xsl:variable>
+  
   <xsl:variable name="copyright-year">
     <xsl:choose>
       <xsl:when

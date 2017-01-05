@@ -38,5 +38,11 @@
   <xsl:attribute-set name="footer__cell">
     <xsl:attribute name="display-align">center</xsl:attribute>
   </xsl:attribute-set>
+  
+  <xsl:attribute-set name="pagenum">
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+    <xsl:attribute name="font-weight">normal</xsl:attribute>
+    <xsl:attribute name="font-size">8pt</xsl:attribute>
+  </xsl:attribute-set>
 
 </xsl:stylesheet>
