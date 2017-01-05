@@ -49,8 +49,8 @@ d1: OASIS Open Repository: Developing style sheets and other resources that can 
 <p>Plugin development is being done using dita-ot-2.4.1. Do the following to create the runtime environment:</p>
 <ol>
 <li>Install the version of the DITA Open Toolkit (dita-ot) that is being used for development.</li>
-<li>Clone this repository to a temporary directory</li>
-<li>Move the entire contents of the cloned instance, including hidden files and hidden directories, to the dita-ot plugins directory</li>
+<li>Clone this repository to a temporary directory.</li>
+<li>Move the entire contents of the cloned directory (but not the cloned directory itself) to the dita-ot plugins directory. <b>Important:</b> Be sure to include hidden files and hidden directories in the move.</li>
 <li>If you are planning on contributing development work, update the .gitignore file in the plugins directory to exclude any additional
 plugins that you may have added after installing the dita-ot. This is important because we do not want those plugins being pushed back to GitHub.</li>
 <li>Run the dita command with the --install option.</li>
