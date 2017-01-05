@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="org.oasis.spec.pdf">
+    <target name="dita2spec-pdf.init">
+        <property location="${dita.plugin.org.oasis.spec.pdf.dir}/cfg"
+            name="customization.dir"/>
+        <property name="org.dita.pdf2.i18n.enabled" value="true"/>
+        <property
+            location="${dita.plugin.org.oasis.spec.pdf.dir}/xsl/fo/spec_topic2fo_shell_ah.xsl"
+            name="args.xsl.pdf"/>
+        <property name="args.chapter.layout" value="BASIC"/>
+        <property name="args.bookmark.style" value="COLLAPSED"/>
+        <property name="args.gen.task.lbl" value="YES"/>
+        <property name="args.fo.include.rellinks" value="none"/>
+    </target>
+    <target depends="dita2spec-pdf.init, dita2pdf2" name="dita2spec-pdf"/>
+</project>

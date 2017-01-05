@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="org.oasis.spec.preprocnumbering">
+
+
+  <target name="numbering">
+    <delete dir="${dita.temp.dir}${file.separator}stage"/>
+    <xslt processor="trax"
+      style="${dita.plugin.org.oasis.spec.preprocnumbering.dir}${file.separator}xsl${file.separator}numbering.xsl"
+      in="${dita.temp.dir}${file.separator}${user.input.file}"
+      out="${dita.temp.dir}${file.separator}stage${file.separator}${user.input.file}">
+      <param name="INDIR" expression="${dita.temp.dir}"/>
+      <param name="OUTDIR" expression="${dita.temp.dir}${file.separator}stage"/>
+    </xslt>
+    <move todir="${dita.temp.dir}">
+      <fileset dir="${dita.temp.dir}${file.separator}stage"/>      
+    </move>
+  </target>
+</project>
