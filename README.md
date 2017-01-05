@@ -45,6 +45,18 @@ d1: OASIS Open Repository: Developing style sheets and other resources that can 
 <p>Repository Maintainers may include here any clarifications &mdash; any additional sections, subsections, and paragraphs that the Maintainer(s) wish to add as descriptive text, reflecting (sub-) project status, milestones, releases, modifications to statement of purpose, etc.  The project Maintainers will create and maintain this content on behalf of the participants.</p>
 </div>
 
+<div><h2><a id="ditaOtIntegration">Stylesheet plugin integration with the DITA Open Toolkit</a></h2>
+<p>Plugin development is being done using dita-ot-2.4.1. Do the following to create the runtime environment:</p>
+<ol>
+<li>Install the version of the DITA Open Toolkit (dita-ot) that is being used for development.</li>
+<li>Clone this repository to a temporary directory</li>
+<li>Move the entire contents of the cloned instance, including hidden files and hidden directories, to the dita-ot plugins directory</li>
+<li>If you are planning on contributing development work, update the .gitignore file in the plugins directory to exclude any additional
+plugins that you may have added after installing the dita-ot. This is important because we do not want those plugins being pushed back to GitHub.</li>
+<li>Run the dita command with the --install option.</li>
+</ol>
+</div>
+
 <div>
 <h2><a id="maintainers">Maintainers</a></h2>
 
