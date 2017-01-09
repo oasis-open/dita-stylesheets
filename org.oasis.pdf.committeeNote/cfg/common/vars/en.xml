@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vars xmlns="http://www.idiominc.com/opentopic/vars">
+    
+    <!-- ===================== CHANGE LOG ================================ -->
+    <!--                                                                   -->
+    <!-- 5 Sept 2015: Eberlein, added change log and "Work product track"  -->
+    <!--              variable.                                            -->
+    <!-- 7 Sept 2015: Thomas, added override for variable "Table of        -->
+    <!--              Contents Appendix"                                   -->
+    <!-- 18 Sept 2015: Eberlein, removed stock images for notes            -->
+    <!--                                                                   -->
+    <!-- ================================================================= -->
+   
+    <!-- Cover page logo-->
+    <variable id="logo Image Path">Customization/OpenTopic/common/artwork/oasis.tif</variable>
+    
+    <!-- Header statements -->
+    <variable id="Statement 1">This is a Non-Standards Track Work Product.</variable>
+    <variable id="Statement 2">The patent provisions of the OASIS IPR Policy do not apply.</variable>
+    
+    <!-- Footer text -->
+    <variable id="Work product track">Non-Standards Track</variable>
+    
+    <!-- String used for TOC -->
+    <variable id="Table of Contents">Table of contents</variable>
+    
+    <!-- String used for generated cross reference -->
+    <variable id="On the page"> (<param ref-name="pagenum"/>)</variable>
+    
+    <!-- Bullets for unordered lists -->
+    <variable id="Unordered List bullet">•</variable>    
+    <variable id="Unordered List bullet 2">–</variable>
+    
+    <!-- Header content -->
+    <variable id="Header">
+        <param ref-name="header-line-1"/>
+        <param ref-name="header-line-2"/>
+    </variable>
+    
+    <!-- NOTE IMAGES -->
+    
+    <!-- The first word in the value of @id indicates the note type. -->
+    <!-- To use an image, add the following content to the variable  -->
+    <!-- element: Customization/OpenTopic/common/artwork/<file-name> -->
+    <variable id="attention Note Image Path"></variable>
+    <variable id="caution Note Image Path"></variable>
+    <variable id="danger Note Image Path"></variable>
+    <variable id="fastpath Note Image Path"></variable>
+    <variable id="important Note Image Path"></variable>
+    <variable id="note Note Image Path"></variable>
+    <variable id="notice Note Image Path"></variable>
+    <variable id="other Note Image Path"></variable>
+    <variable id="remember Note Image Path"></variable>
+    <variable id="restriction Note Image Path"></variable>
+    <variable id="tip Note Image Path"></variable>   
+    <variable id="trouble Note Image Path"></variable>
+    <variable id="warning Note Image Path"></variable>  
+    
+    <!-- The string used to label an appendix within the table of contents. -->
+    <!-- Removed insertion of appendix letter via the number param. The number is now 
+         embedded in the title. See the code in oasis-cn-numbering.xsl. Thomas, 07sep15-->
+    <variable id="Table of Contents Appendix">Appendix </variable>
+
+</vars>
