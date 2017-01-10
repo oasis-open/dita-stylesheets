@@ -1,10 +1,10 @@
-<project name="org.oasis.pdf.committeeNote" default="dita2oasis-pdf-committeeNote">
+<project name="org.oasis.committeeNote.pdf" default="dita2oasis-pdf-committeeNote">
       <property name="transtype" value="oasis-pdf-committeeNote"/>
       <target name="dita2oasis-pdf-committeeNote"
           xmlns:dita="http://dita-ot.sourceforge.net"
           dita:extension="depends org.dita.dost.platform.InsertDependsAction">
           <property name="customization.dir"
-                location="${dita.dir}/plugins/org.oasis.pdf.committeeNote/cfg"/>
+                location="${dita.dir}/plugins/org.oasis.committeeNote.pdf/cfg"/>
           <property name="pdf.formatter" value="ah"/>
           <property name="args.chapter.layout" value="BASIC"/>
           <property name="root-chunk-override" value=""/>
