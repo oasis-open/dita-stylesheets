@@ -1,0 +1,4 @@
+<project>
+    <import file="build-oasis-xhtml-committeeNote.xml"/>
+</project>
+
