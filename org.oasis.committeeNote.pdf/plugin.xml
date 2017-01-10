@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<plugin id="org.oasis.pdf.committeeNote">
+<plugin id="org.oasis.committeeNote.pdf">
   <require plugin="org.dita.pdf2" />
   <template file="build-oasis-pdf-committeeNote_template.xml"/>
   <feature extension="dita.conductor.transtype.check" 
