@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xslt_parameters>
+    <param name="ARGS.INPUT" expression="${args.input}"/>
+    <param name="DITA.TEMP.DIR" expression="${dita.temp.dir}"/>   
+</xslt_parameters>
