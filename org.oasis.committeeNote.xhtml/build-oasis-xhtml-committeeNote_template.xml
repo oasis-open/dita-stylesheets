@@ -1,8 +1,8 @@
-<project xmlns:dita="http://dita-ot.sourceforge.net" name="org.oasis.xhtml.committeeNote" default="dita2oasis-xhtml-committeeNote">
+<project xmlns:dita="http://dita-ot.sourceforge.net" name="org.oasis.committeeNote.xhtml" default="dita2oasis-xhtml-committeeNote">
   
   <property name="transtype" value="oasis-xhtml-committeeNote"/>
   <property name="args.copycss" value="yes"/>
-  <condition property="args.cssroot" value="${dita.plugin.org.oasis.xhtml.committeeNote.dir}${file.separator}resource">
+  <condition property="args.cssroot" value="${dita.plugin.org.oasis.committeeNote.xhtml.dir}${file.separator}resource">
     <not>
       <isset property="args.cssroot"/>
     </not>
@@ -13,7 +13,7 @@
     </not>
   </condition>
   
-  <condition property="args.xsl" value="${dita.plugin.org.oasis.xhtml.committeeNote.dir}${file.separator}xsl${file.separator}oasis-cn-dita2xhtml.xsl">
+  <condition property="args.xsl" value="${dita.plugin.org.oasis.committeeNote.xhtml.dir}${file.separator}xsl${file.separator}oasis-cn-dita2xhtml.xsl">
     <not>
       <isset property="args.xsl"/>
     </not>
