@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <vars xmlns="http://www.idiominc.com/opentopic/vars">
+  
+  <!-- Text to use for appendix titles.-->
+  <variable id="Appendix with number">Appendix </variable>
 
   <!-- Image path to use for a note of "attention" type. -->
   <variable id="attention Note Image Path"/>

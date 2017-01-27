@@ -5,12 +5,11 @@
   xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
   xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
   xmlns:dita2xslfo="http://dita-ot.sourceforge.net/ns/200910/dita2xslfo"
-  xmlns:spdf="org.oasis.spec.pdf"
-  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  xmlns:spdf="org.oasis.spec.pdf" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
   xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
   exclude-result-prefixes="dita-ot spdf ot-placeholder opentopic opentopic-index opentopic-func dita2xslfo xs"
   version="2.0">
-  
+
   <xsl:template match="*" mode="insertChapterFirstpageStaticContent">
     <xsl:param name="type" as="xs:string"/>
     <!-- spec.pdf: This block and its id are needed to furnish a link target for bookmarks and
@@ -21,7 +20,61 @@
       </xsl:attribute>
     </fo:block>
   </xsl:template>
-  
+
+  <xsl:template name="processTopicAppendix">
+    <fo:page-sequence master-reference="body-sequence"
+      xsl:use-attribute-sets="page-sequence.appendix">
+      <xsl:call-template name="startPageNumbering"/>
+      <xsl:call-template name="insertBodyStaticContents"/>
+      <fo:flow flow-name="xsl-region-body">
+        <fo:block xsl:use-attribute-sets="topic">
+          <xsl:call-template name="commonattributes"/>
+          <xsl:variable name="level" as="xs:integer">
+            <xsl:apply-templates select="." mode="get-topic-level"/>
+          </xsl:variable>
+          <xsl:if test="$level eq 1">
+            <fo:marker marker-class-name="current-topic-number">
+              <xsl:variable name="topicref"
+                select="key('map-id', ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id)"/>
+              <xsl:for-each select="$topicref">
+                <xsl:apply-templates select="." mode="topicTitleNumber"/>
+              </xsl:for-each>
+            </fo:marker>
+            <xsl:apply-templates select="." mode="insertTopicHeaderMarker"/>
+          </xsl:if>
+          <xsl:apply-templates select="*[contains(@class, ' topic/prolog ')]"/>
+          <xsl:apply-templates select="." mode="insertChapterFirstpageStaticContent">
+            <xsl:with-param name="type" select="'appendix'"/>
+          </xsl:apply-templates>
+          <fo:block xsl:use-attribute-sets="topic.title">
+            <xsl:call-template name="pullPrologIndexTerms"/>
+            <!-- spec.pdf: Added this call to get the string for Appendix. -->
+            <xsl:call-template name="getVariable">
+              <xsl:with-param name="id" select="'Appendix with number'"/>
+            </xsl:call-template>
+            <xsl:for-each select="*[contains(@class, ' topic/title ')]">
+              <xsl:apply-templates select="." mode="getTitle"/>
+            </xsl:for-each>
+          </fo:block>
+          <xsl:choose>
+            <xsl:when test="$appendixLayout = 'BASIC'">
+              <xsl:apply-templates
+                select="
+                  *[not(contains(@class, ' topic/topic ') or contains(@class, ' topic/title ') or
+                  contains(@class, ' topic/prolog '))]"/>
+              <!--xsl:apply-templates select="." mode="buildRelationships"/-->
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="." mode="createMiniToc"/>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]"/>
+          <xsl:call-template name="pullPrologIndexTerms.end-range"/>
+        </fo:block>
+      </fo:flow>
+    </fo:page-sequence>
+  </xsl:template>
+
   <!-- override definiton list handling; table layout is unreliable with some fo processors -->
   <xsl:template match="*[contains(@class, ' topic/dl ')]">
     <xsl:choose>
@@ -96,18 +149,18 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:template match="*[contains(@class, ' topic/dt ')]">
     <fo:block xsl:use-attribute-sets="dt__block">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
-  
+
   <xsl:template match="*[contains(@class, ' topic/dd ')]">
     <fo:block xsl:use-attribute-sets="dd__block">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
   <!-- end definition list handling override -->
-  
+
 </xsl:stylesheet>
