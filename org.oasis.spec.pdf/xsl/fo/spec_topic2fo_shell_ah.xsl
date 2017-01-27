@@ -35,7 +35,7 @@
   <xsl:import href="plugin:org.dita.pdf2.axf:cfg/fo/attrs/tables-attr_axf.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_tables-attr.xsl"/>  
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/tables.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_tables.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_tables.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/root-processing.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2.axf:xsl/fo/root-processing_axf.xsl"/>
