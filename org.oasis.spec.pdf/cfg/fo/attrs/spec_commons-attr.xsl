@@ -13,6 +13,7 @@
     <xsl:attribute name="line-height">
       <xsl:value-of select="$default-line-height"/>
     </xsl:attribute>
+    <xsl:attribute name="id">fo-root-do-not-change</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="__force__page__count">
