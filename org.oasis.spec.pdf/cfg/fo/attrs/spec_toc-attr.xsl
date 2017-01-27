@@ -20,14 +20,22 @@
       <xsl:value-of select="$default-font-size"/>
     </xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:attribute-set name="__toc__header" use-attribute-sets="common.title horizontal-rule">
     <xsl:attribute name="font-size">18pt</xsl:attribute>
     <xsl:attribute name="padding-top">7pt</xsl:attribute>
     <xsl:attribute name="space-after">6pt</xsl:attribute>
   </xsl:attribute-set>
-  
+
   <xsl:attribute-set name="__toc__chapter__content" use-attribute-sets="__toc__topic__content">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$default-font-size"/>
+    </xsl:attribute>
+    <xsl:attribute name="font-weight">normal</xsl:attribute>
+    <xsl:attribute name="padding-top">0pt</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="__toc__appendix__content" use-attribute-sets="__toc__topic__content">
     <xsl:attribute name="font-size">
       <xsl:value-of select="$default-font-size"/>
     </xsl:attribute>
