@@ -9,6 +9,9 @@
   <variable id="danger Note Image Path"/>
   <!-- Image path to use for a note of "warning" type. -->
   <variable id="warning Note Image Path"/>
-  <variable id="trouble Note Image Path"/>
+  <variable id="trouble Note Image Path"/>  
+  
+  <!-- The heading string to put at the top of the Table of Contents -->
+  <variable id="Table of Contents">Table of Contents</variable>
   
 </vars>

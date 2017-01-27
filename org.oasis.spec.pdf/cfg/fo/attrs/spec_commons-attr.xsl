@@ -284,10 +284,15 @@
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
   </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.frontmatter">
+    <xsl:attribute name="format">1</xsl:attribute>
+  </xsl:attribute-set>
 
 
   <xsl:attribute-set name="revised">
     <xsl:attribute name="color">red</xsl:attribute>
   </xsl:attribute-set>
+  
 
 </xsl:stylesheet>

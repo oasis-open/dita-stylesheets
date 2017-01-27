@@ -19,7 +19,7 @@
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/layout-masters-attr.xsl"/>
   <!--<xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_layout-masters-attr.xsl"/>-->
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/layout-masters.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/spec_layout-masters.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/spec_layout-masters.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/links-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_links-attr.xsl"/>
@@ -49,7 +49,7 @@
   <xsl:import href="plugin:org.dita.pdf2.axf:cfg/fo/attrs/toc-attr_axf.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_toc-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/toc.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_toc.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_toc.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/bookmarks.xsl"/>
   

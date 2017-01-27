@@ -99,7 +99,13 @@ See the accompanying license.txt file for applicable licenses.
       </fo:simple-page-master>
     </xsl:if>
     
-    <!--TOC simple masters-->
+    <!--TOC simple masters-->    
+    <fo:simple-page-master master-name="toc-first" xsl:use-attribute-sets="simple-page-master">
+      <fo:region-body xsl:use-attribute-sets="region-body.odd"/>
+      <fo:region-before region-name="first-toc-header" xsl:use-attribute-sets="region-before"/>
+      <fo:region-after region-name="first-toc-footer" xsl:use-attribute-sets="region-after"/>
+    </fo:simple-page-master>
+    
     <xsl:if test="$mirror-page-margins">
       <fo:simple-page-master master-name="toc-even" xsl:use-attribute-sets="simple-page-master">
         <fo:region-body xsl:use-attribute-sets="region-body.even"/>
@@ -116,14 +122,8 @@ See the accompanying license.txt file for applicable licenses.
     
     <fo:simple-page-master master-name="toc-last" xsl:use-attribute-sets="simple-page-master">
       <fo:region-body xsl:use-attribute-sets="region-body.even"/>
-      <fo:region-before region-name="even-toc-header" xsl:use-attribute-sets="region-before"/>
-      <fo:region-after region-name="even-toc-footer" xsl:use-attribute-sets="region-after"/>
-    </fo:simple-page-master>
-    
-    <fo:simple-page-master master-name="toc-first" xsl:use-attribute-sets="simple-page-master">
-      <fo:region-body xsl:use-attribute-sets="region-body.odd"/>
-      <fo:region-before region-name="odd-toc-header" xsl:use-attribute-sets="region-before"/>
-      <fo:region-after region-name="odd-toc-footer" xsl:use-attribute-sets="region-after"/>
+      <fo:region-before region-name="last-toc-header" xsl:use-attribute-sets="region-before"/>
+      <fo:region-after region-name="last-toc-footer" xsl:use-attribute-sets="region-after"/>
     </fo:simple-page-master>
     
     <!--BODY simple masters-->
@@ -200,6 +200,8 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:call-template name="generate-page-sequence-master">
       <xsl:with-param name="master-name" select="'toc-sequence'"/>
       <xsl:with-param name="master-reference" select="'toc'"/>
+      <xsl:with-param name="first" select="false()"/>
+      <xsl:with-param name="last" select="false()"/>
     </xsl:call-template>
     <xsl:call-template name="generate-page-sequence-master">
       <xsl:with-param name="master-name" select="'body-sequence'"/>
