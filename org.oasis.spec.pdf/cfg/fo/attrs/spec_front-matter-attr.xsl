@@ -4,6 +4,9 @@
   xmlns:opentopic="http://www.idiominc.com/opentopic"
   xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <xsl:attribute-set name="__frontmatter__align__top"/>
+  <xsl:attribute-set name="__frontmatter__align__bottom"/>
 
   <xsl:attribute-set name="__frontmatter__owner">
     <xsl:attribute name="font-family">Sans</xsl:attribute>

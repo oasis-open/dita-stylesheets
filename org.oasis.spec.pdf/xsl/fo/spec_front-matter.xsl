@@ -12,7 +12,7 @@
       <fo:page-sequence master-reference="front-matter" xsl:use-attribute-sets="page-sequence.cover">
         <xsl:call-template name="insertFrontMatterStaticContents"/>
         <fo:flow flow-name="xsl-region-body">
-          <fo:block-container xsl:use-attribute-sets="__cover__background">
+          <fo:block-container>
             <fo:block-container xsl:use-attribute-sets="__frontmatter__align__top">
               <xsl:call-template name="createFrontCoverContentsAlignWithTop"/>
             </fo:block-container>
@@ -62,7 +62,7 @@
   </xsl:template>
 
   <xsl:template name="createFrontCoverContentsAlignWithBottom">
-    <xsl:if test="$map/bookmeta/bookid/booknumber != ''">
+    <!--<xsl:if test="$map/bookmeta/bookid/booknumber != ''">
       <fo:block>
         <xsl:value-of select="$map/bookmeta/bookid/booknumber"/>
       </fo:block>
@@ -77,7 +77,7 @@
       <fo:block>
         <xsl:value-of select="$publication-date"/>
       </fo:block>
-    </xsl:if>
+    </xsl:if>-->
   </xsl:template>
 
   <xsl:template name="spdf:cover-image">

@@ -62,7 +62,7 @@
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/front-matter-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_front-matter-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/front-matter.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_front-matter.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_front-matter.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/preface.xsl"/>
   
