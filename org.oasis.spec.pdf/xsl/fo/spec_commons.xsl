@@ -74,6 +74,54 @@
       </fo:flow>
     </fo:page-sequence>
   </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/topic ')][child::ditaval-startprop[count(preceding-sibling::*) = 0]]">
+    <fo:block xsl:use-attribute-sets="revised">
+      <xsl:text>►</xsl:text>
+      <xsl:variable name="topicType" as="xs:string">
+        <xsl:call-template name="determineTopicType"/>
+      </xsl:variable>
+      <xsl:choose>
+        <xsl:when test="$topicType = 'topicChapter'">
+          <xsl:call-template name="processTopicChapter"/>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicAppendix'">
+          <xsl:call-template name="processTopicAppendix"/>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicAppendices'">
+          <xsl:call-template name="processTopicAppendices"/>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicPart'">
+          <xsl:call-template name="processTopicPart"/>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicPreface'">
+          <xsl:call-template name="processTopicPreface"/>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicNotices'">
+          <xsl:if test="$retain-bookmap-order">
+            <xsl:call-template name="processTopicNotices"/>
+          </xsl:if>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicTocList'">
+          <xsl:call-template name="processTocList"/>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicIndexList'">
+          <xsl:call-template name="processIndexList"/>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicFrontMatter'">
+          <xsl:call-template name="processFrontMatterTopic"/>
+        </xsl:when>
+        <xsl:when test="$topicType = 'topicSimple'">
+          <xsl:call-template name="processTopicSimple"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="." mode="processUnknowTopic">
+            <xsl:with-param name="topicType" select="$topicType"/>
+          </xsl:apply-templates>
+        </xsl:otherwise>
+      </xsl:choose>      
+      <xsl:text>◄</xsl:text>
+    </fo:block></xsl:template>
 
   <!-- override definiton list handling; table layout is unreliable with some fo processors -->
   <xsl:template match="*[contains(@class, ' topic/dl ')]">

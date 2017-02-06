@@ -67,7 +67,7 @@
     <xsl:attribute name="border-left-style">none</xsl:attribute>
     <xsl:attribute name="border-right-style">none</xsl:attribute>
     <xsl:attribute name="border-top-style">none</xsl:attribute>
-    <xsl:attribute name="color">black</xsl:attribute>
+    <xsl:attribute name="color">inherit</xsl:attribute>
     <xsl:attribute name="font-family">Sans</xsl:attribute>
     <xsl:attribute name="font-size">
       <xsl:value-of select="$default-font-size"/>
