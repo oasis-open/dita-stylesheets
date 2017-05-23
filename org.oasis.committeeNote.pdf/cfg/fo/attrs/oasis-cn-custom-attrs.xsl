@@ -6,6 +6,7 @@
  <!--                                                                   -->
  <!-- 05 Sep 2015: Eberlein, added change log.                          -->
  <!-- 29 Oct 2016: Eberlein, added import for XML mention domain attrs. -->
+ <!-- 25 May 2017: Eberlein, added import for programming domain attrs. -->
  <!-- ================================================================= -->
  
  <!-- IMPORT OVERRIDES TO DITA-OT ATTRIBUTE FILES -->
@@ -15,6 +16,7 @@
  <xsl:import href="oasis-cn-tables-attr.xsl"/>
  <xsl:import href="oasis-cn-toc-attr.xsl"/>
  <xsl:import href="oasis-xml-domain-attr.xsl"/>
+ <xsl:import href="oasis-cn-pr-domain-attr.xsl"/>
  
  <!-- IMPORT CUSTOM OASIS ATTRIBUTE FILES -->
  <xsl:import href="oasis-cn-cover-attrs.xsl"/>
