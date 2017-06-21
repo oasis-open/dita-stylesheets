@@ -13,7 +13,7 @@
     
     <!-- ===================== CHANGE LOG ================================ -->
     <!--                                                                   -->
-    <!-- 5 Sept 2015: Eberlein, added change log.                          -->
+    <!-- 5 Sep 2015 KJE: Added override for chapter titles.                -->
     <!-- ================================================================= --> 
 
     <!-- OVERRIDE FOR DRAFT COMMENTS -->
@@ -41,6 +41,62 @@
                 <xsl:apply-templates/>
             </fo:block>
         </xsl:if>
+    </xsl:template>
+    
+    <!--  Override for bookmap chapter titles  -->
+    <xsl:template name="processTopicChapter">
+        <fo:page-sequence master-reference="body-sequence"
+            xsl:use-attribute-sets="page-sequence.body">
+            <xsl:call-template name="startPageNumbering"/>
+            <xsl:call-template name="insertBodyStaticContents"/>
+            <fo:flow flow-name="xsl-region-body">
+                <fo:block xsl:use-attribute-sets="topic">
+                    <xsl:call-template name="commonattributes"/>
+                    <xsl:variable name="level" as="xs:integer">
+                        <xsl:apply-templates select="." mode="get-topic-level"/>
+                    </xsl:variable>
+                    <xsl:if test="$level eq 1">
+                        <fo:marker marker-class-name="current-topic-number">
+                            <xsl:variable name="topicref"
+                                select="key('map-id', ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id)"/>
+                            <xsl:for-each select="$topicref">
+                                <xsl:apply-templates select="." mode="topicTitleNumber"/>
+                            </xsl:for-each>
+                        </fo:marker>
+                        <xsl:apply-templates select="." mode="insertTopicHeaderMarker"/>
+                    </xsl:if>
+                    <xsl:apply-templates select="*[contains(@class, ' topic/prolog ')]"/>
+                    <!-- Bob: Disable this. 21jun17 -->
+                    <!-- <xsl:apply-templates select="." mode="insertChapterFirstpageStaticContent">
+                        <xsl:with-param name="type" select="'chapter'"/>
+                    </xsl:apply-templates>-->
+                    <fo:block xsl:use-attribute-sets="topic.title">
+                        <!-- Bob: Attach the chapter toc id to the title. 21jun17 -->
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="concat('_OPENTOPIC_TOC_PROCESSING_', generate-id())"/>
+                        </xsl:attribute>
+                        <xsl:call-template name="pullPrologIndexTerms"/>
+                        <xsl:for-each select="*[contains(@class, ' topic/title ')]">
+                            <xsl:apply-templates select="." mode="getTitle"/>
+                        </xsl:for-each>
+                    </fo:block>
+                    <xsl:choose>
+                        <xsl:when test="$chapterLayout = 'BASIC'">
+                            <xsl:apply-templates
+                                select="
+                                *[not(contains(@class, ' topic/topic ') or contains(@class, ' topic/title ') or
+                                contains(@class, ' topic/prolog '))]"/>
+                            <!--xsl:apply-templates select="." mode="buildRelationships"/-->
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="." mode="createMiniToc"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]"/>
+                    <xsl:call-template name="pullPrologIndexTerms.end-range"/>
+                </fo:block>
+            </fo:flow>
+        </fo:page-sequence>
     </xsl:template>
 
 </xsl:stylesheet>
