@@ -24,12 +24,12 @@
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/links-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_links-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/links.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_links.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_links.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/lists-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_lists-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/lists.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_lists.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_lists.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/tables-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2.axf:cfg/fo/attrs/tables-attr_axf.xsl"/>

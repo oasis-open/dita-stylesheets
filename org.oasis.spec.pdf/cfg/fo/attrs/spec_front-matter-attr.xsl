@@ -115,11 +115,6 @@
     <xsl:attribute name="space-after">0.6em</xsl:attribute>
   </xsl:attribute-set>
 
-  <xsl:attribute-set name="cover_xref">
-    <xsl:attribute name="color">blue</xsl:attribute>
-    <xsl:attribute name="text-decoration">underline</xsl:attribute>
-  </xsl:attribute-set>
-
   <xsl:attribute-set name="frontmatter-indent">
     <xsl:attribute name="margin-left">0.5in</xsl:attribute>
   </xsl:attribute-set>

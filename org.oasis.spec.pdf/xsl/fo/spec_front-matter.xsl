@@ -53,25 +53,6 @@
     </fo:block>-->
   </xsl:template>
 
-  <xsl:template name="createFrontCoverContentsAlignWithBottom">
-    <!--<xsl:if test="$map/bookmeta/bookid/booknumber != ''">
-      <fo:block>
-        <xsl:value-of select="$map/bookmeta/bookid/booknumber"/>
-      </fo:block>
-    </xsl:if>
-    <xsl:if test="$map/bookmeta/bookid/edition != ''">
-      <fo:block>
-        <xsl:text>Edition </xsl:text>
-        <xsl:value-of select="$map/bookmeta/bookid/edition"/>
-      </fo:block>
-    </xsl:if>
-    <xsl:if test="$publication-date != ''">
-      <fo:block>
-        <xsl:value-of select="$publication-date"/>
-      </fo:block>
-    </xsl:if>-->
-  </xsl:template>
-
   <xsl:template name="spdf:cover-image">
     <xsl:for-each
       select="($map//*[contains(@class, ' topic/data ')][@name = 'cover-image']/*[contains(@class, ' topic/image ')])[1]">

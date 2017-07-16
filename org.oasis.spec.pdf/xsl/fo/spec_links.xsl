@@ -96,6 +96,10 @@
         <xsl:with-param name="format" select="@format"/>
         <xsl:with-param name="href" select="@href"/>
       </xsl:call-template>
+      <xsl:if  test="ancestor::*[contains(@outputclass, 'cover')]">        
+        <xsl:attribute name="color">blue</xsl:attribute>
+        <xsl:attribute name="text-decoration">underline</xsl:attribute>        
+      </xsl:if>
 
       <xsl:choose>
         <xsl:when
