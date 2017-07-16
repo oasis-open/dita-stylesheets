@@ -16,15 +16,7 @@
             <fo:block-container xsl:use-attribute-sets="__frontmatter__align__top">
               <xsl:call-template name="createFrontCoverContentsAlignWithTop"/>
             </fo:block-container>
-            <fo:block-container xsl:use-attribute-sets="__frontmatter__align__bottom">
-              <xsl:call-template name="createFrontCoverContentsAlignWithBottom"/>
-            </fo:block-container>
           </fo:block-container>
-        </fo:flow>
-      </fo:page-sequence>
-      <fo:page-sequence master-reference="front-matter" xsl:use-attribute-sets="page-sequence.cover">
-        <xsl:call-template name="insertFrontMatterStaticContents"/>
-        <fo:flow flow-name="xsl-region-body">
           <xsl:call-template name="insertNoticesTopics"/>
         </fo:flow>
       </fo:page-sequence>
@@ -32,10 +24,10 @@
   </xsl:template>
 
   <xsl:template name="createFrontCoverContentsAlignWithTop">
-    <fo:block text-align="start">
+    <fo:block text-align="start" border-after-style="solid" border-after-width="0.5px" border-after-color="black">
       <fo:external-graphic
-        src="url('file:Customization/OpenTopic/common/artwork/tagsmiths-logo.svg')"
-        content-height="15mm" content-width="60mm" scaling="uniform" text-align="left"/>
+        src="url('file:Customization/OpenTopic/common/artwork/oasis.tif')"
+        content-height="13.3mm" content-width="60mm" scaling="uniform" text-align="left"/>
     </fo:block>
     <fo:block xsl:use-attribute-sets="__frontmatter__title">
       <xsl:choose>
@@ -55,10 +47,10 @@
         </xsl:otherwise>
       </xsl:choose>
     </fo:block>
-    <xsl:apply-templates select="$map//*[contains(@class, ' bookmap/booktitlealt ')]"/>
+    <!--<xsl:apply-templates select="$map//*[contains(@class, ' bookmap/booktitlealt ')]"/>
     <fo:block xsl:use-attribute-sets="__frontmatter__owner">
       <xsl:apply-templates select="$map//*[contains(@class, ' bookmap/bookmeta ')]"/>
-    </fo:block>
+    </fo:block>-->
   </xsl:template>
 
   <xsl:template name="createFrontCoverContentsAlignWithBottom">
@@ -116,11 +108,76 @@
       select="/bookmap/*[contains(@class, ' topic/topic ')][matches($noticesTopicrefs, concat('~', @id, '~'))]">
       <fo:block>
         <!-- spec.pdf: notices mode is implemented in spec_commons.xsl -->
-        <xsl:apply-templates mode="notices">
+        <xsl:apply-templates mode="cover">
           <xsl:with-param name="position" select="position()" as="xs:integer"/>
         </xsl:apply-templates>
       </fo:block>
     </xsl:for-each>
+  </xsl:template>
+  
+  <!-- Tagsmiths: The next several templates with mode="cover" are responsible for outputting
+    the cover topic -29oct13 -->
+  
+  <xsl:template match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'cover')]"
+    mode="cover">
+    <xsl:apply-templates mode="cover"/>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/author ')]" mode="cover notices">
+    <!-- Suppress the cover topic's title -->
+  </xsl:template>
+  
+  <xsl:template
+    match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'cover')]/*[contains(@class, ' topic/title ')]"
+    mode="cover">
+    <fo:block xsl:use-attribute-sets="oasis-h3">
+      <xsl:value-of select="."/>
+    </fo:block>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/section ')]" mode="cover">
+    <xsl:for-each select="*">
+      <xsl:choose>
+        <xsl:when test="contains(@class, ' topic/title ')">
+          <fo:block
+            xsl:use-attribute-sets="cover_category_label cover_category_label_spacing oasis-head"
+            ><xsl:apply-templates/>:</fo:block>
+        </xsl:when>
+        <xsl:when test="contains(@class, ' topic/dl ')">
+          <xsl:apply-templates select="." mode="cover"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <fo:block xsl:use-attribute-sets="frontmatter-indent">
+            <xsl:apply-templates select="."/>
+          </fo:block>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
+  </xsl:template>
+  
+  <!-- Tagsmiths: The next several templates with mode="notices" are responsible for outputting
+    the notices topic -29oct13 -->
+  <xsl:template match="*[contains(@class, ' topic/dl ')]" mode="cover">
+    <xsl:apply-templates mode="cover"/>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/dlentry ')]" mode="cover">
+    <fo:block xsl:use-attribute-sets="frontmatter-indent">
+      <xsl:apply-templates mode="cover"/>
+    </fo:block>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/dt ')]" mode="cover">
+    <fo:block xsl:use-attribute-sets="dlentry.dt__content.cover">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class, ' topic/dd ')]" mode="cover">
+    <fo:block>
+      <xsl:attribute name="margin-left">.15in</xsl:attribute>
+      <xsl:apply-templates/>
+    </fo:block>
   </xsl:template>
 
 
