@@ -121,6 +121,9 @@
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/flagging-from-preprocess.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_flagging-from-preprocess.xsl"/>
   
+  <!-- Tagsmiths: The following paramaters are components used for oasis naming conventions. 15jun16 -->
+  <xsl:param name="outputfilebasename"/>
+  
   <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_utils.xsl"/>-->
   
 </xsl:stylesheet>
