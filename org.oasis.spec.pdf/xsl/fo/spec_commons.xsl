@@ -9,6 +9,8 @@
   xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
   exclude-result-prefixes="dita-ot spdf ot-placeholder opentopic opentopic-index opentopic-func dita2xslfo xs"
   version="2.0">
+  
+  <xsl:import href="spec_topic.xsl"/>
 
   <xsl:template match="*" mode="insertChapterFirstpageStaticContent">
     <xsl:param name="type" as="xs:string"/>
@@ -123,7 +125,7 @@
       <xsl:text>◄</xsl:text>
     </fo:block></xsl:template>
 
-  <!-- override definiton list handling; table layout is unreliable with some fo processors -->
+<!--  <!-\- override definiton list handling; table layout is unreliable with some fo processors -\->
   <xsl:template match="*[contains(@class, ' topic/dl ')]">
     <xsl:choose>
       <xsl:when test="*[contains(@class, ' topic/dlhead ')]">
@@ -152,7 +154,7 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  <!-- if it contains dlhead, we must treat it like a table, so we need this -->
+  <!-\- if it contains dlhead, we must treat it like a table, so we need this -\->
   <xsl:template match="*[contains(@class, ' topic/dl ')]/*[contains(@class, ' topic/dlhead ')]">
     <fo:table-header xsl:use-attribute-sets="dl.dlhead" id="{@id}">
       <fo:table-row xsl:use-attribute-sets="dl.dlhead__row">
@@ -160,7 +162,7 @@
       </fo:table-row>
     </fo:table-header>
   </xsl:template>
-  <!-- if it contains dlhead, we must treat it like a table, so we need this -->
+  <!-\- if it contains dlhead, we must treat it like a table, so we need this -\->
   <xsl:template match="*[contains(@class, ' topic/dlhead ')]/*[contains(@class, ' topic/dthd ')]">
     <fo:table-cell xsl:use-attribute-sets="dlhead.dthd__cell" id="{@id}">
       <fo:block xsl:use-attribute-sets="dlhead.dthd__content">
@@ -168,7 +170,7 @@
       </fo:block>
     </fo:table-cell>
   </xsl:template>
-  <!-- if it contains dlhead, we must treat it like a table, so we need this -->
+  <!-\- if it contains dlhead, we must treat it like a table, so we need this -\->
   <xsl:template match="*[contains(@class, ' topic/dlhead ')]/*[contains(@class, ' topic/ddhd ')]">
     <fo:table-cell xsl:use-attribute-sets="dlhead.ddhd__cell" id="{@id}">
       <fo:block xsl:use-attribute-sets="dlhead.ddhd__content">
@@ -176,7 +178,7 @@
       </fo:block>
     </fo:table-cell>
   </xsl:template>
-  <!-- adding choose statement to keep table output if a dlhead is used; otherwise, treat as a "simple" defintion list -->
+  <!-\- adding choose statement to keep table output if a dlhead is used; otherwise, treat as a "simple" defintion list -\->
   <xsl:template match="*[contains(@class, ' topic/dlentry ')]">
     <xsl:choose>
       <xsl:when test="preceding-sibling::*[contains(@class, ' topic/dlhead ')]">
@@ -209,6 +211,6 @@
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
-  <!-- end definition list handling override -->
-
+  <!-\- end definition list handling override -\->
+-->
 </xsl:stylesheet>
