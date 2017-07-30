@@ -3,6 +3,10 @@
   
   <!-- Text to use for appendix titles.-->
   <variable id="Appendix with number">Appendix </variable>
+  
+  <!-- Template for generated page number of a reference 
+         in printed manual. -->
+  <variable id="On the page"> (<param ref-name="pagenum"/>)</variable>
 
   <!-- Image path to use for a note of "attention" type. -->
   <variable id="attention Note Image Path"/>
