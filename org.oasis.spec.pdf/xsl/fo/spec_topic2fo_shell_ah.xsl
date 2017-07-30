@@ -102,6 +102,7 @@
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/xml-domain-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_xml-domain-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/xml-domain.xsl"/>
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_xml-domain.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/static-content-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_static-content-attr.xsl"/>
