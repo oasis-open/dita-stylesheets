@@ -50,6 +50,7 @@ See the accompanying license.txt file for applicable licenses.
     <!-- Frontmatter simple masters -->
     <fo:simple-page-master master-name="front-matter-first" xsl:use-attribute-sets="simple-page-master">
       <fo:region-body xsl:use-attribute-sets="region-body__frontmatter.odd"/>
+      <fo:region-after region-name="first-frontmatter-footer" xsl:use-attribute-sets="region-after"/>
     </fo:simple-page-master>
     
     <fo:simple-page-master master-name="front-matter-last" xsl:use-attribute-sets="simple-page-master">

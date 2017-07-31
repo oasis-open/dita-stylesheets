@@ -166,11 +166,11 @@
     <xsl:variable name="topic-in">
       <xsl:value-of select="concat($indir-uri, '/', $no-id-href)"/>
     </xsl:variable>
-    <xsl:message>zxzx: topic-in=<xsl:value-of select="$topic-in"/></xsl:message>
+    <!--<xsl:message>zxzx: topic-in=<xsl:value-of select="$topic-in"/></xsl:message>-->
     <xsl:variable name="topic-out">
       <xsl:value-of select="concat($outdir-uri, '/', $no-id-href)"/>
     </xsl:variable>
-    <xsl:message>zxzx: topic-out=<xsl:value-of select="$topic-out"/></xsl:message>
+    <!--<xsl:message>zxzx: topic-out=<xsl:value-of select="$topic-out"/></xsl:message>-->
     <xsl:variable name="process-this-topic" as="xs:boolean">
       <xsl:choose>
         <xsl:when

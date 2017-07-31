@@ -1,0 +1,3 @@
+<dummy>
+  <param name="INPUTMAP" expression="${user.input.file}"></param>
+</dummy>

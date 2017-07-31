@@ -25,7 +25,7 @@
   </xsl:template>
 
   <xsl:template name="insertFrontMatterStaticContents">
-    <xsl:call-template name="insertFrontMatterFootnoteSeparator"/>
+    <xsl:call-template name="insertFrontMatterFirstFooter"/>
     <xsl:call-template name="insertFrontMatterOddFooter"/>
   </xsl:template>
 
@@ -113,7 +113,12 @@
     </fo:static-content>
   </xsl:template>
 
-
+  <xsl:template name="insertFrontMatterFirstFooter">
+    <fo:static-content flow-name="first-frontmatter-footer">
+      <xsl:call-template name="commonOddFooter"/>
+    </fo:static-content>
+  </xsl:template>
+  
   <xsl:template name="insertBackCoverOddFooter">
     <fo:static-content flow-name="odd-back-cover-footer">
       <xsl:call-template name="commonOddFooter"/>
