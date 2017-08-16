@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="oasis_specification_formatting">
+
+  <target name="pub-meta-to-ant-props"
+    description="Retrieve publication-specific metadata for use in ant">
+    <!-- Tagsmiths: The pub-meta-to-ant-props target pulls publication-specific information out of the
+         root map and makes that information available in the build environment as ant propterties.
+         All args.oasis.bookmeta.* properties come from this target. -02oct13 -->
+    <xslt processor="trax" basedir="${dita.temp.dir}" destdir="${dita.temp.dir}"
+      in="${dita.temp.dir}${file.separator}${dita.input.filename}"
+      out="${dita.temp.dir}${file.separator}pubMetadataProps.xml"
+      style="${dita.plugin.org.oasis.specification.pubmeta.dir}${file.separator}xsl${file.separator}pubMetaToAntProps.xsl"> </xslt>
+    <xmlproperty file="${dita.temp.dir}${file.separator}pubMetadataProps.xml"/>
+    <property name="outputFile.base" value="${args.oasis.bookmeta.outputfilebasename}"/>
+  </target>
+
+</project>

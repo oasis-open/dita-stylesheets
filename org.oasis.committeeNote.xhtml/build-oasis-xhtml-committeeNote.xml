@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns:dita="http://dita-ot.sourceforge.net" name="org.oasis.committeeNote.xhtml" default="dita2oasis-xhtml-committeeNote">
+  
+  <property name="transtype" value="oasis-xhtml-committeeNote"/>
+  <property name="args.copycss" value="yes"/>
+  <condition property="args.cssroot" value="${dita.plugin.org.oasis.committeeNote.xhtml.dir}${file.separator}resource">
+    <not>
+      <isset property="args.cssroot"/>
+    </not>
+  </condition>
+  <condition property="args.css" value="oasis-note.css">
+    <not>
+      <isset property="args.css"/>
+    </not>
+  </condition>
+  
+  <condition property="args.xsl" value="${dita.plugin.org.oasis.committeeNote.xhtml.dir}${file.separator}xsl${file.separator}oasis-cn-dita2xhtml.xsl">
+    <not>
+      <isset property="args.xsl"/>
+    </not>
+  </condition>
+  
+  <!-- Thomas: Copied the dita2xhtml dependency chain from target dita2xhtml and then removed from it 
+       target dita.map.xhtml because a discrete TOC file (index.html) is not needed for a single
+       file output. -->
+  <target name="dita2oasis-xhtml-committeeNote" depends="dita2xhtml.init, build-init, preprocess, xhtml.topics, copy-css, copy-graphics">
+  </target>
+  
+  <target name="copy-graphics">
+    <copy todir="${user.csspath.real}">
+      <fileset dir="${args.cssroot}" includes="*.jpg, *.png"/>
+    </copy>
+  </target>
+  
+</project>

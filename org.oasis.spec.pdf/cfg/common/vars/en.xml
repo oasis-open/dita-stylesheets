@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <vars xmlns="http://www.idiominc.com/opentopic/vars">
+  
+  <!-- Text to use for appendix titles.-->
+  <variable id="Appendix with number">Appendix </variable>
+  
+  <!-- Template for generated page number of a reference 
+         in printed manual. -->
+  <variable id="On the page"> (<param ref-name="pagenum"/>)</variable>
 
   <!-- Image path to use for a note of "attention" type. -->
   <variable id="attention Note Image Path"/>
@@ -9,6 +16,9 @@
   <variable id="danger Note Image Path"/>
   <!-- Image path to use for a note of "warning" type. -->
   <variable id="warning Note Image Path"/>
-  <variable id="trouble Note Image Path"/>
+  <variable id="trouble Note Image Path"/>  
+  
+  <!-- The heading string to put at the top of the Table of Contents -->
+  <variable id="Table of Contents">Table of Contents</variable>
   
 </vars>

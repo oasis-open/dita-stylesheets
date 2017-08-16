@@ -13,6 +13,7 @@
     <xsl:attribute name="line-height">
       <xsl:value-of select="$default-line-height"/>
     </xsl:attribute>
+    <xsl:attribute name="id">fo-root-do-not-change</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="__force__page__count">
@@ -66,7 +67,7 @@
     <xsl:attribute name="border-left-style">none</xsl:attribute>
     <xsl:attribute name="border-right-style">none</xsl:attribute>
     <xsl:attribute name="border-top-style">none</xsl:attribute>
-    <xsl:attribute name="color">black</xsl:attribute>
+    <xsl:attribute name="color">inherit</xsl:attribute>
     <xsl:attribute name="font-family">Sans</xsl:attribute>
     <xsl:attribute name="font-size">
       <xsl:value-of select="$default-font-size"/>
@@ -283,10 +284,15 @@
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-top">6pt</xsl:attribute>
   </xsl:attribute-set>
+  
+  <xsl:attribute-set name="page-sequence.frontmatter">
+    <xsl:attribute name="format">1</xsl:attribute>
+  </xsl:attribute-set>
 
 
   <xsl:attribute-set name="revised">
     <xsl:attribute name="color">red</xsl:attribute>
   </xsl:attribute-set>
+  
 
 </xsl:stylesheet>

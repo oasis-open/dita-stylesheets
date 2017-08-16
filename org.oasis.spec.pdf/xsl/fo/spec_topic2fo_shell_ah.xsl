@@ -19,23 +19,23 @@
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/layout-masters-attr.xsl"/>
   <!--<xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_layout-masters-attr.xsl"/>-->
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/layout-masters.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/spec_layout-masters.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/spec_layout-masters.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/links-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_links-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/links.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_links.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_links.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/lists-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_lists-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/lists.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_lists.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_lists.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/tables-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2.axf:cfg/fo/attrs/tables-attr_axf.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_tables-attr.xsl"/>  
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/tables.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_tables.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_tables.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/root-processing.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2.axf:xsl/fo/root-processing_axf.xsl"/>
@@ -49,7 +49,7 @@
   <xsl:import href="plugin:org.dita.pdf2.axf:cfg/fo/attrs/toc-attr_axf.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_toc-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/toc.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_toc.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_toc.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/bookmarks.xsl"/>
   
@@ -62,7 +62,7 @@
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/front-matter-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_front-matter-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/front-matter.xsl"/>
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_front-matter.xsl"/>-->
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_front-matter.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/preface.xsl"/>
   
@@ -102,6 +102,7 @@
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/xml-domain-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_xml-domain-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/xml-domain.xsl"/>
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_xml-domain.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/static-content-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_static-content-attr.xsl"/>
@@ -119,6 +120,10 @@
   
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/flagging.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/flagging-from-preprocess.xsl"/>
+  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_flagging-from-preprocess.xsl"/>
+  
+  <!-- Tagsmiths: The following paramaters are components used for oasis naming conventions. 15jun16 -->
+  <xsl:param name="outputfilebasename"/>
   
   <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_utils.xsl"/>-->
   

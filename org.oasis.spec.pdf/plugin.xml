@@ -4,6 +4,7 @@
     <require plugin="org.dita.pdf2"/>
     <transtype name="spec-pdf" extends="pdf" desc="Oasis Specification PDF"/>
     <feature extension="dita.transtype.print" value="spec-pdf"/>
+    <feature extension="dita.conductor.pdf2.param" value="insertXSLTParameters.xml" type="file"/>
     <feature extension="dita.conductor.target.relative" file="integrator.xml"/>
     <feature extension="org.dita.pdf2.xsl.topicmerge" type="file" value="xsl/common/spec_topicmergeImpl.xsl"/>
 </plugin>
