@@ -1,8 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <project name="oasis_specification_formatting">
 
-  <target name="pub-meta-to-ant-props"
-    description="Retrieve publication-specific metadata for use in ant">
+  <target name="pub-meta-to-ant-props" depends="pub-meta-to-ant-props.init, pub-meta-to-ant-props.transform"
+    description="Retrieve publication-specific metadata for use in ant"/>
+
+  <target name="pub-meta-to-ant-props.init">
+    <condition property="isSpec">
+      <or>
+        <equals arg1="${transtype}" arg2="spec-pdf"/>
+        <equals arg1="${transtype}" arg2="spec-html"/>
+      </or>
+    </condition>
+  </target>
+
+  <target name="pub-meta-to-ant-props.transform" if="${isSpec}">
     <!-- Tagsmiths: The pub-meta-to-ant-props target pulls publication-specific information out of the
          root map and makes that information available in the build environment as ant propterties.
          All args.oasis.bookmeta.* properties come from this target. -02oct13 -->

@@ -19,6 +19,6 @@
   <variable id="trouble Note Image Path"/>  
   
   <!-- The heading string to put at the top of the Table of Contents -->
-  <variable id="Table of Contents">Table of Contents</variable>
+  <variable id="Table of Contents">Table of contents</variable>
   
 </vars>
