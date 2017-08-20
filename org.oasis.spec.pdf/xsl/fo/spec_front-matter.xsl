@@ -55,7 +55,7 @@
     <fo:block xsl:use-attribute-sets="oasis-head oasis-h2">
       <!--<fo:block>errata-num=<xsl:value-of select="$errata-num"/>, stage-abbrev=<xsl:value-of select="$stage-abbrev"/>,
         revision-num=<xsl:value-of select="$revision-num"/>, part-number=<xsl:value-of select="$part-number"/>, spec-release-type=<xsl:value-of select="$spec-release-type"/></fo:block>-->
-      <fo:block>
+      <fo:block space-before="12pt">
         <xsl:value-of
           select="
           /*[contains(@class, ' bookmap/bookmap ')]/*
