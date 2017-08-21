@@ -1,5 +1,14 @@
 <?xml version='1.0'?>
 
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 5 Sep 2015 KJE: Added override for chapter titles.                -->
+<!-- 5 Sep 2015 KJE: Added override for appendix titles.               -->
+<!-- 21 Jun 2015  BT: Added additional override for chapter titles,    -->
+<!-- .            needed for more recent versions of DITA-OT.          -->
+<!-- 16 Aug 2015 KJE: Added additional override for appendix titles.   -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
@@ -10,14 +19,6 @@
     xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
     exclude-result-prefixes="ot-placeholder opentopic opentopic-index opentopic-func dita2xslfo xs"
     version="2.0">
-    
-    <!-- ===================== CHANGE LOG ================================ -->
-    <!--                                                                   -->
-    <!-- 05 Sep 2015 KJE: Added override for chapter titles.               -->
-    <!-- 21 Jun 2015  BT: Added additional override for chapter titles;    -->
-    <!--              needed for move to more recent version of OT.        -->
-    <!-- 16 Aug 2015 KJE: Added additional override for appendix titles.   -->
-    <!-- ================================================================= --> 
 
     <!-- OVERRIDE FOR DRAFT COMMENTS -->
     
@@ -125,16 +126,12 @@
                     
                     <xsl:apply-templates select="*[contains(@class,' topic/prolog ')]"/>
                     
-                    <!-- 16 Aug 2017 KJE: Commented out this template -->
+                    <!-- 15 August 2017: Eberlein, disabled this template -->
                     <!--<xsl:apply-templates select="." mode="insertChapterFirstpageStaticContent">
                         <xsl:with-param name="type" select="'appendix'"/>
                     </xsl:apply-templates>-->
                     
                     <fo:block xsl:use-attribute-sets="topic.title">
-                        <!-- Bob: Attach the chapter toc id to the title. 21jun17 -->
-                        <xsl:attribute name="id">
-                            <xsl:value-of select="concat('_OPENTOPIC_TOC_PROCESSING_', generate-id())"/>
-                        </xsl:attribute>
                         <xsl:call-template name="pullPrologIndexTerms"/>
                         <xsl:for-each select="*[contains(@class,' topic/title ')]">
                             <xsl:apply-templates select="." mode="getTitle"/>

@@ -7,21 +7,10 @@
  <!-- 05 Sep 2015: Eberlein, added change log.                          -->
  <!-- 29 Oct 2016: Eberlein, added import for XML mention domain attrs. -->
  <!-- 25 May 2017: Eberlein, added import for programming domain attrs. -->
+ <!-- 15 Aug 2017: Eberlein, removed import statements, which were      -->
+ <!--              moved to oasis-cn-topic2fo-shell.xsl.                -->
  <!-- ================================================================= -->
- 
- <!-- IMPORT OVERRIDES TO DITA-OT ATTRIBUTE FILES -->
- <xsl:import href="oasis-cn-basic-settings.xsl"/>
- <xsl:import href="oasis-cn-commons-attr.xsl"/>
- <xsl:import href="oasis-cn-static-content-attr.xsl"/>
- <xsl:import href="oasis-cn-tables-attr.xsl"/>
- <xsl:import href="oasis-cn-toc-attr.xsl"/>
- <xsl:import href="oasis-xml-domain-attr.xsl"/>
- <xsl:import href="oasis-cn-pr-domain-attr.xsl"/>
- 
- <!-- IMPORT CUSTOM OASIS ATTRIBUTE FILES -->
- <xsl:import href="oasis-cn-cover-attrs.xsl"/>
- 
- 
+  
  <!-- Used in the topic.title and __toc__header attribute sets -->
  <xsl:attribute-set name="horizontal-rule">
   <xsl:attribute name="border-top-color">#888888</xsl:attribute>
