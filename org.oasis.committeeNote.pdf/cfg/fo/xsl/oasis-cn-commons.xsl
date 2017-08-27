@@ -132,6 +132,10 @@
                     </xsl:apply-templates>-->
                     
                     <fo:block xsl:use-attribute-sets="topic.title">
+                        <!-- Bob: Attach the chapter toc id to the title. 21jun17 -->
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="concat('_OPENTOPIC_TOC_PROCESSING_', generate-id())"/>
+                        </xsl:attribute>
                         <xsl:call-template name="pullPrologIndexTerms"/>
                         <xsl:for-each select="*[contains(@class,' topic/title ')]">
                             <xsl:apply-templates select="." mode="getTitle"/>
