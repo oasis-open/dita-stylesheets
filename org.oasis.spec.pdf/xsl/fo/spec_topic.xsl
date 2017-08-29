@@ -35,7 +35,7 @@
         </fo:table>
       </xsl:when>
       <xsl:otherwise>
-        <fo:block>
+        <fo:block xsl:use-attribute-sets="dl__as__list">
           <xsl:apply-templates/>
         </fo:block>
       </xsl:otherwise>
@@ -79,7 +79,7 @@
         </fo:table-row>
       </xsl:when>
       <xsl:otherwise>
-        <fo:block>
+        <fo:block xsl:use-attribute-sets="dlentry__as__listitem">
           <xsl:call-template name="commonattributes"/>
           <xsl:apply-templates/>
         </fo:block>

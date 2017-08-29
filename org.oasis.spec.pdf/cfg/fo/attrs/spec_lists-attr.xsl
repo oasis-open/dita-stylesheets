@@ -38,5 +38,15 @@
     <xsl:attribute name="text-align">right</xsl:attribute>
     <xsl:attribute name="font-weight">normal</xsl:attribute>
   </xsl:attribute-set>
+  
+  <xsl:attribute-set name="dl__as__list">
+    <xsl:attribute name="space-after.optimum">6pt</xsl:attribute>
+    <xsl:attribute name="space-before.optimum">6pt</xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="dlentry__as__listitem">
+    <xsl:attribute name="space-after.optimum">6pt</xsl:attribute>
+    <xsl:attribute name="space-before.optimum">6pt</xsl:attribute>
+  </xsl:attribute-set>
 
 </xsl:stylesheet>

@@ -81,6 +81,7 @@
   <xsl:attribute-set name="oasis-h2">
     <xsl:attribute name="font-size">18pt</xsl:attribute>
     <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="space-before">12pt</xsl:attribute>
     <xsl:attribute name="color">
       <xsl:value-of select="$cover-heading-color"/>
     </xsl:attribute>
