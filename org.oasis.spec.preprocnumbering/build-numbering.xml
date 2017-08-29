@@ -3,6 +3,18 @@
 
 
   <target name="numbering">
+    <condition property="isSpec" value="true">
+      <or>
+        <equals arg1="${transtype}" arg2="spec-pdf"/>
+        <equals arg1="${transtype}" arg2="spec-html"/>
+      </or>
+    </condition>
+    <condition property="isSpec" value="false">
+      <not>
+        <isset property="isSpec"/>
+      </not>
+    </condition>
+    <echo message="zxzx isSpec=${isSpec}"></echo>
     <delete dir="${dita.temp.dir}${file.separator}stage"/>
     <xslt processor="trax"
       style="${dita.plugin.org.oasis.spec.preprocnumbering.dir}${file.separator}xsl${file.separator}numbering.xsl"
@@ -10,9 +22,10 @@
       out="${dita.temp.dir}${file.separator}stage${file.separator}${user.input.file}">
       <param name="INDIR" expression="${dita.temp.dir}"/>
       <param name="OUTDIR" expression="${dita.temp.dir}${file.separator}stage"/>
+      <param name="IS-SPEC" expression="${isSpec}"/>
     </xslt>
     <move todir="${dita.temp.dir}">
-      <fileset dir="${dita.temp.dir}${file.separator}stage"/>      
+      <fileset dir="${dita.temp.dir}${file.separator}stage"/>
     </move>
   </target>
 </project>

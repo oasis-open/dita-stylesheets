@@ -7,21 +7,36 @@
   xmlns:saxon="http://saxon.sf.net/" exclude-result-prefixes="xs dita-ot mappull ditamsg saxon">
 
   <xsl:output method="xml" indent="yes"/>
-  <xsl:param name="INDIR"></xsl:param>
-  <xsl:param name="OUTDIR"></xsl:param>
-  
-  <xsl:variable name="indir-uri" select="concat('file:/', replace($INDIR, '\\', '/'))"/>  
+  <xsl:param name="INDIR"/>
+  <xsl:param name="OUTDIR"/>
+  <xsl:param name="IS-SPEC">false</xsl:param>
+
+  <xsl:variable name="indir-uri" select="concat('file:/', replace($INDIR, '\\', '/'))"/>
   <xsl:variable name="outdir-uri" select="concat('file:/', replace($OUTDIR, '\\', '/'))"/>
-  
-  <xsl:variable name="numbered-titles" as="xs:boolean"
+
+  <!--<xsl:variable name="numbered-titles" as="xs:boolean"
     select="
       if (/*[contains(@class, ' map/map ')]/*[contains(@class, ' map/topicmeta ')]/data[@name = 'numbered-titles']/@value = 'true') then
         true()
       else
-        false()"/>
+        false()"/>-->
+  <xsl:variable name="numbered-titles" as="xs:boolean">
+    <xsl:choose>
+      <xsl:when test="matches($IS-SPEC, 'true', 'i')">
+        <xsl:sequence select="true()"/>
+      </xsl:when>
+      <xsl:when
+        test="/*[contains(@class, ' map/map ')]/*[contains(@class, ' map/topicmeta ')]/data[@name = 'numbered-titles']/@value = 'true'">
+        <xsl:sequence select="true()"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="false()"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
 
   <!-- Process the root map -->
-  <xsl:template match="/">
+  <xsl:template match="/">    
     <xsl:apply-templates/>
   </xsl:template>
 
@@ -29,19 +44,19 @@
        or with the count() function. This variable contains a flat array of all
        chapter tags in the publication with @id added for matching. -->
   <xsl:variable name="chapter-tags">
-    
-      <!-- Shallow copies only -->
-      <xsl:for-each select="//*[contains(@class, ' bookmap/chapter ')]">
-        <xsl:copy>
-          <xsl:copy-of select="@*"/>
-          <!-- Embed an id for matching with the <chapter> tag that
+
+    <!-- Shallow copies only -->
+    <xsl:for-each select="//*[contains(@class, ' bookmap/chapter ')]">
+      <xsl:copy>
+        <xsl:copy-of select="@*"/>
+        <!-- Embed an id for matching with the <chapter> tag that
                is in the bookmap. -->
-          <xsl:attribute name="id">
-            <xsl:value-of select="generate-id()"/>
-          </xsl:attribute>
-        </xsl:copy>
-      </xsl:for-each>
-    
+        <xsl:attribute name="id">
+          <xsl:value-of select="generate-id()"/>
+        </xsl:attribute>
+      </xsl:copy>
+    </xsl:for-each>
+
   </xsl:variable>
 
   <xsl:template match="*[contains(@class, ' bookmap/part ')]" priority="5">

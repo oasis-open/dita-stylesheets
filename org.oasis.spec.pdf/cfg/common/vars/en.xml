@@ -21,4 +21,9 @@
   <!-- The heading string to put at the top of the Table of Contents -->
   <variable id="Table of Contents">Table of contents</variable>
   
+  <variable id="Unordered List bullet 5">•</variable>
+  <variable id="Unordered List bullet 6">•</variable>
+  <variable id="Unordered List bullet 7">•</variable>
+  <variable id="Unordered List bullet 8">•</variable>
+  
 </vars>
