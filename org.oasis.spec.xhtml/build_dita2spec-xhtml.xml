@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="org.oasis.spec2xhtml">
+  
+  <target depends="dita2spec-xhtml.init, dita2xhtml" name="dita2spec-xhtml"
+    description="OASIS Specification XHTML transform"/>
+
+  <target name="dita2spec-xhtml.init"> </target>
+</project>

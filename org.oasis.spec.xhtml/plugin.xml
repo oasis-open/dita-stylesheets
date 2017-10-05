@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.oasis.spec.xhtml">
+  <require plugin="org.dita.xhtml"/>
+  <transtype name="spec-xhtml" extends="base-html" desc="OASIS Specification XHTML"/>
+  <feature extension="dita.conductor.target.relative" file="integrator.xml"/>
+</plugin>
