@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <plugin id="org.oasis.committeeNote.xhtml">
   <require plugin="org.dita.xhtml"/>
-  <template file="build-oasis-xhtml-committeeNote_template.xml"/>
   <feature extension="dita.conductor.transtype.check" value="oasis-xhtml-committeeNote" type="txt"/>
   <feature extension="dita.conductor.target.relative" value="build.xml" type="file"/>
   <feature extension="dita.conductor.xhtml.param" file="xsl/insertParameters.xml"/>
