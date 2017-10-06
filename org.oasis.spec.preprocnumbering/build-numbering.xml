@@ -14,7 +14,7 @@
         <isset property="isSpec"/>
       </not>
     </condition>
-    <echo message="zxzx isSpec=${isSpec}"></echo>
+    <echo message="zxzx isSpec=${isSpec}"/>
     <delete dir="${dita.temp.dir}${file.separator}stage"/>
     <xslt processor="trax"
       style="${dita.plugin.org.oasis.spec.preprocnumbering.dir}${file.separator}xsl${file.separator}numbering.xsl"
