@@ -8,7 +8,6 @@
                    preprocess,
                    xhtml.topics,
                    build_oasis_xhtml_coverpage,
-                   dita.map.xhtml,
                    copy-css"
     name="dita2spec-xhtml" description="OASIS Specification XHTML transform">
     <echoproperties/>
