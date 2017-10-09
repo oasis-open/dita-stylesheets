@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="org.oasis.spec2xhtml">
+
+  <target
+    depends="dita2spec-xhtml.init,
+                   dita2xhtml.init,
+                   build-init,
+                   preprocess,
+                   generate-xhtml-footer,
+                   xhtml.topics,
+                   build_oasis_xhtml_coverpage,
+                   copy-css"
+    name="dita2spec-xhtml" description="OASIS Specification XHTML transform">
+    <echoproperties/>
+  </target>
+
+  <target name="dita2spec-xhtml.init">
+    <property name="args.copycss" value="yes"/>
+    <condition property="args.cssroot"
+      value="${dita.plugin.org.oasis.spec.xhtml.dir}${file.separator}resource">
+      <not>
+        <isset property="args.cssroot"/>
+      </not>
+    </condition>
+    <condition property="args.css" value="oasis.css">
+      <not>
+        <isset property="args.css"/>
+      </not>
+    </condition>
+    <condition property="args.outext" value=".html">
+      <not>
+        <isset property="args.outext"/>
+      </not>
+    </condition>
+
+    <condition property="args.xsl"
+      value="${dita.plugin.org.oasis.spec.xhtml.dir}${file.separator}xsl${file.separator}spec_dita2htmlShell.xsl">
+      <not>
+        <isset property="args.xsl"/>
+      </not>
+    </condition>
+  </target>
+  
+  <target name="generate-xhtml-footer" unless="args.ftr">
+    <!-- Must use a URL for args.ftr, which is referenced later. Must use a relative path as
+         the output directory below. -->
+    <property name="oasis.generated.ftr"
+      value="${dita.temp.dir}${file.separator}generated-spec-ftr.xml"/>
+    <makeurl file="${dita.temp.dir}${file.separator}generated-spec-ftr.xml" property="args.ftr"
+      validate="no"/>
+    <echo>Footer is creating links to: ${args.oasis.footerlinks}</echo>
+    <xslt processor="trax" basedir="${dita.temp.dir}"
+      in="${dita.temp.dir}${file.separator}${user.input.file}" out="${oasis.generated.ftr}"
+      classpathref="dost.class.path"
+      style="${dita.plugin.org.oasis.spec.xhtml.dir}${file.separator}xsl${file.separator}oasis_footer.xsl">
+      <param name="COVERPAGE" expression="${outputFile.base}${args.outext}"/>
+      <param name="LINKS" expression="${args.oasis.footerlinks}"/>
+      <param name="outputfilebasename" expression="${outputFile.base}"/>
+    </xslt>
+  </target>
+  
+  <target name="build_oasis_xhtml_coverpage">
+    <xslt processor="trax" basedir="${dita.temp.dir}"
+      in="${dita.temp.dir}${file.separator}${user.input.file}"
+      out="${dita.output.dir}${file.separator}${outputFile.base}${args.outext}"
+      classpathref="dost.class.path"
+      style="${dita.plugin.org.oasis.spec.xhtml.dir}${file.separator}xsl${file.separator}oasis_coverpage.xsl">
+      <excludesfile name="${dita.temp.dir}${file.separator}${resourceonlyfile}"
+        if="resourceonlyfile"/>
+      <!-- Tagsmiths: Eliminated DITAEXT parameter. Now using XSLT 2.0 replace() function to capture basename. -04oct13-->
+      <param name="OUTEXT" expression="${out.ext}" if="out.ext"/>
+      <param name="FORMAT" expression="xhtml"/>
+      <param name="FOOTER" expression="${args.ftr}"/>
+      <param name="version-id" expression="${args.oasis.bookmeta.version-id}"/>
+      <param name="errata-num" expression="${args.oasis.bookmeta.errata-num}"/>
+      <param name="stage-abbrev" expression="${args.oasis.bookmeta.stage-abbrev}"/>
+      <param name="revision-num" expression="${args.oasis.bookmeta.revision-num}"/>
+      <param name="part-number" expression="${args.oasis.bookmeta.part-number}"/>
+      <param name="spec-release-type" expression="${args.oasis.bookmeta.spec-release-type}"/>
+    </xslt>
+  </target>
+</project>

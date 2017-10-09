@@ -1,0 +1,227 @@
+
+body{
+  background: #ffffff;
+  color: #000000;
+  margin: 14px;
+  font-size: 10pt;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.subtitle{
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.topmargin{
+  margin-top: 0.5em;
+}
+
+h1.topictitle1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  list-style-type: decimal;
+  color: #66116D;
+}
+
+h2.sectiontitle{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  list-style-type: decimal;
+  color: #66116D;
+}
+
+.fig{
+  margin-top: 1em;
+}
+
+td > ul,
+dd > ul{
+  padding-left: 1.4em;
+}
+
+ul{
+  padding-left: 3.0em;
+}
+
+td > ol,
+dd > ol{
+  padding-left: 1.6em;
+}
+
+ol{
+  padding-left: 3.2em;
+}
+
+pre.codeblock{
+  font-family: "Courier New", Courier, mono;
+  font-size: 9pt;
+  background-color: #EEEEFF;
+  margin-left: 2.8em;
+  margin-right: 2.8em;
+  border-top-style: solid;
+  border-width: 1px;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: none;
+  border-top-color: #000000;
+  border-right-color: #000000;
+  border-bottom-color: #000000;
+  border-left-color: #000000;
+  white-space: pre;
+}
+
+span.keyword{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+}
+
+
+div.note{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  margin-left: 2.1em;
+  margin-right: 2.1em;
+}
+
+td > div.note,
+dd > div.note{
+  margin-left: 1.1em;
+}
+
+dd{
+  margin-left: 2.1em;
+}
+
+/*ul.linkpreviews {
+  background-color: #FFFCCC;
+	border: solid;
+	border-width:thin;
+	list-style-type: none
+}*/
+
+ul.ullinks,
+ul.linkpreviews{
+  background-color: #FFFCCC;
+  border: none;
+  border-width: thin;
+  list-style-type: none;
+  padding: 1em;
+}
+
+dt.oasis-style-reference{
+  font-weight: bold;
+  color: #66116D;
+  margin-left: 1.9em;
+  margin-bottom: 0.1em;
+  margin-top: 0.2em;
+}
+
+.dt{
+  margin-bottom: 0.1em;
+  margin-top: 0.2em;
+}
+
+dd.oasis-style-reference{
+  margin-left: 4em;
+}
+
+caption{
+  margin-top: 1em;
+  font-style: italic;
+}
+
+.table{
+  margin-bottom: 0.5em;
+}
+
+.thead{
+  background-color: #E8E8FF;
+}
+
+th{
+  background-color: #E8E8FF;
+}
+
+.stentry{
+  border-left: none;
+  border-top: none;
+  border-right: solid 1px;
+  border-bottom: solid 1px
+}
+
+.simpletable{
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 0.5em;
+}
+
+.models{
+  width: 100%;
+}
+
+.RFC-2119{
+  font-style: italic;
+}
+
+.title > .parameterentity,
+.title > .xmlatt,
+.title > .xmlelement,
+.title > .xmlpi,
+.dt > .parameterentity,
+.dt > .xmlatt,
+.dt > .xmlelement,
+.dt > .xmlpi{
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+/*Tagsmiths: The <u> element is used in errata to indicate added text. 12aug16*/
+u{
+  text-decoration: underline;
+  color: green;
+}
+
+/*Tagsmiths: The <line-through> element is used in errata to indicate deleted text. 12aug16*/
+.line-through{
+  text-decoration: line-through;
+  color: red;
+}
+
+/*Tagsmiths: The coverpage is not processed by dita2html.xsl. Consequently,
+  flagging is not supported. This class emulates flagging. 22jul16*/
+  
+.revised::before{
+  content: "►";
+}
+
+.revised::after{
+  content: "◄";
+}
+.revised, .red{
+  color: red !important;
+}
+
+.footer-table{
+  font-size: 8pt;
+  padding: 0pt;
+  margin-left: -2pt;
+  border-width: 0pt;
+  width: 100%;
+}
+
+.footer-left > p{
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+  text-align: left;
+}
+
+.footer-center{
+  text-align: center;
+}
+
+.footer-right{
+  text-align: right;
+}
