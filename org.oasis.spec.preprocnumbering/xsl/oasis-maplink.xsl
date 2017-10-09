@@ -213,22 +213,19 @@
             The target of the HREF is a local DITA file
             The user has not specified locktitle to override the title -->
           <xsl:if test="not(($FINALOUTPUTTYPE = 'PDF' or $FINALOUTPUTTYPE = 'IDD') and (not(@scope) or @scope = 'local') and (not(@format) or @format = 'dita') and (not(@locktitle) or @locktitle = 'no'))">
-            <xsl:message>oasis-maplink.xsl: Flag1</xsl:message>
             <linktext class="- topic/linktext ">
               <xsl:choose>
                 <xsl:when
                   test="
                   *[contains(@class, ' map/topicmeta ')]
                   /processing-instruction()[name() = 'ditaot'][. = 'usertext']">
-                  <xsl:message>oasis-maplink.xsl: Flag2</xsl:message>
                   <!-- Do not add section number to hard-coded link text -->
                 </xsl:when>
                 <xsl:when
                   test="
                   *[contains(@class, ' map/topicmeta ')]
                   /*[contains(@class, ' topic/data ')][@name = 'topicid']
-                  /*[contains(@class, ' topic/data ')][@name = 'number']/@value">
-                  <xsl:message>oasis-maplink.xsl: Flag3</xsl:message><xsl:value-of
+                  /*[contains(@class, ' topic/data ')][@name = 'number']/@value"><xsl:value-of
                     select="
                     (*[contains(@class, ' map/topicmeta ')]
                     /*[contains(@class, ' topic/data ')][@name = 'topicid']
@@ -236,7 +233,6 @@
                   <xsl:text> </xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
-                  <xsl:message>oasis-maplink.xsl: Flag4</xsl:message>
                   <xsl:variable name="thishref" select="@href"/>
                   <xsl:if
                     test="
