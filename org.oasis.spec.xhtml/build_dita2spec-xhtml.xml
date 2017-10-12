@@ -9,7 +9,8 @@
                    generate-xhtml-footer,
                    xhtml.topics,
                    build_oasis_xhtml_coverpage,
-                   copy-css"
+                   copy-css,
+                   zip_oasis_output"
     name="dita2spec-xhtml" description="OASIS Specification XHTML transform">
     <echoproperties/>
   </target>
@@ -78,5 +79,15 @@
       <param name="part-number" expression="${args.oasis.bookmeta.part-number}"/>
       <param name="spec-release-type" expression="${args.oasis.bookmeta.spec-release-type}"/>
     </xslt>
+  </target>
+  
+  <target name="zip_oasis_output" description="Zip HTML output">
+    <property name="args.oasis.xhtmlzip.filename" value="${outputFile.base}-html.zip"/>
+    <delete file="${dita.output.dir}${file.separator}${args.oasis.xhtmlzip.filename}"
+      failonerror="false"/>
+    <zip destfile="${dita.output.dir}${file.separator}${args.oasis.xhtmlzip.filename}"
+      basedir="${dita.output.dir}"
+      excludes="dita.list, dita.xml.properties, index.html, *.log, v${args.oasis.bookmeta.version-id}/"
+    />
   </target>
 </project>
