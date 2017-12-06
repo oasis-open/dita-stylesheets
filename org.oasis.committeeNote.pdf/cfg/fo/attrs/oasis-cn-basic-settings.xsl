@@ -5,6 +5,12 @@
                 version="2.0"
                 exclude-result-prefixes="xs">
 
+ <!-- Thomas: Extract the base filename from args.input. 06dec17  -->
+  <xsl:param name="args.input"/>
+  <!-- Thomas: use regex to strip off the directory portion of the filename and to
+       remove the .ditamap file extension. 06dec17-->
+  <xsl:variable name="inputfile.basename" select="replace($args.input, '.+[\\/](.+)?.ditamap', '$1')"/>
+
  <!-- ===================== CHANGE LOG ================================ -->
  <!--                                                                   -->
  <!-- 5 Sept 2015: Eberlein, added change log.                          -->
