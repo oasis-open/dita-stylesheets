@@ -137,7 +137,10 @@
           </p>
           <!-- Tagsmiths: Output the cover topic and the notices topic. -31oct13 -->
           <p class="subtitle">
-            <xsl:value-of select="$specSubtitle1"/>
+            <!-- Part number >= zero means that this is a spec part document. 06dec17 -->
+            <xsl:if test="number($part-number) &gt;= 0">
+              <xsl:value-of select="$specSubtitle1"/>
+            </xsl:if>
             <xsl:choose>
               <xsl:when test="($part-number castable as xs:double) and number($part-number) &lt; 0">
                 <xsl:choose>

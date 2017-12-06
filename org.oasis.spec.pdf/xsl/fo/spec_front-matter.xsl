@@ -56,18 +56,21 @@
       <!--<fo:block>errata-num=<xsl:value-of select="$errata-num"/>, stage-abbrev=<xsl:value-of select="$stage-abbrev"/>,
         revision-num=<xsl:value-of select="$revision-num"/>, part-number=<xsl:value-of select="$part-number"/>, spec-release-type=<xsl:value-of select="$spec-release-type"/></fo:block>-->
       <fo:block>
-        <xsl:value-of
-          select="
-          /*[contains(@class, ' bookmap/bookmap ')]/*
-          /*[contains(@class, ' bookmap/booktitle ')]
-          /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'specificationSubtitle1']"/>
+        <!-- Part number >= zero means that this is a spec part document. 06dec17 -->
+        <xsl:if test="number($part-number) &gt;= 0">
+          <xsl:value-of
+            select="
+              /*[contains(@class, ' bookmap/bookmap ')]/*
+              /*[contains(@class, ' bookmap/booktitle ')]
+              /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'specificationSubtitle1']"
+          />
+        </xsl:if>
         <xsl:choose>
           <!-- Part number less than zero means that this is the errata summary document. 11aug16 -->
           <xsl:when test="($part-number castable as xs:double) and number($part-number) &lt; 0">
             <xsl:choose>
               <!-- It's a draft -->
-              <xsl:when
-                test="($revision-num castable as xs:double) and number($revision-num) > 0">
+              <xsl:when test="($revision-num castable as xs:double) and number($revision-num) > 0">
                 <fo:inline>
                   <xsl:value-of select="$spec-release-type"/>
                 </fo:inline>
@@ -80,8 +83,7 @@
           </xsl:when>
           <xsl:when test="($errata-num castable as xs:double) and number($errata-num) > 0">
             <xsl:choose>
-              <xsl:when
-                test="($revision-num castable as xs:double) and number($revision-num) > 0">
+              <xsl:when test="($revision-num castable as xs:double) and number($revision-num) > 0">
                 <fo:inline xsl:use-attribute-sets="revised">
                   <xsl:text>► incorporating</xsl:text>
                   <xsl:if test="$stage-abbrev = 'csprd'">
@@ -104,7 +106,7 @@
           </xsl:when>
         </xsl:choose>
         <!-- If this is an errata and the revision number is non-zero ... -->
-        
+
       </fo:block>
       <!--<xsl:if test="not(normalize-space($specSubtitle2) = '')">
         <fo:block>
