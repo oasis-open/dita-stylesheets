@@ -40,6 +40,12 @@
         <isset property="args.xsl"/>
       </not>
     </condition>
+    
+    <delete>
+      <fileset dir="${output.dir}">
+        <exclude name="**/*.zip"/>
+      </fileset>
+    </delete>
   </target>
   
   <target name="generate-xhtml-footer" unless="args.ftr">
@@ -87,7 +93,7 @@
       failonerror="false"/>
     <zip destfile="${dita.output.dir}${file.separator}${args.oasis.xhtmlzip.filename}"
       basedir="${dita.output.dir}"
-      excludes="dita.list, dita.xml.properties, index.html, *.log, v${args.oasis.bookmeta.version-id}/"
+      excludes="dita.list, dita.xml.properties, index.html, *.zip, *.log, v${args.oasis.bookmeta.version-id}/"
     />
   </target>
 </project>
