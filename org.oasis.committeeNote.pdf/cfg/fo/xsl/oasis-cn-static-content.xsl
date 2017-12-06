@@ -166,14 +166,14 @@
                         <fo:table-cell>
                             <!-- abbreviated document name -->
                             <fo:block xsl:use-attribute-sets="default_footer">
-                                <xsl:value-of select="$ditaversion"/>
+                                <xsl:value-of select="$inputfile.basename"/>
                             </fo:block>
                         </fo:table-cell>
                         <fo:table-cell>
                             <!-- Level of committee note -->
-                            <fo:block xsl:use-attribute-sets="default_footer" text-align="center">
+                            <!--<fo:block xsl:use-attribute-sets="default_footer" text-align="center">
                                 <xsl:value-of select="$cnLevel"/>
-                            </fo:block>
+                            </fo:block>-->
                         </fo:table-cell>
                         <fo:table-cell>
                             <!-- approval date -->
