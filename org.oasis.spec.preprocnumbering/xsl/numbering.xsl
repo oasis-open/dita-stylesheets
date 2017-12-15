@@ -181,15 +181,14 @@
     <xsl:variable name="topic-in">
       <xsl:value-of select="concat($indir-uri, '/', $no-id-href)"/>
     </xsl:variable>
-    <!--<xsl:message>zxzx: topic-in=<xsl:value-of select="$topic-in"/></xsl:message>-->
+    <!--<xsl:message>numbering.xsl: topic-in=<xsl:value-of select="$topic-in"/></xsl:message>-->
     <xsl:variable name="topic-out">
       <xsl:value-of select="concat($outdir-uri, '/', $no-id-href)"/>
     </xsl:variable>
-    <!--<xsl:message>zxzx: topic-out=<xsl:value-of select="$topic-out"/></xsl:message>-->
+    <!--<xsl:message>numbering.xsl: topic-out=<xsl:value-of select="$topic-out"/></xsl:message>-->
     <xsl:variable name="process-this-topic" as="xs:boolean">
       <xsl:choose>
-        <xsl:when
-          test="preceding::*[contains(@class, ' map/topicref ') and replace(@href, '#.*', '') = $no-id-href]">
+        <xsl:when test="ancestor::*[contains(@class, ' map/relcell ')]">
           <xsl:value-of select="false()"/>
         </xsl:when>
         <xsl:when test="ancestor::*[contains(@class, ' map/topicref ') and @chunk = 'to-content']">
@@ -207,6 +206,7 @@
       </xsl:choose>
     </xsl:variable>
     <xsl:if test="$process-this-topic">
+      <xsl:message>numbering.xsl: Processing <xsl:value-of select="$topic-in"/></xsl:message>
       <xsl:result-document href="{$topic-out}">
         <xsl:apply-templates select="doc($topic-in)"/>
       </xsl:result-document>
