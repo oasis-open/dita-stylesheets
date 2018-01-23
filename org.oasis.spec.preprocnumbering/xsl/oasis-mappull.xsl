@@ -25,12 +25,12 @@
     <xsl:copy>
       <xsl:apply-templates select="* | @* | comment() | processing-instruction() | text()"/>
     </xsl:copy>
-    <xsl:result-document href="file:/C:/Users/bob/Desktop/counting.xml" method="xml" indent="yes">
+    <!--<xsl:result-document href="file:/C:/Users/bob/Desktop/counting.xml" method="xml" indent="yes">
       <xsl:copy-of select="$counting-map"/>
     </xsl:result-document>
     <xsl:result-document href="file:/C:/Users/bob/Desktop/numbered.xml" method="xml" indent="yes">
       <xsl:copy-of select="$numbered-map"/>
-    </xsl:result-document>
+    </xsl:result-document>-->
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="build-counting-map">
