@@ -10,6 +10,35 @@
   xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg"
   xmlns:oa-cn="org.oasis.committeenote" exclude-result-prefixes="xs dita-ot dita2html ditamsg">
 
+  <!-- Author, VRM, prodname templates are here to work around DITA OT issue
+       where metadata cascades (as a copy) to every topic, but then the single 
+       chunked result file puts all of those copies into the result. 
+       Overrides here ensure only one copy of duplicate metadata goes into metadata. --> 
+  <xsl:key name="authors" match="*[contains(@class,' topic/author ')]" use="."/>
+  <xsl:key name="vrms" match="*[contains(@class,' topic/vrm ')]" use="@version"/>
+  <xsl:key name="prodnames" match="*[contains(@class,' topic/prodname ')]" use="."/>
+  <xsl:template match="*[contains(@class,' topic/prodname ')]" mode="gen-metadata">
+    <xsl:choose>
+      <xsl:when test="normalize-space(.)=''"/>
+      <xsl:when test="generate-id(key('prodnames',.)[1])!=generate-id(.)"/>
+      <xsl:otherwise><xsl:next-match/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  <xsl:template match="*[contains(@class,' topic/vrm ')]/@version" mode="gen-metadata">
+    <xsl:choose>
+      <xsl:when test="normalize-space(.)=''"/>
+      <xsl:when test="generate-id(key('vrms',.)[1])!=generate-id(parent::*)"/>
+      <xsl:otherwise><xsl:next-match/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  <xsl:template match="*[contains(@class,' topic/author ')]" mode="gen-metadata">
+    <xsl:choose>
+      <xsl:when test="normalize-space(.)=''"/>
+      <xsl:when test="generate-id(key('authors',.)[1])!=generate-id(.)"/>
+      <xsl:otherwise><xsl:next-match/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <!-- child topics get a div wrapper and fall through -->
   <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="child.topic" name="child.topic">
     <xsl:param name="nestlevel" as="xs:integer">
