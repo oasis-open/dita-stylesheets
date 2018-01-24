@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="org.oasis.spec2xhtml">
+  
+  <target name="dita2spec-htmlhelp" unless="noMap"
+    depends="dita2spec-xhtml.init, dita2htmlhelp.init,
+    build-init,
+    use-init.envhhcdir,
+    use-init.hhcdir,
+    preprocess,
+    xhtml.topics,
+    copy-css">
+    <antcall target="dita.map.htmlhelp"/>
+    <antcall target="dita.htmlhelp.convertlang"/>
+    <antcall target="compile.HTML.Help"/>
+  </target>
+</project>
