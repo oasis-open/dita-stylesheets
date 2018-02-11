@@ -3,6 +3,8 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 5 Sept 2015: Eberlein, added change log.                          -->
+<!-- 10 Feb 2018: Houser, added Times New Roman fallback for           -->
+<!--              rendering flagging symbols                           -->
 <!-- ================================================================= --> 
 
 <font-mappings>
@@ -24,10 +26,11 @@
     <aliases>
       <alias name="Courier">Monospaced</alias>
     </aliases>
-
+    
     <logical-font name="Sans">
+<!-- Added Times New Roman as a backup to Calibri for rendering flagging symbols -->
       <physical-font char-set="default">
-        <font-face>Calibri</font-face>
+        <font-face>Calibri, Times New Roman</font-face>
       </physical-font>
       <physical-font char-set="Simplified Chinese">
         <font-face>AdobeSongStd-Light</font-face>
@@ -50,10 +53,11 @@
         <override-size>smaller</override-size>
       </physical-font>
     </logical-font>
-
+    
     <logical-font name="Serif">
+<!-- Added Times New Roman as a backup to Cambria for render flagging symbols -->
       <physical-font char-set="default">
-        <font-face>Cambria</font-face>
+        <font-face>Cambria, Times New Roman</font-face>
       </physical-font>
       <physical-font char-set="Simplified Chinese">
         <font-face>AdobeSongStd-Light</font-face>
@@ -76,7 +80,7 @@
         <override-size>smaller</override-size>
       </physical-font>
     </logical-font>
-
+    
     <logical-font name="Monospaced">
       <physical-font char-set="default">
         <font-face>Courier New, Courier</font-face>
@@ -100,5 +104,5 @@
       </physical-font>
     </logical-font>
   </font-table>
-
+  
 </font-mappings>
