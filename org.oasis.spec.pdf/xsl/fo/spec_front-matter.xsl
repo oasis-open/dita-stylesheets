@@ -58,62 +58,15 @@
       <fo:block>
         <!-- Part number >= zero means that this is a spec part document. 06dec17 -->
         <xsl:if test="number($part-number) &gt;= 0">
-          <xsl:value-of
+          <xsl:apply-templates
             select="
               /*[contains(@class, ' bookmap/bookmap ')]/*
               /*[contains(@class, ' bookmap/booktitle ')]
               /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'specificationSubtitle1']"
           />
         </xsl:if>
-        <xsl:choose>
-          <!-- Part number less than zero means that this is the errata summary document. 11aug16 -->
-          <xsl:when test="($part-number castable as xs:double) and number($part-number) &lt; 0">
-            <xsl:choose>
-              <!-- It's a draft -->
-              <xsl:when test="($revision-num castable as xs:double) and number($revision-num) > 0">
-                <fo:inline>
-                  <xsl:value-of select="$spec-release-type"/>
-                </fo:inline>
-              </xsl:when>
-              <!-- It's final -->
-              <xsl:otherwise>
-                <fo:inline>OASIS Approved Errata</fo:inline>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:when>
-          <xsl:when test="($errata-num castable as xs:double) and number($errata-num) > 0">
-            <xsl:choose>
-              <xsl:when test="($revision-num castable as xs:double) and number($revision-num) > 0">
-                <fo:inline xsl:use-attribute-sets="revised">
-                  <xsl:text>► incorporating</xsl:text>
-                  <xsl:if test="$stage-abbrev = 'csprd'">
-                    <xsl:text> Public Review</xsl:text>
-                  </xsl:if>
-                  <xsl:text> Draft&#xa0;</xsl:text>
-                  <xsl:value-of select="$revision-num"/>
-                  <xsl:text> of Errata&#xa0;</xsl:text>
-                  <xsl:value-of select="$errata-num"/>
-                  <xsl:text>◄</xsl:text>
-                </fo:inline>
-              </xsl:when>
-              <!-- The lack of a revision number implies that this is a final. -->
-              <xsl:otherwise>
-                <fo:inline xsl:use-attribute-sets="revised">
-                  <xsl:text> ►incorporating Approved Errata◄</xsl:text>
-                </fo:inline>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:when>
-        </xsl:choose>
-        <!-- If this is an errata and the revision number is non-zero ... -->
-
-      </fo:block>
-      <!--<xsl:if test="not(normalize-space($specSubtitle2) = '')">
-        <fo:block>
-          <xsl:value-of select="$specSubtitle2"/>
         </fo:block>
-      </xsl:if>-->
-    </fo:block>
+      </fo:block>
     <!-- date (h2)-->
     <fo:block xsl:use-attribute-sets="cover_category_label oasis-head oasis-h2">
       <xsl:value-of
@@ -123,10 +76,21 @@
         /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'specificationApproved']"
       />
     </fo:block>
-    <!--<xsl:apply-templates select="$map//*[contains(@class, ' bookmap/booktitlealt ')]"/>
-    <fo:block xsl:use-attribute-sets="__frontmatter__owner">
-      <xsl:apply-templates select="$map//*[contains(@class, ' bookmap/bookmeta ')]"/>
-    </fo:block>-->
+    </xsl:template>
+
+  <!-- Thomas: This ugly hack was introduced because normal flag processing isn't applied to book titles in org.dita.pdf2.
+       I would be grateful if somebody could take the time and do this correctly. 13feb18 -->
+  <xsl:template
+    match="*[contains(@class, ' bookmap/booktitlealt ') or contains(@class, ' bookmap/mainbooktitle ')]/*[contains(@class, ' topic/ph ')][not(empty(@rev))]">
+    <fo:inline xsl:use-attribute-sets="revised">
+      <xsl:text>►</xsl:text>
+      <xsl:variable name="current-ph">
+        <xsl:apply-templates/>
+      </xsl:variable>
+      <!-- Thomas: This subhack was needed to strip trailing whitespace. 13feb18-->
+      <xsl:value-of select="normalize-space($current-ph)"/>
+      <xsl:text>◄</xsl:text>
+    </fo:inline>
   </xsl:template>
 
   <xsl:template name="spdf:cover-image">

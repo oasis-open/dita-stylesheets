@@ -28,17 +28,20 @@
 
   <xsl:attribute-set name="__frontmatter__subtitle">
     <xsl:attribute name="font-family">Sans</xsl:attribute>
-    <xsl:attribute name="font-size">14pt</xsl:attribute>
-    <xsl:attribute name="font-weight">normal</xsl:attribute>
-    <xsl:attribute name="margin-left">30mm</xsl:attribute>
+    <xsl:attribute name="font-size">18pt</xsl:attribute>
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="space-before">inherit</xsl:attribute>
+    <xsl:attribute name="margin-left">inherit</xsl:attribute>
+    <xsl:attribute name="line-height-shift-adjustment">inherit</xsl:attribute>
+    <xsl:attribute name="margin-bottom">11pt</xsl:attribute>
     <xsl:attribute name="text-align">left</xsl:attribute>
+  <xsl:attribute name="color" select="$cover-heading-color"/>
+    <xsl:attribute name="keep-with-next">always</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="__frontmatter__title">
     <xsl:attribute name="margin-top">0.8mm</xsl:attribute>
-    <xsl:attribute name="color">
-      <xsl:value-of select="$cover-heading-color"/>
-    </xsl:attribute>
+    <xsl:attribute name="color" select="$cover-heading-color"/>
     <xsl:attribute name="font-family">Sans</xsl:attribute>
     <xsl:attribute name="font-size">24pt</xsl:attribute>
     <xsl:attribute name="font-weight">bold</xsl:attribute>
@@ -47,15 +50,7 @@
     <xsl:attribute name="padding-bottom">0pt</xsl:attribute>
     <xsl:attribute name="padding-top">2pt</xsl:attribute>
     <xsl:attribute name="text-align">left</xsl:attribute>
-<!--    
-        <xsl:attribute name="font-family">sans-serif</xsl:attribute>
-        <xsl:attribute name="space-before">80mm</xsl:attribute>
-        <xsl:attribute name="space-before.conditionality">retain</xsl:attribute>
-        <xsl:attribute name="font-size">22pt</xsl:attribute>
-        <xsl:attribute name="font-weight">bold</xsl:attribute>
-        <xsl:attribute name="line-height">140%</xsl:attribute>
-    -->
-  </xsl:attribute-set>
+</xsl:attribute-set>
   
 
   <!-- The following attribute sets define they presentation of content on the cover. 
