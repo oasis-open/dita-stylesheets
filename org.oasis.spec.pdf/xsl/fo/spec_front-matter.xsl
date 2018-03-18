@@ -34,37 +34,16 @@
         content-height="13.3mm" content-width="60mm" scaling="uniform" text-align="left"/>
     </fo:block>
     <fo:block xsl:use-attribute-sets="__frontmatter__title">
-      <xsl:choose>
-        <xsl:when test="$map/*[contains(@class, ' topic/title ')][1]">
-          <xsl:apply-templates select="$map/*[contains(@class, ' topic/title ')][1]"/>
-        </xsl:when>
-        <xsl:when test="$map//*[contains(@class, ' bookmap/mainbooktitle ')][1]">
-          <xsl:apply-templates select="$map//*[contains(@class, ' bookmap/mainbooktitle ')][1]"/>
-        </xsl:when>
-        <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
-          <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of
-            select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"
-          />
-        </xsl:otherwise>
-      </xsl:choose>
+      <xsl:if test="$map/*[contains(@class, ' topic/title ')][1]">
+        <xsl:apply-templates select="$map/*[contains(@class, ' topic/title ')][1]/mainbooktitle"
+          mode="revmarkup"/>
+      </xsl:if>
     </fo:block>
     <!-- committe draft (h2)-->
     <fo:block xsl:use-attribute-sets="oasis-head oasis-h2">
       <!--<fo:block>errata-num=<xsl:value-of select="$errata-num"/>, stage-abbrev=<xsl:value-of select="$stage-abbrev"/>,
         revision-num=<xsl:value-of select="$revision-num"/>, part-number=<xsl:value-of select="$part-number"/>, spec-release-type=<xsl:value-of select="$spec-release-type"/></fo:block>-->
       <fo:block>
-        <!-- Part number >= zero means that this is a spec part document. 06dec17 -->
-        <xsl:if test="number($part-number) &gt;= 0">
-          <xsl:value-of
-            select="
-              /*[contains(@class, ' bookmap/bookmap ')]/*
-              /*[contains(@class, ' bookmap/booktitle ')]
-              /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'specificationSubtitle1']"
-          />
-        </xsl:if>
         <xsl:choose>
           <!-- Part number less than zero means that this is the errata summary document. 11aug16 -->
           <xsl:when test="($part-number castable as xs:double) and number($part-number) &lt; 0">
@@ -82,10 +61,12 @@
             </xsl:choose>
           </xsl:when>
           <xsl:when test="($errata-num castable as xs:double) and number($errata-num) > 0">
+            <xsl:text>OASIS Standard </xsl:text>
             <xsl:choose>
               <xsl:when test="($revision-num castable as xs:double) and number($revision-num) > 0">
                 <fo:inline xsl:use-attribute-sets="revised">
-                  <xsl:text>► incorporating</xsl:text>
+                  <xsl:text>►</xsl:text>
+                  <xsl:text>incorporating</xsl:text>
                   <xsl:if test="$stage-abbrev = 'csprd'">
                     <xsl:text> Public Review</xsl:text>
                   </xsl:if>
@@ -127,6 +108,19 @@
     <fo:block xsl:use-attribute-sets="__frontmatter__owner">
       <xsl:apply-templates select="$map//*[contains(@class, ' bookmap/bookmeta ')]"/>
     </fo:block>-->
+  </xsl:template>
+
+  <xsl:template match="*" mode="revmarkup">
+    <xsl:apply-templates mode="revmarkup"/>
+  </xsl:template>
+
+  <xsl:template match="*[@rev != '']" mode="revmarkup">
+    <fo:inline xsl:use-attribute-sets="revised">
+      <xsl:text>►</xsl:text>
+      <xsl:variable name="trim-buffer" select="."/>
+      <xsl:value-of select="normalize-space($trim-buffer)"/>
+      <xsl:text>◄</xsl:text>
+    </fo:inline>
   </xsl:template>
 
   <xsl:template name="spdf:cover-image">
