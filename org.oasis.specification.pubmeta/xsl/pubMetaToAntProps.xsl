@@ -91,7 +91,7 @@
       <xsl:when test="$stage-abbrev = 'csprd'">
         <xsl:text>Committee Specification Draft </xsl:text>
         <xsl:value-of select="$revision-num"/>
-        <xsl:text>/ Public Review Draft </xsl:text>
+        <xsl:text> / Public Review Draft </xsl:text>
         <xsl:value-of select="$revision-num"/>
       </xsl:when>
       <xsl:when test="$stage-abbrev = 'os'">OASIS Standard</xsl:when>
