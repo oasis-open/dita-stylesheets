@@ -8,9 +8,27 @@
     use-init.hhcdir,
     preprocess,
     xhtml.topics,
+    build_oasis_xhtml_coverpage,
     copy-css">
+    <echoproperties/>
     <antcall target="dita.map.htmlhelp"/>
     <antcall target="dita.htmlhelp.convertlang"/>
     <antcall target="compile.HTML.Help"/>
+  </target>
+  
+  <target name="dita2spec-xhtmlhelp
+    .init">
+    <property name="args.copycss" value="yes"/>
+    <condition property="args.cssroot"
+      value="${dita.plugin.org.oasis.spec.xhtmlhelp.dir}${file.separator}resource">
+      <not>
+        <isset property="args.cssroot"/>
+      </not>
+    </condition>
+    <condition property="args.css" value="oasis.css">
+      <not>
+        <isset property="args.css"/>
+      </not>
+    </condition>
   </target>
 </project>
