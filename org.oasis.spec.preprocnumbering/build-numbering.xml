@@ -7,6 +7,7 @@
       <or>
         <equals arg1="${transtype}" arg2="spec-pdf"/>
         <equals arg1="${transtype}" arg2="spec-xhtml"/>
+        <equals arg1="${transtype}" arg2="spec-htmlhelp"/>
       </or>
     </condition>
     <condition property="isSpec" value="false">

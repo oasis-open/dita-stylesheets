@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project name="oasis_specification_formatting">
 
   <target name="pub-meta-to-ant-props" depends="pub-meta-to-ant-props.init, pub-meta-to-ant-props.transform"
@@ -9,6 +9,7 @@
       <or>
         <equals arg1="${transtype}" arg2="spec-pdf"/>
         <equals arg1="${transtype}" arg2="spec-xhtml"/>
+        <equals arg1="${transtype}" arg2="spec-htmlhelp"/>
       </or>
     </condition>
   </target>
