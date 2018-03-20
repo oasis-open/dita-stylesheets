@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<project name="org.oasis.spec2xhtml">
+<project name="org.oasis.spec2xhtmlhelp">  
+  
   
   <target name="dita2spec-htmlhelp" unless="noMap"
-    depends="dita2spec-xhtml.init, dita2htmlhelp.init,
+    depends="dita2spec-xhtmlhelp.init,
+    dita2spec-xhtml.init,
+    dita2htmlhelp.init,
     build-init,
     use-init.envhhcdir,
     use-init.hhcdir,
@@ -11,24 +14,44 @@
     build_oasis_xhtml_coverpage,
     copy-css">
     <echoproperties/>
-    <antcall target="dita.map.htmlhelp"/>
-    <antcall target="dita.htmlhelp.convertlang"/>
+    <antcall target="spec.dita.map.htmlhelp"/>
+    <!--Thomas: Supppress convertlang so that HTML encoding in the topic files remains UTF-8. Otherwise,
+        the revision start and revision end glyphs from the .ditaval files won't render
+        correctly. 20mar18 -->
+    <!--<antcall target="dita.htmlhelp.convertlang"/>-->
     <antcall target="compile.HTML.Help"/>
   </target>
   
-  <target name="dita2spec-xhtmlhelp
-    .init">
-    <property name="args.copycss" value="yes"/>
-    <condition property="args.cssroot"
-      value="${dita.plugin.org.oasis.spec.xhtmlhelp.dir}${file.separator}resource">
-      <not>
-        <isset property="args.cssroot"/>
-      </not>
-    </condition>
-    <condition property="args.css" value="oasis.css">
-      <not>
-        <isset property="args.css"/>
-      </not>
-    </condition>
+  <target name="dita2spec-xhtmlhelp.init">
+    <!-- Thomas: Force non-deprecated XSLT transforms to run. 20mar18 -->
+    <property name="generate.copy.outer">3</property>
   </target>
+  <target name="spec.dita.map.htmlhelp"
+    depends="dita.map.htmlhelp.init,
+    spec.dita.map.htmlhelp.hhp,
+    dita.map.htmlhelp.hhc,
+    dita.map.htmlhelp.hhk"/> 
+  
+  <target name="spec.dita.map.htmlhelp.hhp" depends="dita.map.htmlhelp.init"
+    description="Build HTMLHelp HHP file">
+    <local name="htmlhelp.hhp.output.dir"/>
+    <condition property="htmlhelp.hhp.output.dir" value="${dita.output.dir}" else="${_dita.map.output.dir}">
+      <isset property="inner.transform"/>
+    </condition>
+    <xslt basedir="${dita.temp.dir}"
+      destdir="${htmlhelp.hhp.output.dir}"
+      includesfile="${dita.temp.dir}/${user.input.file.listfile}"
+      classpathref="dost.class.path"
+      style="${dita.plugin.org.dita.htmlhelp.dir}/xsl/map2hhp.xsl">
+      <excludesfile name="${dita.temp.dir}/${resourceonlyfile}" if="resourceonlyfile"/>
+      <param name="OUTEXT" expression="${out.ext}" if="out.ext"/>
+      <param name="HHCNAME" expression="${dita.map.filename.root}.hhc"/>
+      <param name="INCLUDEFILE" expression="${args.htmlhelp.includefile}" if="args.htmlhelp.includefile"/>
+      <param name="OUTPUTFILEBASENAME" expression="${args.oasis.bookmeta.outputfilebasename}"/>
+      <param name="defaultLanguage" expression="${default.language}"/>
+      <xmlcatalog refid="dita.catalog"/>
+      <mergemapper to="${dita.map.filename.root}.hhp"/>
+    </xslt>
+  </target>
+  
 </project>
