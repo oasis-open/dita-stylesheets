@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <!-- Tagsmiths: Changed XSLT to version 2.0 -04oct13-->
 <xsl:stylesheet version="2.0" xmlns:oa="http://www.oasis-open.org"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs oa"
@@ -138,9 +138,6 @@
           <!-- Tagsmiths: Output the cover topic and the notices topic. -31oct13 -->
           <p class="subtitle">
             <!-- Part number >= zero means that this is a spec part document. 06dec17 -->
-            <xsl:if test="number($part-number) &gt;= 0">
-              <xsl:value-of select="$specSubtitle1"/>
-            </xsl:if>
             <xsl:choose>
               <xsl:when test="($part-number castable as xs:double) and number($part-number) &lt; 0">
                 <xsl:choose>
@@ -158,12 +155,13 @@
                 </xsl:choose>
               </xsl:when>
               <!-- If this is an errata and the revision number is non-zero ... -->
-              <xsl:when test="($errata-num castable as xs:double) and number($errata-num) > 0">
+              <xsl:when test="($errata-num castable as xs:double) and number($errata-num) > 0">                
+                <xsl:text>OASIS Standard </xsl:text>
                 <xsl:choose>
                   <xsl:when
                     test="($revision-num castable as xs:double) and number($revision-num) > 0">
                     <span class="revised">
-                      <xsl:text> incorporating </xsl:text>
+                      <xsl:text>incorporating </xsl:text>
                       <xsl:if test="$stage-abbrev = 'csprd'">
                         <xsl:text> Public Review</xsl:text>
                       </xsl:if>
