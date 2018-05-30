@@ -10,6 +10,7 @@
     use-init.envhhcdir,
     use-init.hhcdir,
     preprocess,
+    pub-meta-to-ant-props,
     generate-xhtml-footer,
     xhtml.topics,
     build_oasis_xhtml_coverpage,
