@@ -55,8 +55,8 @@
       value="${dita.temp.dir}${file.separator}generated-spec-ftr.xml"/>
     <property name="args.ftr"
       value="${dita.temp.dir}${file.separator}generated-spec-ftr.xml"/>
-    <!--<makeurl file="${dita.temp.dir}${file.separator}generated-spec-ftr.xml" property="args.ftr"
-      validate="no"/>-->
+    <makeurl file="${dita.temp.dir}${file.separator}generated-spec-ftr.xml" property="args.ftr.url"
+      validate="no"/>
     <xslt processor="trax" basedir="${dita.temp.dir}"
       in="${dita.temp.dir}${file.separator}${user.input.file}" out="${oasis.generated.ftr}"
       classpathref="dost.class.path"
@@ -78,7 +78,7 @@
       <!-- Tagsmiths: Eliminated DITAEXT parameter. Now using XSLT 2.0 replace() function to capture basename. -04oct13-->
       <param name="OUTEXT" expression="${out.ext}" if="out.ext"/>
       <param name="FORMAT" expression="xhtml"/>
-      <param name="FOOTER" expression="${args.ftr}"/>
+      <param name="FOOTER" expression="${args.ftr.url}"/>
       <param name="version-id" expression="${args.oasis.bookmeta.version-id}"/>
       <param name="errata-num" expression="${args.oasis.bookmeta.errata-num}"/>
       <param name="stage-abbrev" expression="${args.oasis.bookmeta.stage-abbrev}"/>
