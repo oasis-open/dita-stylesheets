@@ -41,7 +41,7 @@
       </not>
     </condition>
     
-    <delete>
+    <delete failonerror="false">
       <fileset dir="${output.dir}">
         <exclude name="**/*.zip"/>
       </fileset>
