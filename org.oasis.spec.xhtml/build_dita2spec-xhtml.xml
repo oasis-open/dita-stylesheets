@@ -53,15 +53,16 @@
          the output directory below. -->
     <property name="oasis.generated.ftr"
       value="${dita.temp.dir}${file.separator}generated-spec-ftr.xml"/>
-    <makeurl file="${dita.temp.dir}${file.separator}generated-spec-ftr.xml" property="args.ftr"
-      validate="no"/>
-    <echo>Footer is creating links to: ${args.oasis.footerlinks}</echo>
+    <property name="args.ftr"
+      value="${dita.temp.dir}${file.separator}generated-spec-ftr.xml"/>
+    <!--<makeurl file="${dita.temp.dir}${file.separator}generated-spec-ftr.xml" property="args.ftr"
+      validate="no"/>-->
     <xslt processor="trax" basedir="${dita.temp.dir}"
       in="${dita.temp.dir}${file.separator}${user.input.file}" out="${oasis.generated.ftr}"
       classpathref="dost.class.path"
       style="${dita.plugin.org.oasis.spec.xhtml.dir}${file.separator}xsl${file.separator}oasis_footer.xsl">
       <param name="COVERPAGE" expression="${outputFile.base}${args.outext}"/>
-      <param name="LINKS" expression="${args.oasis.footerlinks}"/>
+      <param name="LINKS" expression="${args.oasis.footerlinks}" if="args.oasis.footerlinks"/>
       <param name="outputfilebasename" expression="${outputFile.base}"/>
     </xslt>
   </target>
