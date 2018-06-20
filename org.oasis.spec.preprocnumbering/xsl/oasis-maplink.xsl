@@ -4,8 +4,15 @@
   xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
   exclude-result-prefixes="xs dita-ot">
 
-  <xsl:param name="OASIS-COVERPAGE"/>
+  <xsl:variable name="OASIS-PARTNUM">
+    <xsl:value-of select="normalize-space(//keydef[@keys='part-number'])"/>
+  </xsl:variable>
 
+  <xsl:variable name="OASIS-COVERPAGE">
+    <xsl:text>dita-v1.3-errata</xsl:text>
+    <xsl:value-of select="substring-after(//keydef[@keys=concat('this-part-',$OASIS-PARTNUM,'-html')][1]/@href,'/dita-v1.3-errata')"/>
+  </xsl:variable>
+  
   <!-- Override processing for next/previous links. Ignore @collection-type; create next/previous
        from the first topic to the last. -->
   <xsl:template
@@ -22,7 +29,10 @@
         test="contains(@class, ' bookmap/chapter ') and count(preceding-sibling::*[contains(@class, ' bookmap/chapter ')]) = 0">
         <link class="- topic/link " format="html" role="previous">
           <xsl:attribute name="href">
-            <xsl:value-of select="$pathBackToMapDirectory"/>
+            <xsl:if test="(@format='dita' or not(@format)) and (empty(@scope) or @scope='local')">
+              <xsl:value-of select="document(concat($WORKDIR,@href))/processing-instruction()[name()='path2rootmap-uri']"/>
+            </xsl:if>
+            <!--<xsl:value-of select="$pathBackToMapDirectory"/>-->
             <xsl:value-of select="$OASIS-COVERPAGE"/>
           </xsl:attribute>
           <linktext class="- topic/linktext ">

@@ -19,7 +19,7 @@
         <xsl:text>Return to </xsl:text>
         <a>
           <xsl:attribute name="href">
-            <xsl:choose>
+            <!--<xsl:choose>
               <xsl:when test="$LINKS = 'online'">
                 <xsl:value-of
                   select="
@@ -28,10 +28,10 @@
                     /*[@format = 'html']/@href"
                 />
               </xsl:when>
-              <xsl:otherwise>
+              <xsl:otherwise>-->
                 <xsl:value-of select="$COVERPAGE"/>
-              </xsl:otherwise>
-            </xsl:choose>
+              <!--</xsl:otherwise>
+            </xsl:choose>-->
           </xsl:attribute>
           <xsl:text>main page</xsl:text>
         </a>
