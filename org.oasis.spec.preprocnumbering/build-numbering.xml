@@ -15,6 +15,10 @@
         <isset property="isSpec"/>
       </not>
     </condition>
+    <antcall target="apply-numbering"></antcall>
+  </target>
+  
+  <target name="apply-numbering" if="${isSpec}">
     <delete dir="${dita.temp.dir}${file.separator}stage"/>
     <xslt processor="trax"
       style="${dita.plugin.org.oasis.spec.preprocnumbering.dir}${file.separator}xsl${file.separator}numbering.xsl"
