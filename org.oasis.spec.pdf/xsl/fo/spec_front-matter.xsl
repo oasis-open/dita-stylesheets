@@ -116,11 +116,23 @@
 
   <xsl:template match="*[@rev != '']" mode="revmarkup">
     <fo:inline xsl:use-attribute-sets="revised">
+      <!-- Tagsmiths: Flagging in mainbooktitle not supported in dita-ot-2.x. 22jun18 -->
       <xsl:text>►</xsl:text>
-      <xsl:variable name="trim-buffer" select="."/>
+      <xsl:variable name="trim-buffer">
+        <!-- Tagsmiths: As of 22jun18, dita-ot-3.x produces two redundant instances of ditaval-startprop and
+             ditaval-endprop in this context. Suppress flagging entirely in this context and let the workaround used for dita-ot-2.x
+             handle the revision marking. -->
+        <xsl:apply-templates mode="suppress-flagging"/>
+      </xsl:variable>
       <xsl:value-of select="normalize-space($trim-buffer)"/>
       <xsl:text>◄</xsl:text>
     </fo:inline>
+  </xsl:template>
+  
+  <xsl:template match="*[contains(@class,' ditaot-d/ditaval-startprop ') or contains(@class,' ditaot-d/ditaval-endprop ')]" mode="suppress-flagging" priority="100"/>
+  
+  <xsl:template match="*|text()" mode="suppress-flagging">
+    <xsl:apply-templates select="."/>
   </xsl:template>
 
   <xsl:template name="spdf:cover-image">
@@ -147,7 +159,6 @@
         /bookmap/opentopic:map/frontmatter/*[contains(@class, ' bookmap/notices ')] |
         /bookmap/opentopic:map/frontmatter/*[contains(@class, ' bookmap/notices ')]//topicref">
       <xsl:value-of select="concat('~', @id, '~')"/>
-      <!--<xsl:message>spec_front-matter.xsl: </xsl:message>-->
     </xsl:for-each>
   </xsl:variable>
 
