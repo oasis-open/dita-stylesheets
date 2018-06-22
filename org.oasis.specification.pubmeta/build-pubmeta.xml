@@ -18,10 +18,13 @@
     <!-- Tagsmiths: The pub-meta-to-ant-props target pulls publication-specific information out of the
          root map and makes that information available in the build environment as ant propterties.
          All args.oasis.bookmeta.* properties come from this target. -02oct13 -->
+    <!-- Tagsmiths: Beginning in dita-ot-3.x args.input and dita.input.file no longer have the same
+         filename. Changed @in to point at .job.xml so that dita.input.file can be looked up.-->
     <xslt processor="trax" basedir="${dita.temp.dir}" destdir="${dita.temp.dir}"
-      in="${dita.temp.dir}${file.separator}${dita.input.filename}"
+      in="${dita.temp.dir}${file.separator}.job.xml"
       out="${dita.temp.dir}${file.separator}pubMetadataProps.xml"
-      style="${dita.plugin.org.oasis.specification.pubmeta.dir}${file.separator}xsl${file.separator}pubMetaToAntProps.xsl"> </xslt>
+      style="${dita.plugin.org.oasis.specification.pubmeta.dir}${file.separator}xsl${file.separator}pubMetaToAntProps.xsl"> <param name="dita.temp.dir" expression="${dita.temp.dir}"/>
+    </xslt>
     <xmlproperty file="${dita.temp.dir}${file.separator}pubMetadataProps.xml"/>
     <property name="outputFile.base" value="${args.oasis.bookmeta.outputfilebasename}"/>
   </target>
