@@ -2,8 +2,9 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="task_j5y_pzb_tx">
     <title>Running the org.oasis.pdf.committeeNote dita-ot plugin</title>
-    <shortdesc>This scenario documents the installation and running of the
-        org.oasis.pdf.committeeNote plugin with dita-ot-2.3.3 on Windows 10</shortdesc>
+    <abstract>Eberlein, 30 January 2019: This content is obsolete.<shortdesc>This scenario documents
+            the installation and running of the org.oasis.pdf.committeeNote plugin with
+            dita-ot-2.3.3 on Windows 10</shortdesc></abstract>
     <taskbody>
         <steps>
             <step>
