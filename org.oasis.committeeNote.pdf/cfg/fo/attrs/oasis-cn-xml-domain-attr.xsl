@@ -5,7 +5,7 @@
   
   <!-- ===================== CHANGE LOG ================================ -->
   <!--                                                                   -->
-  <!-- 29 Oct 2016: Eberlein, initial creation.                          -->
+  <!-- 29 Oct 2016 KJE: Initial creation.                                -->
   <!-- ================================================================= -->
   
   <xsl:attribute-set name="xmlelement">

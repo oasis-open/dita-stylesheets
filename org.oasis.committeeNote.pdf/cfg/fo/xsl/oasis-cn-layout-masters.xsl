@@ -5,8 +5,10 @@
     
   <!-- ===================== CHANGE LOG ================================ -->
   <!--                                                                   -->
-  <!-- 5 Sept 2015: Eberlein, added XSL to override base template and    -->
-  <!--              generate layout master for the cover page.           -->
+  <!-- 05 Sep 2015 KJE: Added XSL to override base template and generate -->
+  <!--                  layout master for the cover page.                -->
+  <!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+  <!--                  Commented out cover page page master             -->
   <!--                                                                   -->
   <!-- ================================================================= -->  
 
@@ -19,7 +21,7 @@
         <fo:region-body
           margin-top="1.0in"
           margin-bottom="1.0in"
-          margin-left="2.125in"
+          margin-left="1.25in"
           margin-right="1.25in"
         />
         <fo:region-start extent="2.0in"/>

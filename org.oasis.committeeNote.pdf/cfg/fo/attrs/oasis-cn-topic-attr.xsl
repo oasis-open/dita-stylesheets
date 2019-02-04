@@ -2,8 +2,8 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 05 15 Aug 2015: Eberlein, initial creation. Moved content         -->
-<!--                 from override of commons-attr.xsl.                -->
+<!-- 15 Aug 2015 KJE: Initial creation. Moved content from override    -->
+<!--                  of commons-attr.xsl.                             -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 

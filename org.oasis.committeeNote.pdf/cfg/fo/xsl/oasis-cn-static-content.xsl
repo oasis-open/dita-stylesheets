@@ -6,8 +6,11 @@
 
     <!-- ===================== CHANGE LOG ================================ -->
     <!--                                                                   -->
-    <!-- 5 Sept 2015: Eberlein, added change log.                          -->
+    <!-- 5 Sept 2015 KJE: Added change log.                                -->
     <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
+    <!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+    <!--                  removed content of default header                -->
+    <!--                                                                   -->
     <!-- ================================================================= --> 
     
     <!-- HEADERS -->
@@ -15,25 +18,6 @@
     <!-- Headers: Default header -->
     <xsl:template name="defaultHeader">
         <fo:block xsl:use-attribute-sets="default_header">
-            <xsl:call-template name="getVariable">
-                <xsl:with-param name="id" select="'Header'"/>
-                <xsl:with-param name="params">
-                    <header-line-1>
-                        <fo:block>
-                            <xsl:call-template name="getVariable">
-                                <xsl:with-param name="id" select="'Statement 1'"/>
-                            </xsl:call-template>
-                        </fo:block>
-                    </header-line-1>
-                    <header-line-2>
-                        <fo:block>
-                            <xsl:call-template name="getVariable">
-                                <xsl:with-param name="id" select="'Statement 2'"/>
-                            </xsl:call-template>
-                        </fo:block>
-                    </header-line-2>
-                </xsl:with-param>
-            </xsl:call-template>
         </fo:block>
     </xsl:template>
     
@@ -154,9 +138,14 @@
     
     <!-- FOOTERS -->
     
-    <!-- Headers: Default footer -->
+    <!-- Footers: Default footer -->
     <xsl:template name="defaultFooter">
-        <fo:block margin-left="1.25in" margin-right="1.25in" margin-bottom="0.18in">
+        <fo:block border-top-style="solid" 
+            border-top-width="1px"
+            margin-bottom="0.18in" 
+            margin-left="1.25in" 
+            margin-right="1.25in"
+            padding-top="2pt">
             <fo:table width="100%">
                 <fo:table-column/>
                 <fo:table-column/>
