@@ -2,7 +2,8 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 5 Sept 2015: Eberlein, added change log.                          -->
+<!-- 05 Sep 2015 KJE: Added change log.                                -->
+<!-- 30 Jan 2019 KJE: Changed serif to "Arial"                         -->
 <!-- ================================================================= --> 
 
 <font-mappings>
@@ -53,7 +54,7 @@
 
     <logical-font name="Serif">
       <physical-font char-set="default">
-        <font-face>Cambria</font-face>
+        <font-face>Arial</font-face>
       </physical-font>
       <physical-font char-set="Simplified Chinese">
         <font-face>AdobeSongStd-Light</font-face>
