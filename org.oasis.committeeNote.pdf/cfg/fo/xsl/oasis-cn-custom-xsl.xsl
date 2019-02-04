@@ -6,11 +6,12 @@
 
   <!-- ===================== CHANGE LOG ================================ -->
   <!--                                                                   -->
-  <!-- 05 Sep 2015: Eberlein, added change log. Added import statement   -->
-  <!--              for layout-masters.xsl.                              -->
-  <!-- 07 Sep 2015: Thomas, added import statement for oasis-cn-numbering.xsl  -->
- <!--  15 Aug 2015: Eberlein, commented out import statements, which were -->
- <!--               moved to style sheet shell.                           -->
+  <!-- 05 Sep 2015 KJE: Added change log. Added import statement for     -->
+  <!--                  layout-masters.xsl.                              -->
+  <!-- 07 Sep 2015  BT: Added import statement for                       -->
+  <!--                  oasis-cn-numbering.xsl                           -->
+  <!--  15 Aug 2015 KJE: Commented out import statements, which were     -->
+  <!--                   moved to style sheet shell.                     -->
   <!--                                                                   -->
   <!-- ================================================================= --> 
                

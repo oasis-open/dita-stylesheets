@@ -7,7 +7,7 @@
   <!--                                                                   -->
   <!-- 05 Sep 2015 KJE: Added change log.                                -->
   <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
-  <!-- 12 Jul 2016 Thomas: Changed xref from fo:inline to fo:basic-link  -->
+  <!-- 12 Jul 2016  BT: Changed xref from fo:inline to fo:basic-link     -->
   <!-- ================================================================= --> 
 
   <!-- Tagsmiths: The next several templates with mode="cover" are responsible for outputting

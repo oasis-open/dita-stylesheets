@@ -2,10 +2,10 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 5 Sep 2015 KJE: Added override for chapter titles.                -->
-<!-- 5 Sep 2015 KJE: Added override for appendix titles.               -->
+<!-- 05 Sep 2015 KJE: Added override for chapter titles.               -->
+<!-- 05 Sep 2015 KJE: Added override for appendix titles.              -->
 <!-- 21 Jun 2015  BT: Added additional override for chapter titles,    -->
-<!-- .            needed for more recent versions of DITA-OT.          -->
+<!--                  needed for more recent versions of DITA-OT.      -->
 <!-- 16 Aug 2015 KJE: Added additional override for appendix titles.   -->
 <!-- ================================================================= --> 
 

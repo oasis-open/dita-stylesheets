@@ -6,7 +6,7 @@
     
     <!-- ===================== CHANGE LOG ================================ -->
     <!--                                                                   -->
-    <!-- 5 Sept 2015: Eberlein, added change log. Added $toc.toc-indent.   -->
+    <!-- 05 Sep 2015KJE: Added change log. Added $toc.toc-indent.          -->
     <!-- ================================================================= --> 
     
     <!-- Controls indentation within the TOC -->
