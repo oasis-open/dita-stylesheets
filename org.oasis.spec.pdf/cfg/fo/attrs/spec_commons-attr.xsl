@@ -1,9 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 08 Feb 2019 KJE: Added change log. Replaced OASIS title color     -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet exclude-result-prefixes="xs ditaarch opentopic spdf" version="2.0"
-  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:spdf="org.oasis.spec.pdf"
-  xmlns:opentopic="http://www.idiominc.com/opentopic"
-  xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" 
+                xmlns:spdf="org.oasis.spec.pdf"
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <xsl:attribute-set name="__fo__root" use-attribute-sets="base-font">
     <xsl:attribute name="font-family">Sans</xsl:attribute>
@@ -183,7 +191,8 @@
         </xsl:when>
         <!-- Otherwise, use OASIS purple -->
         <xsl:otherwise>
-          <xsl:text>#66116D</xsl:text>
+          <!--<xsl:text>#66116D</xsl:text>-->
+          <xsl:text>#446CAA</xsl:text>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>
