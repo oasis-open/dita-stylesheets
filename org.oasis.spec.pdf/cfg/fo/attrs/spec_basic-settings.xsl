@@ -1,9 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 08 Feb 2019 KJE: Added change log. Replaced OASIS cover color     -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet exclude-result-prefixes="xs ditaarch opentopic spdf" version="2.0"
-  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
-  xmlns:spdf="org.oasis.spec.pdf" xmlns:opentopic="http://www.idiominc.com/opentopic"
-  xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+                xmlns:spdf="org.oasis.spec.pdf" 
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
   <xsl:param name="pdfFormatter" select="'ah'"/>
   <xsl:param name="tocMaximumLevel" select="6"/>
@@ -23,8 +31,10 @@
   <xsl:variable name="small-monospace-size">8.5pt</xsl:variable>
   <xsl:variable name="default-line-height">1.3</xsl:variable>
   
-  <xsl:variable name="body-heading-color">#66116D</xsl:variable>
-  <xsl:variable name="cover-heading-color">#3B006F</xsl:variable>
+  <!--<xsl:variable name="body-heading-color">#3B006F</xsl:variable>-->
+  <xsl:variable name="body-heading-color">#446CAA</xsl:variable>
+  <!--<xsl:variable name="cover-heading-color">#3B006F</xsl:variable>-->
+  <xsl:variable name="cover-heading-color">#446CAA</xsl:variable>
   <xsl:variable name="text-color">#000000</xsl:variable>
   <xsl:variable name="tableHeaderCellHighlightBGColor">#E8E8E8</xsl:variable>
   
