@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- This file is part of the DITA Open Toolkit project hosted on 
-     Sourceforge.net. See the accompanying license.txt file for 
-     applicable licenses.-->
-<!-- (c) Copyright IBM Corp. 2004, 2005 All Rights Reserved. -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
-  xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html"
-  xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg"
-  xmlns:oa-cn="org.oasis.committeenote" exclude-result-prefixes="xs dita-ot dita2html ditamsg">
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Feb 2019 KJE: Modified to add rebranded OASIS logo and         -->
+<!--                  "OASIS Committee Note" under logo                -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" 
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+                xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html"
+                xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg"
+                xmlns:oa-cn="org.oasis.committeenote" exclude-result-prefixes="xs dita-ot dita2html ditamsg">
 
   <!-- Author, VRM, prodname templates are here to work around DITA OT issue
        where metadata cascades (as a copy) to every topic, but then the single 
        chunked result file puts all of those copies into the result. 
        Overrides here ensure only one copy of duplicate metadata goes into metadata. --> 
+  
   <xsl:key name="authors" match="*[contains(@class,' topic/author ')]" use="."/>
   <xsl:key name="vrms" match="*[contains(@class,' topic/vrm ')]" use="@version"/>
   <xsl:key name="prodnames" match="*[contains(@class,' topic/prodname ')]" use="."/>
@@ -21,21 +26,27 @@
     <xsl:choose>
       <xsl:when test="normalize-space(.)=''"/>
       <xsl:when test="generate-id(key('prodnames',.)[1])!=generate-id(.)"/>
-      <xsl:otherwise><xsl:next-match/></xsl:otherwise>
+      <xsl:otherwise>
+        <xsl:next-match/>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
   <xsl:template match="*[contains(@class,' topic/vrm ')]/@version" mode="gen-metadata">
     <xsl:choose>
       <xsl:when test="normalize-space(.)=''"/>
       <xsl:when test="generate-id(key('vrms',.)[1])!=generate-id(parent::*)"/>
-      <xsl:otherwise><xsl:next-match/></xsl:otherwise>
+      <xsl:otherwise>
+        <xsl:next-match/>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
   <xsl:template match="*[contains(@class,' topic/author ')]" mode="gen-metadata">
     <xsl:choose>
       <xsl:when test="normalize-space(.)=''"/>
       <xsl:when test="generate-id(key('authors',.)[1])!=generate-id(.)"/>
-      <xsl:otherwise><xsl:next-match/></xsl:otherwise>
+      <xsl:otherwise>
+        <xsl:next-match/>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
@@ -148,12 +159,17 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- 05 Feb 2019 KJE: Modified to add rebranded OASIS logo and
+                        "OASIS Committee Note" under logo  -->
   <xsl:template name="committe-note-pubinfo">
     <p class="logo">
       <a href="http://www.oasis-open.org">
-        <img src="OASISLogo.jpg" alt="OASIS logo"/>
+        <img src="OASISLogo-v2.0.jpg" alt="OASIS logo"/>
       </a>
     </p>
+    <div class="text-under-logo">
+      <span>OASIS Committee Note</span>
+    </div>   
     <hr/>
     <div class="committee-note-title">
       <xsl:apply-templates select="$bookmap/bookmap/booktitle/mainbooktitle"/>
