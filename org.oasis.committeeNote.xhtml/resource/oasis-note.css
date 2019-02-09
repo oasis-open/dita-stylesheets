@@ -1,18 +1,12 @@
 /*
-  OASIS Committee Note CSS stylesheet
-
-  This forms part of the package of the DocBook XML publishing environment
-  and methodology found linked from http://docs.oasis-open.org/templates/
-
-  Derived from http://www.oasis-open.org/spectools/css/ with changes for
-  the colour of titles and headings.
-
-  One stylesheet is used for all phases of the document development.
-  
-  $Id: oasis-note.css,v 1.2 2013/05/17 03:27:42 admin Exp $
+  OASIS DITA TC CSS for Committee Notes 
+  -------------------------------------
+  05 Feb 2019 KJE: Edited to implement OASIS rebranding;
+                   remove Docbook styles; add background
+                   color for thead
+  08 Feb 2019 KJE: Modified styles for "no-indent"
 */
 body{
-    background-image:url("banner.png");
     background-repeat:no-repeat;
     background-position:top left;
     background-attachment:fixed;
@@ -21,95 +15,107 @@ body{
     font-size:90%;
 }
 
+/* 05 Feb 2019 KJE: Added the following */
+div.text-under-logo{
+    color:#707070;
+    font-family:arial, helvetica, sans-serif;
+    font-size:18pt;
+    font-weight:bold;
+}
+
 div.committee-note-title{
-    font-family:Calibri, Times, serif;
+    font-family:arial, helvetica, sans-serif;
     font-size:250%;
     font-weight:bold;
     list-style-type:decimal;
-    color:#A1985A;
+    color:#446CAA;
 }
 
 div.publication-level{
     margin-top:0.83em;
-    font-family:Calibri, Times, serif;
+    font-family:arial, helvetica, sans-serif;
     font-size:170%;
     font-weight:bold;
     list-style-type:decimal;
-    color:#A1985A;
+    color:#446CAA;
 }
 
 div.approval-date{
     margin-top:0.83em;
     margin-bottom:0.83em;
-    font-family:Calibri, Times, serif;
+    font-family:arial, helvetica, sans-serif;
     font-size:170%;
     font-weight:bold;
     list-style-type:decimal;
-    color:#A1985A;
+    color:#446CAA;
 }
 
 h1.topictitle1{
     margin-top:2em;
-    font-family:Calibri, Times, serif;
+    font-family:arial, helvetica, sans-serif;
     font-size:170%;
     font-weight:bold;
     list-style-type:decimal;
-    color:#A1985A;
+    color:#446CAA;
 }
 
 
 h1.frontmatter-topic-title{
     margin-top:2em;
-    font-family:Calibri, Times, serif;
+    font-family:arial, helvetica, sans-serif;
     font-size:140%;
     font-weight:bold;
     list-style-type:decimal;
-    color:#A1985A;
+    color:#446CAA;
+}
+
+*.sectiontitle{
+    color:#446CAA;
 }
 
 h2.sectiontitle{
-    font-family:Calibri, Times, serif;
+    font-family:arial, helvetica, sans-serif;
     font-size:140%;
     font-weight:bold;
     list-style-type:decimal;
-    color:#A1985A;
+    color:#446CAA;
 }
-
+/* This|Previous|Latest versions; all cover page sections */
 h2.frontmatter-section-title{
-    font-family:Calibri, Times, serif;
+    font-family:arial, helvetica, sans-serif;
     font-size:100%;
     font-weight:bold;
     list-style-type:decimal;
-    color:#A1985A;
+    color:#446CAA;
 }
-
+/* Add colon after "This|Previous|Latest" versions; all cover page sections */
 h2.frontmatter-section-title::after{
     content:':';
 }
 
 h2.topictitle2{
-    font-size:120%;
-    color:#A1985A;
+    font-size:140%;
+    color:#446CAA;
 }
 
 
 h3{
     font-size:120%;
-    color:#A1985A;
+    color:#446CAA;
 }
 
 h4{
-    color:#A1985A;
+    color:#446CAA;
 }
 
 h5{
     font-style:italic;
-    color:#A1985A;
+    color:#446CAA;
 }
 
 h6{
     font-variant:small-caps;
-    color:#A1985A;
+    color:#446CAA;
 }
 
 .toclinks{
@@ -140,102 +146,14 @@ p.toc4{
     -webkit-margin-after:0.2em;
     margin-left:72pt;
 }
-
-.docid-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.uri-heading{
-    font-size:12pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.loc-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.abstract-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.status-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.thisver-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.prevver-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.editor-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.author-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.contrib-heading{
-    font-size:10pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
-.notices-heading{
-    font-size:18pt;
-    font-weight:bold;
-    color:#A1985A;
-}
-
+/* 05 Feb 2019 KJE: Not clear whether this is used */
 div.section h1.title{
     padding-top:0in;
     color:#A1985A;
 }
-
+/* 05 Feb 2019 KJE: Not clear whether this is used */
 div.article h1.title{
     color:#A1985A;
-}
-
-pre.programlisting{
-    background-color:#E7DEEF;
-}
-
-div.informalexample pre{
-    margin-top:0px;
-    padding-top:0px;
-    margin-bottom:0px;
-    padding-bottom:0px;
-    background-color:#E7DEEF;
-}
-
-div.informalexample{
-    margin-left:2em;
-    padding-top:4px;
-    padding-bottom:4px;
-    border-top-width:1px;
-    border-top-style:solid;
-    border-bottom-width:1px;
-    border-bottom-style:solid;
 }
 
 span.underline{
@@ -256,6 +174,7 @@ td{
 }
 
 th{
+    background-color:#edf1f8;
     border-color:#AFAFAF;
     text-align:left;
 }
@@ -288,6 +207,11 @@ tfoot{
     a[href]:hover{
         background:#ffa
     }
+}
+
+*.no-indent{
+    list-style-position: inside;
+    padding-left: 0px;
 }
 
 /* end of file */
