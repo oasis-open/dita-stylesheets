@@ -1,16 +1,18 @@
 <?xml version='1.0'?>
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015 KJE: Added change log. Moved text to en.xml.          -->
+<!-- o5 Jan 2016 BT: Added cnVersion variable. Modified footers.       -->
+<!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema" 
                 xmlns:fo="http://www.w3.org/1999/XSL/Format" 
-                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function" version="2.0">
-
- <!-- ===================== CHANGE LOG ================================ -->
- <!--                                                                   -->
- <!-- 05 Sep 2015 KJE: Added change log. Moved text to en.xml.          -->
- <!-- o5 Jan 2016 BT: Added cnVersion variable. Modified footers.       -->
- <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
- <!--                                                                   -->
- <!-- ================================================================= --> 
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function" 
+                version="2.0">
  
  <!-- VARIABLES: METADATA --> 
  <!-- Based on metadata from root DITA map -->

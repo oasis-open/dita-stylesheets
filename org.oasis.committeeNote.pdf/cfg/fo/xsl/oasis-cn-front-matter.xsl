@@ -1,21 +1,22 @@
 <?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    xmlns:opentopic="http://www.idiominc.com/opentopic"
-    exclude-result-prefixes="opentopic"
-    version="2.0">
 
-  <!-- ===================== CHANGE LOG ================================ -->
-  <!--                                                                   -->
-  <!-- 05 Sep 2015 WEK: Modified to generate sidebar on cover.           -->
-  <!-- 05 Sep 2015 KJE: Reworked code to generate OASIS styling.         -->
-  <!--                  Moved formatting to attribute sets. Moved        -->
-  <!--                  text to en.xml file.                             -->
-  <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
-  <!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
-  <!--                  Removed left cover-page flow                     -->
-  <!--                                                                   -->
-  <!-- ================================================================= -->
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015 WEK: Modified to generate sidebar on cover.           -->
+<!-- 05 Sep 2015 KJE: Reworked code to generate OASIS styling.         -->
+<!--                  Moved formatting to attribute sets. Moved        -->
+<!--                  text to en.xml file.                             -->
+<!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
+<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!--                  Removed left cover-page flow                     -->
+<!--                                                                   -->
+<!-- ================================================================= -->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                exclude-result-prefixes="opentopic"
+                version="2.0">
   
   <xsl:template name="createFrontMatter">    
     <fo:page-sequence master-reference="front-matter" format="1"

@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015 KJE: Added XSL to override base template and generate -->
+<!--                  layout master for the cover page.                -->
+<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!--                  Removed left flow on cover page page master      -->
+<!-- 01 Feb 2016 KJE: Added footer to cover page                       -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    version="2.0">
-    
-  <!-- ===================== CHANGE LOG ================================ -->
-  <!--                                                                   -->
-  <!-- 05 Sep 2015 KJE: Added XSL to override base template and generate -->
-  <!--                  layout master for the cover page.                -->
-  <!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
-  <!--                  Removed left flow on cover page page master      -->
-  <!-- 01 Feb 2016 KJE: Added footer to cover page                       -->
-  <!--                                                                   -->
-  <!-- ================================================================= -->  
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                version="2.0">
 
   <xsl:template name="createDefaultLayoutMasters">
     <fo:layout-master-set>

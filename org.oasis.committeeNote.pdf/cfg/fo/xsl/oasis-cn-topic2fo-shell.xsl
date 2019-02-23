@@ -7,14 +7,14 @@
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    xmlns:opentopic-i18n="http://www.idiominc.com/opentopic/i18n"
-    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
-    xmlns:opentopic="http://www.idiominc.com/opentopic"
-    xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
-    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
-    exclude-result-prefixes="opentopic-index opentopic opentopic-i18n opentopic-func"
-    version="2.0">
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:opentopic-i18n="http://www.idiominc.com/opentopic/i18n"
+                xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+                exclude-result-prefixes="opentopic-index opentopic opentopic-i18n opentopic-func"
+                version="2.0">
 
     <xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
     <xsl:import href="plugin:org.dita.base:xsl/common/dita-textonly.xsl"/>

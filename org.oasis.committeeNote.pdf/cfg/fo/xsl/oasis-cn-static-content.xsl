@@ -1,17 +1,18 @@
 <?xml version='1.0'?>
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    version="2.0">
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 5 Sept 2015 KJE: Added change log.                                -->
+<!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
+<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!--                  removed content of default header                -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
 
-    <!-- ===================== CHANGE LOG ================================ -->
-    <!--                                                                   -->
-    <!-- 5 Sept 2015 KJE: Added change log.                                -->
-    <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
-    <!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
-    <!--                  removed content of default header                -->
-    <!--                                                                   -->
-    <!-- ================================================================= --> 
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                version="2.0">
     
     <!-- HEADERS -->
     

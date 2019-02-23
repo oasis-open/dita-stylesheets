@@ -4,6 +4,7 @@
 <!--                                                                   -->
 <!-- 05 Sep 2015 KJE: Added change log.                                -->
 <!-- 30 Jan 2019 KJE: Changed serif to "Arial"                         -->
+<!-- 20 Feb 2019 KJE: Changed serif and sans to "Liberation Sans"      -->
 <!-- ================================================================= --> 
 
 <font-mappings>
@@ -28,7 +29,7 @@
 
     <logical-font name="Sans">
       <physical-font char-set="default">
-        <font-face>Calibri</font-face>
+        <font-face>Liberation Sans</font-face>
       </physical-font>
       <physical-font char-set="Simplified Chinese">
         <font-face>AdobeSongStd-Light</font-face>
@@ -54,7 +55,7 @@
 
     <logical-font name="Serif">
       <physical-font char-set="default">
-        <font-face>Arial</font-face>
+        <font-face>Liberation Sans</font-face>
       </physical-font>
       <physical-font char-set="Simplified Chinese">
         <font-face>AdobeSongStd-Light</font-face>

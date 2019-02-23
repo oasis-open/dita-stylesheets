@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 
-<xsl:stylesheet 
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-  xmlns:fo="http://www.w3.org/1999/XSL/Format" version="2.0">
-  
-  <!-- ===================== CHANGE LOG ================================ -->
-  <!--                                                                   -->
-  <!-- 05 Sep 2015 KJE: Added change log.                                -->
-  <!-- 10 Sep 2015 KJE: Added override for @keycol                       -->
-  <!-- 21 Sep 2015 KJE: Added override for @keycol in header row         -->
-  <!-- 08 Oct 2015  BT: Added strow.stentry override                     -->
-  <!-- 01 Feb 2019 KJE: Changed color for table headers                  -->
-  <!--                                                                   -->
-  <!-- ================================================================= --> 
-  
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015 KJE: Added change log.                                -->
+<!-- 10 Sep 2015 KJE: Added override for @keycol                       -->
+<!-- 21 Sep 2015 KJE: Added override for @keycol in header row         -->
+<!-- 08 Oct 2015  BT: Added strow.stentry override                     -->
+<!-- 01 Feb 2019 KJE: Changed color for table headers                  -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+                xmlns:fo="http://www.w3.org/1999/XSL/Format" 
+                version="2.0">
+   
   <!-- VARIABLES -->
   <xsl:variable name="default-table-header-color">#edf1f8</xsl:variable>
   

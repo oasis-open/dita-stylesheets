@@ -1,21 +1,25 @@
 <?xml version='1.0' encoding='ASCII'?>
-<xsl:stylesheet exclude-result-prefixes="ditaarch opentopic oa" version="2.0"
-  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
-  xmlns:oa="org.oasis.specification.fo" xmlns:fo="http://www.w3.org/1999/XSL/Format"
-  xmlns:opentopic="http://www.idiominc.com/opentopic"
-  xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 07 Sep 2015 Thomas: Created file.                                 -->
+<!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
+
+<xsl:stylesheet exclude-result-prefixes="ditaarch opentopic oa" 
+                version="2.0"
+                xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+                xmlns:oa="org.oasis.specification.fo" 
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
   <!-- This stylesheet overrides the plugin:org.dita.pdf2:/xsl/fo/commons.xsl getTitle template.
        It was placed in its own file so that this override would be reusable across multiple
        customizations. Thomas, 07sep15 -->
-  
-  <!-- ===================== CHANGE LOG ================================ -->
-  <!--                                                                   -->
-  <!-- 07 Sep 2015 Thomas: Created file.                                 -->
-  <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
-  <!--                                                                   -->
-  <!-- ================================================================= --> 
 
   <!--title numbering-->
   <xsl:variable name="oa:number-levels"
