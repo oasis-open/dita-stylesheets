@@ -1,13 +1,13 @@
 <?xml version='1.0'?>
 
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015 KJE: Added change log.                                -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    version="2.0">
-  
-  <!-- ===================== CHANGE LOG ================================ -->
-  <!--                                                                   -->
-  <!-- 05 Sep 2015 KJE: Added change log.                                -->
-  <!-- ================================================================= --> 
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                version="2.0">
   
   <!-- MISCELLANEOUS -->
   <xsl:attribute-set name="pagenum">

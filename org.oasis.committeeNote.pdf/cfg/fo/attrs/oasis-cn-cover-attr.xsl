@@ -1,18 +1,21 @@
 <?xml version='1.0'?>
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 27 Aug 2015 KJE: Removed indentation from cover page              -->
+<!-- 05 Sep 2015 KJE: Consolidated attribute sets. Added attribute     -->
+<!--                  sets for the left flow on the cover.             -->
+<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!--                  removed attribute sets for cover page sidebar;   -->
+<!--                  added attribute set for cover page header        -->
+<!--                                                                   -->
+<!-- ================================================================= -->
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:fo="http://www.w3.org/1999/XSL/Format" version="2.0">
+                xmlns:fo="http://www.w3.org/1999/XSL/Format" 
+                version="2.0">
  
- <!-- ===================== CHANGE LOG ================================ -->
- <!--                                                                   -->
- <!-- 27 Aug 2015 KJE: Removed indentation from cover page              -->
- <!-- 05 Sep 2015 KJE: Consolidated attribute sets. Added attribute     -->
- <!--                  sets for the left flow on the cover.             -->
- <!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
- <!--                  removed attribute sets for cover page sidebar;   -->
- <!--                  added attribute set for cover page header        -->
- <!--                                                                   -->
- <!-- ================================================================= -->
- 
+ <!-- KJE: This styles the content immediately above the document title. -->
  <xsl:attribute-set name="oasis-cover-header">
   <xsl:attribute name="border-bottom-color">#888888</xsl:attribute>
   <xsl:attribute name="border-bottom-style">solid</xsl:attribute>

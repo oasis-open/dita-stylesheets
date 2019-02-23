@@ -1,13 +1,13 @@
 <?xml version='1.0'?>
 
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015KJE: Added change log. Added $toc.toc-indent.          -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    version="2.0">
-    
-    <!-- ===================== CHANGE LOG ================================ -->
-    <!--                                                                   -->
-    <!-- 05 Sep 2015KJE: Added change log. Added $toc.toc-indent.          -->
-    <!-- ================================================================= --> 
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                version="2.0">
     
     <!-- Controls indentation within the TOC -->
     <xsl:variable name="toc.toc-indent" select="'.2in'"/>
