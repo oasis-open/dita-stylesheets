@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This file is part of the DITA Open Toolkit project hosted on 
-     Sourceforge.net. See the accompanying license.txt file for 
-     applicable licenses.-->
-<!-- (c) Copyright IBM Corp. 2011 All Rights Reserved. -->
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Feb 2019 KJE: Added changed log                                -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
 
 <!-- Thomas: This file was cloned from org.dita.xhtml/xsl/dita2xhtml so 
      that overrides specific to committee notes do not affect other
