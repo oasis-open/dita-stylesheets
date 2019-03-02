@@ -3,6 +3,8 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 08 Feb 2019 KJE: Added change log. Replaced OASIS cover color     -->
+<!-- 02 Mar 2019 KJE: Changed color for table header row.              -->
+<!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet exclude-result-prefixes="xs ditaarch opentopic spdf" version="2.0"
@@ -36,7 +38,7 @@
   <!--<xsl:variable name="cover-heading-color">#3B006F</xsl:variable>-->
   <xsl:variable name="cover-heading-color">#446CAA</xsl:variable>
   <xsl:variable name="text-color">#000000</xsl:variable>
-  <xsl:variable name="tableHeaderCellHighlightBGColor">#E8E8E8</xsl:variable>
+  <xsl:variable name="tableHeaderCellHighlightBGColor">#edf1f8</xsl:variable>
   
   <xsl:variable name="copyright-year">
     <xsl:choose>
