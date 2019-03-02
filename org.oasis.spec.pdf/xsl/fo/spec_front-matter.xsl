@@ -1,10 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 08 Feb 2019 KJE: Added change log. Replaced OASIS logo .          -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet exclude-result-prefixes="ditaarch opentopic spdf" version="2.0"
-  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:spdf="org.oasis.spec.pdf"
-  xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:opentopic="http://www.idiominc.com/opentopic"
-  xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <!--cover-->
+                xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" 
+                xmlns:spdf="org.oasis.spec.pdf"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format" 
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <!--Cover page -->
   <xsl:param name="errata-num"/>
   <xsl:param name="stage-abbrev"/>
   <xsl:param name="revision-num"/>
@@ -30,8 +40,8 @@
   <xsl:template name="createFrontCoverContentsAlignWithTop">
     <fo:block text-align="start" border-after-style="solid" border-after-width="0.5px"
       border-after-color="black">
-      <fo:external-graphic src="url('file:Customization/OpenTopic/common/artwork/oasis.tif')"
-        content-height="13.3mm" content-width="60mm" scaling="uniform" text-align="left"/>
+      <fo:external-graphic src="url('file:Customization/OpenTopic/common/artwork/OASISLogo-v2.0.jpg')"
+        content-height="55px" content-width="255px" scaling="uniform" text-align="left"/>
     </fo:block>
     <fo:block xsl:use-attribute-sets="__frontmatter__title">
       <xsl:if test="$map/*[contains(@class, ' topic/title ')][1]">
