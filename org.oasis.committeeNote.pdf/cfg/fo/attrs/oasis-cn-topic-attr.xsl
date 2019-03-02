@@ -2,15 +2,15 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 05 15 Aug 2015: Eberlein, initial creation. Moved content         -->
-<!--                 from override of commons-attr.xsl.                -->
+<!-- 15 Aug 2015 KJE: Initial creation. Moved content from override    -->
+<!--                  of commons-attr.xsl.                             -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    xmlns:rx="http://www.renderx.com/XSL/Extensions"
-    version="2.0">
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:rx="http://www.renderx.com/XSL/Extensions"
+                version="2.0">
 
     <xsl:attribute-set name="topic.title" use-attribute-sets="common.title horizontal-rule">
         <xsl:attribute name="font-size">18pt</xsl:attribute>

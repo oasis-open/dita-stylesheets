@@ -2,19 +2,20 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 15 Aug 2017: Eberlein, initial creation.                          -->
+<!-- 15 Aug 2017 KJE: Initial creation.                                -->
+<!-- 02 Mar 2019 KJE: Updated to match file shipped with DITA-OT 3.2.1 -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    xmlns:opentopic-i18n="http://www.idiominc.com/opentopic/i18n"
-    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
-    xmlns:opentopic="http://www.idiominc.com/opentopic"
-    xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
-    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
-    exclude-result-prefixes="opentopic-index opentopic opentopic-i18n opentopic-func"
-    version="2.0">
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:opentopic-i18n="http://www.idiominc.com/opentopic/i18n"
+                xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+                exclude-result-prefixes="opentopic-index opentopic opentopic-i18n opentopic-func"
+                version="2.0">
 
     <xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
     <xsl:import href="plugin:org.dita.base:xsl/common/dita-textonly.xsl"/>
@@ -37,6 +38,8 @@
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/tables.xsl"/>
     <xsl:import href="plugin:org.oasis.committeeNote.pdf:cfg/fo/xsl/oasis-cn-tables.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/root-processing.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/topic-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/concept-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/commons-attr.xsl"/>
     <xsl:import href="plugin:org.oasis.committeeNote.pdf:cfg/fo/attrs/oasis-cn-commons-attr.xsl"/>
     <xsl:import href="plugin:org.oasis.committeeNote.pdf:cfg/fo/attrs/oasis-cn-custom-attr.xsl"/>
@@ -84,7 +87,11 @@
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/xml-domain-attr.xsl"/>
     <xsl:import href="plugin:org.oasis.committeeNote.pdf:cfg/fo/attrs/oasis-cn-xml-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/xml-domain.xsl"/>
-
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/svg-domain-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/svg-domain.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/hazard-d-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/hazard-d.xsl"/>
+    
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/static-content-attr.xsl"/>
     <xsl:import href="plugin:org.oasis.committeeNote.pdf:cfg/fo/attrs/oasis-cn-static-content-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/static-content.xsl"/>

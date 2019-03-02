@@ -1,14 +1,17 @@
 <?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
-  version="2.0">
 
-  <!-- ===================== CHANGE LOG ================================ -->
-  <!--                                                                   -->
-  <!-- 05 Sep 2015 KJE: Added change log.                                -->
-  <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
-  <!-- 12 Jul 2016 Thomas: Changed xref from fo:inline to fo:basic-link  -->
-  <!-- ================================================================= --> 
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015 KJE: Added change log.                                -->
+<!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
+<!-- 12 Jul 2016  BT: Changed xref from fo:inline to fo:basic-link     -->
+<!-- ================================================================= --> 
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format" 
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                version="2.0">
 
   <!-- Tagsmiths: The next several templates with mode="cover" are responsible for outputting
     the cover topic -29oct13 -->

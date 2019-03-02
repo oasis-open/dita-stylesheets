@@ -2,20 +2,22 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 05 Sep 2015: Eberlein, added change log.                          -->
-<!-- 18 Sep 2015: Eberlein, added styling for draft comments and       -->
-<!--              section titles                                       -->
-<!-- 05 Oct 2015: Eberlein, increased font size for section titles     -->
+<!-- 05 Sep 2015 KJE: Added change log.                                -->
+<!-- 18 Sep 2015 KJE: Added styling for draft comments and             -->
+<!--                  section titles                                   -->
+<!-- 05 Oct 2015 KJE: Increased font size for section titles           -->
+<!-- 30 Jan 2019 KJE: Changed $default-title-color as required for     -->
+<!--                  OASIS rebranding                                 -->
 <!--                                                                   -->
 <!-- ================================================================= -->  
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    xmlns:rx="http://www.renderx.com/XSL/Extensions"
-    version="2.0">
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:rx="http://www.renderx.com/XSL/Extensions"
+                version="2.0">
         
     <!-- VARIABLES -->
-    <xsl:variable name="default-title-color">#A1985A</xsl:variable>  
+    <xsl:variable name="default-title-color">#446CAA</xsl:variable>  
 
     <!-- BASIC FONT -->
     <xsl:attribute-set name="__fo__root" use-attribute-sets="base-font">
@@ -35,10 +37,7 @@
         <xsl:attribute name="font-weight">normal</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     </xsl:attribute-set>
-    
-
-    
-    
+       
     <!-- REMOVE EMPTY PAGES -->  
     <xsl:attribute-set name="__force__page__count">
         <xsl:attribute name="force-page-count">

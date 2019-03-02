@@ -1,28 +1,32 @@
 <?xml version="1.0"?>
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015 KJE: Added XSL to override base template and generate -->
+<!--                  layout master for the cover page.                -->
+<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!--                  Removed left flow on cover page page master      -->
+<!-- 01 Feb 2016 KJE: Added footer to cover page                       -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    version="2.0">
-    
-  <!-- ===================== CHANGE LOG ================================ -->
-  <!--                                                                   -->
-  <!-- 5 Sept 2015: Eberlein, added XSL to override base template and    -->
-  <!--              generate layout master for the cover page.           -->
-  <!--                                                                   -->
-  <!-- ================================================================= -->  
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                version="2.0">
 
   <xsl:template name="createDefaultLayoutMasters">
     <fo:layout-master-set>
       
       <!-- Frontmatter simple masters -->
-      <!-- Master for the cover page with left-side bar. -->
+      <!-- Master for the cover page -->
       <fo:simple-page-master master-name="front-matter-first" xsl:use-attribute-sets="simple-page-master">
         <fo:region-body
           margin-top="1.0in"
           margin-bottom="1.0in"
-          margin-left="2.125in"
+          margin-left="1.25in"
           margin-right="1.25in"
         />
-        <fo:region-start extent="2.0in"/>
+        <fo:region-after region-name="odd-frontmatter-footer" xsl:use-attribute-sets="region-after"/>
       </fo:simple-page-master>
       
       <fo:simple-page-master master-name="front-matter-last" xsl:use-attribute-sets="simple-page-master">

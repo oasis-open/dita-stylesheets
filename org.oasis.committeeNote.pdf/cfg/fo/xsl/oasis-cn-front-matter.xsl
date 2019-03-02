@@ -1,44 +1,28 @@
 <?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fo="http://www.w3.org/1999/XSL/Format"
-    xmlns:opentopic="http://www.idiominc.com/opentopic"
-    exclude-result-prefixes="opentopic"
-    version="2.0">
 
-  <!-- ===================== CHANGE LOG ================================ -->
-  <!--                                                                   -->
-  <!-- 5 Sept 2015: Kimber, modified to generate sidebar on cover.       -->
-  <!-- 5 Sept 2015: Eberlein, reworked code to generate OASIS styling.   -->
-  <!--              Moved formatting to attribute sets. Moved text to    -->
-  <!--              en.xml file.                                         -->
-  <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
-  <!--                                                                   -->
-  <!-- ================================================================= -->
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 05 Sep 2015 WEK: Modified to generate sidebar on cover.           -->
+<!-- 05 Sep 2015 KJE: Reworked code to generate OASIS styling.         -->
+<!--                  Moved formatting to attribute sets. Moved        -->
+<!--                  text to en.xml file.                             -->
+<!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
+<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!--                  Removed left cover-page flow                     -->
+<!--                                                                   -->
+<!-- ================================================================= -->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                exclude-result-prefixes="opentopic"
+                version="2.0">
   
   <xsl:template name="createFrontMatter">    
     <fo:page-sequence master-reference="front-matter" format="1"
       xsl:use-attribute-sets="__force__page__count">
       <xsl:call-template name="insertFrontMatterStaticContents"/>
-      <xsl:comment>====== Cover ======</xsl:comment> 
-      <xsl:comment>====== Left flow ======</xsl:comment>
-      <fo:static-content flow-name="xsl-region-start">     
-        <fo:block-container xsl:use-attribute-sets="cover-sidebar">
-          <fo:block xsl:use-attribute-sets="cover-sidebar-text">
-            <fo:inline>
-              <xsl:call-template name="getVariable">
-                <xsl:with-param name="id" select="'Statement 1'" />
-              </xsl:call-template>
-            </fo:inline>
-            <xsl:text> </xsl:text>
-            <fo:inline>
-              <xsl:call-template name="getVariable">
-                <xsl:with-param name="id" select="'Statement 2'" />
-              </xsl:call-template>
-            </fo:inline>
-          </fo:block>
-        </fo:block-container>
-      </fo:static-content>
-      <xsl:comment>====== Right flow ======</xsl:comment>
+      
       <fo:flow flow-name="xsl-region-body">
         <fo:block>          
           <fo:block>
@@ -49,6 +33,11 @@
                 </xsl:call-template>
               </xsl:attribute>
             </fo:external-graphic>
+          </fo:block>
+          <fo:block xsl:use-attribute-sets="oasis-cover-header">
+            <xsl:call-template name="getVariable">
+              <xsl:with-param name="id" select="'OASIS committee note'" />
+            </xsl:call-template>
           </fo:block>
           
           <!-- Document title-->

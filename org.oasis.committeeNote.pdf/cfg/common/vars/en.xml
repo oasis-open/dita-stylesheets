@@ -3,20 +3,22 @@
     
     <!-- ===================== CHANGE LOG ================================ -->
     <!--                                                                   -->
-    <!-- 5 Sept 2015: Eberlein, added change log and "Work product track"  -->
-    <!--              variable.                                            -->
-    <!-- 7 Sept 2015: Thomas, added override for variable "Table of        -->
-    <!--              Contents Appendix"                                   -->
-    <!-- 18 Sept 2015: Eberlein, removed stock images for notes            -->
+    <!-- 05 Sep 2015 KJE: Added change log and "Work product track"        -->
+    <!--                  variable.                                        -->
+    <!-- 07 Sep 2015  BT: Added override for variable "Table of Contents   -->
+    <!--                  Appendix"                                        -->
+    <!-- 18 Sep 2015 KJE: Removed stock images for notes                   -->
+    <!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+    <!--                  removed header variables; changed logo;          -->
+    <!--                  added string for cover page heaser               -->
     <!--                                                                   -->
     <!-- ================================================================= -->
    
     <!-- Cover page logo-->
-    <variable id="logo Image Path">Customization/OpenTopic/common/artwork/oasis.tif</variable>
+    <variable id="logo Image Path">Customization/OpenTopic/common/artwork/OASISLogo-v2.0.jpg</variable>
     
-    <!-- Header statements -->
-    <variable id="Statement 1">This is a Non-Standards Track Work Product.</variable>
-    <variable id="Statement 2">The patent provisions of the OASIS IPR Policy do not apply.</variable>
+    <!-- Cover page header string -->
+    <variable id="OASIS committee note">OASIS Committee Note</variable>
     
     <!-- Footer text -->
     <variable id="Work product track">Non-Standards Track</variable>
@@ -30,12 +32,6 @@
     <!-- Bullets for unordered lists -->
     <variable id="Unordered List bullet">•</variable>    
     <variable id="Unordered List bullet 2">–</variable>
-    
-    <!-- Header content -->
-    <variable id="Header">
-        <param ref-name="header-line-1"/>
-        <param ref-name="header-line-2"/>
-    </variable>
     
     <!-- NOTE IMAGES -->
     
