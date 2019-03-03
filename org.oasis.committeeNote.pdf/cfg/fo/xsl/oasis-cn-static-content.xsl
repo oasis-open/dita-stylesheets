@@ -1,4 +1,4 @@
-<?xml version='1.0'?>
+﻿<?xml version='1.0'?>
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
@@ -141,9 +141,9 @@
     
     <!-- Footers: Default footer -->
     <xsl:template name="defaultFooter">
-        <fo:block border-top-style="solid" 
+        <fo:block border-top-style="none" 
             border-top-width="1px"
-            margin-bottom="0.18in" 
+            margin-bottom="0.375in" 
             margin-left="1.25in" 
             margin-right="1.25in"
             padding-top="2pt">

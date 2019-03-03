@@ -1,4 +1,4 @@
-<?xml version='1.0'?>
+﻿<?xml version='1.0'?>
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
@@ -19,8 +19,8 @@
   <xsl:attribute-set name="default_footer">
     <xsl:attribute name="font-size">9pt</xsl:attribute>
     <xsl:attribute name="margin-bottom">0pt</xsl:attribute>
-    <xsl:attribute name="margin-left">-1.25in</xsl:attribute>
-    <xsl:attribute name="margin-right">-1.25in</xsl:attribute>
+    <xsl:attribute name="margin-left">-1.5in</xsl:attribute>
+    <xsl:attribute name="margin-right">-1.5in</xsl:attribute>
     <xsl:attribute name="padding-top">0pt</xsl:attribute>
   </xsl:attribute-set>
   
@@ -113,8 +113,14 @@
 
   <xsl:attribute-set name="default_header">
     <xsl:attribute name="font-size">9pt</xsl:attribute>
-    <xsl:attribute name="margin-top">30pt</xsl:attribute>
+    <!--<xsl:attribute name="margin-top">30pt</xsl:attribute>-->
+    <xsl:attribute name="margin-top">1in</xsl:attribute>
     <xsl:attribute name="text-align">center</xsl:attribute>
+    <xsl:attribute name="border-top-color">#000000</xsl:attribute>
+    <xsl:attribute name="border-top-style">solid</xsl:attribute>
+    <xsl:attribute name="border-top-width">1px</xsl:attribute>
+    <xsl:attribute name="margin-left">1in</xsl:attribute>
+    <xsl:attribute name="margin-right">1in</xsl:attribute>
   </xsl:attribute-set>
 <!--
   <xsl:attribute-set name="even__header">
