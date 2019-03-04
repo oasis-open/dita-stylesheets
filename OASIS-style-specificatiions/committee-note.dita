@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="reference_trt_wgh_zgb">
+    <title>Style specifications for the OASIS committee note (PDF)</title>
+    <shortdesc></shortdesc>
+    <refbody>
+        <section>
+            <title>Basic settings</title>
+            <table frame="all" rowsep="1" colsep="1">
+                <title>Fonts</title>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Property</entry>
+                            <entry>Value</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Font: Serif</entry>
+                            <entry>Liberation</entry>
+                            <entry>For HTML output, we need to specify fallback fonts</entry>
+                        </row>
+                        <row>
+                            <entry>Font: San-serif</entry>
+                            <entry>Liberation Sans</entry>
+                            <entry>For HTML output, we need to specify fallback fonts</entry>
+                        </row>
+                        <row>
+                            <entry>Font: Monospaced</entry>
+                            <entry>Liberation Monospace</entry>
+                            <entry>For HTML output, we need to specify fallback fonts</entry>
+                        </row>
+                        <row>
+                            <entry>Default font size</entry>
+                            <entry>10 pt</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Default small font size</entry>
+                            <entry>9 pt?</entry>
+                            <entry>Used in tables; might not need to be specified / is too
+                                granular</entry>
+                        </row>
+                        <row>
+                            <entry>Default monospace font size</entry>
+                            <entry>9 pt?</entry>
+                            <entry>Used in code samples; might not need to be specified / is too
+                                granular</entry>
+                        </row>
+                        <row>
+                            <entry>Font line height</entry>
+                            <entry>1.3</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Font color</entry>
+                            <entry>#000000</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Font weight</entry>
+                            <entry>normal</entry>
+                            <entry/>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table frame="all" rowsep="1" colsep="1">
+                <title>Page settings</title>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Property</entry>
+                            <entry>Value</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Page size</entry>
+                            <entry>8 x 11 in</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Margin: Top</entry>
+                            <entry>1in</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Margin: Bottom</entry>
+                            <entry>1in</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Margin: Left</entry>
+                            <entry>1.25in</entry>
+                            <entry>Does OASIS want this to be 1 in?</entry>
+                        </row>
+                        <row>
+                            <entry>Margin: Right</entry>
+                            <entry>1.25in</entry>
+                            <entry>Does OASIS want this to be 1 in?</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section>
+            <title>Cover page</title>
+            <table frame="all" rowsep="1" colsep="1">
+                <title>Cover page</title>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Section label</entry>
+                            <entry>Specifications</entry>
+                            <entry>Section content</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>&lt;documentTitle> + Version &lt;x></entry>
+                            <entry>24 pt bold san-serif; #446CAA</entry>
+                            <entry morerows="14">
+                                <ul>
+                                    <li>11 pt normal san-serif</li>
+                                    <li>Color #000000, except for hyperlinks which are blue</li>
+                                    <li>Test is flush left against margins (including list items and
+                                        content of <xmlelement>dd</xmlelement> elements</li>
+                                    <li>Hyperlinks are underlined but not italicized</li>
+                                </ul>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>Committee Note &lt;0x></entry>
+                            <entry>18 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>&lt;Day Month Year></entry>
+                            <entry>18 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Specification URIs</entry>
+                            <entry>14 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>This version:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Previous version:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Latest version:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Technical Committee:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Chair:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Editors:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Additional artifacts</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Related work:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Abstract:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Status:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                        <row>
+                            <entry>Citation format:</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section>
+            <title>Headers</title>
+            <table frame="all" rowsep="1" colsep="1">
+                <title>Cover page header</title>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Property or label</entry>
+                            <entry>Specification</entry>
+                            <entry>Note</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Logo</entry>
+                            <entry>OASISLogo-v2.0.jpg</entry>
+                            <entry>Let's add URL to graphic on OASIS Web site</entry>
+                        </row>
+                        <row>
+                            <entry>OASIS Committee Note</entry>
+                            <entry>18pt bold san-serif, #707070; padding between this text and logo
+                                = ?</entry>
+                            <entry>Text under logo</entry>
+                        </row>
+                        <row>
+                            <entry>Horizontal line</entry>
+                            <entry>solid 1 px,  #707070</entry>
+                            <entry>Underneath "OASIS Committee Note"</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table frame="all" rowsep="1" colsep="1">
+                <title>Body page header</title>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Property or label</entry>
+                            <entry>Specification</entry>
+                            <entry>Note</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Horizontal line</entry>
+                            <entry>solid 1 px,  #000000</entry>
+                            <entry/>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section>
+            <title>Footers</title>
+            <p>The following two row, three column table should appear on every page in the
+                document. There should be no row or column separators, but the top row of the table
+                should be rendered in 1 px #000000. Content in the 1st column is rendered flush
+                left; content in the 2nd column is rendered centered; content in the 3rd column is
+                rendered flush right.</p>
+            <simpletable frame="all" relcolwidth="1* 1* 1*">
+                <strow>
+                    <stentry>&lt;document-short-name></stentry>
+                    <stentry/>
+                    <stentry>&lt;Date of publication>, as rendered on cover page</stentry>
+                </strow>
+                <strow>
+                    <stentry>Non- Standards Track</stentry>
+                    <stentry>Copyright @ OASIS Open &lt;year>. All Rights Reserved.</stentry>
+                    <stentry>Page X of Z</stentry>
+                </strow>
+            </simpletable>
+            <p>The following properties apply to the content of the footer:</p>
+            <ul>
+                <li>Font = San-serif</li>
+                <li>Font size= 9 pt</li>
+                <li>Font weight= normal</li>
+            </ul>
+        </section>
+        <section>
+            <title>Body content</title>
+            <table frame="all" rowsep="1" colsep="1">
+                <title>Header levels</title>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Header level</entry>
+                            <entry>Specification</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Header level one</entry>
+                            <entry>18 pt bold san-serif; #446CAA</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Header level two</entry>
+                            <entry>14 pt bold san-serif; #446CAA</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Header level three</entry>
+                            <entry>13 pt bold san-serif; #446CAA</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Header level four</entry>
+                            <entry>12 pt bold san-serif; #446CAA</entry>
+                            <entry/>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section>
+            <title>Basic body content</title>
+            <table frame="all" rowsep="1" colsep="1">
+                <title/>
+                <tgroup cols="3">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Item</entry>
+                            <entry>Specification</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Table headers</entry>
+                            <entry>Smaller text? Background color?</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>List items</entry>
+                            <entry>Indentation?</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Table cell entries</entry>
+                            <entry>Font size?</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Code samples</entry>
+                            <entry>Font size?</entry>
+                            <entry/>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+    </refbody>
+</reference>
