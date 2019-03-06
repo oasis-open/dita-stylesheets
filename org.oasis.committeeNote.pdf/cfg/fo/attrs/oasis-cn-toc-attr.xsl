@@ -1,4 +1,4 @@
-<?xml version='1.0'?>
+﻿<?xml version='1.0'?>
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
@@ -20,7 +20,7 @@
     </xsl:attribute-set>
 
     <!-- Controls formatting of the auto-generated title on first page of TOC -->
-    <xsl:attribute-set name="__toc__header" use-attribute-sets="common.title horizontal-rule">
+    <xsl:attribute-set name="__toc__header" use-attribute-sets="common.title">
         <xsl:attribute name="font-size">18pt</xsl:attribute>
         <xsl:attribute name="margin-top">0pt</xsl:attribute>
         <xsl:attribute name="margin-bottom">8.4pt</xsl:attribute>

@@ -21,17 +21,18 @@
   <xsl:variable name="page-height">11.0in</xsl:variable>
 
   <!-- Page margins -->
-  <xsl:variable name="page-margin-inside">1.25in</xsl:variable>
-  <xsl:variable name="page-margin-outside">1.25in</xsl:variable>
-  <xsl:variable name="page-margin-top">1in</xsl:variable>
-  <xsl:variable name="page-margin-bottom">1in</xsl:variable>
+  <xsl:variable name="page-margin-inside">1.0in</xsl:variable>
+  <xsl:variable name="page-margin-outside">1.0in</xsl:variable>
+  <!-- Added .2in to top margin to prevent text crashing into heading rule -->
+  <xsl:variable name="page-margin-top">1.2in</xsl:variable>
+  <xsl:variable name="page-margin-bottom">1.0in</xsl:variable>
   <xsl:variable name="mirror-page-margins" select="true()"/>
               
   <!--The side column width is the amount that body text is indented relative to the margin. -->
   <xsl:variable name="side-col-width">0pt</xsl:variable>           
      
   <!-- Font size and line height -->
-  <xsl:variable name="default-font-size">11pt</xsl:variable>
-  <xsl:variable name="default-line-height">12pt</xsl:variable>
+  <xsl:variable name="default-font-size">10pt</xsl:variable>
+  <xsl:variable name="default-line-height">11pt</xsl:variable>
                        
 </xsl:stylesheet>
