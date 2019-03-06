@@ -5,6 +5,9 @@
 <!-- 05 Sep 2015 KJE: Added change log.                                -->
 <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
 <!-- 12 Jul 2016  BT: Changed xref from fo:inline to fo:basic-link     -->
+<!-- 06 Mar 2019 KJE: Removed indentation from <dd>; made <dt> bold    -->
+<!--                  and adding padding-top                           -->
+<!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
@@ -63,13 +66,15 @@
 
   <xsl:template match="*[contains(@class, ' topic/dt ')]" mode="cover">
     <fo:block>
+      <xsl:attribute name="font-weight">bold</xsl:attribute>
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' topic/dd ')]" mode="cover">
     <fo:block>
-      <xsl:attribute name="margin-left">.15in</xsl:attribute>
+      <xsl:attribute name="margin-left">0in</xsl:attribute>      
+      <xsl:attribute name="padding-top">5pt</xsl:attribute>
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>

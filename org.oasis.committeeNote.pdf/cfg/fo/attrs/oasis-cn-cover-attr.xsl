@@ -5,7 +5,7 @@
 <!-- 27 Aug 2015 KJE: Removed indentation from cover page              -->
 <!-- 05 Sep 2015 KJE: Consolidated attribute sets. Added attribute     -->
 <!--                  sets for the left flow on the cover.             -->
-<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!-- 01 Feb 2019 KJE: Implemented OASIS redesign for committee note:   -->
 <!--                  removed attribute sets for cover page sidebar;   -->
 <!--                  added attribute set for cover page header        -->
 <!--                                                                   -->

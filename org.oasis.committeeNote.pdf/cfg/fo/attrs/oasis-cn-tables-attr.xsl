@@ -7,6 +7,7 @@
 <!-- 21 Sep 2015 KJE: Added override for @keycol in header row         -->
 <!-- 08 Oct 2015  BT: Added strow.stentry override                     -->
 <!-- 01 Feb 2019 KJE: Changed color for table headers                  -->
+<!-- 06 Mar 2019 KJE: Changed font size for simple table cells         -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -16,7 +17,7 @@
    
   <!-- VARIABLES -->
   <xsl:variable name="default-table-header-color">#edf1f8</xsl:variable>
-  
+  <xsl:variable name="default-table-font-size">9pt</xsl:variable>
   <!-- DEFINITION LISTS -->
   <xsl:attribute-set name="dl"/>
   
@@ -34,6 +35,9 @@
   <xsl:attribute-set name="sthead.stentry">
     <xsl:attribute name="background-color">
       <xsl:value-of select="$default-table-header-color"/>
+    </xsl:attribute>
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$default-table-font-size"/>
     </xsl:attribute>
   </xsl:attribute-set>
   
@@ -54,6 +58,9 @@
     <xsl:attribute name="border-before-style">solid</xsl:attribute>
     <xsl:attribute name="border-before-width">1pt</xsl:attribute>
     <xsl:attribute name="border-before-width.conditionality">retain</xsl:attribute>
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$default-table-font-size"/>
+    </xsl:attribute>
   </xsl:attribute-set>
   
 </xsl:stylesheet>

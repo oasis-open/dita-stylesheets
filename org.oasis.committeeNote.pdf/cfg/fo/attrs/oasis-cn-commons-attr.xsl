@@ -8,7 +8,7 @@
 <!-- 05 Oct 2015 KJE: Increased font size for section titles           -->
 <!-- 30 Jan 2019 KJE: Changed $default-title-color as required for     -->
 <!--                  OASIS rebranding                                 -->
-<!--                                                                   -->
+<!-- 06 Mar 2019 KJE: Changed base-font to 10 pt                       -->
 <!-- ================================================================= -->  
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -22,7 +22,7 @@
     <!-- BASIC FONT -->
     <xsl:attribute-set name="__fo__root" use-attribute-sets="base-font">
         <xsl:attribute name="font-family">sans-serif</xsl:attribute>
-        <xsl:attribute name="font-size">11pt</xsl:attribute>
+        <xsl:attribute name="font-size">10pt</xsl:attribute>
         <xsl:attribute name="id">fo-root-do-not-change</xsl:attribute>
     </xsl:attribute-set>
    
