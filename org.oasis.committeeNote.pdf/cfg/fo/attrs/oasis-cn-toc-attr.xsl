@@ -2,7 +2,10 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 05 Sep 2015KJE: Added change log. Added $toc.toc-indent.          -->
+<!-- 05 Sep 2015 KJE: Added change log. Added $toc.toc-indent.         -->
+<!-- 05 Sep 2015 ARH: Removed horizontal-rule from __toc__header       -->
+<!--                  to accommodate OASIS rebranding                  -->
+<!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

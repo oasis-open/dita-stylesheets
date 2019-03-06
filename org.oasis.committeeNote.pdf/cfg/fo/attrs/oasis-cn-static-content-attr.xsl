@@ -3,6 +3,8 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 05 Sep 2015 KJE: Added change log.                                -->
+<!-- 03 Mar 2015 ARH: Modifications to accommodate OASIS rebranding:   -->
+<!--                  Changes to footer margins; default header        -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
