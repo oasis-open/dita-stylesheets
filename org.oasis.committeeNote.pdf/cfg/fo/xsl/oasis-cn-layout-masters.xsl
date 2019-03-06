@@ -4,10 +4,11 @@
 <!--                                                                   -->
 <!-- 05 Sep 2015 KJE: Added XSL to override base template and generate -->
 <!--                  layout master for the cover page.                -->
-<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!-- 01 Feb 2019 KJE: Implemented OASIS redesign for committee note:   -->
 <!--                  Removed left flow on cover page page master      -->
-<!-- 01 Feb 2016 KJE: Added footer to cover page                       -->
-<!--                                                                   -->
+<!-- 01 Feb 2019 KJE: Added footer to cover page                       -->
+<!-- 03 Mar 2019 ARH: Changed margins; added horizontal-rule to region -->
+<!--                  before                                           -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

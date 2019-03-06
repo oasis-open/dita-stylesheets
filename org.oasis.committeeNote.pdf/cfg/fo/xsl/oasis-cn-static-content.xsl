@@ -4,9 +4,11 @@
 <!--                                                                   -->
 <!-- 5 Sept 2015 KJE: Added change log.                                -->
 <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
-<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
+<!-- 01 Feb 2019 KJE: Implemented OASIS redesign for committee note:   -->
 <!--                  removed content of default header                -->
-<!--                                                                   -->
+<!-- 03 Mar 2019 ARH: Implemented OASIS redesign for committee note:   -->
+<!--                  removed border-top from default header and       -->
+<!--                  adjusted margin-bottom                           -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

@@ -3,6 +3,9 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 05 Sep 2015 KJE: Added change log.                                -->
+<!-- 03 Mar 2019 ARH: Changed page margins, font sizes, and            -->
+<!--                  page-margin-top to accommodated OASIS rebranding -->
+<!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
