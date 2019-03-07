@@ -4,7 +4,6 @@
 <!--                                                                   -->
 <!-- 15 Aug 2015 KJE: Initial creation. Moved content from override    -->
 <!--                  of commons-attr.xsl.                             -->
-<!--                                                                   -->
 <!-- 03 Mar 2019 ARH: Changes to accommodate OASIS rebranding: Removal -->
 <!--                  of horizontal-rule attribute set; correction to  -->
 <!--                  padding                                                 -->

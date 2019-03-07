@@ -5,6 +5,7 @@
 <!-- 05 Sep 2015 KJE: Added change log.                                -->
 <!-- 03 Mar 2019 ARH: Changed page margins, font sizes, and            -->
 <!--                  page-margin-top to accommodated OASIS rebranding -->
+<!-- 07 Mar KJE: Added variables previously defined in other files     -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -26,7 +27,7 @@
   <!-- Page margins -->
   <xsl:variable name="page-margin-inside">1.0in</xsl:variable>
   <xsl:variable name="page-margin-outside">1.0in</xsl:variable>
-  <!-- Added .2in to top margin to prevent text crashing into heading rule -->
+  <!-- ARH: Added .2in to top margin to prevent text crashing into heading rule -->
   <xsl:variable name="page-margin-top">1.2in</xsl:variable>
   <xsl:variable name="page-margin-bottom">1.0in</xsl:variable>
   <xsl:variable name="mirror-page-margins" select="true()"/>
@@ -35,7 +36,16 @@
   <xsl:variable name="side-col-width">0pt</xsl:variable>           
      
   <!-- Font size and line height -->
+  <xsl:variable name="default-codeblock-font-size">8pt</xsl:variable>
   <xsl:variable name="default-font-size">10pt</xsl:variable>
   <xsl:variable name="default-line-height">11pt</xsl:variable>
+  <xsl:variable name="default-monospace-font">9pt</xsl:variable>
+  <xsl:variable name="default-table-font-size">9pt</xsl:variable>
+  
+  <!-- Title color -->
+  <xsl:variable name="default-title-color">#446CAA</xsl:variable>
+  
+  <!-- Background colors -->
+  <xsl:variable name="default-table-header-color">#edf1f8</xsl:variable>
                        
 </xsl:stylesheet>

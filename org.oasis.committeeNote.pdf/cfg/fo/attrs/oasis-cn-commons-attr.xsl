@@ -1,4 +1,4 @@
-﻿<?xml version='1.0'?>
+<?xml version='1.0'?>
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
@@ -9,16 +9,15 @@
 <!-- 30 Jan 2019 KJE: Changed $default-title-color as required for     -->
 <!--                  OASIS rebranding                                 -->
 <!-- 06 Mar 2019 KJE: Changed base-font to 10 pt                       -->
-<!-- 07 Mar 2019 KJE: Changed serif to sans-serif                      -->
+<!-- 07 Mar 2019 KJE: Changed serif to sans-serif; moved variable      -->
+<!--                  to oasis-cn-basic-settings.xsl file              -->
+<!--                                                                   -->
 <!-- ================================================================= -->  
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
                 xmlns:rx="http://www.renderx.com/XSL/Extensions"
                 version="2.0">
-        
-    <!-- VARIABLES -->
-    <xsl:variable name="default-title-color">#446CAA</xsl:variable>  
 
     <!-- BASIC FONT -->
     <xsl:attribute-set name="__fo__root" use-attribute-sets="base-font">

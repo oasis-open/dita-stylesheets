@@ -5,7 +5,8 @@
 <!-- 05 Sep 2015 KJE: Added change log. Added $toc.toc-indent.         -->
 <!-- 03 Mar 2019 ARH: Removed horizontal-rule from __toc__header       -->
 <!--                  to accommodate OASIS rebranding                  -->
-<!-- 06 Mar 2019 KJE: Changed font-size to 10 pt                       -->
+<!-- 07 Mar 2019 KJE: Changed TOC font-size to use variable            -->
+<!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -17,7 +18,9 @@
     
     <!-- Common formatting for many items in the TOC -->  
     <xsl:attribute-set name="default-TOC">
-        <xsl:attribute name="font-size">10pt</xsl:attribute>
+        <xsl:attribute name="font-size">
+            <xsl:value-of select="$default-font-size"/>
+        </xsl:attribute>
         <xsl:attribute name="font-weight">normal</xsl:attribute>
         <xsl:attribute name="padding-top">0pt</xsl:attribute>
     </xsl:attribute-set>
