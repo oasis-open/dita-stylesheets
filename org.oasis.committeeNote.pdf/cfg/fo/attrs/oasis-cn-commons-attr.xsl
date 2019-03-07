@@ -9,6 +9,7 @@
 <!-- 30 Jan 2019 KJE: Changed $default-title-color as required for     -->
 <!--                  OASIS rebranding                                 -->
 <!-- 06 Mar 2019 KJE: Changed base-font to 10 pt                       -->
+<!-- 07 Mar 2019 KJE: Changed serif to sans-serif                      -->
 <!-- ================================================================= -->  
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -33,7 +34,7 @@
         <xsl:attribute name="color">
             <xsl:value-of select="$default-title-color"/>
         </xsl:attribute>
-        <xsl:attribute name="font-family">serif</xsl:attribute>
+        <xsl:attribute name="font-family">sans-serif</xsl:attribute>
         <xsl:attribute name="font-weight">normal</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     </xsl:attribute-set>
