@@ -8,6 +8,7 @@
 <!-- 01 Feb 2019 KJE: Implemented OASIS redesign for committee note:   -->
 <!--                  removed attribute sets for cover page sidebar;   -->
 <!--                  added attribute set for cover page header        -->
+<!-- 07 Mar 2019 KJE: Changed serif to sans-serif                      -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -21,7 +22,7 @@
   <xsl:attribute name="border-bottom-style">solid</xsl:attribute>
   <xsl:attribute name="border-bottom-width">1px</xsl:attribute>
   <xsl:attribute name="color">#707070</xsl:attribute>
-  <xsl:attribute name="font-family">serif</xsl:attribute>
+  <xsl:attribute name="font-family">sans-serif</xsl:attribute>
   <xsl:attribute name="font-size">18pt</xsl:attribute>
   <xsl:attribute name="font-weight">bold</xsl:attribute>
   <xsl:attribute name="keep-with-next">always</xsl:attribute>
@@ -31,7 +32,7 @@
  
  <xsl:attribute-set name="oasis-cover-font">
   <xsl:attribute name="color">#446CAA</xsl:attribute>
-  <xsl:attribute name="font-family">serif</xsl:attribute>
+  <xsl:attribute name="font-family">sans-serif</xsl:attribute>
   <xsl:attribute name="font-weight">bold</xsl:attribute>
   <xsl:attribute name="keep-with-next">always</xsl:attribute>
   <xsl:attribute name="text-align">left</xsl:attribute>
