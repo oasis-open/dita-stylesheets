@@ -8,16 +8,14 @@
 <!-- 08 Oct 2015  BT: Added strow.stentry override                     -->
 <!-- 01 Feb 2019 KJE: Changed color for table headers                  -->
 <!-- 06 Mar 2019 KJE: Changed font size for simple table cells         -->
+<!-- 07 Mar 2019 KJE: Moved variables to oasis-cn-basic-settings.xsl   -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
                 xmlns:fo="http://www.w3.org/1999/XSL/Format" 
                 version="2.0">
-   
-  <!-- VARIABLES -->
-  <xsl:variable name="default-table-header-color">#edf1f8</xsl:variable>
-  <xsl:variable name="default-table-font-size">9pt</xsl:variable>
+  
   <!-- DEFINITION LISTS -->
   <xsl:attribute-set name="dl"/>
   
