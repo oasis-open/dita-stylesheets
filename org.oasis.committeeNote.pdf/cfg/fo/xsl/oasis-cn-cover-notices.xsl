@@ -6,7 +6,7 @@
 <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
 <!-- 12 Jul 2016  BT: Changed xref from fo:inline to fo:basic-link     -->
 <!-- 06 Mar 2019 KJE: Removed indentation from <dd>; made <dt> bold    -->
-<!--                  and adding padding-top                           -->
+<!--                  and added padding-top                            -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -15,18 +15,21 @@
                 xmlns:fo="http://www.w3.org/1999/XSL/Format" 
                 xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
                 version="2.0">
-
+  
   <!-- Tagsmiths: The next several templates with mode="cover" are responsible for outputting
     the cover topic -29oct13 -->
 
+  <!-- 06 Mar 2019 KJE: Targets oasis-cover.dita -->
   <xsl:template match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'cover')]" mode="cover">
     <xsl:apply-templates mode="cover"/>
   </xsl:template>
 
-  <xsl:template match="*[contains(@class, ' topic/author ')]" mode="cover notices">
-    <!-- Suppress the cover topic's title -->
-  </xsl:template>
+  <!-- 06 Mar 2019 KJE: Commented the following code out; no effect on output -->
+  <!--<xsl:template match="*[contains(@class, ' topic/author ')]" mode="cover notices">
+    <!-\- Suppress the cover topic's title -\->
+  </xsl:template>-->
 
+  <!-- 06 Mar 2019 KJE: Applies oasis-h3 attribute set to oasis-cover.dita -->
   <xsl:template
     match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'cover')]/*[contains(@class, ' topic/title ')]"
     mode="cover">
@@ -35,17 +38,21 @@
     </fo:block>
   </xsl:template>
 
+  <!-- 06 Mar 2019 KJE: Targets oasis-cover.dita -->
   <xsl:template match="*[contains(@class, ' topic/section ')]" mode="cover">
     <xsl:for-each select="*">
       <xsl:choose>
+        <!-- 06 Mar 2019 KJE: Applies cover_category_label attribute set and adds a colon to title in oasis-cover.dita  -->
         <xsl:when test="contains(@class, ' topic/title ')">
           <fo:block xsl:use-attribute-sets="cover_category_label"
             ><xsl:apply-templates/>:</fo:block>
         </xsl:when>
+        <!--  06 Mar 2019 KJE: Applies template to definition list used in "Citation format" -->
         <xsl:when test="contains(@class, ' topic/dl ')">
           <xsl:apply-templates select="." mode="cover"/>
         </xsl:when>
         <xsl:otherwise>
+          <!--  06 Mar 2019 KJE:If it'a NOT a title or dl, apply attribute set -->
           <fo:block xsl:use-attribute-sets="frontmatter-indent">
             <xsl:apply-templates select="."/>
           </fo:block>
@@ -64,6 +71,7 @@
     </fo:block>
   </xsl:template>
 
+  <!--  06 Mar 2019 KJE: Apply bold formatting to dt on cover page -->
   <xsl:template match="*[contains(@class, ' topic/dt ')]" mode="cover">
     <fo:block>
       <xsl:attribute name="font-weight">bold</xsl:attribute>
@@ -71,6 +79,7 @@
     </fo:block>
   </xsl:template>
 
+  <!--  06 Mar 2019 KJE: For dt on cover page, make flush left with margin and add some padding -->
   <xsl:template match="*[contains(@class, ' topic/dd ')]" mode="cover">
     <fo:block>
       <xsl:attribute name="margin-left">0in</xsl:attribute>      
