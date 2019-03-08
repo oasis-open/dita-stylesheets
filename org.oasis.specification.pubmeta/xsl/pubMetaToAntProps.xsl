@@ -5,50 +5,30 @@
 
   <xsl:output method="xml" indent="yes"/>
 
-  <xsl:variable name="wp-abbrev">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'wp-abbrev'])"/>
-  </xsl:variable>
-  <xsl:variable name="version-id">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'version-id'])"/>
-  </xsl:variable>
-  <xsl:variable name="errata-num">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'errata-num'])"/>
-  </xsl:variable>
-  <xsl:variable name="stage-abbrev">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'stage-abbrev'])"/>
-  </xsl:variable>
-  <xsl:variable name="prev-stage-abbrev">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'prev-stage-abbrev'])"/>
-  </xsl:variable>
-  <xsl:variable name="revision-num">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'revision-num'])"/>
-  </xsl:variable>
-  <xsl:variable name="prev-revision-num">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'prev-revision-num'])"/>
-  </xsl:variable>
+  <xsl:param name="dita.temp.dir"/>
+
+  <xsl:variable name="user.input.file.name" select="replace(concat('file:///', $dita.temp.dir, '/', /job/property[@name='user.input.file']/string),'\\', '/')"/>
+  <xsl:variable name="user.input.file" select="doc($user.input.file.name)"/>
+  <xsl:variable name="wp-abbrev" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'wp-abbrev'])"/>
+  <xsl:variable name="version-id" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'version-id'])"
+    />
+  <xsl:variable name="errata-num" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'errata-num'])"/>
+  <xsl:variable name="stage-abbrev" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'stage-abbrev'])"/>
+  <xsl:variable name="prev-stage-abbrev" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'prev-stage-abbrev'])"/>
+  <xsl:variable name="revision-num" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'revision-num'])"/>
+  <xsl:variable name="prev-revision-num" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'prev-revision-num'])"
+    />
   <xsl:variable name="part-number">
     <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'part-number'])"/>
+      select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'part-number'])"/>
   </xsl:variable>
-  <xsl:variable name="abbrev-part-name">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'abbrev-part-name'])"/>
-  </xsl:variable>
-  <xsl:variable name="errata-artifact-type">
-    <!-- Notice that this select attribute uses a general //keydef XPath selector instead
-         of the /bookmap/frontmatter/topichead/keydef selector. This was done so that you
+  <xsl:variable name="abbrev-part-name" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'abbrev-part-name'])"/>
+  <!-- Notice that this select attribute uses a general //keydef XPath selector instead
+         of the $user.input.file/bookmap/frontmatter/topichead/keydef selector. This was done so that you
          can override this key in the errata summary bookmap by defining it directly in the
          bookmap before the part-specify key definition ditamap gets read.
     -->
-    <xsl:value-of select="normalize-space((//keydef[@keys = 'errata-artifact-type'])[1])"/>
-  </xsl:variable>
+  <xsl:variable name="errata-artifact-type" select="normalize-space((//keydef[@keys = 'errata-artifact-type'])[1])"/>
   <!-- This is needed for the errata summary document cover. Specifically, it's here to
        to trigger the correct file name construction for parts 0 - 3 in the Additional
        artifacts section.-->
@@ -62,26 +42,17 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-  <xsl:variable name="oasis-dita-uri-base">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'oasis-dita-uri-base'])"
+  <xsl:variable name="oasis-dita-uri-base" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'oasis-dita-uri-base'])"
     />
-  </xsl:variable>
   <xsl:variable name="outputbasefilename">
+    <!-- Tagsmiths: For some reason, Saxon doesn't like evaulating a local function from variable/@select. 21jun18 -->
     <xsl:value-of
       select="spec:getBaseFilename($errata-num, $errata-artifact-type, $stage-abbrev, $revision-num, $part-number, $abbrev-part-name)"
     />
   </xsl:variable>
-  <xsl:variable name="grammarfilename">
-    <xsl:value-of select="replace($outputbasefilename, '-complete', '-complete-grammars.zip')"/>
-  </xsl:variable>
-  <xsl:variable name="sourcefilename">
-    <xsl:value-of select="concat($outputbasefilename, '-dita.zip')"/>
-  </xsl:variable>
-  <xsl:variable name="approval-date">
-    <xsl:value-of
-      select="normalize-space(/bookmap/frontmatter/topichead/keydef[@keys = 'approval-date'])"/>
-  </xsl:variable>
+  <xsl:variable name="grammarfilename" select="replace($outputbasefilename, '-complete', '-complete-grammars.zip')"/>
+  <xsl:variable name="sourcefilename" select="concat($outputbasefilename, '-dita.zip')"/>
+  <xsl:variable name="approval-date" select="normalize-space($user.input.file/bookmap/frontmatter/topichead/keydef[@keys = 'approval-date'])"/>
   <xsl:variable name="spec-release-type">
     <xsl:choose>
       <xsl:when test="$stage-abbrev = 'csd'">
