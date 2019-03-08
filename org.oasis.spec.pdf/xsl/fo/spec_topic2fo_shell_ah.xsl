@@ -1,9 +1,21 @@
 <?xml version='1.0' encoding='utf-8'?>
-<xsl:stylesheet spdf:version="2.4.1" exclude-result-prefixes="ditaarch opentopic spdf" version="2.0"
-  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
-  xmlns:spdf="org.oasis.spec.pdf" xmlns:opentopic="http://www.idiominc.com/opentopic"
-  xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 08 Mar 2019 KJE: Initial creation. Updated to match file shipped  -->
+<!--                  with DITA-OT 3.3                                 -->
+<!--                                                                   -->
+<!-- =====================++++++++++++================================ -->
+
+<xsl:stylesheet spdf:version="2.4.1" 
+                exclude-result-prefixes="ditaarch opentopic spdf" 
+                version="2.0"
+                xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+                xmlns:spdf="org.oasis.spec.pdf" 
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
   <!-- spec.pdf: Base imports are interleaved with spec overrides. The spec overrides are
        interleaved to minimize template precedence problems. -->  
@@ -38,9 +50,9 @@
   <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_tables.xsl"/>
   
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/root-processing.xsl"/>
-  <xsl:import href="plugin:org.dita.pdf2.axf:xsl/fo/root-processing_axf.xsl"/>
-  
-  <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/commons-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/topic-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/concept-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/commons-attr.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_commons-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/commons.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_commons.xsl"/>
@@ -103,28 +115,25 @@
   <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_xml-domain-attr.xsl"/>
   <xsl:import href="plugin:org.dita.pdf2:xsl/fo/xml-domain.xsl"/>
   <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_xml-domain.xsl"/>
-  
-  <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/static-content-attr.xsl"/>
-  <xsl:import href="plugin:org.oasis.spec.pdf:cfg/fo/attrs/spec_static-content-attr.xsl"/>
-  <xsl:import href="plugin:org.dita.pdf2:xsl/fo/static-content.xsl"/>
-  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_static-content.xsl"/>
-  
-  <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/glossary-attr.xsl"/>
-  <xsl:import href="plugin:org.dita.pdf2:xsl/fo/glossary.xsl"/>
-  
-  <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/lot-lof-attr.xsl"/>
-  <xsl:import href="plugin:org.dita.pdf2:xsl/fo/lot-lof.xsl"/>
-  
-  <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/learning-elements-attr.xsl"/>
-  <xsl:import href="plugin:org.dita.pdf2:xsl/fo/learning-elements.xsl"/>
-  
-  <xsl:import href="plugin:org.dita.pdf2:xsl/fo/flagging.xsl"/>
-  <xsl:import href="plugin:org.dita.pdf2:xsl/fo/flagging-from-preprocess.xsl"/>
-  <xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_flagging-from-preprocess.xsl"/>
-  
-  <!-- Tagsmiths: The following paramaters are components used for oasis naming conventions. 15jun16 -->
-  <xsl:param name="outputfilebasename"/>
-  
-  <!--<xsl:import href="plugin:org.oasis.spec.pdf:xsl/fo/spec_utils.xsl"/>-->
-  
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/svg-domain-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/svg-domain.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/hazard-d-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/hazard-d.xsl"/>
+    
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/static-content-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/static-content.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/glossary-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/glossary.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/lot-lof-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/lot-lof.xsl"/>
+    
+    <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/learning-elements-attr.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/learning-elements.xsl"/>
+    
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/flagging.xsl"/>
+    <xsl:import href="plugin:org.dita.pdf2:xsl/fo/flagging-from-preprocess.xsl"/>
+
+
+    <xsl:output method="xml" encoding="utf-8" indent="no"/>
+
 </xsl:stylesheet>
