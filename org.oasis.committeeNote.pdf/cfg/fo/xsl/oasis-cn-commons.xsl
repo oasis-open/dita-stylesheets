@@ -7,6 +7,7 @@
 <!-- 21 Jun 2015  BT: Added additional override for chapter titles,    -->
 <!--                  needed for more recent versions of DITA-OT.      -->
 <!-- 16 Aug 2015 KJE: Added additional override for appendix titles.   -->
+<!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

@@ -2,7 +2,7 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 07 Sep 2015: Thomas, initial draft which includes overrides to    -->
+<!-- 07 Sep 2015  BT: Iinitial draft which includes overrides to       -->
 <!--                      suppress auto-generated label.               -->
 <!--                                                                   -->
 <!-- ================================================================= --> 

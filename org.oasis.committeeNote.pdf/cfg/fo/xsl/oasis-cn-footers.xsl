@@ -3,7 +3,7 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 05 Sep 2015 KJE: Added change log. Moved text to en.xml.          -->
-<!-- o5 Jan 2016 BT: Added cnVersion variable. Modified footers.       -->
+<!-- 05 Jan 2016 BT: Added cnVersion variable. Modified footers.       -->
 <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
