@@ -38,12 +38,12 @@
   <xsl:attribute name="text-align">left</xsl:attribute>
  </xsl:attribute-set>
  
- <xsl:attribute-set name="main-document-title" use-attribute-sets="oasis-cover-font">
-  <xsl:attribute name="font-size">24pt</xsl:attribute>
-  <xsl:attribute name="padding-before">4pt</xsl:attribute>
+ <xsl:attribute-set name="main-document-title" use-attribute-sets="oasis-cover-font">  
+  <xsl:attribute name="border">none</xsl:attribute>
+  <xsl:attribute name="font-size">24pt</xsl:attribute>  
   <xsl:attribute name="margin-bottom">10pt</xsl:attribute>
   <xsl:attribute name="margin-top">10pt</xsl:attribute>
-  <xsl:attribute name="border">none</xsl:attribute>
+  <xsl:attribute name="padding-before">4pt</xsl:attribute>
  </xsl:attribute-set>
  
  <xsl:attribute-set name="oasis-h2" use-attribute-sets="oasis-cover-font">
@@ -60,25 +60,25 @@
   <xsl:attribute name="margin-top">8pt</xsl:attribute>
  </xsl:attribute-set>
  
- <xsl:attribute-set name="frontmatter-indent">
-  <!-- Eberlein 27 August 2015: Commented this out to remove identation from cover page. -->
-  <!-- <xsl:attribute name="margin-left">0.5in</xsl:attribute>-->
- </xsl:attribute-set>
- 
- <xsl:attribute-set name="cover_p">
-  <xsl:attribute name="text-indent">0em</xsl:attribute>
+ <xsl:attribute-set name="cover_p">  
   <xsl:attribute name="space-after">0.6em</xsl:attribute>
+  <xsl:attribute name="text-indent">0em</xsl:attribute>
  </xsl:attribute-set>
  
  <xsl:attribute-set name="cover_sl">
+  <xsl:attribute name="keep-with-previous.within-page">always</xsl:attribute>
   <xsl:attribute name="provisional-distance-between-starts">0mm</xsl:attribute>
   <xsl:attribute name="provisional-label-separation">0mm</xsl:attribute>
-  <xsl:attribute name="keep-with-previous.within-page">always</xsl:attribute>
  </xsl:attribute-set>
  
  <xsl:attribute-set name="cover_xref" use-attribute-sets="common.link">
   <xsl:attribute name="font-style">normal</xsl:attribute>
   <xsl:attribute name="text-decoration">underline</xsl:attribute>
+ </xsl:attribute-set>
+ 
+ <xsl:attribute-set name="frontmatter-indent">
+  <!-- Eberlein 27 August 2015: Commented this out to remove identation from cover page. -->
+  <!-- <xsl:attribute name="margin-left">0.5in</xsl:attribute>-->
  </xsl:attribute-set>
 
 </xsl:stylesheet>
