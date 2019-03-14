@@ -2,8 +2,8 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 07 Sep 2015  BT: Iinitial draft which includes overrides to       -->
-<!--                      suppress auto-generated label.               -->
+<!-- 07 Sep 2015  BT: Initial draft which includes overrides to        -->
+<!--                  suppress auto-generated label.                   -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 

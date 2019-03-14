@@ -7,6 +7,7 @@
 <!-- 12 Jul 2016  BT: Changed xref from fo:inline to fo:basic-link     -->
 <!-- 06 Mar 2019 KJE: Removed indentation from <dd>; made <dt> bold    -->
 <!--                  and added padding-top                            -->
+<!-- 14 Mar 2019 KJE: Restored code for suppressing map author on cover -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -24,10 +25,9 @@
     <xsl:apply-templates mode="cover"/>
   </xsl:template>
 
-  <!-- 06 Mar 2019 KJE: Commented the following code out; no effect on output -->
-  <!--<xsl:template match="*[contains(@class, ' topic/author ')]" mode="cover notices">
-    <!-\- Suppress the cover topic's title -\->
-  </xsl:template>-->
+  <!--14 Mar 2019 KJE: Suppress rendering the map author under "Specification URIs"--> 
+  <xsl:template match="*[contains(@class, ' topic/author ')]" mode="cover notices">
+  </xsl:template>
 
   <!-- 06 Mar 2019 KJE: Applies oasis-h3 attribute set to oasis-cover.dita -->
   <xsl:template
