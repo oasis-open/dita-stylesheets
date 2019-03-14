@@ -28,27 +28,28 @@
                         <row>
                             <entry>Default monospace font size</entry>
                             <entry>9pt</entry>
-                            <entry>Used for XML elements and attributes; inline code samples</entry>
+                            <entry>Used for XML elements and attributes; inline code samples – DITA
+                                TC only</entry>
                         </row>
                         <row>
                             <entry>Default small font size</entry>
                             <entry>9 pt</entry>
-                            <entry>Used in tables and footer</entry>
+                            <entry>Used in tables and footer – DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Font: Serif</entry>
                             <entry>Liberation</entry>
-                            <entry>Fallback fonts?</entry>
+                            <entry/>
                         </row>
                         <row>
-                            <entry>Font: San-serif</entry>
+                            <entry>Font: sans-serif</entry>
                             <entry>Liberation Sans</entry>
-                            <entry>Fallback fonts?</entry>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Font: Monospaced</entry>
                             <entry>Liberation Monospace</entry>
-                            <entry>Fallback fonts?</entry>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Font color</entry>
@@ -134,7 +135,7 @@
                         </row>
                         <row>
                             <entry>OASIS Committee Note</entry>
-                            <entry>18pt bold san-serif #707070</entry>
+                            <entry>18pt bold sans-serif #707070</entry>
                             <entry>Text is rendered under the logo</entry>
                         </row>
                         <row>
@@ -161,77 +162,77 @@
                     <tbody>
                         <row>
                             <entry>&lt;documentTitle> + Version &lt;x></entry>
-                            <entry>24 pt bold san-serif #446CAA</entry>
+                            <entry>24 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Committee Note &lt;0x></entry>
-                            <entry>18 pt bold san-serif #446CAA</entry>
+                            <entry>18 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>&lt;Day Month Year></entry>
-                            <entry>18 pt bold san-serif #446CAA</entry>
+                            <entry>18 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Specification URIs</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>This version:</entry>
-                            <entry>10 pt bold san-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Previous version:</entry>
-                            <entry>10 pt bold san-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Latest version:</entry>
-                            <entry>10 pt bold san-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Technical Committee:</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Chair:</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Editors:</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Additional artifacts</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Related work:</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Abstract:</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Status:</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Citation format:</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                     </tbody>
@@ -253,7 +254,7 @@
                     <tbody>
                         <row>
                             <entry>Font</entry>
-                            <entry>10 pt normal san-serif #000000</entry>
+                            <entry>10 pt normal sans-serif #000000</entry>
                             <entry/>
                         </row>
                         <row>
@@ -290,7 +291,7 @@
                     <tbody>
                         <row>
                             <entry>Font</entry>
-                            <entry>San-serif</entry>
+                            <entry>sans-serif</entry>
                             <entry/>
                         </row>
                         <row>
@@ -307,9 +308,9 @@
                 </tgroup>
             </table>
             <p>The footer should be rendered as a two row, three column table, as shown below. There
-                should be no row or column separators. Content in the 1st column is rendered flush
-                left; content in the 2nd column is rendered centered; content in the 3rd column is
-                rendered flush right.</p>
+                should be no row or column separators or any frame. Content in the 1st column is
+                rendered flush left; content in the 2nd column is rendered centered; content in the
+                3rd column is rendered flush right.</p>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
                 <tgroup cols="3">
                     <colspec colname="c1" colnum="1" colwidth="1.5*" align="left"/>
@@ -375,12 +376,12 @@
                         <row>
                             <entry>Background</entry>
                             <entry>#F0F0F0</entry>
-                            <entry/>
+                            <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Font</entry>
                             <entry>8 pt normal monospace</entry>
-                            <entry/>
+                            <entry>DITA TC only</entry>
                         </row>
                     </tbody>
                 </tgroup>
@@ -402,12 +403,12 @@
                         <row>
                             <entry>Definition descriptions</entry>
                             <entry>Indented 5 mm</entry>
-                            <entry/>
+                            <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Definition terms</entry>
                             <entry>Bold</entry>
-                            <entry/>
+                            <entry>DITA TC only</entry>
                         </row>
                     </tbody>
                 </tgroup>
@@ -429,27 +430,27 @@
                         <row>
                             <entry>Table headers background</entry>
                             <entry>#EDF1F8</entry>
-                            <entry/>
+                            <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table header content</entry>
-                            <entry>9 pt bold san-serif</entry>
-                            <entry/>
+                            <entry>9 pt bold sans-serif</entry>
+                            <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table cell entries</entry>
-                            <entry>9 pt normal san-serif</entry>
-                            <entry/>
+                            <entry>9 pt normal sans-serif</entry>
+                            <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table titles</entry>
-                            <entry>10 pt bold san-serif #446CAA</entry>
-                            <entry/>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
+                            <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table title label</entry>
-                            <entry>10 pt bold san-serif #446CAA</entry>
-                            <entry>Auto-generated text for the label = "Table &lt;#>: "</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
+                            <entry>DITA TC only</entry>
                         </row>
                     </tbody>
                 </tgroup>
@@ -470,28 +471,28 @@
                     <tbody>
                         <row>
                             <entry>Header level one</entry>
-                            <entry>18 pt bold san-serif #446CAA</entry>
+                            <entry>18 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Header level two</entry>
-                            <entry>14 pt bold san-serif #446CAA</entry>
+                            <entry>14 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Header level three</entry>
-                            <entry>13 pt bold san-serif #446CAA</entry>
+                            <entry>13 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Header level four</entry>
-                            <entry>12 pt bold san-serif #446CAA</entry>
+                            <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Section titles</entry>
-                            <entry>13 pt italic san-serif #446CAA</entry>
-                            <entry/>
+                            <entry>13 pt italic sans-serif #446CAA</entry>
+                            <entry>DITA TC only</entry>
                         </row>
                     </tbody>
                 </tgroup>
