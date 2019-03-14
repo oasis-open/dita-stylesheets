@@ -6,6 +6,7 @@
 <!-- 03 Mar 2015 ARH: Modifications to accommodate OASIS rebranding:   -->
 <!--                  Changes to footer margins; default header        -->
 <!-- 09 Mar 2019 KJE: Removed unused attribute sets                    -->
+<!-- 14 Mar 2019 KJE: Commented out contents of "default_header"       -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -28,14 +29,14 @@
   <!-- Header rule appears on every page except cover -->
 
   <xsl:attribute-set name="default_header">   
-    <xsl:attribute name="border-top-color">#000000</xsl:attribute>
+    <!--<xsl:attribute name="border-top-color">#000000</xsl:attribute>
     <xsl:attribute name="border-top-style">solid</xsl:attribute>
     <xsl:attribute name="border-top-width">1px</xsl:attribute>
     <xsl:attribute name="font-size">9pt</xsl:attribute>   
     <xsl:attribute name="margin-left">1in</xsl:attribute>
     <xsl:attribute name="margin-right">1in</xsl:attribute>
     <xsl:attribute name="margin-top">1in</xsl:attribute>
-    <xsl:attribute name="text-align">center</xsl:attribute>
+    <xsl:attribute name="text-align">center</xsl:attribute>-->
   </xsl:attribute-set>
 
 </xsl:stylesheet>

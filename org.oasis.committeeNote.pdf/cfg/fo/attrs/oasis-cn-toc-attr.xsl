@@ -6,6 +6,7 @@
 <!-- 03 Mar 2019 ARH: Removed horizontal-rule from __toc__header       -->
 <!--                  to accommodate OASIS rebranding                  -->
 <!-- 07 Mar 2019 KJE: Changed TOC font-size to use variable            -->
+<!-- 14 Mar 2019 KJE: Restored line above to __toc_header              -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -27,11 +28,15 @@
 
     <!-- Controls formatting of the auto-generated title on first page of TOC -->
     <xsl:attribute-set name="__toc__header" use-attribute-sets="common.title">
+        <xsl:attribute name="border-after-width">3pt</xsl:attribute>
+        <xsl:attribute name="border-top-color">#000000</xsl:attribute>
+        <xsl:attribute name="border-top-style">solid</xsl:attribute>
+        <xsl:attribute name="border-top-width">1px</xsl:attribute>
         <xsl:attribute name="font-size">18pt</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="margin-top">0pt</xsl:attribute>
         <xsl:attribute name="margin-bottom">8.4pt</xsl:attribute>
-        <xsl:attribute name="padding-top">2pt</xsl:attribute>
+        <xsl:attribute name="padding-top">16.8pt</xsl:attribute>
     </xsl:attribute-set>
     
     <!-- Controls formatting of the topic titles in the TOC -->
