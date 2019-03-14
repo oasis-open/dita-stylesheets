@@ -9,6 +9,7 @@
 <!--                  padding                                          -->
 <!-- 09 Mar 2919 KJE: Update font size for topic.topic.topic.title     -->
 <!--                  to match OASIS 2019 rebranding                   -->
+<!-- 09 Mar 2919 KJE: Remove bold highlighting from topic titles       -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -22,8 +23,7 @@
 
     <xsl:attribute-set name="topic.title" use-attribute-sets="common.title">
         <xsl:attribute name="border-after-width">3pt</xsl:attribute>
-        <xsl:attribute name="font-size">18pt</xsl:attribute>
-        <xsl:attribute name="font-weight">bold</xsl:attribute>       
+        <xsl:attribute name="font-size">18pt</xsl:attribute>     
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="padding-top">0</xsl:attribute>
         <xsl:attribute name="space-after">14pt</xsl:attribute>
@@ -31,8 +31,7 @@
     </xsl:attribute-set>
     
     <xsl:attribute-set name="topic.topic.title" use-attribute-sets="common.title">
-        <xsl:attribute name="font-size">14pt</xsl:attribute>
-        <xsl:attribute name="font-weight">bold</xsl:attribute>        
+        <xsl:attribute name="font-size">14pt</xsl:attribute>      
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="padding-top">0</xsl:attribute>        
         <xsl:attribute name="space-before">12pt</xsl:attribute>
@@ -41,7 +40,6 @@
     
     <xsl:attribute-set name="topic.topic.topic.title" use-attribute-sets="common.title">       
         <xsl:attribute name="font-size">13pt</xsl:attribute>
-        <xsl:attribute name="font-weight">bold</xsl:attribute>       
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="space-after">2pt</xsl:attribute>
         <xsl:attribute name="space-before">10pt</xsl:attribute>
