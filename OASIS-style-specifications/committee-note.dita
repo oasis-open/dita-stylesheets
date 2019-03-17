@@ -2,20 +2,21 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_trt_wgh_zgb">
     <title>Style specifications for the OASIS committee note (PDF)</title>
-    <shortdesc></shortdesc>
     <refbody>
         <section>
             <title>Basic settings</title>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
                 <title>Fonts</title>
-                <tgroup cols="3">
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
                             <entry>Property</entry>
-                            <entry>Value</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
                             <entry>Notes</entry>
                         </row>
                     </thead>
@@ -23,47 +24,44 @@
                         <row>
                             <entry>Default font size</entry>
                             <entry>10 pt</entry>
+                            <entry>80%</entry>
                             <entry/>
                         </row>
-                        <row>
-                            <entry>Default monospace font size</entry>
-                            <entry>9pt</entry>
-                            <entry>Used for XML elements and attributes; inline code samples – DITA
-                                TC only</entry>
-                        </row>
-                        <row>
-                            <entry>Default small font size</entry>
-                            <entry>9 pt</entry>
-                            <entry>Used in tables and footer – DITA TC only</entry>
-                        </row>
+                        
                         <row>
                             <entry>Font: Serif</entry>
                             <entry>Liberation</entry>
+                            <entry/>
                             <entry/>
                         </row>
                         <row>
                             <entry>Font: sans-serif</entry>
                             <entry>Liberation Sans</entry>
+                            <entry>"Liberation Sans",arial, helvetica, sans-serif</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Font: Monospaced</entry>
                             <entry>Liberation Monospace</entry>
                             <entry/>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Font color</entry>
                             <entry>#000000</entry>
+                            <entry/>
                             <entry/>
                         </row>
                         <row>
                             <entry>Font line height</entry>
                             <entry>11 pt</entry>
                             <entry/>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Font weight</entry>
                             <entry>normal</entry>
+                            <entry/>
                             <entry/>
                         </row>
                     </tbody>
@@ -71,14 +69,16 @@
             </table>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
                 <title>Page settings</title>
-                <tgroup cols="3">
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
                             <entry>Property</entry>
-                            <entry>Value</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
                             <entry>Notes</entry>
                         </row>
                     </thead>
@@ -86,26 +86,31 @@
                         <row>
                             <entry>Page size</entry>
                             <entry>8 x 11 in</entry>
+                            <entry>Not applicable</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Margin: Top</entry>
                             <entry>1 in</entry>
                             <entry/>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Margin: Bottom</entry>
                             <entry>1 in</entry>
+                            <entry/>
                             <entry/>
                         </row>
                         <row>
                             <entry>Margin: Left</entry>
                             <entry>1 in</entry>
                             <entry/>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Margin: Right</entry>
                             <entry>1 in</entry>
+                            <entry/>
                             <entry/>
                         </row>
                     </tbody>
@@ -116,14 +121,16 @@
             <title>Cover page</title>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
                 <title>Cover page header</title>
-                <tgroup cols="3">
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
                             <entry>Property or label</entry>
-                            <entry>Specification</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
                             <entry>Note</entry>
                         </row>
                     </thead>
@@ -132,15 +139,18 @@
                             <entry>Logo</entry>
                             <entry>OASISLogo-v2.0.jpg</entry>
                             <entry/>
+                            <entry/>
                         </row>
                         <row>
                             <entry>OASIS Committee Note</entry>
                             <entry>18pt bold sans-serif #707070</entry>
+                            <entry>150%</entry>
                             <entry>Text is rendered under the logo</entry>
                         </row>
                         <row>
                             <entry>Horizontal line</entry>
                             <entry>solid 1 px #707070</entry>
+                            <entry/>
                             <entry>Line is rendered underneath "OASIS Committee Note"</entry>
                         </row>
                     </tbody>
@@ -148,14 +158,16 @@
             </table>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
                 <title>Cover page section labels</title>
-                <tgroup cols="3">
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
                             <entry>Section label</entry>
-                            <entry>Specifications</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
                             <entry>Notes</entry>
                         </row>
                     </thead>
@@ -163,76 +175,91 @@
                         <row>
                             <entry>&lt;documentTitle> + Version &lt;x></entry>
                             <entry>24 pt bold sans-serif #446CAA</entry>
+                            <entry>200%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Committee Note &lt;0x></entry>
                             <entry>18 pt bold sans-serif #446CAA</entry>
+                            <entry>150%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>&lt;Day Month Year></entry>
                             <entry>18 pt bold sans-serif #446CAA</entry>
+                            <entry>150%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Specification URIs</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>This version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
+                            <entry>80%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Previous version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
+                            <entry>80%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Latest version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
+                            <entry>80%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Technical Committee:</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Chair:</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Editors:</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Additional artifacts</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Related work:</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Abstract:</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Status:</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Citation format:</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry/>
                         </row>
                     </tbody>
@@ -240,14 +267,16 @@
             </table>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
                 <title>Cover page section content</title>
-                <tgroup cols="3">
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
                             <entry>Property</entry>
-                            <entry>Specifications</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
                             <entry>Note</entry>
                         </row>
                     </thead>
@@ -255,16 +284,19 @@
                         <row>
                             <entry>Font</entry>
                             <entry>10 pt normal sans-serif #000000</entry>
+                            <entry>80%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Hyperlinks</entry>
                             <entry>blue underlined</entry>
-                            <entry>Not italicized</entry>
+                            <entry/>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Indentation</entry>
                             <entry>Text flush against left margin</entry>
+                            <entry/>
                             <entry>Including list items and content of "Citation format"
                                 section</entry>
                         </row>
@@ -274,7 +306,7 @@
         </section>
         <section>
             <title>Footers</title>
-            <p>The footer should appear on every page in the committee note.</p>
+            <p>(PDF only) The footer should appear on every page in the committee note.</p>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
                 <title>Footer content</title>
                 <tgroup cols="3">
@@ -331,44 +363,102 @@
                 </tgroup>
             </table>
         </section>
+        <!--<section><title>Headers</title><p>This header appears on every page except for the cover.</p><table frame="all" rowsep="1" colsep="1" pgwide="1"><title>Header</title><tgroup cols="3"><colspec colname="c1" colnum="1" colwidth="1*"/><colspec colname="c2" colnum="2" colwidth="1*"/><colspec colname="c3" colnum="3" colwidth="1*"/><thead><row><entry>Property or label</entry><entry>Specification</entry><entry>Note</entry></row></thead><tbody><row><entry>Horizontal line</entry><entry>solid 1 px #000000</entry><entry/></row></tbody></tgroup></table></section>-->
         <section>
-            <title>Headers</title>
-            <p>This header appears on every page except for the cover.</p>
+            <title>Body content</title>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
-                <title>Header</title>
-                <tgroup cols="3">
+                <title>Titles</title>
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
-                            <entry>Property or label</entry>
-                            <entry>Specification</entry>
-                            <entry>Note</entry>
+                            <entry>Header level</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
+                            <entry>Notes</entry>
                         </row>
                     </thead>
                     <tbody>
                         <row>
-                            <entry>Horizontal line</entry>
-                            <entry>solid 1 px #000000</entry>
+                            <entry>Header level one</entry>
+                            <entry>18 pt sans-serif #446CAA</entry>
+                            <entry>150%</entry>
+                            <entry>Line above: solid 1 px #000000</entry>
+                        </row>
+                        <row>
+                            <entry>Header level two</entry>
+                            <entry>14 pt sans-serif #446CAA</entry>
+                            <entry>120%</entry>
                             <entry/>
+                        </row>
+                        <row>
+                            <entry>Header level three</entry>
+                            <entry>13 pt sans-serif #446CAA</entry>
+                            <entry>110%</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Header level four</entry>
+                            <entry>12 pt sans-serif #446CAA</entry>
+                            <entry>100%</entry>
+                            <entry/>
+                        </row>
+                        <row audience="dita-tc">
+                            <entry>Section titles</entry>
+                            <entry>13 pt italic sans-serif #446CAA</entry>
+                            <entry>110%</entry>
+                            <entry>DITA TC only</entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
-        </section>
-        <section>
-            <title>Body content</title>
-            <table frame="all" rowsep="1" colsep="1" pgwide="1">
-                <title>Block code samples</title>
-                <tgroup cols="3">
+            <table frame="all" rowsep="1" colsep="1" pgwide="1" audience="dita-tc">
+                <title>Monospace fonts</title>
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
                     <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol4" colnum="4" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Font</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Default monospace font size</entry>
+                            <entry>9pt</entry>
+                            <entry/>
+                            <entry>Used for XML elements and attributes; inline code samples – DITA
+                                TC only</entry>
+                        </row>
+                        <row>
+                            <entry>Default small font size</entry>
+                            <entry>9 pt</entry>
+                            <entry/>
+                            <entry>Used in tables and footer – DITA TC only</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table frame="all" rowsep="1" colsep="1" pgwide="1" audience="dita-tc">
+                <title>Block code samples</title>
+                <tgroup cols="4">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
                             <entry>Property</entry>
-                            <entry>Specification</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
                             <entry>Notes</entry>
                         </row>
                     </thead>
@@ -376,26 +466,30 @@
                         <row>
                             <entry>Background</entry>
                             <entry>#F0F0F0</entry>
+                            <entry/>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Font</entry>
                             <entry>8 pt normal monospace</entry>
+                            <entry/>
                             <entry>DITA TC only</entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
-            <table frame="all" rowsep="1" colsep="1" pgwide="1">
+            <table frame="all" rowsep="1" colsep="1" pgwide="1" audience="dita-tc">
                 <title>Lists</title>
-                <tgroup cols="3">
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
                             <entry>Item</entry>
-                            <entry>Specification</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
                             <entry>Notes</entry>
                         </row>
                     </thead>
@@ -403,26 +497,30 @@
                         <row>
                             <entry>Definition descriptions</entry>
                             <entry>Indented 5 mm</entry>
+                            <entry/>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Definition terms</entry>
                             <entry>Bold</entry>
+                            <entry/>
                             <entry>DITA TC only</entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
-            <table frame="all" rowsep="1" colsep="1" pgwide="1">
+            <table frame="all" rowsep="1" colsep="1" pgwide="1" audience="dita-tc">
                 <title>Tables</title>
-                <tgroup cols="3">
+                <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
                     <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
                     <thead>
                         <row>
                             <entry>Property</entry>
-                            <entry>Specification</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
                             <entry>Notes</entry>
                         </row>
                     </thead>
@@ -430,68 +528,31 @@
                         <row>
                             <entry>Table headers background</entry>
                             <entry>#EDF1F8</entry>
+                            <entry/>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table header content</entry>
                             <entry>9 pt bold sans-serif</entry>
+                            <entry>90%</entry>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table cell entries</entry>
                             <entry>9 pt normal sans-serif</entry>
+                            <entry>90%</entry>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table titles</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table title label</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
-                            <entry>DITA TC only</entry>
-                        </row>
-                    </tbody>
-                </tgroup>
-            </table>
-            <table frame="all" rowsep="1" colsep="1" pgwide="1">
-                <title>Titles</title>
-                <tgroup cols="3">
-                    <colspec colname="c1" colnum="1" colwidth="1*"/>
-                    <colspec colname="c2" colnum="2" colwidth="1*"/>
-                    <colspec colname="c3" colnum="3" colwidth="1*"/>
-                    <thead>
-                        <row>
-                            <entry>Header level</entry>
-                            <entry>Specification</entry>
-                            <entry>Notes</entry>
-                        </row>
-                    </thead>
-                    <tbody>
-                        <row>
-                            <entry>Header level one</entry>
-                            <entry>18 pt bold sans-serif #446CAA</entry>
-                            <entry/>
-                        </row>
-                        <row>
-                            <entry>Header level two</entry>
-                            <entry>14 pt bold sans-serif #446CAA</entry>
-                            <entry/>
-                        </row>
-                        <row>
-                            <entry>Header level three</entry>
-                            <entry>13 pt bold sans-serif #446CAA</entry>
-                            <entry/>
-                        </row>
-                        <row>
-                            <entry>Header level four</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
-                            <entry/>
-                        </row>
-                        <row>
-                            <entry>Section titles</entry>
-                            <entry>13 pt italic sans-serif #446CAA</entry>
+                            <entry>100%</entry>
                             <entry>DITA TC only</entry>
                         </row>
                     </tbody>
