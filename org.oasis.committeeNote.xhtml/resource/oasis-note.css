@@ -5,27 +5,30 @@
                    remove Docbook styles; add background
                    color for thead
   08 Feb 2019 KJE: Modified styles for "no-indent"
+  15 Mar 2019 KJE: Removed bold highlighting from headers;
+                   added line above header level-1
 */
+
 body{
     background-repeat:no-repeat;
     background-position:top left;
     background-attachment:fixed;
     margin-left:18pt;
-    font-family:Calibri, Times, serif;
-    font-size:90%;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:80%;
 }
 
 /* 05 Feb 2019 KJE: Added the following */
 div.text-under-logo{
     color:#707070;
-    font-family:arial, helvetica, sans-serif;
-    font-size:18pt;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
     font-weight:bold;
 }
 
 div.committee-note-title{
-    font-family:arial, helvetica, sans-serif;
-    font-size:250%;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:200%;
     font-weight:bold;
     list-style-type:decimal;
     color:#446CAA;
@@ -33,8 +36,8 @@ div.committee-note-title{
 
 div.publication-level{
     margin-top:0.83em;
-    font-family:arial, helvetica, sans-serif;
-    font-size:170%;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
     font-weight:bold;
     list-style-type:decimal;
     color:#446CAA;
@@ -43,46 +46,51 @@ div.publication-level{
 div.approval-date{
     margin-top:0.83em;
     margin-bottom:0.83em;
-    font-family:arial, helvetica, sans-serif;
-    font-size:170%;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
     font-weight:bold;
     list-style-type:decimal;
     color:#446CAA;
 }
 
 h1.topictitle1{
+    border-top:1px solid black;
     margin-top:2em;
-    font-family:arial, helvetica, sans-serif;
-    font-size:170%;
-    font-weight:bold;
+    padding-top:10pt;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:normal;
     list-style-type:decimal;
     color:#446CAA;
 }
 
 
 h1.frontmatter-topic-title{
-    margin-top:2em;
-    font-family:arial, helvetica, sans-serif;
-    font-size:140%;
-    font-weight:bold;
+    /*border-top:1px solid black;
+    margin-top:2em;*/
+    padding-top:10pt;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:normal;
     list-style-type:decimal;
     color:#446CAA;
 }
 
 *.sectiontitle{
     color:#446CAA;
+    font-weight:normal;
 }
 
 h2.sectiontitle{
-    font-family:arial, helvetica, sans-serif;
-    font-size:140%;
-    font-weight:bold;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:100%;
+    font-weight:normal;
     list-style-type:decimal;
     color:#446CAA;
 }
 /* This|Previous|Latest versions; all cover page sections */
 h2.frontmatter-section-title{
-    font-family:arial, helvetica, sans-serif;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
     font-size:100%;
     font-weight:bold;
     list-style-type:decimal;
@@ -94,28 +102,33 @@ h2.frontmatter-section-title::after{
 }
 
 h2.topictitle2{
-    font-size:140%;
+    font-size:120%;
     color:#446CAA;
+    font-weight:normal
 }
 
 
 h3{
-    font-size:120%;
-    color:#446CAA;
+    font-size:110%;
+    color:#446CAA;    
+    font-weight:normal
 }
 
 h4{
-    color:#446CAA;
+    color:#446CAA;        
+    font-weight:normal
 }
 
 h5{
     font-style:italic;
-    color:#446CAA;
+    color:#446CAA;    
+    font-weight:normal
 }
 
 h6{
     font-variant:small-caps;
-    color:#446CAA;
+    color:#446CAA;    
+    font-weight:normal
 }
 
 .toclinks{
