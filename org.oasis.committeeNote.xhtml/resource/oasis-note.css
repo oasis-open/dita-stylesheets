@@ -7,6 +7,10 @@
   08 Feb 2019 KJE: Modified styles for "no-indent"
   15 Mar 2019 KJE: Removed bold highlighting from headers;
                    added line above header level-1
+  17 Mar 2019 KJE: Added styles for xmlelement and xmlatt;
+                   codeblock
+  18 Mar 2019 KJE: Added additional styling for <dd> on
+                   cover page and TOC
 */
 
 body{
@@ -64,6 +68,17 @@ h1.topictitle1{
     color:#446CAA;
 }
 
+/* 18 Mar 2019: Added to style TOC with line above */
+h1.frontmatter-notices-title{
+    border-top:1px solid black;
+    margin-top:2em;
+    padding-top:10pt;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:normal;
+    list-style-type:decimal;
+    color:#446CAA;
+}
 
 h1.frontmatter-topic-title{
     /*border-top:1px solid black;
@@ -129,6 +144,16 @@ h6{
     font-variant:small-caps;
     color:#446CAA;    
     font-weight:normal
+}
+
+code.xmlatt{
+    font-family:"Liberation Mono",Courier,monospace;
+    font-size:90%;
+}
+
+code.xmlelement{
+    font-family:"Liberation Mono",Courier,monospace;
+    font-size:90%;
 }
 
 .toclinks{
@@ -222,9 +247,16 @@ tfoot{
     }
 }
 
+/* KJE: Added margin-inline-start to prevent Chrome from addding
+        indentation */
 *.no-indent{
     list-style-position: inside;
+    margin-inline-start:0px;
     padding-left: 0px;
+}
+
+dd.no-indent {
+    padding-top:.5em;
 }
 
 /* end of file */

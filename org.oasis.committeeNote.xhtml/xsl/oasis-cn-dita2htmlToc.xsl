@@ -2,7 +2,9 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 05 Feb 2019 KJE: Added changed log                                -->
+<!-- 05 Feb 2019 KJE: Added change log                                 -->
+<!-- 17 Mar 2019 KJE: Init-capped "Table of contents"                  -->
+<!-- 18 Mar 2019 KJE: Modified to assign new class to TOC label        -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -42,7 +44,8 @@
 
             <xsl:value-of select="$newline"/>
             <xsl:if test="$TRANSTYPE != 'htmlhelp'">
-                <h1 class="title frontmatter-topic-title">Table of Contents</h1>
+                <!--<h1 class="title frontmatter-topic-title">Table of contents</h1>-->
+                <h1 class="title frontmatter-notices-title">Table of contents</h1>
                 <xsl:value-of select="$newline"/>
                 <div class="toclinks">
                     <xsl:apply-templates
