@@ -27,13 +27,6 @@
                             <entry>80%</entry>
                             <entry/>
                         </row>
-                        
-                        <row>
-                            <entry>Font: Serif</entry>
-                            <entry>Liberation</entry>
-                            <entry/>
-                            <entry/>
-                        </row>
                         <row>
                             <entry>Font: sans-serif</entry>
                             <entry>Liberation Sans</entry>
@@ -43,7 +36,7 @@
                         <row>
                             <entry>Font: Monospaced</entry>
                             <entry>Liberation Monospace</entry>
-                            <entry/>
+                            <entry>"Liberation Mono",Courier,monospace</entry>
                             <entry/>
                         </row>
                         <row>
@@ -194,25 +187,25 @@
                             <entry>Specification URIs</entry>
                             <entry>12 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
-                            <entry/>
+                            <entry>DITA TC: Currently rendered as 150%</entry>
                         </row>
                         <row>
                             <entry>This version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>80%</entry>
-                            <entry/>
+                            <entry>DITA TC: Currently rendered as 100%</entry>
                         </row>
                         <row>
                             <entry>Previous version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>80%</entry>
-                            <entry/>
+                            <entry>DITA TC: Currently rendered as 100%</entry>
                         </row>
                         <row>
                             <entry>Latest version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>80%</entry>
-                            <entry/>
+                            <entry>DITA TC: Currently rendered as 100%</entry>
                         </row>
                         <row>
                             <entry>Technical Committee:</entry>
@@ -297,8 +290,8 @@
                             <entry>Indentation</entry>
                             <entry>Text flush against left margin</entry>
                             <entry/>
-                            <entry>Including list items and content of "Citation format"
-                                section</entry>
+                            <entry>DITA TC: Content of "Citation format" section not rendered flush
+                                left</entry>
                         </row>
                     </tbody>
                 </tgroup>
@@ -363,7 +356,6 @@
                 </tgroup>
             </table>
         </section>
-        <!--<section><title>Headers</title><p>This header appears on every page except for the cover.</p><table frame="all" rowsep="1" colsep="1" pgwide="1"><title>Header</title><tgroup cols="3"><colspec colname="c1" colnum="1" colwidth="1*"/><colspec colname="c2" colnum="2" colwidth="1*"/><colspec colname="c3" colnum="3" colwidth="1*"/><thead><row><entry>Property or label</entry><entry>Specification</entry><entry>Note</entry></row></thead><tbody><row><entry>Horizontal line</entry><entry>solid 1 px #000000</entry><entry/></row></tbody></tgroup></table></section>-->
         <section>
             <title>Body content</title>
             <table frame="all" rowsep="1" colsep="1" pgwide="1">
@@ -386,7 +378,8 @@
                             <entry>Header level one</entry>
                             <entry>18 pt sans-serif #446CAA</entry>
                             <entry>150%</entry>
-                            <entry>Line above: solid 1 px #000000</entry>
+                            <entry>Line above: solid 1 px #000000<p>DITA TC: Not rendered for
+                                    "Notices" and "Table of contents"</p></entry>
                         </row>
                         <row>
                             <entry>Header level two</entry>
@@ -434,14 +427,14 @@
                         <row>
                             <entry>Default monospace font size</entry>
                             <entry>9pt</entry>
-                            <entry/>
+                            <entry>90%</entry>
                             <entry>Used for XML elements and attributes; inline code samples – DITA
                                 TC only</entry>
                         </row>
                         <row>
                             <entry>Default small font size</entry>
                             <entry>9 pt</entry>
-                            <entry/>
+                            <entry>80%</entry>
                             <entry>Used in tables and footer – DITA TC only</entry>
                         </row>
                     </tbody>
@@ -534,13 +527,13 @@
                         <row>
                             <entry>Table header content</entry>
                             <entry>9 pt bold sans-serif</entry>
-                            <entry>90%</entry>
+                            <entry>80%</entry>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
                             <entry>Table cell entries</entry>
                             <entry>9 pt normal sans-serif</entry>
-                            <entry>90%</entry>
+                            <entry>80%</entry>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
