@@ -7,6 +7,8 @@
   08 Feb 2019 KJE: Modified styles for "no-indent"
   15 Mar 2019 KJE: Removed bold highlighting from headers;
                    added line above header level-1
+  17 Mar 2019 KJE: Added styles for xmlelement and xmlatt;
+                   codeblock
 */
 
 body{
@@ -129,6 +131,16 @@ h6{
     font-variant:small-caps;
     color:#446CAA;    
     font-weight:normal
+}
+
+code.xmlatt{
+    font-family:"Liberation Mono",Courier,monospace;
+    font-size:90%;
+}
+
+code.xmlelement{
+    font-family:"Liberation Mono",Courier,monospace;
+    font-size:90%;
 }
 
 .toclinks{
