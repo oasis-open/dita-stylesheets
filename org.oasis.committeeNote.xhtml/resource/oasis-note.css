@@ -10,7 +10,9 @@
   17 Mar 2019 KJE: Added styles for xmlelement and xmlatt;
                    codeblock
   18 Mar 2019 KJE: Added additional styling for <dd> on
-                   cover page and TOC
+                   cover page and TOC; corrected styles for
+                   header-levels 3 and 4 to be normal;
+                   corrected some cover styles to be bold
 */
 
 body{
@@ -75,7 +77,7 @@ h1.frontmatter-notices-title{
     padding-top:10pt;
     font-family:"Liberation Sans",arial, helvetica, sans-serif;
     font-size:150%;
-    font-weight:normal;
+    font-weight:bold;
     list-style-type:decimal;
     color:#446CAA;
 }
@@ -86,7 +88,7 @@ h1.frontmatter-topic-title{
     padding-top:10pt;
     font-family:"Liberation Sans",arial, helvetica, sans-serif;
     font-size:150%;
-    font-weight:normal;
+    font-weight:bold;
     list-style-type:decimal;
     color:#446CAA;
 }
@@ -123,26 +125,15 @@ h2.topictitle2{
 }
 
 
-h3{
+.topictitle3{
     font-size:110%;
     color:#446CAA;    
     font-weight:normal
 }
 
-h4{
+.topictitle4{
+    font-size:100%;
     color:#446CAA;        
-    font-weight:normal
-}
-
-h5{
-    font-style:italic;
-    color:#446CAA;    
-    font-weight:normal
-}
-
-h6{
-    font-variant:small-caps;
-    color:#446CAA;    
     font-weight:normal
 }
 
