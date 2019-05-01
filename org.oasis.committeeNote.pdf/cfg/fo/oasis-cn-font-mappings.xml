@@ -7,6 +7,7 @@
 <!-- 20 Feb 2019 KJE: Changed serif and sans to "Liberation Sans"      -->
 <!-- 03 Mar 2019 KJE: Changed monospace to "Liberation Mono"           -->
 <!-- 07 Mar 2019 KJE: Changed serif to "Liberation Serif"              -->
+<!-- 01 May 2019 KJE: Changed monospace back to "Courier"              -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -50,7 +51,7 @@
         <font-face>ZapfDingbats</font-face>
       </physical-font>
       <physical-font char-set="SymbolsSuperscript">
-        <font-face>Calibri, Arial Unicode MS</font-face>
+        <font-face>Liberation Sans</font-face>
         <baseline-shift>20%</baseline-shift>
         <override-size>smaller</override-size>
       </physical-font>
@@ -76,7 +77,7 @@
         <font-face>ZapfDingbats</font-face>
       </physical-font>
       <physical-font char-set="SymbolsSuperscript">
-        <font-face>Cambria, Times</font-face>
+        <font-face>Liberation Serif</font-face>
         <baseline-shift>20%</baseline-shift>
         <override-size>smaller</override-size>
       </physical-font>
@@ -84,7 +85,7 @@
 
     <logical-font name="Monospaced">
       <physical-font char-set="default">
-        <font-face>Liberation Mono</font-face>
+        <font-face>Courier New, Courier</font-face>
       </physical-font>
       <physical-font char-set="Simplified Chinese">
         <font-face>AdobeSongStd-Light</font-face>

@@ -2,12 +2,13 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 05 Sep 2015 KJE: Added change log.                                -->
+<!-- 05 Sep 2015 KJE: Added change log                                 -->
 <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
 <!-- 12 Jul 2016  BT: Changed xref from fo:inline to fo:basic-link     -->
-<!-- 06 Mar 2019 KJE: Removed indentation from <dd>; made <dt> bold    -->
-<!--                  and added padding-top                            -->
 <!-- 14 Mar 2019 KJE: Restored code for suppressing map author on cover -->
+<!-- 30 Apr 2019 KJE: Commented out template for "Specification URIs"  -->
+<!-- 01 May 2019 KJE: Modified template for sl to remove need to use   -->
+<!--                  outputclass in the DITA source                   -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -33,9 +34,9 @@
   <xsl:template
     match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'cover')]/*[contains(@class, ' topic/title ')]"
     mode="cover">
-    <fo:block xsl:use-attribute-sets="oasis-h3">
+<!--    <fo:block xsl:use-attribute-sets="oasis-h3">
       <xsl:value-of select="."/>
-    </fo:block>
+    </fo:block>-->
   </xsl:template>
 
   <!-- 06 Mar 2019 KJE: Targets oasis-cover.dita -->
@@ -119,6 +120,8 @@
     </fo:block>
   </xsl:template>
 
+  <!-- KJE: Candidate for removal or incorporating pieces into another template. -->
+  <!--      It never fires, since I've removed outputclass="no-italics" from source. -->
   <!-- Apply styling for xrefs on cover page -->
   <xsl:template match="*[contains(@class, ' topic/xref ') and contains(@outputclass, 'no-italics')]">
     <fo:basic-link xsl:use-attribute-sets="cover_xref">
@@ -131,6 +134,7 @@
     </fo:basic-link>
   </xsl:template>
 
+   <!-- KJE: Candidate for removal. -->
   <xsl:template
     match="*[contains(@class, ' topic/xref ') and contains(@outputclass, 'no-italics')]/*[contains(@class, ' topic/keyword ')]">
     <xsl:apply-templates/>
@@ -176,30 +180,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- Tagsmiths override p for outputclass=no-space-before used on cover. -30oct13 -->
-  <!-- <xsl:template match="*[contains(@class, ' topic/xref ')][@type = 'fn']" priority="2">
-    <xsl:variable name="href-fragment" select="substring-after(@href, '#')"/>
-    <xsl:variable name="footnote-target"
-      select="
-        //*[contains(@class, ' topic/fn ')]
-        [@id = substring-after($href-fragment, '/')]
-        [ancestor::*[contains(@class, ' topic/topic ')]
-        [1]/@id = substring-before($href-fragment, '/')]"/>
-    <xsl:variable name="destination" select="opentopic-func:getDestinationId(@href)"/>
-    <xsl:variable name="element" select="key('key_anchor', $destination)[1]"/>
-    <xsl:variable name="referenceTitle">
-      <xsl:apply-templates select="$footnote-target" mode="footnote-callout"/>
-    </xsl:variable>
-    <!-\- Tagsmiths: Make callout an active link. 05jun15 -\->
-    <fo:basic-link xsl:use-attribute-sets="xref">
-      <xsl:call-template name="xref_guts">
-        <xsl:with-param name="destination" select="$destination"/>
-        <xsl:with-param name="element" select="$element"/>
-        <xsl:with-param name="referenceTitle" select="$referenceTitle"/>
-      </xsl:call-template>
-    </fo:basic-link>
-  </xsl:template>-->
-
+  <!-- KJE: If this template is used, it should be moved to a more appropiate file. -->
   <xsl:template match="*[contains(@class, ' topic/fn ')]" mode="footnote-callout">
     <fo:inline xsl:use-attribute-sets="fn__callout">
       <xsl:choose>
@@ -210,12 +191,10 @@
           <xsl:number level="any" count="*[contains(@class, ' topic/fn ') and not(@callout)]"/>
         </xsl:otherwise>
       </xsl:choose>
-
     </fo:inline>
   </xsl:template>
 
-  <!-- Tagsmiths override sl for outputclass=no-indent used in cover. Also, fire keep
-    rule when sl is in cover. -30oct13 -->
+  <!-- KJE: Candidate for removal. I suspect it's an artifact from another plug-in-->
   <xsl:template match="*[contains(@class, ' ut-d/imagemap ')]">
     <fo:inline>
       <xsl:call-template name="commonattributes"/>
@@ -227,11 +206,10 @@
     </fo:list-block>-->
   </xsl:template>
 
-  <!-- Tagsmiths override sl for outputclass=no-indent used in cover. Also, fire keep
-    rule when sl is in cover. -30oct13 -->
-  <xsl:template match="*[contains(@class, ' topic/sl ')]">
+    <!-- KJE: Override simple list on cover -->
+    <xsl:template match="*[contains(@class, ' topic/sl ')]">
     <xsl:choose>
-      <xsl:when test="@outputclass = 'no-indent'">
+      <xsl:when test="ancestor::*[@outputclass = 'cover']">
         <fo:list-block xsl:use-attribute-sets="cover_sl">
           <xsl:call-template name="commonattributes"/>
           <xsl:apply-templates/>
@@ -239,9 +217,6 @@
       </xsl:when>
       <xsl:otherwise>
         <fo:list-block xsl:use-attribute-sets="sl">
-          <xsl:if test="ancestor::*[@outputclass = 'cover']">
-            <xsl:attribute name="keep-with-previous.within-page">always</xsl:attribute>
-          </xsl:if>
           <xsl:call-template name="commonattributes"/>
           <xsl:apply-templates/>
         </fo:list-block>
