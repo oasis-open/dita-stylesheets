@@ -35,8 +35,8 @@
                         </row>
                         <row>
                             <entry>Font: Monospaced</entry>
-                            <entry>Liberation Monospace</entry>
-                            <entry>"Liberation Mono",Courier,monospace</entry>
+                            <entry>Courier</entry>
+                            <entry>"Courier,monospace"</entry>
                             <entry/>
                         </row>
                         <row>
@@ -184,12 +184,6 @@
                             <entry/>
                         </row>
                         <row>
-                            <entry>Specification URIs</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
-                            <entry>100%</entry>
-                            <entry>DITA TC: Currently rendered as 150%</entry>
-                        </row>
-                        <row>
                             <entry>This version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>80%</entry>
@@ -209,49 +203,49 @@
                         </row>
                         <row>
                             <entry>Technical Committee:</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Chair:</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Editors:</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Additional artifacts</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Related work:</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Abstract:</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Status:</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
                             <entry/>
                         </row>
                         <row>
                             <entry>Citation format:</entry>
-                            <entry>12 pt bold sans-serif #446CAA</entry>
+                            <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>100%</entry>
                             <entry/>
                         </row>
@@ -290,8 +284,7 @@
                             <entry>Indentation</entry>
                             <entry>Text flush against left margin</entry>
                             <entry/>
-                            <entry>DITA TC: Content of "Citation format" section not rendered flush
-                                left</entry>
+                            <entry/>
                         </row>
                     </tbody>
                 </tgroup>
@@ -397,6 +390,18 @@
                             <entry>Header level four</entry>
                             <entry>12 pt sans-serif #446CAA</entry>
                             <entry>100%</entry>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Header level five</entry>
+                            <entry>11 pt sans-serif #446CAA</entry>
+                            <entry/>
+                            <entry/>
+                        </row>
+                        <row>
+                            <entry>Header level six</entry>
+                            <entry>10 pt sans-serif #446CAA</entry>
+                            <entry/>
                             <entry/>
                         </row>
                         <row audience="dita-tc">

@@ -8,7 +8,10 @@
 <!-- 01 Feb 2019 KJE: Implemented OASIS redesign for committee note:   -->
 <!--                  removed attribute sets for cover page sidebar;   -->
 <!--                  added attribute set for cover page header        -->
+<!-- 06 Mar 2019 KJE: Removed indentation from <dd>; made <dt> bold    -->
+<!--                  and added padding-top                            -->
 <!-- 07 Mar 2019 KJE: Changed serif to sans-serif                      -->
+<!-- 30 Apr 2019 KJE: Changed cover label fonts to 10pt                -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -52,11 +55,11 @@
  </xsl:attribute-set>
  
  <xsl:attribute-set name="oasis-h3" use-attribute-sets="oasis-cover-font">
-  <xsl:attribute name="font-size">12pt</xsl:attribute>
+  <xsl:attribute name="font-size">10pt</xsl:attribute>
  </xsl:attribute-set>
  
  <xsl:attribute-set name="cover_category_label" use-attribute-sets="oasis-cover-font">
-  <xsl:attribute name="font-size">12pt</xsl:attribute>
+  <xsl:attribute name="font-size">10pt</xsl:attribute>
   <xsl:attribute name="margin-top">8pt</xsl:attribute>
  </xsl:attribute-set>
  
@@ -80,5 +83,5 @@
   <!-- Eberlein 27 August 2015: Commented this out to remove identation from cover page. -->
   <!-- <xsl:attribute name="margin-left">0.5in</xsl:attribute>-->
  </xsl:attribute-set>
-
+ 
 </xsl:stylesheet>
