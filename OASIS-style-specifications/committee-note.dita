@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="reference_trt_wgh_zgb">
-    <title>Style specifications for the OASIS committee note (PDF)</title>
+    <title>Style specifications for the OASIS committee note</title>
     <refbody>
         <section>
             <title>Basic settings</title>
@@ -35,8 +35,8 @@
                         </row>
                         <row>
                             <entry>Font: Monospaced</entry>
-                            <entry>Courier</entry>
-                            <entry>"Courier,monospace"</entry>
+                            <entry>Courier New, Courier</entry>
+                            <entry>"Courier New", Courier,monospace</entry>
                             <entry/>
                         </row>
                         <row>
@@ -187,19 +187,19 @@
                             <entry>This version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>80%</entry>
-                            <entry>DITA TC: Currently rendered as 100%</entry>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Previous version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>80%</entry>
-                            <entry>DITA TC: Currently rendered as 100%</entry>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Latest version:</entry>
                             <entry>10 pt bold sans-serif #446CAA</entry>
                             <entry>80%</entry>
-                            <entry>DITA TC: Currently rendered as 100%</entry>
+                            <entry/>
                         </row>
                         <row>
                             <entry>Technical Committee:</entry>
@@ -372,7 +372,7 @@
                             <entry>18 pt sans-serif #446CAA</entry>
                             <entry>150%</entry>
                             <entry>Line above: solid 1 px #000000<p>DITA TC: Not rendered for
-                                    "Notices" and "Table of contents"</p></entry>
+                                    "Notices" and "Table of contents" in XHTML</p></entry>
                         </row>
                         <row>
                             <entry>Header level two</entry>
