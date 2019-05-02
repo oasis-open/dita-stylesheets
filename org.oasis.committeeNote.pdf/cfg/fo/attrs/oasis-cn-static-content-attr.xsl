@@ -7,6 +7,7 @@
 <!--                  Changes to footer margins; default header        -->
 <!-- 09 Mar 2019 KJE: Removed unused attribute sets                    -->
 <!-- 14 Mar 2019 KJE: Commented out contents of "default_header"       -->
+<!-- 02 May 2019 KJE: Changed footer font size to 8 pt                 -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -18,7 +19,7 @@
   <!-- Footer appears on every page, including cover -->
   
   <xsl:attribute-set name="default_footer">
-    <xsl:attribute name="font-size">9pt</xsl:attribute>
+    <xsl:attribute name="font-size">8pt</xsl:attribute>
     <xsl:attribute name="margin-bottom">0pt</xsl:attribute>
     <xsl:attribute name="margin-left">-1.5in</xsl:attribute>
     <xsl:attribute name="margin-right">-1.5in</xsl:attribute>
