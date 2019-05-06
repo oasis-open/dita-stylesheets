@@ -9,6 +9,9 @@
 <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
 <!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
 <!--                  Removed left cover-page flow                     -->
+<!-- 05 May 2019 KJE: Added comments; implemented changed names for    -->
+<!--                  attribute sets                                   -->
+<!-- 06 May 2019 KJE: Removed call to obsolete variable                -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -23,6 +26,7 @@
       xsl:use-attribute-sets="__force__page__count">
       <xsl:call-template name="insertFrontMatterStaticContents"/>
       
+      <!-- Render the OASIS logo and "Committee Note" -->
       <fo:flow flow-name="xsl-region-body">
         <fo:block>          
           <fo:block>
@@ -40,27 +44,20 @@
             </xsl:call-template>
           </fo:block>
           
-          <!-- Document title-->
-          
+          <!-- Render the document title-->         
           <fo:block xsl:use-attribute-sets="main-document-title">
-            <xsl:value-of select="$hwDocumentTitle"/>
+            <xsl:value-of select="$documentTitle"/>
           </fo:block>
           
-          <!-- Status -->
-          
-          <fo:block xsl:use-attribute-sets="oasis-h2">
+          <!-- Render the stage of the document -->          
+          <fo:block xsl:use-attribute-sets="cover-stage-date">
             <fo:block>
-              <xsl:value-of select="$specSubtitle1"/>
+              <xsl:value-of select="$documentStage"/>
             </fo:block>
-            <xsl:if test="not(normalize-space($specSubtitle2) = '')">
-              <fo:block>
-                <xsl:value-of select="$specSubtitle2"/>
-              </fo:block>
-            </xsl:if>
           </fo:block>
           
-          <!-- Approval date -->
-          <fo:block xsl:use-attribute-sets="oasis-h2">
+          <!-- Render the stage date -->
+          <fo:block xsl:use-attribute-sets="cover-stage-date">
             <xsl:value-of
               select="
               /*[contains(@class, ' bookmap/bookmap ')]/*
@@ -69,13 +66,14 @@
             />
           </fo:block>
           
-          <!-- Process the cover topic. -->
+          <!-- Process the OASIS cover-information topic -->
           <fo:block>
             <xsl:apply-templates
               select="/*[contains(@class, ' bookmap/bookmap ')]/*[contains(@class, ' topic/topic ')][@outputclass = 'cover']"
               mode="cover"/>
           </fo:block>
-          <!-- Process the notices topic. -->
+          
+          <!-- Process the OASIS notices topic -->
           <fo:block padding-top="10pt">
             <xsl:apply-templates
               select="/*[contains(@class, ' bookmap/bookmap ')]/*[contains(@class, ' topic/topic ')][@outputclass = 'frontmatternotices']"
@@ -86,10 +84,9 @@
     </fo:page-sequence>
   </xsl:template>
   
+      <!-- Suppress the default chapter and appendix rendering.   -->
+    <!-- Retain the code that creates anchors for link targets. -->
   <xsl:template name="insertChapterFirstpageStaticContent">
-    <!-- Avoid the default large "Chapter [newline] #" style heading at the
-         top of chapters and appendices. Only save the portion that creates
-         anchors for link targets. -->
     <xsl:param name="type"/>
     <fo:block>
       <xsl:attribute name="id">
