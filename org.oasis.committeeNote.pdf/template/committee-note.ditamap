@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap>
+    <booktitle>
+        <mainbooktitle outputclass="documentTitle">&lt;Name of committee note> Version
+            &lt;x.x></mainbooktitle>
+        <booktitlealt outputclass="documentStage"><keyword keyref="stage"/></booktitlealt>
+        <booktitlealt outputclass="stageDate"><keyword keyref="stage-date"/></booktitlealt>
+    </booktitle>
+    <bookmeta>
+        <!--KJE: This optional metadata is surfaced ...-->
+        <shortdesc>&lt;Name of the committee note></shortdesc>
+        <author>&lt;Name of the OASIS Technical Committee></author>
+        <keywords>
+            <!--KJE: Add optional keywords. These are used to ...-->
+            <keyword/>
+            <keyword/>
+            <keyword/>
+        </keywords>
+        <bookrights>
+            <!--KJE: The year of publication is used in the copyright statement in the PDF footer.-->
+            <copyrfirst>
+                <year>&lt;Add year of publication></year>
+            </copyrfirst>
+            <bookowner>
+                <organization>OASIS</organization>
+            </bookowner>
+        </bookrights>
+    </bookmeta>
+    <frontmatter>
+        <mapref href="resources/key-definitions.ditamap" format="ditamap"
+            processing-role="resource-only"/>
+        <mapref href="resources/subjectScheme.ditamap" format="ditamap"
+            processing-role="resource-only"/>
+        <notices>
+            <topicref href="frontmatter/cover-page-information.dita" toc="no" linking="none"/>
+            <topicref href="frontmatter/notices.dita" toc="no" linking="none"/>
+        </notices>
+    </frontmatter>
+    <chapter href="introduction/introduction.ditamap" format="ditamap"/>
+    <appendix href="acknowledgments/acknowledgments.dita"/>
+    <appendix href="revision-history/revision-history.dita"/>
+</bookmap>
