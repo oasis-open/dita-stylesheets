@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="acknowledgments">
+    <title>Acknowledgments</title>
+    <shortdesc>The following individuals participated in the creation of this document and are
+        gratefully acknowledged.</shortdesc>
+    <body>
+        <sl>
+            <sli>&lt;Name, Company | Individual member></sli>
+        </sl>
+        <p>In addition, the &lt;name of OASIS TC> also would like to recognize the following people
+            for their insights and support:</p>
+        <sl>
+            <sli>&lt;Name></sli>
+            <sli>&lt;Name></sli>
+        </sl>
+    </body>
+</topic>

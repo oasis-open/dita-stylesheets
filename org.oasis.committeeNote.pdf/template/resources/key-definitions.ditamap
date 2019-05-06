@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>Key definitions</title>
+ <topichead>
+  <!--Cover page text-->
+  <topicmeta>
+   <navtitle>Cover page text</navtitle>
+  </topicmeta>
+  <keydef keys="stage">
+   <!--Stage and revision-->
+   <!--The sequence is Working Draft, Committee Note Draft, Committee Note Public Review Draft, and Committee Note.-->
+   <!--See http://docs.oasis-open.org/specGuidelines/ndr/namingDirectives.html#versioning for more information.-->
+   <topicmeta>
+    <linktext>Working Draft 01</linktext>
+   </topicmeta>
+  </keydef>
+  <keydef keys="stage-date">
+   <!--Date of publication-->
+   <!--For all stages but Working Draft, this should be the date that the document was approved by the Technical Committee.-->
+   <topicmeta>
+    <linktext>Day month year</linktext>
+   </topicmeta>
+  </keydef>
+ </topichead>
+ <topichead>
+  <!-- This version URLs-->
+  <topicmeta>
+   <navtitle>This version</navtitle>
+  </topicmeta>
+  <!-- Needs to have the latest version URLin @href-->
+  <!--Needs keys for HTML, PDF, and DITA source-->
+  <keydef keys="this-html" scope="external" format="html"/>
+  <keydef keys="this-pdf" scope="external" format="pdf"/>
+  <keydef keys="this-dita" scope="external" format="zip"/>
+ </topichead>
+ <topichead>
+  <!-- Previous version URLs-->
+  <topicmeta>
+   <navtitle>Previous version</navtitle>
+  </topicmeta>
+  <!--Needs to have the previous version URL in @href -->
+  <!--Needs keys for HTML and PDF only-->
+  <keydef keys="previous-html" scope="external" format="html"/>
+  <keydef keys="previous-pdf" scope="external" format="pdf"/>
+ </topichead>
+ <topichead>
+  <!-- Latest version URLs-->
+  <topicmeta>
+   <navtitle>Latest version</navtitle>
+  </topicmeta>
+  <!-- Needs to have no OASIS metadata in the URL specified by @href-->
+  <!-- Do not change as the committee note advances through the OASIS stages. These URLs are symlinks that redirect.-->
+  <!--Needs keys for HTML and PDF only-->
+  <keydef keys="latest-html" format="html" scope="external"/>
+  <keydef keys="latest-pdf" scope="external" format="pdf"/>
+ </topichead>
+ <topichead>
+  <!-- Latest versions of the DITA specification-->
+  <topicmeta>
+   <navtitle>Latest versions of the DITA specification</navtitle>
+  </topicmeta>
+  <!-- Needs to have no OASIS metadata in @href and link text-->
+  <!-- Do not change this as the specification advances through the different phases-->
+  <!--HTML format only-->
+  <keydef keys="latest-errata-html"
+   href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/dita-v1.3-errata02-os.html"
+   scope="external" format="html"/>
+  <keydef keys="latest-part-0-html"
+   href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part0-overview.html" scope="external"
+   format="html"/>
+  <keydef keys="latest-part-1-html"
+   href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part1-base.html" scope="external"
+   format="html"/>
+  <keydef keys="latest-part-2-html"
+   href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part2-tech-content.html"
+   scope="external" format="html"/>
+  <keydef keys="latest-part-3-html"
+   href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part3-all-inclusive.html"
+   scope="external" format="html"/>
+ </topichead>
+ <topichead>
+  <!--External URIs-->
+  <topicmeta>
+   <navtitle>External URLs</navtitle>
+  </topicmeta>
+  <keydef keys="tc-comment" format="html" scope="external"
+   href="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=dita"/>
+  <keydef keys="oasis-ipr" format="html" scope="external"
+   href="https://www.oasis-open.org/policies-guidelines/ipr"/>
+ </topichead>
+</map>
