@@ -14,6 +14,7 @@
 <!--                  attributes, removed unused templates, added      -->
 <!--                  comments, and rearranged order                   -->
 <!-- 05 May 2019 KJE: Renamed attribute sets to be more intuitive      -->
+<!-- 06 May 2019 KJE: Changed @outputclass values to be more intuitive -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -22,14 +23,6 @@
                 xmlns:fo="http://www.w3.org/1999/XSL/Format" 
                 xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
                 version="2.0">
-  
-  <!-- This template is fired from oasis-cn-front-matter.xsl.                -->
-  <!-- Targets the cover-information topic; fires templates with mode="cover"-->
-<!--  <xsl:template 
-    match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'cover')]" 
-    mode="cover">
-    <xsl:apply-templates mode="cover"/>
-  </xsl:template>-->
   
   
   <!-- SUPPRESSES CONTENT THAT WE DO NOT WANT RENDERED -->
@@ -41,10 +34,11 @@
     mode="cover">
   </xsl:template>
 
-  <!-- Suppresses rendering the map author on the cover page, which is a PDF2 default --> 
+  <!-- Suppresses rendering the map author on the cover page   --> 
+  <!-- or notices. This behaviour comes from the PDF2 plug-in. -->
   <xsl:template 
     match="*[contains(@class, ' topic/author ')]" 
-    mode="cover">
+    mode="cover notices">
   </xsl:template>
 
 
@@ -164,14 +158,14 @@
   <!-- Templates with mode="notices" are fired from oasis-cn-front-matter.xsl. -->
   
   <xsl:template 
-    match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'frontmatternotices')]"
+    match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'notices')]"
     mode="notices">
     <xsl:apply-templates mode="notices"/>
   </xsl:template>
   
   <!-- Format title of "Notices" and make it start on a new page -->
   <xsl:template
-    match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'frontmatternotices')]/*[contains(@class, ' topic/title ')]"
+    match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'notices')]/*[contains(@class, ' topic/title ')]"
     mode="notices">
     <fo:block page-break-before="always" xsl:use-attribute-sets="cover-stage-date">
       <xsl:apply-templates/>

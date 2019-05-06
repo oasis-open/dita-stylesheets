@@ -11,7 +11,8 @@
 <!--                  Removed left cover-page flow                     -->
 <!-- 05 May 2019 KJE: Added comments; implemented changed names for    -->
 <!--                  attribute sets                                   -->
-<!-- 06 May 2019 KJE: Removed call to obsolete variable                -->
+<!-- 06 May 2019 KJE: Removed call to obsolete variable, changed       -->
+<!--                  variable names, outputclass values               -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -62,21 +63,25 @@
               select="
               /*[contains(@class, ' bookmap/bookmap ')]/*
               /*[contains(@class, ' bookmap/booktitle ')]
-              /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'specificationApproved']"
+              /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'stageDate']"
             />
           </fo:block>
           
           <!-- Process the OASIS cover-information topic -->
           <fo:block>
             <xsl:apply-templates
-              select="/*[contains(@class, ' bookmap/bookmap ')]/*[contains(@class, ' topic/topic ')][@outputclass = 'cover']"
+              select="
+              /*[contains(@class, ' bookmap/bookmap ')]
+              /*[contains(@class, ' topic/topic ')][@outputclass = 'cover']"
               mode="cover"/>
           </fo:block>
           
           <!-- Process the OASIS notices topic -->
           <fo:block padding-top="10pt">
             <xsl:apply-templates
-              select="/*[contains(@class, ' bookmap/bookmap ')]/*[contains(@class, ' topic/topic ')][@outputclass = 'frontmatternotices']"
+              select="
+              /*[contains(@class, ' bookmap/bookmap ')]
+              /*[contains(@class, ' topic/topic ')][@outputclass = 'notices']"
               mode="notices"/>
           </fo:block>
         </fo:block>
