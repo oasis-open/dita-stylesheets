@@ -11,7 +11,9 @@
 <!-- 06 Mar 2019 KJE: Removed indentation from <dd>; made <dt> bold    -->
 <!--                  and added padding-top                            -->
 <!-- 07 Mar 2019 KJE: Changed serif to sans-serif                      -->
-<!-- 30 Apr 2019 KJE: Changed cover label fonts to 10pt                -->
+<!-- 30 Apr 2019 KJE: Changed section titles to 10pt                   -->
+<!-- 05 May 2019 KJE: Renamed attribute sets to be more intuitive;     -->
+<!--                  removed unused attribute sets                    -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -41,6 +43,7 @@
   <xsl:attribute name="text-align">left</xsl:attribute>
  </xsl:attribute-set>
  
+ <!-- Styles the main title of the document -->
  <xsl:attribute-set name="main-document-title" use-attribute-sets="oasis-cover-font">  
   <xsl:attribute name="border">none</xsl:attribute>
   <xsl:attribute name="font-size">24pt</xsl:attribute>  
@@ -49,39 +52,37 @@
   <xsl:attribute name="padding-before">4pt</xsl:attribute>
  </xsl:attribute-set>
  
- <xsl:attribute-set name="oasis-h2" use-attribute-sets="oasis-cover-font">
+  <!-- Styles the stage and date -->
+ <xsl:attribute-set name="cover-stage-date" use-attribute-sets="oasis-cover-font">
   <xsl:attribute name="font-size">18pt</xsl:attribute>
   <xsl:attribute name="margin-bottom">11pt</xsl:attribute>
  </xsl:attribute-set>
  
- <xsl:attribute-set name="oasis-h3" use-attribute-sets="oasis-cover-font">
-  <xsl:attribute name="font-size">10pt</xsl:attribute>
- </xsl:attribute-set>
- 
- <xsl:attribute-set name="cover_category_label" use-attribute-sets="oasis-cover-font">
+   <!-- Styles the section titles -->
+ <xsl:attribute-set name="cover-section-title" use-attribute-sets="oasis-cover-font">
   <xsl:attribute name="font-size">10pt</xsl:attribute>
   <xsl:attribute name="margin-top">8pt</xsl:attribute>
  </xsl:attribute-set>
  
- <xsl:attribute-set name="cover_p">  
+ <!-- Styles the first paragraph after a cover-page section title -->
+ <!-- The paragraphs are rendered close to the title              -->
+ <xsl:attribute-set name="cover-p">  
   <xsl:attribute name="space-after">0.6em</xsl:attribute>
   <xsl:attribute name="text-indent">0em</xsl:attribute>
  </xsl:attribute-set>
  
- <xsl:attribute-set name="cover_sl">
+ <!-- Styles the simple lists on the cover page      -->
+ <!-- The lists are rendered without any indentation -->
+ <xsl:attribute-set name="cover-sl">
   <xsl:attribute name="keep-with-previous.within-page">always</xsl:attribute>
   <xsl:attribute name="provisional-distance-between-starts">0mm</xsl:attribute>
   <xsl:attribute name="provisional-label-separation">0mm</xsl:attribute>
  </xsl:attribute-set>
- 
- <xsl:attribute-set name="cover_xref" use-attribute-sets="common.link">
+
+ <!-- Styles the cross references on the cover page -->
+ <xsl:attribute-set name="cover-xref" use-attribute-sets="common.link">
   <xsl:attribute name="font-style">normal</xsl:attribute>
   <xsl:attribute name="text-decoration">underline</xsl:attribute>
- </xsl:attribute-set>
- 
- <xsl:attribute-set name="frontmatter-indent">
-  <!-- Eberlein 27 August 2015: Commented this out to remove identation from cover page. -->
-  <!-- <xsl:attribute name="margin-left">0.5in</xsl:attribute>-->
  </xsl:attribute-set>
  
 </xsl:stylesheet>

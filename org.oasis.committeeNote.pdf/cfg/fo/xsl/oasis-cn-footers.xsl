@@ -3,8 +3,9 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 05 Sep 2015 KJE: Added change log. Moved text to en.xml.          -->
-<!-- 05 Jan 2016 BT: Added cnVersion variable. Modified footers.       -->
+<!-- 05 Jan 2016  BT: Added cnVersion variable. Modified footers.      -->
 <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
+<!-- 06 May 2019 KJE: Renamed variables, removed obsolete variables    -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -18,7 +19,7 @@
  <!-- Based on metadata from root DITA map -->
  <!-- Used in file names and variables called in footers -->
  
- <xsl:variable name="hwDocumentTitle">
+ <xsl:variable name="documentTitle">
   <xsl:value-of
    select="
    /*[contains(@class, ' bookmap/bookmap ')]/*
@@ -27,22 +28,16 @@
   />
  </xsl:variable>
  
- <xsl:variable name="specSubtitle1"
+ <xsl:variable name="documentStage"
   select="
   /*[contains(@class, ' bookmap/bookmap ')]/*
   /*[contains(@class, ' bookmap/booktitle ')]
-  /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'specificationSubtitle1']"/>
- 
- <xsl:variable name="specSubtitle2"
-  select="
-  /*[contains(@class, ' bookmap/bookmap ')]/*
-  /*[contains(@class, ' bookmap/booktitle ')]
-  /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'specificationSubtitle2']"/>
+  /*[contains(@class, ' bookmap/booktitlealt ')][@outputclass = 'documentStage']"/>
  
  <!-- VARIABLES: FOOTERS -->
  
  <!-- Variable: Approval date --> 
- <xsl:variable name="oasis-date">
+ <xsl:variable name="documentDate">
   <xsl:value-of
    select="
    /*[contains(@class, ' bookmap/bookmap ')]/*

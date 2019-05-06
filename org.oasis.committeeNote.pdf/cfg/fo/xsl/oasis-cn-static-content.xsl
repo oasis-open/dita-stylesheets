@@ -9,6 +9,7 @@
 <!-- 03 Mar 2019 ARH: Implemented OASIS redesign for committee note:   -->
 <!--                  removed border-top from default header and       -->
 <!--                  adjusted margin-bottom                           -->
+<!-- 06 May 2019 KJE: Changed names of variable called for footer      -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -171,7 +172,7 @@
                         <fo:table-cell>
                             <!-- approval date -->
                             <fo:block xsl:use-attribute-sets="default_footer" text-align="right">
-                                <xsl:value-of select="$oasis-date"/>
+                                <xsl:value-of select="$documentDate"/>
                             </fo:block>
                         </fo:table-cell>
                     </fo:table-row>
