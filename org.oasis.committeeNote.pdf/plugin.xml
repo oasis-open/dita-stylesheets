@@ -1,7 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
+
+<!-- ===================== CHANGE LOG ================================ -->
+<!--                                                                   -->
+<!-- 08 May 2019 KJE: Added change log after making modifications      -->
+<!--                  based on call with RDA                           -->
+<!--                                                                   -->
+<!-- ================================================================= --> 
+
 <plugin id="org.oasis.committeeNote.pdf">
     <require plugin="org.dita.pdf2"/>
     <feature extension="dita.conductor.transtype.check" value="oasis-pdf-committeeNote" type="txt"/>
-    <feature extension="dita.conductor.target.relative" value="build.xml" type="file"/>
+        <feature extension="dita.conductor.transtype.check" value="oasis-pdf-specification" type="txt"/>
+    <feature extension="ant.import" value="build-oasis-pdf-committeeNote.xml" type="file"/>
     <feature extension="dita.conductor.pdf2.param" type="file" value="PDFTransformParameters.xml"/>
 </plugin>
