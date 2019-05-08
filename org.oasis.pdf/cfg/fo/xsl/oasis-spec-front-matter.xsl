@@ -2,17 +2,7 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 05 Sep 2015 WEK: Modified to generate sidebar on cover.           -->
-<!-- 05 Sep 2015 KJE: Reworked code to generate OASIS styling.         -->
-<!--                  Moved formatting to attribute sets. Moved        -->
-<!--                  text to en.xml file.                             -->
-<!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
-<!-- 01 Feb 2016 KJE: Implemented OASIS redesign for committee note:   -->
-<!--                  Removed left cover-page flow                     -->
-<!-- 05 May 2019 KJE: Added comments; implemented changed names for    -->
-<!--                  attribute sets                                   -->
-<!-- 06 May 2019 KJE: Removed call to obsolete variable, changed       -->
-<!--                  variable names, outputclass values               -->
+<!-- 08 May 2019 KJE: Initial creation                                 -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -27,10 +17,10 @@
       xsl:use-attribute-sets="__force__page__count">
       <xsl:call-template name="insertFrontMatterStaticContents"/>
       
-      <!-- Render the OASIS logo and "Committee Note" -->
+      <!-- Render the OASIS logo -->
       <fo:flow flow-name="xsl-region-body">
         <fo:block>          
-          <fo:block>
+          <fo:block xsl:use-attribute-sets="oasis-cover-header">
             <fo:external-graphic content-width="5cm">
               <xsl:attribute name="src">
                 <xsl:call-template name="getVariable">
@@ -38,11 +28,6 @@
                 </xsl:call-template>
               </xsl:attribute>
             </fo:external-graphic>
-          </fo:block>
-          <fo:block xsl:use-attribute-sets="oasis-cover-header">
-            <xsl:call-template name="getVariable">
-              <xsl:with-param name="id" select="'OASIS committee note'" />
-            </xsl:call-template>
           </fo:block>
           
           <!-- Render the document title-->         
@@ -87,17 +72,6 @@
         </fo:block>
       </fo:flow>
     </fo:page-sequence>
-  </xsl:template>
-  
-      <!-- Suppress the default chapter and appendix rendering.   -->
-    <!-- Retain the code that creates anchors for link targets. -->
-  <xsl:template name="insertChapterFirstpageStaticContent">
-    <xsl:param name="type"/>
-    <fo:block>
-      <xsl:attribute name="id">
-        <xsl:value-of select="concat('_OPENTOPIC_TOC_PROCESSING_', generate-id())"/>
-      </xsl:attribute>
-    </fo:block>
   </xsl:template>
     
 </xsl:stylesheet>

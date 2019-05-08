@@ -7,6 +7,7 @@
 <!-- 31 Jan 2016 KJE: Replaced call to deprecated template             -->
 <!-- 06 May 2019 KJE: Renamed variables, removed obsolete variables,   -->
 <!--                  changed outputclass values, added comments       -->
+<!-- 08 May 2019 KJE: Changed name of string in en.xml                 -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -82,9 +83,8 @@
  
  <!-- Variable: Work product information -->  
  <xsl:variable name="ditaproduct">
-  <!--<xsl:text>Non-Standards Track</xsl:text>-->
   <xsl:call-template name="getVariable">
-   <xsl:with-param name="id" select="'Work product track'" />
+   <xsl:with-param name="id" select="'Committee note track'" />
   </xsl:call-template>
  </xsl:variable>
 
