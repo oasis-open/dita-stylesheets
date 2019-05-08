@@ -6,8 +6,8 @@
         <section id="this-version">
             <title>This version</title>
             <sl>
-                <sli><xref keyref="this-html" outputclass="no-italics"/> (Authoritative)</sli>
-                <sli><xref keyref="this-pdf" outputclass="no-italics"/></sli>
+                <sli><xref keyref="this-html"/> (Authoritative)</sli>
+                <sli><xref keyref="this-pdf"/></sli>
             </sl>
         </section>
         <section id="previous-version">
@@ -20,32 +20,32 @@
             <title>Latest version</title>
             <sl>
                 <sli>
-                    <xref keyref="latest-html" outputclass="no-italics"/> (Authoritative)</sli>
-                <sli><xref keyref="latest-pdf" outputclass="no-italics"/></sli>
+                    <xref keyref="latest-html"/> (Authoritative)</sli>
+                <sli><xref keyref="latest-pdf"/></sli>
             </sl>
         </section>
         <section id="technical-committee">
             <title>Technical Committee</title>
             <p><xref href="https://www.oasis-open.org/committees/dita/" format="html"
-                    scope="external" outputclass="no-italics">OASIS Darwin Information Typing
-                    Architecture (DITA) TC</xref></p>
+                    scope="external">OASIS Darwin Information Typing Architecture (DITA)
+                TC</xref></p>
         </section>
         <section id="chair">
             <title>Chair</title>
             <p>Kristen James Eberlein (<xref format="mailto"
                     href="mailto:kris@eberleinconsulting.com" scope="external"
-                    outputclass="no-italics">kris@eberleinconsulting.com</xref>), <xref
-                    href="http://eberleinconsulting.com/" format="html" scope="external"
-                    outputclass="no-italics">Eberlein Consulting LLC</xref></p>
+                    >kris@eberleinconsulting.com</xref>), <xref
+                    href="http://eberleinconsulting.com/" format="html" scope="external">Eberlein
+                    Consulting LLC</xref></p>
         </section>
         <section id="editors">
             <title>Editors</title>
             <sl>
                 <sli>Kristen James Eberlein (<xref format="mailto"
                         href="mailto:kris@eberleinconsulting.com" scope="external"
-                        outputclass="no-italics">kris@eberleinconsulting.com</xref>), <xref
+                        >kris@eberleinconsulting.com</xref>), <xref
                         href="http://eberleinconsulting.com/" format="html" scope="external"
-                        outputclass="no-italics">Eberlein Consulting LLC</xref></sli>
+                        >Eberlein Consulting LLC</xref></sli>
             </sl>
         </section>
         <section id="additional-artifacts">
@@ -53,7 +53,7 @@
             <p>This document is part of a work product that also includes:</p>
             <ul>
                 <li>ZIP file that contains the DITA source for this document. <xref
-                        keyref="this-dita" outputclass="no-italics"/></li>
+                        keyref="this-dita"/></li>
             </ul>
         </section>
         <section id="related-work">
@@ -107,9 +107,8 @@
                     <dt>[&lt;WP-abbrev>]</dt>
                     <dd><cite>&lt;Committee note title></cite> Version &lt;x.x>. Edited by &lt;list
                         editors in alphabetical order>. <keyword keyref="stage-date"/>. <keyword
-                            keyref="stage"/>. <xref keyref="this-html"
-                            outputclass="no-italics"/>. Latest version: <xref keyref="latest-html"
-                            outputclass="no-italics"/>.</dd>
+                            keyref="stage"/>. <xref keyref="this-html"/>. Latest version: <xref
+                            keyref="latest-html"/>.</dd>
                 </dlentry>
             </dl>
         </section>
