@@ -11,6 +11,8 @@
 <!-- 06 Mar 2019 KJE: Changed base-font to 10 pt                       -->
 <!-- 07 Mar 2019 KJE: Changed serif to sans-serif; moved variable      -->
 <!--                  to oasis-cn-basic-settings.xsl file              -->
+<!-- 08 May 2019 KJE: Added template for handling monospaced elements  -->
+<!--                  and attributes in titles and <dt>                -->
 <!--                                                                   -->
 <!-- ================================================================= -->  
 
@@ -37,6 +39,30 @@
         <xsl:attribute name="font-weight">normal</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
     </xsl:attribute-set>
+    
+    <!-- XML ELEMENTS OR ATTRIBUTES IN TITLES -->
+      <xsl:attribute-set name="monospace-in-titles">
+    <xsl:attribute name="font-style">normal</xsl:attribute>
+    <xsl:attribute name="font-family">
+      <xsl:choose>
+        <xsl:when
+          test="ancestor-or-self::*[contains(@class, ' topic/title ') or contains(@class, ' topic/dt ')]">sans-serif</xsl:when>
+        <xsl:otherwise>monospace</xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
+    <xsl:attribute name="font-size">
+      <xsl:choose>
+        <xsl:when test="ancestor::*[contains(@class, ' topic/title ')]">sans-serif</xsl:when>
+        <xsl:when
+          test="ancestor::*[contains(@class, ' topic/table ') or contains(@class, ' topic/simpletable ')]">
+          <xsl:value-of select="$small-monospace-size"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$default-monospace-size"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
+  </xsl:attribute-set>
        
     <!-- REMOVE EMPTY PAGES -->  
     <xsl:attribute-set name="__force__page__count">
