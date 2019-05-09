@@ -4,6 +4,7 @@
 <!--                                                                   -->
 <!-- 15 Aug 2017 KJE: Initial creation.                                -->
 <!-- 02 Mar 2019 KJE: Updated to match file shipped with DITA-OT 3.2.1 -->
+<!-- 09 May 2019 KJE: Imported oasis-cn-lists-attr.xsl                 -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -32,6 +33,7 @@
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/links-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/links.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/lists-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis.pdf:cfg/fo/attrs/oasis-cn-lists-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/lists.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/tables-attr.xsl"/>
     <xsl:import href="plugin:org.oasis.pdf:cfg/fo/attrs/oasis-cn-tables-attr.xsl"/>
