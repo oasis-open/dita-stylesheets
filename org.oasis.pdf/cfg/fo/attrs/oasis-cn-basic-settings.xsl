@@ -5,7 +5,10 @@
 <!-- 05 Sep 2015 KJE: Added change log.                                -->
 <!-- 03 Mar 2019 ARH: Changed page margins, font sizes, and            -->
 <!--                  page-margin-top to accommodated OASIS rebranding -->
-<!-- 07 Mar KJE: Added variables previously defined in other files     -->
+<!-- 07 Mar 2019 KJE: Added variables previously defined in other files-->
+<!-- 09 May 2019 KJE: Changed size of monospace font to 10 pt, added   -->
+<!--                  Changed size of monospace font to 10 pt, added   -->
+<!--                  "small-monospace-size" for use in tables         -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -38,8 +41,9 @@
   <xsl:variable name="default-codeblock-font-size">8pt</xsl:variable>
   <xsl:variable name="default-font-size">10pt</xsl:variable>
   <xsl:variable name="default-line-height">11pt</xsl:variable>
-  <xsl:variable name="default-monospace-font">9pt</xsl:variable>
+  <xsl:variable name="default-monospace-size">10pt</xsl:variable>
   <xsl:variable name="default-table-font-size">9pt</xsl:variable>
+  <xsl:variable name="small-monospace-size">9pt</xsl:variable>
   
   <!-- Title color -->
   <xsl:variable name="default-title-color">#446CAA</xsl:variable>

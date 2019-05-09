@@ -309,7 +309,7 @@
                         </row>
                         <row>
                             <entry>Font size</entry>
-                            <entry>9pt</entry>
+                            <entry>8pt</entry>
                             <entry>The MQTT spec uses 8 pt in footers</entry>
                         </row>
                         <row>
