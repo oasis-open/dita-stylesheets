@@ -12,11 +12,11 @@
     
   <!--Unordered list-->
   <xsl:attribute-set name="ul.li">
-    <xsl:attribute name="text-indent">20pt</xsl:attribute>
+    <xsl:attribute name="margin-left">20pt</xsl:attribute>
   </xsl:attribute-set>   
   
    <xsl:attribute-set name="ol.li">
-     <xsl:attribute name="text-indent">20pt</xsl:attribute>
+     <xsl:attribute name="margin-left">20pt</xsl:attribute>
     </xsl:attribute-set>
 
 </xsl:stylesheet>
