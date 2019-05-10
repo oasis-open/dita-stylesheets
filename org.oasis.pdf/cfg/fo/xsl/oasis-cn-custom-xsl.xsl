@@ -8,7 +8,7 @@
 <!--                  oasis-cn-numbering.xsl                           -->
 <!--  15 Aug 2015 KJE: Commented out import statements, which were     -->
 <!--                   moved to style sheet shell.                     -->
-<!--                                                                   -->
+<!--  10 May 2019 KJE: Added template for RFC-2119 term                -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -17,18 +17,12 @@
                 xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function" 
                 version="2.0">
                
- <!-- IMPORT OVERRIDES TO DITA-OT XSL FILES -->
-<!-- <xsl:import href="oasis-cn-commons.xsl"/>
- <xsl:import href="oasis-cn-front-matter.xsl"/>
- <xsl:import href="oasis-cn-layout-masters.xsl"/>
- <xsl:import href="oasis-cn-static-content.xsl"/>
- <xsl:import href="oasis-cn-tables.xsl"/>
- <xsl:import href="oasis-cn-toc.xsl"/>
- 
- <!-\- IMPORT CUSTOM OASIS XSL FILES -\->
- <xsl:import href="oasis-cn-cover-notices-xsl.xsl"/>
- <xsl:import href="oasis-cn-footers-xsl.xsl"/>
- <xsl:import href="oasis-cn-numbering.xsl"/>   -->     
+    <xsl:template match="*[contains(@class,' topic/term ')][@outputclass = 'RFC-2119']">
+       <fo:inline xsl:use-attribute-sets="RFC-2119">
+        <xsl:call-template name="commonattributes"/>
+        <xsl:apply-templates/>
+       </fo:inline>
+    </xsl:template>    
   
 </xsl:stylesheet>
 
