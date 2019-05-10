@@ -17,6 +17,7 @@
 <!-- 06 May 2019 KJE: Changed @outputclass values to be more intuitive -->
 <!-- 09 May 2019 KJE: Added template to render list items with 0 pt    -->
 <!--                  margin-left; reworked templates                  -->
+<!-- 10 May 2019 KJE: Added template for xrefs in "Status" section     -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -71,12 +72,41 @@
   </xsl:template>
   
     
-  <!-- FORMAT CROSS REFERENCES ON THE COVER PAGE -->
-  <!-- Styles cross references with underlining  --> 
+  <!-- FORMAT CROSS REFERENCES                   -->
   <!-- ==========================================-->
   
-  <xsl:template match="*[@outputclass = 'cover']//*[contains(@class, ' topic/xref ')]">
+  <!-- Styles cross references WITH underlining  --> 
+  <!-- Cross references in <sli>                 -->
+  <xsl:template match="*[@outputclass = 'cover']//*[contains(@class, ' topic/sli ')]/*[contains(@class, ' topic/xref ')]">
     <fo:basic-link xsl:use-attribute-sets="cover-xref">
+      <xsl:call-template name="buildBasicLinkDestination">
+        <xsl:with-param name="scope" select="@scope"/>
+        <xsl:with-param name="format" select="@format"/>
+        <xsl:with-param name="href" select="@href"/>
+      </xsl:call-template>
+      <xsl:apply-templates/>
+    </fo:basic-link>
+  </xsl:template>
+  
+  <!-- Styles cross references WITH underlining  --> 
+  <!-- Cross references in <li>                 -->  
+    <xsl:template match="*[@outputclass = 'cover']//*[contains(@class, ' topic/li ')]/*[contains(@class, ' topic/xref ')]">
+    <fo:basic-link xsl:use-attribute-sets="cover-xref">
+      <xsl:call-template name="buildBasicLinkDestination">
+        <xsl:with-param name="scope" select="@scope"/>
+        <xsl:with-param name="format" select="@format"/>
+        <xsl:with-param name="href" select="@href"/>
+      </xsl:call-template>
+      <xsl:apply-templates/>
+    </fo:basic-link>
+  </xsl:template>
+  
+    <!-- Styles cross references WITHOUT underlining  --> 
+    <!-- Cross references in <p>                      -->
+    <xsl:template 
+      match="*[contains(@class, ' topic/p ')]/*[contains(@class, ' topic/xref ')]"
+      mode="cover">
+    <fo:basic-link xsl:use-attribute-sets="status-section-xref">
       <xsl:call-template name="buildBasicLinkDestination">
         <xsl:with-param name="scope" select="@scope"/>
         <xsl:with-param name="format" select="@format"/>

@@ -7,7 +7,6 @@
 <!--                  page-margin-top to accommodated OASIS rebranding -->
 <!-- 07 Mar 2019 KJE: Added variables previously defined in other files-->
 <!-- 09 May 2019 KJE: Changed size of monospace font to 10 pt, added   -->
-<!--                  Changed size of monospace font to 10 pt, added   -->
 <!--                  "small-monospace-size" for use in tables         -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
