@@ -14,6 +14,7 @@
 <!-- 30 Apr 2019 KJE: Changed section titles to 10pt                   -->
 <!-- 05 May 2019 KJE: Renamed attribute sets to be more intuitive;     -->
 <!--                  removed unused attribute sets                    -->
+<!-- 09 May 2019 KJE: Added attribute set for list items               -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -84,5 +85,10 @@
   <xsl:attribute name="font-style">normal</xsl:attribute>
   <xsl:attribute name="text-decoration">underline</xsl:attribute>
  </xsl:attribute-set>
+ 
+  <!-- Styles the lists on the cover page -->
+  <xsl:attribute-set name="cover-li">
+    <xsl:attribute name="margin-left">0pt</xsl:attribute>
+  </xsl:attribute-set> 
  
 </xsl:stylesheet>

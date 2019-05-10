@@ -504,6 +504,18 @@
                             <entry/>
                             <entry>DITA TC only</entry>
                         </row>
+                        <row>
+                            <entry>Ordered list items</entry>
+                            <entry>Indented 20 pt</entry>
+                            <entry/>
+                            <entry>DITA TC only</entry>
+                        </row>
+                        <row>
+                            <entry>unordered list items</entry>
+                            <entry>Indented 20 pt</entry>
+                            <entry/>
+                            <entry>DITA TC only</entry>
+                        </row>
                     </tbody>
                 </tgroup>
             </table>

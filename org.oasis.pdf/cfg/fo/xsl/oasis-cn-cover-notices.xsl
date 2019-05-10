@@ -15,6 +15,8 @@
 <!--                  comments, and rearranged order                   -->
 <!-- 05 May 2019 KJE: Renamed attribute sets to be more intuitive      -->
 <!-- 06 May 2019 KJE: Changed @outputclass values to be more intuitive -->
+<!-- 09 May 2019 KJE: Added template to render list items with 0 pt    -->
+<!--                  margin-left; reworked templates                  -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -42,103 +44,36 @@
   </xsl:template>
 
 
-  <!-- TRIGGERS TEMPLATES FOR ELEMENTS THAT ARE DIRECT CHILDREN OF SECTION -->
-  <!-- Applies to <title>, <dl>, <p>, <sl>, and <ul>                       -->
-  <!-- Also applies special formatting to the section titles               -->
-  <!-- =================================================================== -->
+  <!-- RENDERS AND STYLES SECTION TITLES -->
+  <!-- ================================= -->
   
-  <xsl:template match="*[contains(@class, ' topic/section ')]" mode="cover">
-    <xsl:for-each select="*">
-      <xsl:choose>
-        <!-- For section titles, applies cover_category_label attribute set and adds a colon after the title-->
-        <xsl:when test="contains(@class, ' topic/title ')">
-          <fo:block xsl:use-attribute-sets="cover-section-title">
-            <xsl:apply-templates/>:
-          </fo:block>
-        </xsl:when>
-        <!-- For definition lists, fires templates with mode="cover"-->
-        <xsl:when test="contains(@class, ' topic/dl ')">
-          <xsl:apply-templates select="." mode="cover"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <!-- Fire templates and apply fallthrough styles -->
-          <!-- Applies to <p>, <sl>, and <ul> -->
-          <xsl:apply-templates select="."/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:for-each>
-  </xsl:template>
+    <xsl:template 
+        match="*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"
+        mode="cover">
+        <fo:block xsl:use-attribute-sets="cover-section-title">
+            <xsl:apply-templates/>
+            <xsl:text>:</xsl:text>
+        </fo:block>
+    </xsl:template>
+   
+  <!-- RENDERS AND STYLES SIMPLE LIST -->
+  <!-- Renders list items flush left  -->
+  <!-- ============================== -->
   
-    <!-- KJE: Override simple list on cover -->
-    <!--      Could this be built into above template -->
-    <xsl:template match="*[contains(@class, ' topic/sl ')]">
-    <xsl:choose>
-      <xsl:when test="ancestor::*[@outputclass = 'cover']">
+    <xsl:template 
+      match="*[contains(@class, ' topic/sl ')]
+              [ancestor::*[@outputclass = 'cover']]"
+      mode="cover">
         <fo:list-block xsl:use-attribute-sets="cover-sl">
           <xsl:call-template name="commonattributes"/>
           <xsl:apply-templates/>
         </fo:list-block>
-      </xsl:when>
-      <xsl:otherwise>
-        <fo:list-block xsl:use-attribute-sets="sl">
-          <xsl:call-template name="commonattributes"/>
-          <xsl:apply-templates/>
-        </fo:list-block>
-      </xsl:otherwise>
-    </xsl:choose>
   </xsl:template>
   
-  <!-- Apply special formatting to <p> immediately after section titles -->
-  <!-- on cover page. Standard formatting for other paragraphs.         -->
-  <xsl:template match="*[contains(@class, ' topic/p ')]">
-    <xsl:choose>
-      <xsl:when
-        test="
-          ancestor::*[contains(@class, ' topic/topic ')][@outputclass = 'cover'] and
-          preceding-sibling::*[contains(@class, ' topic/title ')]">
-        <fo:block xsl:use-attribute-sets="cover-p">
-          <xsl:call-template name="commonattributes"/>
-          <xsl:apply-templates/>
-        </fo:block>
-      </xsl:when>
-      <xsl:otherwise>
-        <fo:block xsl:use-attribute-sets="p">
-          <xsl:call-template name="commonattributes"/>
-          <xsl:apply-templates/>
-        </fo:block>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
-  <!-- FORMAT DEFINITION LIST used in "Citation format" -->
-  <!-- ================================================ -->
-  
-  <!-- Fires templates for <dlentry> elements -->
-  <xsl:template match="*[contains(@class, ' topic/dlentry ')]" mode="cover">
-    <xsl:apply-templates mode="cover"/>
-  </xsl:template>
-
-  <!-- Apply bold formatting to <dt> element -->
-  <xsl:template match="*[contains(@class, ' topic/dt ')]" mode="cover">
-    <fo:block>
-      <xsl:attribute name="font-weight">bold</xsl:attribute>
-      <xsl:apply-templates/>
-    </fo:block>
-  </xsl:template>
-
-  <!--  Format <dd>: make flush left with margin and add some padding -->
-  <xsl:template match="*[contains(@class, ' topic/dd ')]" mode="cover">
-    <fo:block>
-      <xsl:attribute name="margin-left">0in</xsl:attribute>      
-      <xsl:attribute name="padding-top">5pt</xsl:attribute>
-      <xsl:apply-templates/>
-    </fo:block>
-  </xsl:template>
-  
-  
-  <!-- FORMAT CROSS REFERENCES ON THE COVER PAGE        -->
-  <!-- Style cross references on cover with underlining --> 
-  <!-- ================================================ -->
+    
+  <!-- FORMAT CROSS REFERENCES ON THE COVER PAGE -->
+  <!-- Styles cross references with underlining  --> 
+  <!-- ==========================================-->
   
   <xsl:template match="*[@outputclass = 'cover']//*[contains(@class, ' topic/xref ')]">
     <fo:basic-link xsl:use-attribute-sets="cover-xref">
@@ -151,28 +86,117 @@
     </fo:basic-link>
   </xsl:template>
 
+  
+  <!-- FORMAT FIRST PARAGRAPH OF SECTIONS                 -->
+  <!-- Apply special formatting to <p> immediately after  -->
+  <!-- section titles on cover page.                      -->
+  <!-- ================================================   -->
+  
+  <xsl:template 
+    match="*[contains(@class, ' topic/p ')]
+            [ancestor::*[contains(@class, ' topic/topic ')][@outputclass = 'cover']]
+            [preceding-sibling::*[contains(@class, ' topic/title ')]]"
+    mode="cover">
+        <fo:block xsl:use-attribute-sets="cover-p">
+          <xsl:call-template name="commonattributes"/>
+          <xsl:apply-templates/>
+        </fo:block>
+  </xsl:template>
+  
+
+  <!-- FORMAT DEFINITION LIST used in "Citation format" -->
+  <!-- Renders entries flush left                       -->
+  <!-- ================================================ -->
+  
+  <!-- Fires templates for <dlentry> elements -->
+  <xsl:template 
+    match="*[contains(@class, ' topic/dlentry ')]" 
+    mode="cover">
+    <xsl:apply-templates mode="cover"/>
+  </xsl:template>
+
+  <!-- Apply bold formatting to <dt> element -->
+  <xsl:template 
+    match="*[contains(@class, ' topic/dt ')]" 
+    mode="cover">
+    <fo:block>
+      <xsl:attribute name="font-weight">bold</xsl:attribute>
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
+  <!--  Format <dd>: make flush left with margin and add some padding -->
+  <xsl:template 
+    match="*[contains(@class, ' topic/dd ')]" 
+    mode="cover">
+    <fo:block>
+      <xsl:attribute name="margin-left">0in</xsl:attribute>      
+      <xsl:attribute name="padding-top">5pt</xsl:attribute>
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+  
+  
+  <!-- FORMAT UNORDERED LIST used in "Additional artifacts" -->
+  <!-- and "Related work"                                   -->
+  <!-- Renders list items flush left                        -->
+  <!-- ==================================================== -->
+  
+    <!-- Fires templates for <ul> elements -->
+    <xsl:template 
+      match="*[contains(@class, ' topic/ul ')]"
+      mode="cover">
+        <fo:list-block xsl:use-attribute-sets="ul">
+            <xsl:call-template name="commonattributes"/>
+            <xsl:apply-templates mode="cover"/>         
+        </fo:list-block>
+    </xsl:template>
+  
+  <!-- Applies cover-li attribute set to list item -->
+  <xsl:template 
+    match="*[contains(@class, ' topic/ul ')]/*[contains(@class, ' topic/li ')]"
+    mode="cover">
+        <xsl:variable name="depth" select="count(ancestor::*[contains(@class, ' topic/ul ')])"/>
+        <fo:list-item xsl:use-attribute-sets="cover-li">
+            <xsl:call-template name="commonattributes"/>
+            <fo:list-item-label xsl:use-attribute-sets="ul.li__label">
+                <fo:block xsl:use-attribute-sets="ul.li__label__content">
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="concat('Unordered List bullet ', (($depth - 1) mod 4) + 1)"/>
+                    </xsl:call-template>
+                </fo:block>
+            </fo:list-item-label>
+            <fo:list-item-body xsl:use-attribute-sets="ul.li__body">
+                <fo:block xsl:use-attribute-sets="ul.li__content">
+                    <xsl:apply-templates/>
+                </fo:block>
+            </fo:list-item-body>
+        </fo:list-item>
+    </xsl:template>
+
 
   <!-- RENDER NOTICES TOPIC -->
   <!-- ==================== -->
 
   <!-- Templates with mode="notices" are fired from oasis-cn-front-matter.xsl. -->
-  
+ 
   <xsl:template 
-    match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'notices')]"
+    match="*[contains(@class, ' topic/topic ')][contains(@outputclass, 'notices')]"
     mode="notices">
     <xsl:apply-templates mode="notices"/>
   </xsl:template>
   
   <!-- Format title of "Notices" and make it start on a new page -->
   <xsl:template
-    match="*[contains(@class, ' topic/topic ') and contains(@outputclass, 'notices')]/*[contains(@class, ' topic/title ')]"
+    match="*[contains(@class, ' topic/topic ')][contains(@outputclass, 'notices')]
+           /*[contains(@class, ' topic/title ')]"
     mode="notices">
     <fo:block page-break-before="always" xsl:use-attribute-sets="cover-stage-date">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
   
-    <!-- Trigger templates for chilren of <section> -->
+  <!-- Trigger default templates for chilren of <section> -->
   <xsl:template match="*[contains(@class, ' topic/section ')]" mode="notices">
     <xsl:apply-templates select="."/>
   </xsl:template>
