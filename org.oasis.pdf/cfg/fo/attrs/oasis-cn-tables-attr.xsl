@@ -9,6 +9,7 @@
 <!-- 01 Feb 2019 KJE: Changed color for table headers                  -->
 <!-- 06 Mar 2019 KJE: Changed font size for simple table cells         -->
 <!-- 07 Mar 2019 KJE: Moved variables to oasis-cn-basic-settings.xsl   -->
+<!-- 10 May 2019 KJE: Set margin-left for <dd> to 20pt                 -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -25,7 +26,8 @@
   </xsl:attribute-set>
   
   <xsl:attribute-set name="dlentry.dd__content">
-    <xsl:attribute name="start-indent">from-parent(start-indent) + 5mm</xsl:attribute>
+    <!--<xsl:attribute name="start-indent">from-parent(start-indent) + 5mm</xsl:attribute>-->
+    <xsl:attribute name="margin-left">20pt</xsl:attribute>
   </xsl:attribute-set>
   
   <!-- SIMPLE TABLES -->

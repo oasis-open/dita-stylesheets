@@ -539,7 +539,7 @@
                     <tbody>
                         <row>
                             <entry>Definition descriptions</entry>
-                            <entry>Indented 5 mm</entry>
+                            <entry>margin-left: 20pt</entry>
                             <entry/>
                             <entry>DITA TC only</entry>
                         </row>
@@ -551,13 +551,13 @@
                         </row>
                         <row>
                             <entry>Ordered list items</entry>
-                            <entry>Indented 20 pt</entry>
+                            <entry>margin-left: 20pt</entry>
                             <entry/>
                             <entry>DITA TC only</entry>
                         </row>
                         <row>
-                            <entry>unordered list items</entry>
-                            <entry>Indented 20 pt</entry>
+                            <entry>Unordered list items</entry>
+                            <entry>margin-left: 20pt</entry>
                             <entry/>
                             <entry>DITA TC only</entry>
                         </row>
