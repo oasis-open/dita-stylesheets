@@ -14,6 +14,7 @@
 <!--                  padding                                          -->
 <!--08 May 2919 KJE: Changed section title to bold 11.5 pt; added      -->
 <!--                 attribute sets for H4-H6                          -->
+<!--10 May 2019 KJE: Added attribute set for RFC-2119 term             -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -108,5 +109,11 @@
     <xsl:attribute name="padding">5pt</xsl:attribute>
     <xsl:attribute name="space-before">0em</xsl:attribute>
   </xsl:attribute-set>
+    
+    <!-- RFC-2119 TERM -->
+    <xsl:attribute-set name="RFC-2119">
+        <xsl:attribute name="font-style">normal</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+    </xsl:attribute-set>
 
 </xsl:stylesheet>

@@ -400,8 +400,14 @@
                         </row>
                         <row audience="dita-tc">
                             <entry>Section titles</entry>
-                            <entry>13 pt italic sans-serif #446CAA</entry>
+                            <entry>11.5 pt sans-serif #446CAA</entry>
                             <entry>110%</entry>
+                            <entry>DITA TC only</entry>
+                        </row>
+                        <row audience="dita-tc">
+                            <entry>Example titles</entry>
+                            <entry>11.5 pt sans-serif #446CAA</entry>
+                            <entry/>
                             <entry>DITA TC only</entry>
                         </row>
                     </tbody>
@@ -425,16 +431,16 @@
                     <tbody>
                         <row>
                             <entry>Default monospace font size</entry>
-                            <entry>9pt</entry>
+                            <entry>10pt</entry>
                             <entry>90%</entry>
                             <entry>Used for XML elements and attributes; inline code samples – DITA
                                 TC only</entry>
                         </row>
                         <row>
-                            <entry>Default small font size</entry>
+                            <entry>Default small monospace font size</entry>
                             <entry>9 pt</entry>
                             <entry>80%</entry>
-                            <entry>Used in tables and footer – DITA TC only</entry>
+                            <entry>Used in tables and code blocks – DITA TC only</entry>
                         </row>
                     </tbody>
                 </tgroup>
@@ -463,9 +469,54 @@
                         </row>
                         <row>
                             <entry>Font</entry>
-                            <entry>8 pt normal monospace</entry>
+                            <entry>9 pt normal monospace</entry>
                             <entry/>
                             <entry>DITA TC only</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table frame="all" rowsep="1" colsep="1" pgwide="1" audience="dita-tc">
+                <title>inline elements</title>
+                <tgroup cols="4">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Property</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>RFC-2119 terms</entry>
+                            <entry>bold</entry>
+                            <entry/>
+                            <entry>DITA TC only</entry>
+                        </row>
+                        <row>
+                            <entry>Term</entry>
+                            <entry>regular</entry>
+                            <entry/>
+                            <entry>DITA TC only</entry>
+                        </row>
+                        <row>
+                            <entry>XML attribute</entry>
+                            <entry>10 pt normal monospace</entry>
+                            <entry/>
+                            <entry>DITA TC only. In titles and definition terms, rendered in regular
+                                font weight an size.</entry>
+                        </row>
+                        <row>
+                            <entry>XML element</entry>
+                            <entry>10 pt normal monospace</entry>
+                            <entry/>
+                            <entry>DITA TC only. In titles and definition terms, rendered in regular
+                                font weight an size.</entry>
                         </row>
                     </tbody>
                 </tgroup>

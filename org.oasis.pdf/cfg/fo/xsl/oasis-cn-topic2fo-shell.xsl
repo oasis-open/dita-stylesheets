@@ -5,6 +5,7 @@
 <!-- 15 Aug 2017 KJE: Initial creation.                                -->
 <!-- 02 Mar 2019 KJE: Updated to match file shipped with DITA-OT 3.2.1 -->
 <!-- 09 May 2019 KJE: Imported oasis-cn-lists-attr.xsl                 -->
+<!-- 10 May 2019 KJE: Imported oasis-cn-custom-xsl.xsl                 -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -49,6 +50,7 @@
     <xsl:import href="plugin:org.oasis.pdf:cfg/fo/attrs/oasis-cn-cover-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/commons.xsl"/>
     <xsl:import href="plugin:org.oasis.pdf:cfg/fo/xsl/oasis-cn-commons.xsl"/>
+    <xsl:import href="plugin:org.oasis.pdf:cfg/fo/xsl/oasis-cn-custom-xsl.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/toc-attr.xsl"/>
     <xsl:import href="plugin:org.oasis.pdf:cfg/fo/attrs/oasis-cn-toc-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/toc.xsl"/>
