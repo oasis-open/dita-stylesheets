@@ -4,6 +4,7 @@
 <!--                                                                   -->
 <!-- 25 May 2017 KJE: Initial version.                                 -->
 <!-- 07 Mar 2019 KJE: Changed font-size to a variable                  -->
+<!-- 15 May 2019 KJE: Added attribute set for codeph                   -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -15,5 +16,7 @@
             <xsl:value-of select="$default-codeblock-font-size"/>
         </xsl:attribute>
     </xsl:attribute-set>
+    
+    <xsl:attribute-set name="codeph" use-attribute-sets="monospace-in-titles"/>
  
 </xsl:stylesheet>
