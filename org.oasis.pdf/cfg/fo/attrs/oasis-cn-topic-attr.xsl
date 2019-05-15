@@ -15,6 +15,7 @@
 <!--08 May 2919 KJE: Changed section title to bold 11.5 pt; added      -->
 <!--                 attribute sets for H4-H6                          -->
 <!--10 May 2019 KJE: Added attribute set for RFC-2119 term             -->
+<!--15 May 2019 KJE: Removed padding for example                       -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -70,6 +71,7 @@
         <xsl:attribute name="space-after">2pt</xsl:attribute>
         <xsl:attribute name="space-before">10pt</xsl:attribute>
     </xsl:attribute-set>
+    
     <xsl:attribute-set name="section.title" use-attribute-sets="common.title">
         <xsl:attribute name="font-size">11.5pt</xsl:attribute>
         <!--<xsl:attribute name="font-style">italic</xsl:attribute>-->
@@ -106,7 +108,6 @@
     </xsl:attribute>
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
     <xsl:attribute name="margin-right">0pt</xsl:attribute>
-    <xsl:attribute name="padding">5pt</xsl:attribute>
     <xsl:attribute name="space-before">0em</xsl:attribute>
   </xsl:attribute-set>
     
