@@ -16,7 +16,8 @@
 <!--                 attribute sets for H4-H6                          -->
 <!--10 May 2019 KJE: Added attribute set for RFC-2119 term             -->
 <!--15 May 2019 KJE: Removed padding from example; added attribute     -->
-<!--                 set for note                                      -->
+<!--                 set for note and RFC-2119 statement               -->
+<!--16 May 2019 KJE: Refined attribute set for RFC-2119 statement      -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -114,8 +115,8 @@
         <xsl:attribute name="margin-right">0pt</xsl:attribute>
         <xsl:attribute name="space-before">0em</xsl:attribute>
     </xsl:attribute-set>
-    
-    <!-- NOTES -->   
+
+    <!-- NOTES -->
     <xsl:attribute-set name="note__table">
         <xsl:attribute name="margin-left">20pt</xsl:attribute>
     </xsl:attribute-set>
@@ -125,8 +126,8 @@
         <xsl:attribute name="font-style">normal</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
     </xsl:attribute-set>
-    
-    <xsl:attribute-set name="RFC-2119-statement">
+
+    <xsl:attribute-set name="RFC-2119-statement" use-attribute-sets="common.block">
         <xsl:attribute name="border-left">2pt solid #446CAA</xsl:attribute>
         <xsl:attribute name="border-right">2pt solid #446CAA</xsl:attribute>
         <xsl:attribute name="padding-left">5pt</xsl:attribute>
