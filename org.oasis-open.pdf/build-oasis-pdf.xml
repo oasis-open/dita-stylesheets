@@ -4,17 +4,18 @@
 <!--                                                                   -->
 <!-- 08 May 2019 KJE: Added change log after making modifications      -->
 <!--                  based on call with RDA                           -->
+<!-- 16 May 2019 KJE: Changed name of plug-in                          -->
 <!--                                                                   -->
 <!-- ================================================================= -->  
 
-<project name="org.oasis.pdf" default="dita2oasis-pdf-committeeNote">
+<project name="org.oasis-open.pdf" default="dita2oasis-pdf-committeeNote">
  
       <!-- Build OASIS committee note -->
       <target xmlns:dita="http://dita-ot.sourceforge.net" name="dita2oasis-pdf-committeeNote">
           <property name="customization.dir" 
-                    location="${dita.plugin.org.oasis.pdf.dir}/cfg"/>
+                    location="${dita.plugin.org.oasis-open.pdf.dir}/cfg"/>
           <property name="args.xsl.pdf"
-                    location="${dita.plugin.org.oasis.pdf.dir}/cfg/fo/xsl/oasis-cn-topic2fo-shell.xsl"/>
+                    location="${dita.plugin.org.oasis-open.pdf.dir}/cfg/fo/xsl/oasis-cn-topic2fo-shell.xsl"/>
           <property name="pdf.formatter" value="ah"/>
           <property name="args.chapter.layout" value="BASIC"/>
           <antcall target="dita2pdf2"/>
@@ -23,9 +24,9 @@
         <!-- Build OASIS specification -->
       <target xmlns:dita="http://dita-ot.sourceforge.net" name="dita2oasis-pdf-specification">
           <property name="customization.dir" 
-                    location="${dita.plugin.org.oasis.pdf.dir}/cfg"/>
+                    location="${dita.plugin.org.oasis-open.pdf.dir}/cfg"/>
           <property name="args.xsl.pdf"
-                    location="${dita.plugin.org.oasis.pdf.dir}/cfg/fo/xsl/oasis-spec-topic2fo-shell.xsl"/>
+                    location="${dita.plugin.org.oasis-open.pdf.dir}/cfg/fo/xsl/oasis-spec-topic2fo-shell.xsl"/>
           <property name="pdf.formatter" value="ah"/>
           <property name="args.chapter.layout" value="BASIC"/>
           <antcall target="dita2pdf2"/>
