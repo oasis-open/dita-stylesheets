@@ -4,10 +4,11 @@
 <!--                                                                   -->
 <!-- 08 May 2019 KJE: Added change log after making modifications      -->
 <!--                  based on call with RDA                           -->
+<!-- 16 May 2019 KJE: Changed name of plug-in                          -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
-<plugin id="org.oasis.pdf">
+<plugin id="org.oasis-open.pdf">
     <require plugin="org.dita.pdf2"/>
     <feature extension="dita.conductor.transtype.check" value="oasis-pdf-committeeNote" type="txt"/>
     <feature extension="dita.conductor.transtype.check" value="oasis-pdf-specification" type="txt"/>
