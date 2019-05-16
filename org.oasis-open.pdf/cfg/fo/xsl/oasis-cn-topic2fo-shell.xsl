@@ -36,6 +36,7 @@
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/links-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-links-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/links.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-links.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/lists-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-lists-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/lists.xsl"/>
