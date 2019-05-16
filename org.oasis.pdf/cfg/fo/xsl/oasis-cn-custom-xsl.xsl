@@ -25,6 +25,14 @@
          <xsl:apply-templates/>
       </fo:inline>
    </xsl:template>
+   
+      <xsl:template match="*[contains(@class, ' topic/p ')]
+         [descendant::*[contains(@class, ' topic/term ')][@outputclass = 'RFC-2119']]">
+      <fo:block xsl:use-attribute-sets="RFC-2119-statement">
+         <xsl:call-template name="commonattributes"/>
+         <xsl:apply-templates/>
+      </fo:block>
+   </xsl:template>
 
    <!-- NOTES -->
 

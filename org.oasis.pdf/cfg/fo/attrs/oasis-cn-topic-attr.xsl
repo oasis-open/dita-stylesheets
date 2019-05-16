@@ -125,5 +125,12 @@
         <xsl:attribute name="font-style">normal</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
     </xsl:attribute-set>
+    
+    <xsl:attribute-set name="RFC-2119-statement">
+        <xsl:attribute name="border-left">2pt solid #446CAA</xsl:attribute>
+        <xsl:attribute name="border-right">2pt solid #446CAA</xsl:attribute>
+        <xsl:attribute name="padding-left">5pt</xsl:attribute>
+        <xsl:attribute name="padding-right">5pt</xsl:attribute>
+    </xsl:attribute-set>
 
 </xsl:stylesheet>
