@@ -9,6 +9,8 @@
 <!-- 01 Feb 2019 KJE: Changed color for table headers                  -->
 <!-- 06 Mar 2019 KJE: Changed font size for simple table cells         -->
 <!-- 07 Mar 2019 KJE: Moved variables to oasis-cn-basic-settings.xsl   -->
+<!-- 10 May 2019 KJE: Set margin-left for <dd> to 20pt                 -->
+<!-- 15 May 2019 KJE: Added attribute sets for CALS tables             -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -25,8 +27,35 @@
   </xsl:attribute-set>
   
   <xsl:attribute-set name="dlentry.dd__content">
-    <xsl:attribute name="start-indent">from-parent(start-indent) + 5mm</xsl:attribute>
+    <!--<xsl:attribute name="start-indent">from-parent(start-indent) + 5mm</xsl:attribute>-->
+    <xsl:attribute name="margin-left">20pt</xsl:attribute>
   </xsl:attribute-set>
+  
+    <!-- CALS TABLES -->
+  
+  <xsl:attribute-set name="table.title" use-attribute-sets="base-font common.title">
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="padding-top">5pt</xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="thead.row.entry">
+    <xsl:attribute name="background-color">
+      <xsl:value-of select="$default-table-header-color"/>
+    </xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="thead.row.entry__content" use-attribute-sets="common.table.body.entry common.table.head.entry">
+    <xsl:attribute name="font-size">
+      <xsl:value-of select="$default-table-font-size"/>
+    </xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="tbody.row.entry__content" use-attribute-sets="common.table.body.entry">
+     <xsl:attribute name="font-size">
+      <xsl:value-of select="$default-table-font-size"/>
+    </xsl:attribute>
+  </xsl:attribute-set>
+  
   
   <!-- SIMPLE TABLES -->
 

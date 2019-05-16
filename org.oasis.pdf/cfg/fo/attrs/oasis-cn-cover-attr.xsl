@@ -15,6 +15,7 @@
 <!-- 05 May 2019 KJE: Renamed attribute sets to be more intuitive;     -->
 <!--                  removed unused attribute sets                    -->
 <!-- 09 May 2019 KJE: Added attribute set for list items               -->
+<!-- 10 May 2019 KJE: Added attribute set for status-section-xref      -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -86,6 +87,11 @@
   <xsl:attribute name="text-decoration">underline</xsl:attribute>
  </xsl:attribute-set>
  
+  <!-- Styles the cross references in the "Status" section -->
+ <xsl:attribute-set name="status-section-xref" use-attribute-sets="common.link">
+  <xsl:attribute name="font-style">normal</xsl:attribute>
+ </xsl:attribute-set>
+  
   <!-- Styles the lists on the cover page -->
   <xsl:attribute-set name="cover-li">
     <xsl:attribute name="margin-left">0pt</xsl:attribute>
