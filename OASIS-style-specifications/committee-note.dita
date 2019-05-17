@@ -477,6 +477,31 @@
                 </tgroup>
             </table>
             <table frame="all" rowsep="1" colsep="1" pgwide="1" audience="dita-tc">
+                <title>Draft comments</title>
+                <tgroup cols="4">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+                    <colspec colname="c3" colnum="4" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>Property</entry>
+                            <entry>Value (PDF)</entry>
+                            <entry>Value (XHTML)</entry>
+                            <entry>Notes</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Background</entry>
+                            <entry>#d8eef3</entry>
+                            <entry/>
+                            <entry>DITA TC only</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <table frame="all" rowsep="1" colsep="1" pgwide="1" audience="dita-tc">
                 <title>Lists</title>
                 <tgroup cols="4">
                     <colspec colname="c1" colnum="1" colwidth="1*"/>
@@ -537,7 +562,7 @@
                     <tbody>
                         <row>
                             <entry>Table headers background</entry>
-                            <entry>#EDF1F8</entry>
+                            <entry>#ebf6f9</entry>
                             <entry/>
                             <entry>DITA TC only</entry>
                         </row>
