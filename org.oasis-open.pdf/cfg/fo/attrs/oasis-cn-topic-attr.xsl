@@ -12,12 +12,13 @@
 <!-- 09 Mar 2919 KJE: Remove bold highlighting from topic titles;      -->
 <!--                  add line above to topic.title and restore        -->
 <!--                  padding                                          -->
-<!--08 May 2919 KJE: Changed section title to bold 11.5 pt; added      -->
-<!--                 attribute sets for H4-H6                          -->
-<!--10 May 2019 KJE: Added attribute set for RFC-2119 term             -->
-<!--15 May 2019 KJE: Removed padding from example; added attribute     -->
+<!-- 08 May 2919 KJE: Changed section title to bold 11.5 pt; added     -->
+<!--                  attribute sets for H4-H6                         -->
+<!-- 10 May 2019 KJE: Added attribute set for RFC-2119 term            -->
+<!-- 15 May 2019 KJE: Removed padding from example; added attribute    -->
 <!--                 set for note and RFC-2119 statement               -->
-<!--16 May 2019 KJE: Refined attribute set for RFC-2119 statement      -->
+<!-- 16 May 2019 KJE: Refined attribute set for RFC-2119 statement     -->
+<!-- 17 May 2019 KJE: Modified attribute set for draft comment         -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -86,9 +87,12 @@
 
     <!-- DRAFT COMMENTS -->
     <xsl:attribute-set name="draft-comment" use-attribute-sets="common.border">
-        <xsl:attribute name="background-color">#E6E6F6</xsl:attribute>
+        <xsl:attribute name="background-color">#d8eef3</xsl:attribute>
         <xsl:attribute name="color">black</xsl:attribute>
+        <xsl:attribute name="margin-left">0pt</xsl:attribute>
+        <xsl:attribute name="margin-right">0pt</xsl:attribute>
         <xsl:attribute name="padding">5pt</xsl:attribute>
+        <xsl:attribute name="space-before">5pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="draft-comment__label">

@@ -12,7 +12,8 @@
     <!--                  removed header variables; changed logo;          -->
     <!--                  added string for cover page heaser               -->
     <!-- 08 May 2019 KJE: Added strings for committee note and spec        -->
-    <!--                  footer use                                                 -->
+    <!--                  footer use                                       -->
+    <!-- 16 May 2019 KJE: Added string for "OASIS TC document"             -->
     <!--                                                                   -->
     <!-- ================================================================= -->
    
@@ -24,6 +25,7 @@
     
     <!-- Footer text -->
     <variable id="Committee note track">Non-Standards Track</variable>
+    <variable id="OASIS TC document">DITA TC work product</variable>
     <variable id="Standards track">Standards Track Work Product</variable>
     
     <!-- String used for TOC -->

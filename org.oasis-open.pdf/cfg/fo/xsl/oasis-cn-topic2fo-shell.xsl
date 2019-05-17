@@ -80,6 +80,7 @@
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/reference-elements.xsl"/>
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/sw-domain-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-sw-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/sw-domain.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/pr-domain-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-pr-domain-attr.xsl"/>
