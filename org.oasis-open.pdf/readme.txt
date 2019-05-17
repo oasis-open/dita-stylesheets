@@ -13,4 +13,4 @@ It defines two transformations:
 
  * oasis-pdf-committeeNote    (OASIS committee note)
  * oasis-pdf-specification    (OASIS specification)
- * oasis-tc-pdf               (Generic PDF, body uses spec styles)
+ * oasis-pdf-generic          (Generic PDF, body uses spec styles)
