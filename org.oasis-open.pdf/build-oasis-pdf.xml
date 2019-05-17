@@ -31,5 +31,16 @@
           <property name="args.chapter.layout" value="BASIC"/>
           <antcall target="dita2pdf2"/>
         </target>
+  
+          <!-- Build OASIS TC document -->
+      <target xmlns:dita="http://dita-ot.sourceforge.net" name="dita2oasis-tc-pdf">
+          <property name="customization.dir" 
+                    location="${dita.plugin.org.oasis-open.pdf.dir}/cfg"/>
+          <property name="args.xsl.pdf"
+                    location="${dita.plugin.org.oasis-open.pdf.dir}/cfg/fo/xsl/oasis-tc-topic2fo-shell.xsl"/>
+          <property name="pdf.formatter" value="fop"/>
+          <property name="args.chapter.layout" value="BASIC"/>
+          <antcall target="dita2pdf2"/>
+        </target>
      
 </project>
