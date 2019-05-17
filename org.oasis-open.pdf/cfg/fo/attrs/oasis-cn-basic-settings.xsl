@@ -8,6 +8,7 @@
 <!-- 07 Mar 2019 KJE: Added variables previously defined in other files-->
 <!-- 09 May 2019 KJE: Changed size of monospace font to 10 pt, added   -->
 <!--                  "small-monospace-size" for use in tables         -->
+<!-- 17 May 2019 KJE: Changed background color for table header        -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -17,7 +18,7 @@
                 exclude-result-prefixes="xs">
 
  <!-- File name (output)  -->
- <!-- Create output file name from DITAmap, minus directoy path and extensions -->
+ <!-- Create output file name from DITAmap, minus directory path and extensions -->
   <xsl:param name="args.input"/>
   <xsl:variable name="inputfile.basename" select="replace($args.input, '.+[\\/](.+)?.ditamap', '$1')"/>
           
@@ -48,6 +49,6 @@
   <xsl:variable name="default-title-color">#446CAA</xsl:variable>
   
   <!-- Background colors -->
-  <xsl:variable name="default-table-header-color">#edf1f8</xsl:variable>
-                       
+  <xsl:variable name="default-table-header-color">#ebf6f9</xsl:variable>
+                 
 </xsl:stylesheet>
