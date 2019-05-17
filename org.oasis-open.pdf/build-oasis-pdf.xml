@@ -33,7 +33,7 @@
         </target>
   
           <!-- Build OASIS TC document -->
-      <target xmlns:dita="http://dita-ot.sourceforge.net" name="dita2oasis-tc-pdf">
+      <target xmlns:dita="http://dita-ot.sourceforge.net" name="dita2oasis-pdf-generic">
           <property name="customization.dir" 
                     location="${dita.plugin.org.oasis-open.pdf.dir}/cfg"/>
           <property name="args.xsl.pdf"
