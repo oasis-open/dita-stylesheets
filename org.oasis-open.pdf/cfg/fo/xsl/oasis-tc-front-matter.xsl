@@ -2,7 +2,7 @@
 
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
-<!-- 08 May 2019 KJE: Initial creation                                 -->
+<!-- 17 May 2019 KJE: Initial creation                                 -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -18,6 +18,20 @@
             <xsl:call-template name="insertFrontMatterStaticContents"/>
             <fo:flow flow-name="xsl-region-body">
               <fo:block-container xsl:use-attribute-sets="__frontmatter">
+                <fo:block text-align="left">
+            <fo:external-graphic content-width="5cm">
+              <xsl:attribute name="src">
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id">logo Image Path</xsl:with-param>
+                </xsl:call-template>
+              </xsl:attribute>
+            </fo:external-graphic>
+          </fo:block>
+          <fo:block xsl:use-attribute-sets="oasis-cover-header">
+            <xsl:call-template name="getVariable">
+              <xsl:with-param name="id" select="'OASIS TC'" />
+            </xsl:call-template>
+          </fo:block>
                 <xsl:call-template name="createFrontCoverContents"/>
               </fo:block-container>
             </fo:flow>

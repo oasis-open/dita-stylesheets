@@ -13,6 +13,7 @@
     
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-tc-front-matter.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-tc-static-content.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-tc-custom-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-tc-footers.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-spec-topic-attr.xsl"/>
     

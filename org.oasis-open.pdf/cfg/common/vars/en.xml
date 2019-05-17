@@ -14,19 +14,21 @@
     <!-- 08 May 2019 KJE: Added strings for committee note and spec        -->
     <!--                  footer use                                       -->
     <!-- 16 May 2019 KJE: Added string for "OASIS TC document"             -->
+    <!-- 17 May 2019 KJE: Added string for "OASIS TC"                      -->
     <!--                                                                   -->
     <!-- ================================================================= -->
    
     <!-- Cover page logo-->
     <variable id="logo Image Path">Customization/OpenTopic/common/artwork/OASISLogo-v2.0.jpg</variable>
     
-    <!-- Cover page header string for committee note -->
-    <variable id="OASIS committee note">OASIS Committee Note</variable>
+    <!-- Cover page header strings -->
+    <variable id="OASIS committee note">OASIS Committee Note</variable>   
+    <variable id="OASIS TC">DITA Technical Committee</variable>
     
     <!-- Footer text -->
     <variable id="Committee note track">Non-Standards Track</variable>
+    <variable id="Standards track">Standards Track Work Product</variable>    
     <variable id="OASIS TC document">DITA TC work product</variable>
-    <variable id="Standards track">Standards Track Work Product</variable>
     
     <!-- String used for TOC -->
     <variable id="Table of Contents">Table of contents</variable>
