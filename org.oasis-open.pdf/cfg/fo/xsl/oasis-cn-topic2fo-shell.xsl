@@ -8,6 +8,7 @@
 <!-- 10 May 2019 KJE: Imported oasis-cn-custom-xsl.xsl                 -->
 <!-- 15 May 2019 KJE: Imported oasis-cn-links-attr.xsl                 -->
 <!-- 16 May 2019 KJE: Changed name of plug-in                          -->
+<!-- 23 Jun 2019 KJE: Imported oasis-hi-domain-attr.xsl                -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -86,6 +87,7 @@
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-pr-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/pr-domain.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/hi-domain-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-hi-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/hi-domain.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/ui-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/ui-domain.xsl"/>
