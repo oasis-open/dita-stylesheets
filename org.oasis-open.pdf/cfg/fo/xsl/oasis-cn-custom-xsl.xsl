@@ -11,6 +11,7 @@
 <!--  10 May 2019 KJE: Added templates for RFC-2119 term               -->
 <!--  15 May 2019 KJE: Added templates to style note labels as side    -->
 <!--                   headers                                         -->
+<!--  19 May 2019 KJE: Added templates to render title above figure    -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -33,6 +34,25 @@
          <xsl:apply-templates/>
       </fo:block>
    </xsl:template>
+   
+   <!-- FIGURES -->
+   <!-- Renders title above figure -->
+   
+       <xsl:template match="*[contains(@class,' topic/fig ')]">
+        <fo:block xsl:use-attribute-sets="fig">
+            <xsl:call-template name="commonattributes"/>
+            <xsl:call-template name="setFrame"/>
+            <xsl:call-template name="setExpanse"/>
+            <xsl:call-template name="setScale"/>
+            <xsl:if test="not(@id)">
+              <xsl:attribute name="id">
+                <xsl:call-template name="get-id"/>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates select="*[contains(@class,' topic/title ')]"/>
+            <xsl:apply-templates select="*[not(contains(@class,' topic/title '))]"/>           
+        </fo:block>
+    </xsl:template>
 
    <!-- NOTES -->
 
