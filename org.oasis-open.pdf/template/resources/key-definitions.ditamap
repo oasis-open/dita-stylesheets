@@ -9,7 +9,8 @@
   </topicmeta>
   <keydef keys="stage">
    <!--Stage and revision-->
-   <!--The sequence is Working Draft, Committee Note Draft, Committee Note Public Review Draft, and Committee Note.-->
+   <!--Committee notes: The sequence is Working Draft, Committee Note Draft, Committee Note Public Review Draft, and Committee Note.-->
+   <!--Specifications: The sequence is Working Draft, Committee Specification Draft, Committee Specification Public Review Draft, Committee Specification, Candidate OASIS Standard, and OASIS Standard-->
    <!--See http://docs.oasis-open.org/specGuidelines/ndr/namingDirectives.html#versioning for more information.-->
    <topicmeta>
     <linktext>Working Draft 01</linktext>

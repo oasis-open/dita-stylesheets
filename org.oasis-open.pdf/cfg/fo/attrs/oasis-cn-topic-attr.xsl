@@ -19,6 +19,7 @@
 <!--                 set for note and RFC-2119 statement               -->
 <!-- 16 May 2019 KJE: Refined attribute set for RFC-2119 statement     -->
 <!-- 17 May 2019 KJE: Modified attribute set for draft comment         -->
+<!-- 05 jUL 2019 KJE: Added attribute set for <pre>                    -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -123,6 +124,20 @@
     <!-- NOTES -->
     <xsl:attribute-set name="note__table">
         <xsl:attribute name="margin-left">20pt</xsl:attribute>
+    </xsl:attribute-set>
+    
+    <!-- PREFORMATTED TEXT -->
+    <xsl:attribute-set name="pre">
+        <xsl:attribute name="font-size">
+            <xsl:value-of select="$default-codeblock-font-size"/>
+        </xsl:attribute>
+        <xsl:attribute name="keep-with-previous.within-page">always</xsl:attribute>
+        <xsl:attribute name="start-indent">6pt + from-parent(start-indent)</xsl:attribute>
+        <xsl:attribute name="end-indent">6pt + from-parent(end-indent)</xsl:attribute>
+        <xsl:attribute name="padding">6pt</xsl:attribute>
+        <xsl:attribute name="background-color">#f0f0f0</xsl:attribute>
+        <xsl:attribute name="wrap-option">wrap</xsl:attribute>
+        <xsl:attribute name="hyphenation-character">&#x25BA;</xsl:attribute>
     </xsl:attribute-set>
 
     <!-- RFC-2119 TERM -->
