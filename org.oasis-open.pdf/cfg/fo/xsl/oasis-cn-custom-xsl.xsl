@@ -12,12 +12,16 @@
 <!--  15 May 2019 KJE: Added templates to style note labels as side    -->
 <!--                   headers                                         -->
 <!--  19 May 2019 KJE: Added templates to render title above figure    -->
+<!--  13 Jul 2019 KJE: Added template to style <keyword>               -->
+<!--  15 Dec 2019 KJE: Updated template to style <keyword>             -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fo="http://www.w3.org/1999/XSL/Format"
-   xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function" version="2.0">
+   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+   xmlns:fo="http://www.w3.org/1999/XSL/Format"
+   xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function" version="2.0"
+   xmlns:kje="http://www.eberleinconsulting.com">
 
    <!-- RFC-2119 TERMS -->
    <xsl:template match="*[contains(@class, ' topic/term ')][@outputclass = 'RFC-2119']">
@@ -27,12 +31,28 @@
       </fo:inline>
    </xsl:template>
    
-      <xsl:template match="*[contains(@class, ' topic/p ')]
+   <xsl:template match="*[contains(@class, ' topic/p ')]
          [descendant::*[contains(@class, ' topic/term ')][@outputclass = 'RFC-2119']]">
       <fo:block xsl:use-attribute-sets="RFC-2119-statement">
          <xsl:call-template name="commonattributes"/>
          <xsl:apply-templates/>
       </fo:block>
+   </xsl:template>
+
+   <!-- KEYWORD -->
+   <!-- Surround the content of <keyword> elements with 
+        quotation marks, with the following exceptions:
+          * On the cover page
+          * Child of <dt>                          -->
+   
+   <xsl:template match="*[contains(@class,' topic/keyword ')]
+                         [not(ancestor-or-self::*[contains(@class,' topic/topic ')][@outputclass='cover'])]
+                         [not(ancestor-or-self::*[contains(@class,' topic/dt ')])]">
+      <fo:inline>
+         <xsl:text>"</xsl:text>
+         <xsl:apply-templates/>
+         <xsl:text>"</xsl:text>
+      </fo:inline>
    </xsl:template>
    
    <!-- FIGURES -->

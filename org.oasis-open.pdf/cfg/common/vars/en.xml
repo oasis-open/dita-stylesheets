@@ -15,6 +15,7 @@
     <!--                  footer use                                       -->
     <!-- 16 May 2019 KJE: Added string for "OASIS TC document"             -->
     <!-- 17 May 2019 KJE: Added string for "OASIS TC"                      -->
+    <!-- 01 Dec 2019 KJE: Added strings for task labels                    -->
     <!--                                                                   -->
     <!-- ================================================================= -->
    
@@ -63,5 +64,15 @@
     <!-- Removed insertion of appendix letter via the number param. The number is now 
          embedded in the title. See the code in oasis-cn-numbering.xsl. Thomas, 07sep15-->
     <variable id="Table of Contents Appendix">Appendix </variable>
+    
+      <!--Labels for task sections -->
+  <variable id="Task Prereq">Before you begin</variable>
+  <variable id="Task Context">About this task</variable>
+  <variable id="Task Steps">Procedure</variable>
+  <variable id="#steps-unordered-label">Procedure</variable>
+  <variable id="Task Result">Result</variable>
+  <variable id="Task Troubleshooting">Troubleshooting</variable>
+  <variable id="Task Example">Example</variable>
+  <variable id="Task Postreq">What to do next</variable>
 
 </vars>

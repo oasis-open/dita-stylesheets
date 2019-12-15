@@ -9,7 +9,7 @@
 <!-- 01 Feb 2019 KJE: Added footer to cover page                       -->
 <!-- 03 Mar 2019 ARH: Changed margins; added horizontal-rule to region -->
 <!--                  before                                           -->
-<!-- 17 May 2019 KJE: Removed horizontal-rul from region-before        -->
+<!-- 17 May 2019 KJE: Removed horizontal-rule from region-before       -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -88,7 +88,6 @@
       
       <xsl:if test="$mirror-page-margins">
         <fo:simple-page-master master-name="body-even" xsl:use-attribute-sets="simple-page-master">
-          <!-- Increased margin-top by .2in to prevent text crashing into header rule -->
           <fo:region-body xsl:use-attribute-sets="region-body.even"/>
           <fo:region-before region-name="even-body-header" xsl:use-attribute-sets="region-before"/>
           <fo:region-after region-name="even-body-footer" xsl:use-attribute-sets="region-after"/>
