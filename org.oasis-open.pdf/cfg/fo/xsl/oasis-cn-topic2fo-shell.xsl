@@ -9,6 +9,7 @@
 <!-- 15 May 2019 KJE: Imported oasis-cn-links-attr.xsl                 -->
 <!-- 16 May 2019 KJE: Changed name of plug-in                          -->
 <!-- 23 Jun 2019 KJE: Imported oasis-hi-domain-attr.xsl                -->
+<!-- 02 Dec 2019 KJE: Imported oasis-tc-task-elements.xsl              -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -47,11 +48,11 @@
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-tables.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/root-processing.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/topic-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-topic-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/concept-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/commons-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-commons-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-custom-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-topic-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-cover-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/commons.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-commons.xsl"/>
@@ -76,6 +77,7 @@
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/task-elements-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/task-elements.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-tc-task-elements.xsl"/>
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/reference-elements-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/reference-elements.xsl"/>
