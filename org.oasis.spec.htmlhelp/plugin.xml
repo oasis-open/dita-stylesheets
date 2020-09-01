@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin id="org.oasis.spec.htmlhelp">
-  <require plugin="org.dita.xhtml"/>
-  <transtype name="spec-htmlhelp" extends="spec-xhtml" desc="OASIS Specification HTML Help"/>
-  <feature extension="dita.conductor.target.relative" file="integrator.xml"/>
-  <feature extension="dita.xsl.htmlhelp.map2hhc" file="xsl/map2htmlhelp/spec_map2hhcImpl.xsl"></feature>
-  <feature extension="dita.xsl.htmlhelp.map2hhp" file="xsl/map2htmlhelp/spec_map2hhpImpl.xsl"></feature>
-</plugin>
