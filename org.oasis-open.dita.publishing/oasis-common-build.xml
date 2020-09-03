@@ -4,7 +4,7 @@
 	<target name="add-identifiers">
 		<pipeline message="Add IDs to blocks" taskname="add-identifiers">
 			<xslt basedir="${dita.temp.dir}"
-				style="${dita.plugin.org.oasis-open.common.dir}/xsl/add-identifiers.xsl">
+				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/add-identifiers.xsl">
 				<ditaFileset format="dita"/>
 				<xmlcatalog refid="dita.catalog"/>
 			</xslt>
