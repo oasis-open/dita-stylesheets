@@ -8,6 +8,7 @@
   xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:specrfc="org.oasis.spec.pdf/rfc"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
   <xsl:key name="rfc-terms" match="*[@specrfc:container]" use="true()"/>
@@ -44,8 +45,8 @@
       <xsl:variable name="collected-rules-as-table" as="element()">
         <simpletable relcolwidth="1* 7*" class="- topic/simpletable " outputclass="collected-rfc-rules" id="collected-rfc-rules-as-table" frame="all">
           <sthead class="- topic/sthead ">
-            <stentry class="- topic/stentry ">Rule number</stentry>
-            <stentry class="- topic/stentry ">Conformance statement</stentry>
+            <stentry class="- topic/stentry " dita-ot:y="1" dita-ot:x="1">Rule number</stentry>
+            <stentry class="- topic/stentry " dita-ot:y="1" dita-ot:x="2">Conformance statement</stentry>
           </sthead>
           <xsl:for-each select="key('rfc-terms',true())[not(ancestor::draft-comment or ancestor::required-cleanup or ancestor::*[@specrfc:container])]">
             <xsl:variable name="elname">
@@ -58,9 +59,10 @@
               <!--<xsl:value-of select="name(ancestor::*[ or contains(@class,' topic/p ') or contains(@class,' topic/div ') or
                 contains(@class,' topic/li ')][1])"/>-->
             </xsl:variable>
+            <xsl:variable name="rownum" select="1 + position()"/>
             <strow class="- topic/strow ">
-              <stentry class="- topic/stentry " id="gen-rfc-item-{position()}"><xref class="- topic/xref " href="#{@id}">Rule <xsl:value-of select="position()"/></xref></stentry>
-              <stentry class="- topic/stentry ">
+              <stentry class="- topic/stentry " id="gen-rfc-item-{position()}" dita-ot:y="{$rownum}" dita-ot:x="1"><xref class="- topic/xref " href="#{@id}">Rule <xsl:value-of select="position()"/></xref></stentry>
+              <stentry class="- topic/stentry " dita-ot:y="{$rownum}" dita-ot:x="2">
                 <xsl:choose>
                   <xsl:when test="$elname='ph'"><xsl:apply-templates select="." mode="copy-normative-rule"/></xsl:when>
                   <xsl:when test="$elname='p'"><xsl:apply-templates select="node()" mode="copy-normative-rule"/></xsl:when>
