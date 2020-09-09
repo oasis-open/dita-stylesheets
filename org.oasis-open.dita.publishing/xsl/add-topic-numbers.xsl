@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Generate a topic number for each title in the TOC.
+    Makes several assumptions:
+    * Assumes input is bookmap
+    * Assumes uses chapters and appendix (not part)
+    * Assumes submap boundaries are not important
+    * Assumes every numbered heading has a topic (would not number topicheads)
+    -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs"
@@ -8,6 +16,8 @@
     <xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/>
     <xsl:variable name="msgprefix" select="''"/>
     
+    <!-- Create an easy lookup variable with the full TOC, with extra grouping elements
+        like <submap> removed. -->
     <xsl:variable name="fulltoc" as="element()">
         <xsl:for-each select="/*">
             <xsl:copy>
@@ -17,6 +27,7 @@
         </xsl:for-each>
     </xsl:variable>
     
+    <!-- If a topicref has HREF, keep a copy of it with attributes. Disregard other elements. -->
     <xsl:template match="*" mode="buildtoc">
         <xsl:choose>
             <xsl:when test="@href">
@@ -39,6 +50,10 @@
         </xsl:copy>
     </xsl:template>
     
+    <!-- If a topicref has an associated topic, AND is part of a chapter or appendix, 
+        get the TOC number using the lookup $fulltoc, and place it in:
+        <resourceid appid="X.Y.Z" appname="spectopicnum"> (plus class, xtrf, xtrc)
+        -->
     <xsl:template match="*[contains(@class,' map/topicref ')]
         [@href]
         [ancestor-or-self::*[contains(@class,' bookmap/chapter ') or contains(@class,' bookmap/appendix ')]]">
@@ -70,6 +85,8 @@
         </xsl:copy>
     </xsl:template>
     
+    <!-- This is operating on $fulltoc which has already filtered out all non-meaningful topicrefs and groups,
+        like the <submap> container for referenced maps -->
     <xsl:template match="*" mode="find-position-in-toc">
       <xsl:choose>
         <xsl:when test="contains(@class,' bookmap/appendix ')">
@@ -84,20 +101,6 @@
             <xsl:number format="1" count="*[contains(@class, ' map/topicref ')]"/>
         </xsl:otherwise>
       </xsl:choose>
-    </xsl:template>
-    
-    <xsl:template match="*" mode="count-submap-topics">
-        <xsl:choose>
-            <xsl:when test="self::submap">
-                <xsl:apply-templates select="*[contains(@class,' map/topicref ')]" mode="count-submap-topics"/>
-            </xsl:when>
-            <xsl:when test="@href">
-                <xsl:copy-of select="."/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:apply-templates select="*[contains(@class,' map/topicref ')]" mode="count-submap-topics"/>
-            </xsl:otherwise>
-        </xsl:choose>
     </xsl:template>
     
 </xsl:stylesheet>
