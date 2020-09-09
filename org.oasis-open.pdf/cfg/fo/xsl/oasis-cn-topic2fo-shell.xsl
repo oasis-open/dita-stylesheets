@@ -70,7 +70,7 @@
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-front-matter.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-cover-notices.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-footers.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-numbering.xsl"/>
+    <!--<xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-numbering.xsl"/>-->
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/map-elements-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/map-elements.xsl"/>

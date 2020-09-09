@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:dita="http://dita-ot.sourceforge.net"
+	xmlns:if="ant:if" 
+	xmlns:unless="ant:unless" 
+	name="oasis-common-build">
+	
+	<!-- Create a custom preprocess2 so that we can insert topic numbering.
+		Matches preprocess2 except:
+		* Call custom preprocess2.topics.oasis rather than preprocess2.topics
+	    * Add the "add-identifiers" step to preprocess
+	-->
+	<target name="preprocess2.oasis"
+		dita:extension="depends org.dita.dost.platform.InsertDependsAction"
+		description="Preprocess"
+		dita:depends="{depend.preprocess.pre},
+		preprocess2.init,
+		ditaval-merge,
+		
+		preprocess2.maps,
+		preprocess2.topics.oasis,
+		
+		map-clean-map,
+		clean-preprocess,
+		copy-files2,
+		add-identifiers,
+		{depend.preprocess.post}">
+		<dirname property="_dita.map.output.dir" file="${dita.output.dir}/${user.input.file}" />
+		<dirname property="_dita.map.temp.dir" file="${dita.temp.dir}/${user.input.file}" />
+		<property name="uplevels" value=""/>
+		<property name="dita.map.output.dir" location="${_dita.map.output.dir}/${uplevels}"/>
+	</target>
+	
+	<!-- Create a custom preprocess2 so that we can add topic numbering around the
+		"topic-move-meta-entries" target. Otherwise matches toolkit's 3.5 level preprocess2.topics -->
+	<target name="preprocess2.topics.oasis"
+		depends="topic-reader,
+		topic-branch-filter,
+		topic-keyref,
+		topic-copy-to,
+		topic-conrefpush,
+		topic-conref,
+		topic-profile,
+		preprocess2.topic-fragment,
+		topic-chunk,
+		number-topics,
+		topic-move-meta-entries,
+		add-numbers-to-titles,
+		topic-maplink,
+		topic-topicpull"/>
+
+    <!-- Add ID attribute to all block level elements -->
+	<target name="add-identifiers">
+		<pipeline message="Add IDs to blocks" taskname="add-identifiers">
+			<xslt basedir="${dita.temp.dir}"
+				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/add-identifiers.xsl">
+				<ditaFileset format="dita"/>
+				<xmlcatalog refid="dita.catalog"/>
+			</xslt>
+		</pipeline>
+	</target>
+	
+    <!-- Add a topic number to all topics that go in the TOC. -->
+	<target name="number-topics">
+		<pipeline message="Add numbers to topicrefs" taskname="number-topics">
+			<xslt basedir="${dita.temp.dir}"
+				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/add-topic-numbers.xsl">
+				<ditaFileset format="ditamap" input="true"/>
+				<xmlcatalog refid="dita.catalog"/>
+			</xslt>
+		</pipeline>
+	</target>
+	
+    <!-- Move generated topic numbers into the title. -->
+	<target name="add-numbers-to-titles">
+		<pipeline message="Add numbers to topicrefs" taskname="number-topics">
+			<xslt basedir="${dita.temp.dir}"
+				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/prefix-titles-with-numbers.xsl">
+				<ditaFileset format="ditamap" input="true"/>
+				<ditaFileset format="dita" processingRole="normal"/>
+				<xmlcatalog refid="dita.catalog"/>
+			</xslt>
+		</pipeline>
+	</target>
+	
+	
+</project>
