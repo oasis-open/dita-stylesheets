@@ -5,7 +5,7 @@
     depends="dita2spec-xhtml.init,
                    dita2xhtml.init,
                    build-init,
-                   preprocess,
+                   preprocess2.oasis,
                    generate-xhtml-footer,
                    xhtml.topics,
                    build_oasis_xhtml_coverpage,

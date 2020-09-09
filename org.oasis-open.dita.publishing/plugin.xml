@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="org.oasis-open.dita.publishing" version="1.0">
   <feature extension="ant.import" file="oasis-common-build.xml"/>
-  <feature extension="depend.preprocess.post" value="add-identifiers"/>
+  <!--<feature extension="depend.preprocess.post" value="add-identifiers"/>-->
+  <template file="oasis-common-build_template.xml"/>
 </plugin>

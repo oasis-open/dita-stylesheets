@@ -9,45 +9,49 @@
 <!-- ================================================================= -->  
 
 <project name="org.oasis-open.pdf" default="dita2oasis-pdf-committeeNote">
+    
+    <!-- Define a common dita2pdf2 for OASIS, which uses the custom preprocess
+        in order to pick up topic numbering for TOC / Titles. -->
+    <target name="dita2pdf2.oasis" depends="dita2pdf2.init, build-init, preprocess2.oasis, map2pdf2, topic2pdf2"/>
  
-      <!-- Build OASIS committee note -->
-      <target name="dita2oasis-pdf-committeeNote" depends="pdf-committeeNote-init, dita2pdf2"/>
+    <!-- Build OASIS committee note -->
+    <target name="dita2oasis-pdf-committeeNote" depends="pdf-committeeNote-init, dita2pdf2.oasis"/>
   
-      <target name="pdf-committeeNote-init">
-          <property name="customization.dir" 
+    <target name="pdf-committeeNote-init">
+        <property name="customization.dir" 
                     location="${dita.plugin.org.oasis-open.pdf.dir}/cfg"/>
-          <property name="args.xsl.pdf"
+        <property name="args.xsl.pdf"
                     location="${dita.plugin.org.oasis-open.pdf.dir}/cfg/fo/xsl/oasis-cn-topic2fo-shell.xsl"/>
-          <property name="pdf.formatter" value="ah"/>
-          <property name="args.chapter.layout" value="BASIC"/>
-      </target>
+        <property name="pdf.formatter" value="ah"/>
+        <property name="args.chapter.layout" value="BASIC"/>
+    </target>
   
-      <!-- Build OASIS specification -->
-      <target name="dita2oasis-pdf-specification" depends="pdf-spec-init, dita2pdf2"/>
+    <!-- Build OASIS specification -->
+    <target name="dita2oasis-pdf-specification" depends="pdf-spec-init, dita2pdf2.oasis"/>
         
-      <target name="pdf-spec-init">
+    <target name="pdf-spec-init">
         <property name="customization.dir" 
                   location="${dita.plugin.org.oasis-open.pdf.dir}/cfg"/>
         <condition property="args.xsl.pdf" 
                    value="${dita.plugin.org.oasis-open.pdf.dir}/cfg/fo/xsl/oasis-spec-topic2fo-fop-shell.xsl">
-          <equals arg1="${pdf.formatter}" arg2="fop"/>
+            <equals arg1="${pdf.formatter}" arg2="fop"/>
         </condition>
         <property name="args.xsl.pdf"
                   location="${dita.plugin.org.oasis-open.pdf.dir}/cfg/fo/xsl/oasis-spec-topic2fo-shell.xsl"/>
         <property name="pdf.formatter" value="ah"/>
         <property name="args.chapter.layout" value="BASIC"/>
-      </target>
-  
-          <!-- Build OASIS TC document -->
-      <target name="dita2oasis-pdf-generic" depends="oasis-generic-pdf-init, dita2pdf2"/>
-  
-      <target name="oasis-generic-pdf-init">
-          <property name="customization.dir" 
+    </target>
+    
+    <!-- Build OASIS TC document -->
+    <target name="dita2oasis-pdf-generic" depends="oasis-generic-pdf-init, dita2pdf2.oasis"/>
+    
+    <target name="oasis-generic-pdf-init">
+        <property name="customization.dir" 
                     location="${dita.plugin.org.oasis-open.pdf.dir}/cfg"/>
-          <property name="args.xsl.pdf"
+        <property name="args.xsl.pdf"
                     location="${dita.plugin.org.oasis-open.pdf.dir}/cfg/fo/xsl/oasis-tc-topic2fo-shell.xsl"/>
-          <property name="pdf.formatter" value="fop"/>
-          <property name="args.chapter.layout" value="BASIC"/>
-      </target>
+        <property name="pdf.formatter" value="fop"/>
+        <property name="args.chapter.layout" value="BASIC"/>
+    </target>
      
 </project>
