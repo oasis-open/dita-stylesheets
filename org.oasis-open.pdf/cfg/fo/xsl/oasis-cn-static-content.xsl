@@ -168,6 +168,7 @@
                             <!--<fo:block xsl:use-attribute-sets="default_footer" text-align="center">
                                 <xsl:value-of select="$cnLevel"/>
                             </fo:block>-->
+                            <fo:block></fo:block>
                         </fo:table-cell>
                         <fo:table-cell>
                             <!-- approval date -->
