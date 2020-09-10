@@ -16,6 +16,10 @@
   </target>
 
   <target name="dita2spec-xhtml.init">
+    <!-- Adding "oasislinks" as a link type ensures our custom
+      next/previous links only end up affecting the OASIS html output.
+      The maplink XSL is in there for other builds but does nothing. -->
+    <property name="include.rellinks" value="friend next previous oasislinks"/>
     <property name="args.copycss" value="yes"/>
     <condition property="args.cssroot"
       value="${dita.plugin.org.oasis.spec.xhtml.dir}${file.separator}resource">
@@ -40,12 +44,6 @@
         <isset property="args.xsl"/>
       </not>
     </condition>
-    
-    <delete failonerror="false">
-      <fileset dir="${output.dir}">
-        <exclude name="**/*.zip"/>
-      </fileset>
-    </delete>
   </target>
   
   <target name="generate-xhtml-footer" unless="args.ftr">
