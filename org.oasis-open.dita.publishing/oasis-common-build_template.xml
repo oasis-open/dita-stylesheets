@@ -82,5 +82,93 @@
 		</pipeline>
 	</target>
 	
+	<!-- Set defaults if values have not been passed in -->
+	<target name="oasis.common.init">
+		<tstamp>
+			<format property="default-publish-date" pattern="d MMMM yyyy" locale="en"/>
+		</tstamp>
+		<tstamp>
+			<format property="default-current-year" pattern="yyyy" locale="en"/>
+		</tstamp>
+		<property name="oasis.spec.descriptor" value="dita-v2-XX"/>
+		<property name="oasis.track" value="Standards Track Work Product"/>
+		<property name="oasis.copyright" value="Copyright © OASIS Open ${default-current-year}. All Rights Reserved."/>
+		<property name="oasis.spec.date" value="${default-publish-date}"/>
+	</target>
+	
+	<!-- Build OASIS style HTML5 output -->
+	<target
+		depends="oasis.common.init,
+		dita2spec-html5.init,
+		html5.init,
+		build-init,
+		preprocess2.oasis,
+		override.html5.topic.init,
+		html5.topic,
+		oasis-html5-coverpage,
+		html5.css,
+		return-oasis-html5"
+		name="dita2spec-html5" description="OASIS Specification HTML5 transform">
+	</target>
+	
+	<target name="dita2spec-html5.init">
+		<!-- Adding "oasislinks" as a link type ensures our custom
+      next/previous links only end up affecting the OASIS html output.
+      The maplink XSL is in there for other builds but does nothing. -->
+		<property name="include.rellinks" value="friend next previous oasislinks"/>
+		<property name="args.copycss" value="yes"/>
+		<property name="args.cssroot"
+			value="${dita.plugin.org.oasis.spec.xhtml.dir}${file.separator}resource"/>
+		<property name="args.css" value="oasis.css"/>
+		<property name="args.outext" value=".html"/>
+		<property name="args.xsl" 
+			value="${dita.plugin.org.oasis-open.dita.publishing.dir}${file.separator}xslhtml5${file.separator}dita2oasis-html5_shell.xsl"/>
+		
+		<!-- Setup a temp "output" directory within temp processing directory, so we can zip output -->
+		<property name="temp.output.dir.name" value="temp_outdir"/>
+	</target>
+	
+	<!-- Need to set validate="no" on the html5.map.url property setting below.
+		Done by default in 3.6, added this override for use with 3.5.3 -->
+	<target name="override.html5.topic.init">
+		<local name="html5.map"/>
+		<loadfile property="html5.map" srcfile="${dita.temp.dir}/${user.input.file.listfile}" unless:set="noMap">
+			<filterchain>
+				<headfilter lines="1"/>
+			</filterchain>
+		</loadfile>
+		<makeurl property="html5.map.url" file="${dita.temp.dir}/${html5.map}" validate="no" unless:set="noMap"/>
+	</target>
+	
+	<target name="oasis-html5-coverpage">
+		<pipeline message="Build OASIS HTML5 cover page" taskname="oasis-cover">
+			<xslt basedir="${dita.temp.dir}"
+				destdir="${dita.output.dir}"
+				extension="${out.ext}"
+				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xslhtml5/oasis_coverpage.xsl">
+				<ditaFileset format="ditamap" input="true"/>
+				<param name="OUTEXT" expression="${out.ext}" if:set="out.ext"/>
+				<param name="version-id" expression="${args.oasis.bookmeta.version-id}"/>
+				<param name="errata-num" expression="${args.oasis.bookmeta.errata-num}"/>
+				<param name="stage-abbrev" expression="${args.oasis.bookmeta.stage-abbrev}"/>
+				<param name="revision-num" expression="${args.oasis.bookmeta.revision-num}"/>
+				<param name="part-number" expression="${args.oasis.bookmeta.part-number}"/>
+				<param name="spec-release-type" expression="${args.oasis.bookmeta.spec-release-type}"/>
+				<xmlcatalog refid="dita.catalog"/>
+			</xslt>
+		</pipeline>
+	</target>
+	
+	<target name="return-oasis-html5">
+		<property name="oasis-haml5-zipname" value="${dita.map.filename.root}.zip"/>
+		<zip destfile="${output.dir}/${oasis-haml5-zipname}" basedir="${dita.output.dir}">
+			<include name="**/*"/>
+		</zip>
+		
+		<!-- Also return individual files -->
+		<copy todir="${output.dir}">
+			<fileset dir="${dita.output.dir}"/>
+		</copy>
+	</target>
 	
 </project>

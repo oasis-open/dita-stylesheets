@@ -13,7 +13,7 @@
   <!-- Provide a version (default is 1.0 if not specified) -->
   <feature extension="package.version" value="1.0.0"/>
 
-  <feature extension="depend.preprocess.post" value="pub-meta-to-ant-props" type="text"/>
-  <feature extension="dita.conductor.target" value="build-pubmeta.xml" type="file"/>
+  <!--<feature extension="depend.preprocess.post" value="pub-meta-to-ant-props" type="text"/>
+  <feature extension="dita.conductor.target" value="build-pubmeta.xml" type="file"/>-->
 
 </plugin>
