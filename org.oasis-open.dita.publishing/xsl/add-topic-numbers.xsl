@@ -45,6 +45,7 @@
     
     <xsl:template match="@* | node()">
         <xsl:param name="spectopicnum"/>
+        <xsl:param name="spectocid"/>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
@@ -53,6 +54,8 @@
     <!-- If a topicref has an associated topic, AND is part of a chapter or appendix, 
         get the TOC number using the lookup $fulltoc, and place it in:
         <resourceid appid="X.Y.Z" appname="spectopicnum"> (plus class, xtrf, xtrc)
+        
+        In addition, add a generated ID to use for unique TOC IDs in the HTML TOC
         -->
     <xsl:template match="*[contains(@class,' map/topicref ')]
         [@href]
@@ -67,20 +70,24 @@
             <xsl:if test="empty(*[contains(@class,' map/topicmeta ')])">
                 <topicmeta class="- map/topicmeta " xtrf="{@xtrf}" xtrc="{@xtrc}">
                     <resourceid class="- topic/resourceid " appname="spectopicnum" appid="{$tocnum}" xtrf="{@xtrf}" xtrc="{@xtrc}"/>
+                    <resourceid class="- topic/resourceid " appname="spectocid" appid="{$id-in-gentoc}" xtrf="{@xtrf}" xtrc="{@xtrc}"/>
                 </topicmeta>
             </xsl:if>
             <xsl:apply-templates select="node()">
                 <xsl:with-param name="spectopicnum" select="$tocnum"/>
+                <xsl:with-param name="spectocid" select="$id-in-gentoc"/>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
     
     <xsl:template match="*[contains(@class,' map/topicmeta ')]">
         <xsl:param name="spectopicnum" as="xs:string?"/>
+        <xsl:param name="spectocid" as="xs:string?"/>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
             <xsl:if test="string-length($spectopicnum) > 0">
                 <resourceid class="- topic/resourceid " appname="spectopicnum" appid="{$spectopicnum}" xtrf="{@xtrf}" xtrc="{@xtrc}"/>
+                <resourceid class="- topic/resourceid " appname="spectocid" appid="{$spectocid}" xtrf="{@xtrf}" xtrc="{@xtrc}"/>
             </xsl:if>
         </xsl:copy>
     </xsl:template>

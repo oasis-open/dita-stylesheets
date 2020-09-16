@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<parameters>
+  <param name="oasis.landing.page" expression="${dita.map.filename.root}${out.ext}"/>
+  <param name="oasis.spec.descriptor" expression="${oasis.spec.descriptor}"/>
+  <param name="oasis.track" expression="${oasis.track}"/>
+  <param name="oasis.copyright" expression="${oasis.copyright}"/>
+  <param name="oasis.spec.date" expression="${oasis.spec.date}"/>
+</parameters>
