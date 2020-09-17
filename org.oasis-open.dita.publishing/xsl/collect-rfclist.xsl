@@ -21,8 +21,6 @@
   
   <xsl:param name="rfclist.file"/>
   
-  <xsl:key name="rfc-terms" match="*[@specrfc:container]" use="true()"/>
-  
   <xsl:template match="/">
     <rfclist>
       <xsl:apply-templates select="/*/*[contains(@class,' bookmap/chapter ') or contains(@class,' bookmap/appendix ')]"/>
