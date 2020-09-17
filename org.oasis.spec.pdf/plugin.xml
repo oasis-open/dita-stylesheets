@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="org.oasis.spec.pdf">
     <feature extension="package.version" value="0.0.1"/>
-    <require plugin="org.dita.pdf2"/>
+    <!--<require plugin="org.dita.pdf2"/>
     <transtype name="spec-pdf" extends="pdf" desc="OASIS specification PDF"/>
     <feature extension="dita.transtype.print" value="spec-pdf"/>
     <feature extension="dita.conductor.pdf2.param" value="insertXSLTParameters.xml" type="file"/>
     <feature extension="dita.conductor.target.relative" file="integrator.xml"/>
-    <feature extension="org.dita.pdf2.xsl.topicmerge" type="file" value="xsl/common/spec_topicmergeImpl.xsl"/>
+    <feature extension="org.dita.pdf2.xsl.topicmerge" type="file" value="xsl/common/spec_topicmergeImpl.xsl"/>-->
 </plugin>

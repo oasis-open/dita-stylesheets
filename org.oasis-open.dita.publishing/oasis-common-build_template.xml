@@ -23,6 +23,7 @@
 		clean-preprocess,
 		copy-files2,
 		add-identifiers,
+		generate-rfc-list,
 		{depend.preprocess.post}">
 		<dirname property="_dita.map.output.dir" file="${dita.output.dir}/${user.input.file}" />
 		<dirname property="_dita.map.temp.dir" file="${dita.temp.dir}/${user.input.file}" />
@@ -59,6 +60,53 @@
 		</pipeline>
 	</target>
 	
+	<!-- If needed, collect tagged RFC statements into a list.
+	Because preprocess can rename the conformance topic, we cannot rely on
+	its file name. Should be able to identify it but for now just brute force
+	process all files looking for the hook to turn into a list. -->
+	<target name="generate-rfc-list" if="aggregate.rfc.topics">
+		
+		<property name="rfclist.file" value="${dita.temp.dir}/rfclist.xml"/>
+		
+		<available file="${dita.temp.dir}/${user.input.file}" property="rfc.use.input.file.name"/>
+		<local name="rfc.renamed.map"/>
+		<loadfile property="rfc.renamed.map" srcfile="${dita.temp.dir}/${user.input.file.listfile}" unless:set="noMap">
+			<filterchain>
+				<headfilter lines="1"/>
+			</filterchain>
+		</loadfile>
+		
+		<condition property="rfc.input.map" value="${dita.temp.dir}/${user.input.file}">
+			<isset property="rfc.use.input.file.name"/>
+		</condition>
+		<property name="rfc.input.map" value="${dita.temp.dir}/${rfc.renamed.map}"/>
+		
+		<!-- Process the map, which walks topics looking for RFC items. -->
+		<pipeline message="Collect RFC statements" taskname="collect-rfclist">
+			<xslt basedir="${dita.temp.dir}"
+				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/collect-rfclist.xsl"
+				in="${rfc.input.map}"
+				out="${rfclist.file}">
+				<xmlcatalog refid="dita.catalog"/>
+			</xslt>
+		</pipeline>
+		
+		<!-- Process topics, looking for the one that needs the generated list.
+		    TODO: because we are processing every topic, we should be able to
+		    link from RFC items in topics back to this list, and even better,
+		    copy the number back into the RFC item for display as the link. -->
+		<pipeline message="Find the RFC data element and generate list" taskname="generate-rfclist">
+			<xslt basedir="${dita.temp.dir}"
+				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/generate-rfclist.xsl"
+				filenameparameter="FILENAME"
+				filedirparameter="FILEDIR">
+				<ditaFileset format="dita" processingRole="normal"/>
+				<param name="rfclist.file" expression="${rfclist.file}"/>
+				<xmlcatalog refid="dita.catalog"/>
+			</xslt>
+		</pipeline>
+	</target>
+	
     <!-- Add a topic number to all topics that go in the TOC. -->
 	<target name="number-topics">
 		<pipeline message="Add numbers to topicrefs" taskname="number-topics">
@@ -83,7 +131,7 @@
 	</target>
 	
 	<!-- Set defaults if values have not been passed in -->
-	<target name="oasis.common.init">
+	<target name="oasis.specification.init">
 		<tstamp>
 			<format property="default-publish-date" pattern="d MMMM yyyy" locale="en"/>
 		</tstamp>
@@ -94,11 +142,14 @@
 		<property name="oasis.track" value="Standards Track Work Product"/>
 		<property name="oasis.copyright" value="Copyright © OASIS Open ${default-current-year}. All Rights Reserved."/>
 		<property name="oasis.spec.date" value="${default-publish-date}"/>
+		
+		<!-- Set the topic that will get the conformance list -->
+		<property name="aggregate.rfc.topics" value="true"/>
 	</target>
 	
 	<!-- Build OASIS style HTML5 output -->
 	<target
-		depends="oasis.common.init,
+		depends="oasis.specification.init,
 		dita2spec-html5.init,
 		html5.init,
 		build-init,
