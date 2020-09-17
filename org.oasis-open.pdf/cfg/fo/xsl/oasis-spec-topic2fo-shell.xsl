@@ -15,7 +15,7 @@
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-spec-front-matter.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-spec-footers.xsl"/>
     <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-spec-topic-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-rfclist.xsl"/>
+    <!--<xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-rfclist.xsl"/>-->
     
     <xsl:output method="xml" encoding="utf-8" indent="no"/>
 
