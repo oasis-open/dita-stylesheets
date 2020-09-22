@@ -52,6 +52,49 @@
     <xsl:attribute name="rfcnum" select="$rfcnum"/>    
     <xsl:attribute name="rfctarget" select="concat($dotdots, $rfclist.dita.topic, '/', $rfcnum)"/>
   </xsl:template>
+  
+  <xsl:template match="*[@rfclink]">
+    <xsl:variable name="searchid" select="@rfclink"/>
+    <xsl:variable name="rfcnum" select="document($rfclist.file)/rfclist/rfcitem[@rfclink = $searchid]/@rfcid"/>
+    <xsl:variable name="xref" as="element(xref)">
+      <xref class="- topic/xref " 
+        scope="local" href="{concat($dotdots, $rfclist.dita.topic, '/', $rfcnum)}"
+        xtrc="{@xtrc}" xtrf="{@xtrf}">
+          <xsl:value-of select="$rfcnum"/>
+        <desc class="- topic/desc ">Conformance clause number <xsl:value-of select="$rfcnum"/></desc>
+      </xref>
+    </xsl:variable>
+    <xsl:choose>
+      <xsl:when test="contains(@class,' topic/li ')">
+        <xsl:copy>
+          <xsl:apply-templates select="@*"/>
+          <rfcdiv class="+ topic/div oasis/rfcdiv " xtrc="{@xtrc}" xtrf="{@xtrf}">
+            <rfcnum class="+ topic/div oasis/rfcnum " xtrc="{@xtrc}" xtrf="{@xtrf}">
+              <xsl:copy-of select="$xref"/>
+            </rfcnum>
+            <rfctext class="+ topic/div oasis/rfctext " xtrc="{@xtrc}" xtrf="{@xtrf}">
+              <xsl:apply-templates/>
+            </rfctext>
+          </rfcdiv>
+        </xsl:copy>
+      </xsl:when>
+      <xsl:otherwise>
+        <rfcdiv class="+ topic/div oasis/rfcdiv " xtrc="{@xtrc}" xtrf="{@xtrf}" id="{@id}">
+          <rfcnum class="+ topic/div oasis/rfcnum " xtrc="{@xtrc}" xtrf="{@xtrf}">
+            <xsl:copy-of select="$xref"/>
+          </rfcnum>
+          <rfctext class="+ topic/div oasis/rfctext " xtrc="{@xtrc}" xtrf="{@xtrf}">
+            <xsl:next-match/>
+          </rfctext>
+        </rfcdiv>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="*[@rfclink][not(contains(@class,' topic/li '))]/@id">
+    <!-- ID was moved up to the <rfcdiv> container, except for list items, 
+      which remain the target --> 
+  </xsl:template>
    
   <xsl:template match="*[contains(@class,' topic/data ')][@name='rfc-list']">
     <xsl:apply-templates select="document($rfclist.file)/*" mode="generate-rfclist">
@@ -66,7 +109,7 @@
     <xsl:if test="rfcitem">
       <simpletable relcolwidth="1* 7*" class="- topic/simpletable " outputclass="collected-rfc-rules" id="collected-rfc-rules-as-table" frame="all">
         <sthead class="- topic/sthead ">
-          <stentry class="- topic/stentry " dita-ot:y="1" dita-ot:x="1">Rule number</stentry>
+          <stentry class="- topic/stentry " dita-ot:y="1" dita-ot:x="1">Item</stentry>
           <stentry class="- topic/stentry " dita-ot:y="1" dita-ot:x="2">Conformance statement</stentry>
         </sthead>
         <xsl:for-each select="rfcitem">
