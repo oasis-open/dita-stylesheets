@@ -16,7 +16,20 @@
   
   <xsl:param name="FILENAME"/>
   <xsl:param name="FILEDIR"/>
+  <!-- XML file with all of the RFC items -->
   <xsl:param name="rfclist.file"/>
+  <!-- Name of the file with aggregated list of RFC items -->
+  <xsl:param name="rfclist.dita.topic"/>
+  
+  <!-- Path back to the map directory for links -->
+  <xsl:variable name="dotdots">
+    <xsl:choose>
+      <xsl:when test="$FILEDIR = '.' or $FILEDIR = ''"></xsl:when>
+      <xsl:otherwise>
+        <xsl:for-each select="tokenize($FILEDIR, '/')">../</xsl:for-each>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
     
   <xsl:template match="/">
     <xsl:apply-templates/>
@@ -28,6 +41,16 @@
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
     </xsl:copy>
+  </xsl:template>
+  
+  <!-- Any element with @rfclink is an RFC block. Find out the number, add metadata.
+  1. What was the RFC number?
+  2. What is the link target in the aggregated list?-->
+  <xsl:template match="@rfclink">
+    <xsl:variable name="searchid" select="."/>
+    <xsl:variable name="rfcnum" select="document($rfclist.file)/rfclist/rfcitem[@rfclink = $searchid]/@rfcid"/>
+    <xsl:attribute name="rfcnum" select="$rfcnum"/>    
+    <xsl:attribute name="rfctarget" select="concat($dotdots, $rfclist.dita.topic, '/', $rfcnum)"/>
   </xsl:template>
    
   <xsl:template match="*[contains(@class,' topic/data ')][@name='rfc-list']">
@@ -41,14 +64,6 @@
     <xsl:param name="xtrf"/>
     <xsl:param name="xtrc"/>
     <xsl:if test="rfcitem">
-      <xsl:variable name="dotdots">
-        <xsl:choose>
-          <xsl:when test="$FILEDIR = '.' or $FILEDIR = ''"></xsl:when>
-          <xsl:otherwise>
-            <xsl:for-each select="tokenize($FILEDIR, '/')">../</xsl:for-each>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:variable>
       <simpletable relcolwidth="1* 7*" class="- topic/simpletable " outputclass="collected-rfc-rules" id="collected-rfc-rules-as-table" frame="all">
         <sthead class="- topic/sthead ">
           <stentry class="- topic/stentry " dita-ot:y="1" dita-ot:x="1">Rule number</stentry>
@@ -66,14 +81,18 @@
           <xsl:variable name="rownum" select="1 + position()"/>
           <strow class="- topic/strow ">
             <stentry class="- topic/stentry " 
-              id="gen-rfc-item-{position()}" 
+              id="{@rfcid}" 
               dita-ot:y="{$rownum}" dita-ot:x="1">
               <xref 
                 class="- topic/xref " 
+                outputclass="rfc-inline-num"
                 href="{$dotdots}{@href}"
                 type="topic"
                 xtrf="{$xtrf}"
-                xtrc="{$xtrc}">CONF-DITA.<xsl:value-of select="format-number(position(), '000')"/></xref></stentry>
+                xtrc="{$xtrc}">
+                  <xsl:value-of select="@rfcid"/>
+              </xref>
+            </stentry>
             <stentry class="- topic/stentry " dita-ot:y="{$rownum}" dita-ot:x="2">
               <xsl:choose>
                 <xsl:when test="$elname='ph'"><xsl:apply-templates select="*"/></xsl:when>
