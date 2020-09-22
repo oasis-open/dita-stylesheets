@@ -19,12 +19,15 @@
   xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
-  <xsl:param name="rfclist.file"/>
+  <xsl:param name="rfc.conformance.prefix" select="''" as="xs:string"/>
   
   <xsl:template match="/">
-    <rfclist>
-      <xsl:apply-templates select="/*/*[contains(@class,' bookmap/chapter ') or contains(@class,' bookmap/appendix ')]"/>
-    </rfclist>
+    <xsl:variable name="rfclist" as="element(rfclist)">
+      <rfclist>
+        <xsl:apply-templates select="/*/*[contains(@class,' bookmap/chapter ') or contains(@class,' bookmap/appendix ')]"/>
+      </rfclist>
+    </xsl:variable>
+    <xsl:apply-templates select="$rfclist" mode="number-rfclist"/>
   </xsl:template>
   
   <xsl:template match="*[contains(@class,' map/topicref ')]">
@@ -53,6 +56,8 @@
         descendant::*[contains(@class, ' topic/term ')][@outputclass = 'RFC-2119']">
         <xsl:variable name="topicid" select="ancestor::*[contains(@class,' topic/topic ')][1]/@id"/>
         <rfcitem href="{$topicfile}#{$topicid}/{@id}">
+          <!-- Should have @rfclink from previous step -->
+          <xsl:copy-of select="@rfclink"/>
           <xsl:apply-templates select="." mode="copy-normative-rule">
             <xsl:with-param name="topicfile" select="$topicfile"/>
           </xsl:apply-templates>
@@ -83,9 +88,23 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  <xsl:template match="*|@*|text()" mode="copy-normative-rule">
+  <xsl:template match="@* | node()" mode="copy-normative-rule">
     <xsl:copy>
-      <xsl:apply-templates select="@*|*|text()" mode="copy-normative-rule"/>
+      <xsl:apply-templates select="@* | node()" mode="copy-normative-rule"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <!-- Output each RFC item, adding numbers along the way. -->
+  <xsl:template match="@* | node()" mode="number-rfclist">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" mode="number-rfclist"/>
+    </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match="rfcitem" mode="number-rfclist">
+    <xsl:copy>
+      <xsl:attribute name="rfcid" select="concat($rfc.conformance.prefix, format-number(count(preceding-sibling::* | self::*), '000'))"/>
+      <xsl:apply-templates select="@* | node()" mode="number-rfclist"/>
     </xsl:copy>
   </xsl:template>
   

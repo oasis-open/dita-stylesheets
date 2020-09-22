@@ -6,5 +6,6 @@
   
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
   <xsl:import href="oasis-html-footer.xsl"/>
+  <xsl:import href="format-rfc.xsl"/>
 
 </xsl:stylesheet>

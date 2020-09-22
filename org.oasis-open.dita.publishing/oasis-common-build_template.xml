@@ -66,6 +66,9 @@
 	process all files looking for the hook to turn into a list. -->
 	<target name="generate-rfc-list" if="aggregate.rfc.topics">
 		
+		<property name="rfc.conformance.prefix" value="DITA.CONF."/>
+		<property name="tempfile.with.rfc.file" value="${dita.temp.dir}/rfcfile.txt"/>
+		<makeurl property="store.dita.rfc.filename" file="${tempfile.with.rfc.file}" validate="no"/>
 		<property name="rfclist.file" value="${dita.temp.dir}/rfclist.xml"/>
 		
 		<available file="${dita.temp.dir}/${user.input.file}" property="rfc.use.input.file.name"/>
@@ -75,11 +78,28 @@
 				<headfilter lines="1"/>
 			</filterchain>
 		</loadfile>
-		
 		<condition property="rfc.input.map" value="${dita.temp.dir}/${user.input.file}">
 			<isset property="rfc.use.input.file.name"/>
 		</condition>
 		<property name="rfc.input.map" value="${dita.temp.dir}/${rfc.renamed.map}"/>
+		
+		<pipeline message="Find the RFC items to enable two way linking" taskname="locate-rfc-items">
+			<xslt basedir="${dita.temp.dir}"
+				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/locate-rfc-items.xsl"
+				filenameparameter="FILENAME"
+				filedirparameter="FILEDIR">
+				<ditaFileset format="dita" processingRole="normal"/>
+				<param name="store.dita.rfc.filename" expression="${store.dita.rfc.filename}"/>
+				<xmlcatalog refid="dita.catalog"/>
+			</xslt>
+		</pipeline>
+		
+		<loadfile property="rfclist.dita.topic" srcfile="${tempfile.with.rfc.file}">
+			<filterchain>
+				<headfilter lines="1"/>
+			</filterchain>
+		</loadfile>
+		<echo> Aggregated RFC list goes in: ${rfclist.dita.topic}</echo>
 		
 		<!-- Process the map, which walks topics looking for RFC items. -->
 		<pipeline message="Collect RFC statements" taskname="collect-rfclist">
@@ -87,6 +107,7 @@
 				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/collect-rfclist.xsl"
 				in="${rfc.input.map}"
 				out="${rfclist.file}">
+				<param name="rfc.conformance.prefix" expression="${rfc.conformance.prefix}"/>
 				<xmlcatalog refid="dita.catalog"/>
 			</xslt>
 		</pipeline>
@@ -102,6 +123,7 @@
 				filedirparameter="FILEDIR">
 				<ditaFileset format="dita" processingRole="normal"/>
 				<param name="rfclist.file" expression="${rfclist.file}"/>
+				<param name="rfclist.dita.topic" expression="${rfclist.dita.topic}"/>
 				<xmlcatalog refid="dita.catalog"/>
 			</xslt>
 		</pipeline>
@@ -169,7 +191,7 @@
 		<property name="include.rellinks" value="friend next previous oasislinks"/>
 		<property name="args.copycss" value="yes"/>
 		<property name="args.cssroot"
-			value="${dita.plugin.org.oasis.spec.xhtml.dir}${file.separator}resource"/>
+			value="${dita.plugin.org.oasis-open.dita.publishing.dir}${file.separator}resources"/>
 		<property name="args.css" value="oasis.css"/>
 		<property name="args.outext" value=".html"/>
 		<property name="args.xsl" 
