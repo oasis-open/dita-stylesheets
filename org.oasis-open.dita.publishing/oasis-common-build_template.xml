@@ -70,6 +70,7 @@
 		<property name="tempfile.with.rfc.file" value="${dita.temp.dir}/rfcfile.txt"/>
 		<makeurl property="store.dita.rfc.filename" file="${tempfile.with.rfc.file}" validate="no"/>
 		<property name="rfclist.file" value="${dita.temp.dir}/rfclist.xml"/>
+		<makeurl property="rfclist.file.url" file="${rfclist.file}" validate="no"/>
 		
 		<available file="${dita.temp.dir}/${user.input.file}" property="rfc.use.input.file.name"/>
 		<local name="rfc.renamed.map"/>
@@ -122,7 +123,7 @@
 				filenameparameter="FILENAME"
 				filedirparameter="FILEDIR">
 				<ditaFileset format="dita" processingRole="normal"/>
-				<param name="rfclist.file" expression="${rfclist.file}"/>
+				<param name="rfclist.file" expression="${rfclist.file.url}"/>
 				<param name="rfclist.dita.topic" expression="${rfclist.dita.topic}"/>
 				<xmlcatalog refid="dita.catalog"/>
 			</xslt>
