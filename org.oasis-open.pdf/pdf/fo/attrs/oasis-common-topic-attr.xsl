@@ -19,7 +19,8 @@
 <!--                 set for note and RFC-2119 statement               -->
 <!-- 16 May 2019 KJE: Refined attribute set for RFC-2119 statement     -->
 <!-- 17 May 2019 KJE: Modified attribute set for draft comment         -->
-<!-- 05 jUL 2019 KJE: Added attribute set for <pre>                    -->
+<!-- 05 Jul 2019 KJE: Added attribute set for <pre>                    -->
+<!-- 23 Sep 2020 KJE: Removed attribute sets for RFC items             -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -138,19 +139,6 @@
         <xsl:attribute name="background-color">#f0f0f0</xsl:attribute>
         <xsl:attribute name="wrap-option">wrap</xsl:attribute>
         <xsl:attribute name="hyphenation-character">&#x25BA;</xsl:attribute>
-    </xsl:attribute-set>
-
-    <!-- RFC-2119 TERM -->
-    <xsl:attribute-set name="RFC-2119">
-        <xsl:attribute name="font-style">normal</xsl:attribute>
-        <xsl:attribute name="font-weight">bold</xsl:attribute>
-    </xsl:attribute-set>
-
-    <xsl:attribute-set name="RFC-2119-statement" use-attribute-sets="common.block">
-        <xsl:attribute name="border-left">2pt solid #446CAA</xsl:attribute>
-        <xsl:attribute name="border-right">2pt solid #446CAA</xsl:attribute>
-        <xsl:attribute name="padding-left">5pt</xsl:attribute>
-        <xsl:attribute name="padding-right">5pt</xsl:attribute>
     </xsl:attribute-set>
 
 </xsl:stylesheet>
