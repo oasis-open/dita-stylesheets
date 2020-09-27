@@ -3,7 +3,7 @@ Original creation: KJE 30 Jan 2019
 Last update: KJE 27 Sep 2020
 --------------------------------------------------------------------
 
-This plug-in runs on DITA-0T 3.5.3 and uses Antenna House Formatter
+This plug-in runs on DITA-0T 3.5.4 and uses Antenna House Formatter
 for official TC PDFs. (You can use FOP for unofficial PDFs.) 
 It requires a system with the Liberation Sans font installed.
 
