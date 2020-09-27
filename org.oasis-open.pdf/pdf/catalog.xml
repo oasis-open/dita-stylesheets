@@ -8,7 +8,7 @@
   <uri name="cfg:fo/xsl/custom.xsl" uri="fo/xsl/oasis-cn-custom-xsl.xsl"/>
 
   <!-- FontMapper configuration override entry.-->
-  <uri name="cfg:fo/font-mappings.xml" uri="fo/oasis-cn-font-mappings.xml"/>
+  <uri name="cfg:fo/font-mappings.xml" uri="fo/oasis-common-font-mappings.xml"/>
 
   <!-- I18N configuration override entries.-->
   <!--uri name="cfg:fo/i18n/de_DE.xml" uri="fo/i18n/de.xml"/-->

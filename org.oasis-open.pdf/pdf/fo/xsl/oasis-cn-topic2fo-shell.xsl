@@ -10,6 +10,7 @@
 <!-- 16 May 2019 KJE: Changed name of plug-in                          -->
 <!-- 23 Jun 2019 KJE: Imported oasis-hi-domain-attr.xsl                -->
 <!-- 02 Dec 2019 KJE: Imported oasis-tc-task-elements.xsl              -->
+<!-- 23 Sep 2020 KJE: Modified to reflect file name changes            -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -31,65 +32,64 @@
     <xsl:import href="plugin:org.dita.pdf2:xsl/common/vars.xsl"/>
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/basic-settings.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-basic-settings.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-basic-settings.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/layout-masters-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/layout-masters.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-layout-masters.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-layout-masters.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/links-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-links-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-links-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/links.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-links.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-links.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/lists-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-lists-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-lists-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/lists.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/tables-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-tables-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-tables-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/tables.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-tables.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-tables.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/root-processing.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/topic-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-topic-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-topic-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/concept-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/commons-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-commons-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-custom-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-cover-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-commons-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-cn-custom-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-cover-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/commons.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-commons.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-custom-xsl.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-commons.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-custom-xsl.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/toc-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-toc-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-toc-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/toc.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-toc.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-toc.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/bookmarks.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/index-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/index.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/front-matter-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/front-matter.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/preface.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-front-matter.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-cover-notices.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-footers.xsl"/>
-    <!--<xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-numbering.xsl"/>-->
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-front-matter.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-cover-notices.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-footers.xsl"/>
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/map-elements-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/map-elements.xsl"/>
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/task-elements-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/task-elements.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-tc-task-elements.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-tc-task-elements.xsl"/>
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/reference-elements-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/reference-elements.xsl"/>
 
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/sw-domain-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-sw-domain-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-sw-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/sw-domain.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/pr-domain-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-pr-domain-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-pr-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/pr-domain.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/hi-domain-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-hi-domain-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-hi-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/hi-domain.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/ui-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/ui-domain.xsl"/>
@@ -98,7 +98,7 @@
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/markup-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/markup-domain.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/xml-domain-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-xml-domain-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-xml-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/xml-domain.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/svg-domain-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/svg-domain.xsl"/>
@@ -106,9 +106,9 @@
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/hazard-d.xsl"/>
     
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/static-content-attr.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/attrs/oasis-cn-static-content-attr.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/attrs/oasis-common-static-content-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/static-content.xsl"/>
-    <xsl:import href="plugin:org.oasis-open.pdf:cfg/fo/xsl/oasis-cn-static-content.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.pdf:pdf/fo/xsl/oasis-common-static-content.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/glossary-attr.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:xsl/fo/glossary.xsl"/>
     <xsl:import href="plugin:org.dita.pdf2:cfg/fo/attrs/lot-lof-attr.xsl"/>
