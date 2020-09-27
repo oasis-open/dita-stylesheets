@@ -42,15 +42,19 @@
         <property name="args.chapter.layout" value="BASIC"/>
     </target>
     
-    <!-- Build OASIS TC document -->
+    <!-- Build OASIS TC PDF -->
     <target name="dita2oasis-pdf-generic" depends="oasis-generic-pdf-init, dita2pdf2.oasis"/>
     
     <target name="oasis-generic-pdf-init">
         <property name="customization.dir" 
-                    location="${dita.plugin.org.oasis-open.pdf.dir}/pdf"/>
+                  location="${dita.plugin.org.oasis-open.pdf.dir}/pdf"/>
+        <condition property="args.xsl.pdf" 
+                   value="${dita.plugin.org.oasis-open.pdf.dir}/pdf/fo/xsl/oasis-tc-topic2fo-fop-shell.xsl">
+            <equals arg1="${pdf.formatter}" arg2="fop"/>
+        </condition>
         <property name="args.xsl.pdf"
                     location="${dita.plugin.org.oasis-open.pdf.dir}/pdf/fo/xsl/oasis-tc-topic2fo-shell.xsl"/>
-        <property name="pdf.formatter" value="fop"/>
+        <property name="pdf.formatter" value="ah"/>
         <property name="args.chapter.layout" value="BASIC"/>
     </target>
      

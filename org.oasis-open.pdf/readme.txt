@@ -1,9 +1,10 @@
 Readme for the OASIS PDF plug-in
 Original creation: KJE 30 Jan 2019
+Last update: KJE 27 Sep 2020
 --------------------------------------------------------------------
 
-This plug-in runs on DITA-0T 3.3.4 and uses Antenna House Formatter
-for official TC PDFs. (You can use FOP for generic PDFs.) 
+This plug-in runs on DITA-0T 3.5.3 and uses Antenna House Formatter
+for official TC PDFs. (You can use FOP for unofficial PDFs.) 
 It requires a system with the Liberation Sans font installed.
 
 It defines three transformations:
