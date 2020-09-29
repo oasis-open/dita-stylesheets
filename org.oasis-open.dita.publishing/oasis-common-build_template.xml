@@ -59,12 +59,25 @@
 			</xslt>
 		</pipeline>
 	</target>
-	
+
 	<!-- If needed, collect tagged RFC statements into a list.
 	Because preprocess can rename the conformance topic, we cannot rely on
 	its file name. Should be able to identify it but for now just brute force
-	process all files looking for the hook to turn into a list. -->
-	<target name="generate-rfc-list" if="aggregate.rfc.topics">
+	process all files looking for the hook to turn into a list. 
+	Need to set aggregate.rfc.topics to have this run. -->
+	
+	<target name="generate-rfc-list" depends="generate-rfc-list.init,
+		generate-rfc-list.findlist,
+		generate-rfc-list.collect,
+		generate-rfc-list.create"/>
+	
+	<target name="generate-rfc-list.init" if="aggregate.rfc.topics">
+		
+		<condition property="skip.rfclist" value="true">
+			<not>
+				<isset property="aggregate.rfc.topics"/>
+			</not>
+		</condition>
 		
 		<property name="rfc.conformance.prefix" value="DITA.CONF."/>
 		<property name="tempfile.with.rfc.file" value="${dita.temp.dir}/rfcfile.txt"/>
@@ -83,7 +96,9 @@
 			<isset property="rfc.use.input.file.name"/>
 		</condition>
 		<property name="rfc.input.map" value="${dita.temp.dir}/${rfc.renamed.map}"/>
+	</target>
 		
+	<target name="generate-rfc-list.findlist" unless="skip.rfclist">
 		<pipeline message="Find the RFC items to enable two way linking" taskname="locate-rfc-items">
 			<xslt basedir="${dita.temp.dir}"
 				style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/locate-rfc-items.xsl"
@@ -95,12 +110,22 @@
 			</xslt>
 		</pipeline>
 		
+		<available file="${tempfile.with.rfc.file}" property="found.rfclist.topic"/>
+		
+		<condition property="skip.rfclist" value="true">
+			<not>
+				<isset property="found.rfclist.topic"/>
+			</not>
+		</condition>
+	</target>
+		
+	<target name="generate-rfc-list.collect" unless="skip.rfclist">
 		<loadfile property="rfclist.dita.topic" srcfile="${tempfile.with.rfc.file}">
 			<filterchain>
 				<headfilter lines="1"/>
 			</filterchain>
 		</loadfile>
-		<echo> Aggregated RFC list goes in: ${rfclist.dita.topic}</echo>
+		<!--<echo> Aggregated RFC list goes in: ${rfclist.dita.topic}</echo>-->
 		
 		<!-- Process the map, which walks topics looking for RFC items. -->
 		<pipeline message="Collect RFC statements" taskname="collect-rfclist">
@@ -112,7 +137,9 @@
 				<xmlcatalog refid="dita.catalog"/>
 			</xslt>
 		</pipeline>
-		
+	</target>
+
+	<target name="generate-rfc-list.create" unless="skip.rfclist">
 		<!-- Process topics, looking for the one that needs the generated list.
 		    TODO: because we are processing every topic, we should be able to
 		    link from RFC items in topics back to this list, and even better,
