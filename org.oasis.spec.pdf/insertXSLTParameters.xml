@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<parameters>
-  <param name="errata-num" expression="${args.oasis.bookmeta.errata-num}"/>
-  <param name="stage-abbrev" expression="${args.oasis.bookmeta.stage-abbrev}"/>
-  <param name="revision-num" expression="${args.oasis.bookmeta.revision-num}"/>
-  <param name="outputfilebasename" expression="${args.oasis.bookmeta.outputfilebasename}"/>
-  <param name="part-number" expression="${args.oasis.bookmeta.part-number}"/>
-  <param name="spec-release-type" expression="${args.oasis.bookmeta.spec-release-type}"/>
-</parameters>

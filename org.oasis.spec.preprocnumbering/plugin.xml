@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin id="org.oasis.spec.preprocnumbering"><!--
-  <feature extension="dita.conductor.target.relative" file="integrator.xml"/>
-  <feature extension="dita.xsl.mappull" value="xsl/oasis-mappull.xsl" type="file"/>
-  <feature extension="dita.xsl.maplink" value="xsl/oasis-maplink.xsl" type="file"/>
-  <feature extension="depend.preprocess.post" value="numbering" type="text"/>-->
-</plugin>
