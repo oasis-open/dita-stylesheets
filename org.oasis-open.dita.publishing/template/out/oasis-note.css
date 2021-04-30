@@ -1,0 +1,253 @@
+/*
+  OASIS DITA TC CSS for Committee Notes 
+  -------------------------------------
+  05 Feb 2019 KJE: Edited to implement OASIS rebranding;
+                   remove Docbook styles; add background
+                   color for thead
+  08 Feb 2019 KJE: Modified styles for "no-indent"
+  15 Mar 2019 KJE: Removed bold highlighting from headers;
+                   added line above header level-1
+  17 Mar 2019 KJE: Added styles for xmlelement and xmlatt;
+                   codeblock
+  18 Mar 2019 KJE: Added additional styling for <dd> on
+                   cover page and TOC; corrected styles for
+                   header-levels 3 and 4 to be normal;
+                   corrected some cover styles to be bold
+*/
+
+body{
+    background-repeat:no-repeat;
+    background-position:top left;
+    background-attachment:fixed;
+    margin-left:18pt;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:80%;
+}
+
+/* 05 Feb 2019 KJE: Added the following */
+div.text-under-logo{
+    color:#707070;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:bold;
+}
+
+div.committee-note-title{
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:200%;
+    font-weight:bold;
+    list-style-type:decimal;
+    color:#446CAA;
+}
+
+div.publication-level{
+    margin-top:0.83em;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:bold;
+    list-style-type:decimal;
+    color:#446CAA;
+}
+
+div.approval-date{
+    margin-top:0.83em;
+    margin-bottom:0.83em;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:bold;
+    list-style-type:decimal;
+    color:#446CAA;
+}
+
+h1.topictitle1{
+    border-top:1px solid black;
+    margin-top:2em;
+    padding-top:10pt;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:normal;
+    list-style-type:decimal;
+    color:#446CAA;
+}
+
+/* 18 Mar 2019: Added to style TOC with line above */
+h1.frontmatter-notices-title{
+    border-top:1px solid black;
+    margin-top:2em;
+    padding-top:10pt;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:bold;
+    list-style-type:decimal;
+    color:#446CAA;
+}
+
+h1.frontmatter-topic-title{
+    /*border-top:1px solid black;
+    margin-top:2em;*/
+    padding-top:10pt;
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:bold;
+    list-style-type:decimal;
+    color:#446CAA;
+}
+
+*.sectiontitle{
+    color:#446CAA;
+    font-weight:normal;
+}
+
+h2.sectiontitle{
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:100%;
+    font-weight:normal;
+    list-style-type:decimal;
+    color:#446CAA;
+}
+/* This|Previous|Latest versions; all cover page sections */
+h2.frontmatter-section-title{
+    font-family:"Liberation Sans",arial, helvetica, sans-serif;
+    font-size:100%;
+    font-weight:bold;
+    list-style-type:decimal;
+    color:#446CAA;
+}
+/* Add colon after "This|Previous|Latest" versions; all cover page sections */
+h2.frontmatter-section-title::after{
+    content:':';
+}
+
+h2.topictitle2{
+    font-size:120%;
+    color:#446CAA;
+    font-weight:normal
+}
+
+
+.topictitle3{
+    font-size:110%;
+    color:#446CAA;    
+    font-weight:normal
+}
+
+.topictitle4{
+    font-size:100%;
+    color:#446CAA;        
+    font-weight:normal
+}
+
+code.xmlatt{
+    font-family:"Liberation Mono",Courier,monospace;
+    font-size:90%;
+}
+
+code.xmlelement{
+    font-family:"Liberation Mono",Courier,monospace;
+    font-size:90%;
+}
+
+.toclinks{
+    -webkit-margin-before:0em;
+    -webkit-margin-after:0em;
+}
+
+p.toc1{
+    -webkit-margin-before:0.2em;
+    -webkit-margin-after:0.2em;
+    margin-left:18pt;
+}
+
+p.toc2{
+    -webkit-margin-before:0.2em;
+    -webkit-margin-after:0.2em;
+    margin-left:36pt;
+}
+
+p.toc3{
+    -webkit-margin-before:0.2em;
+    -webkit-margin-after:0.2em;
+    margin-left:54pt;
+}
+
+p.toc4{
+    -webkit-margin-before:0.2em;
+    -webkit-margin-after:0.2em;
+    margin-left:72pt;
+}
+/* 05 Feb 2019 KJE: Not clear whether this is used */
+div.section h1.title{
+    padding-top:0in;
+    color:#A1985A;
+}
+/* 05 Feb 2019 KJE: Not clear whether this is used */
+div.article h1.title{
+    color:#A1985A;
+}
+
+span.underline{
+    text-decoration:underline;
+}
+
+span.term{
+    font-weight:bold;
+}
+
+tr{
+    border-color:#AFAFAF;
+}
+
+td{
+    border-color:#AFAFAF;
+    text-align:left;
+}
+
+th{
+    background-color:#edf1f8;
+    border-color:#AFAFAF;
+    text-align:left;
+}
+
+col{
+    border-color:#AFAFAF;
+}
+
+colgroup{
+    border-color:#AFAFAF;
+}
+
+table{
+    border-color:#AFAFAF;
+}
+
+tbody{
+    border-color:#AFAFAF;
+}
+
+thead{
+    border-color:#AFAFAF;
+}
+
+tfoot{
+    border-color:#AFAFAF;
+}
+
+@media screen{ /* hide from IE3 */
+    a[href]:hover{
+        background:#ffa
+    }
+}
+
+/* KJE: Added margin-inline-start to prevent Chrome from addding
+        indentation */
+*.no-indent{
+    list-style-position: inside;
+    margin-inline-start:0px;
+    padding-left: 0px;
+}
+
+dd.no-indent {
+    padding-top:.5em;
+}
+
+/* end of file */

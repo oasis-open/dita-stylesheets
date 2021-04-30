@@ -1,16 +1,22 @@
-Readme for the OASIS PDF plug-in
+Readme for the OASIS Style plugins
 Original creation: KJE 30 Jan 2019
-Last update: KJE 27 Sep 2020
+Last update: RDA 30 Apr 2021
 --------------------------------------------------------------------
 
-This plug-in runs on DITA-0T 3.5.4 and uses Antenna House Formatter
+The org.oasis-open.dita.publishing plugin now combines styling for
+both HTML5 and PDF specification output, as well styling for
+PDF Committee Notes. (X)HTML committee note processing is still
+in a standalone plugin, although we expect it to be merged later.
+
+PDF transformation types run on DITA-0T 3.5.4 and use Antenna House Formatter
 for official TC PDFs. (You can use FOP for unofficial PDFs.) 
-It requires a system with the Liberation Sans font installed.
+This requires a system with the Liberation Sans font installed.
 
-It defines three transformations:
+The plugin defines several transformations:
 
+ * spec-html5                 (OASIS Specification, HTML5)
+ * oasis-pdf-specification    (OASIS specification, PDF)
  * oasis-pdf-committeeNote    (OASIS committee note)
- * oasis-pdf-specification    (OASIS specification)
  * oasis-pdf-generic          (Generic PDF, body uses spec styles)
  
  The template directory contains starter files for new

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="org.oasis-open.dita.publishing" version="1.0">
   <feature extension="ant.import" file="oasis-common-build.xml"/>
+  <feature extension="ant.import" file="build-oasis-pdf.xml"/>
   <feature extension="dita.xsl.maplink" value="xsl/maplink_oasis.xsl" type="file"/>
   <template file="oasis-common-build_template.xml"/>
-  <transtype name="spec-html5" extends="html5">    
-  </transtype>
+  <transtype name="spec-html5" extends="html5"/>
+  <transtype name="oasis-pdf-specification" extends="pdf2"/>
+  <transtype name="oasis-pdf-committeeNote" extends="pdf2"/>
+  <transtype name="oasis-pdf-generic" extends="pdf2"/>
   <feature extension="dita.conductor.html5.param" type="file" value="html5-params.xml"/>
+  <feature extension="dita.conductor.pdf2.param" type="file" value="PDFTransformParameters.xml"/>
+  <require plugin="org.dita.pdf2"/>
 </plugin>
