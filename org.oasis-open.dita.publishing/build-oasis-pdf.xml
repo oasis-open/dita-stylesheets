@@ -5,10 +5,11 @@
 <!-- 08 May 2019 KJE: Added change log after making modifications      -->
 <!--                  based on call with RDA                           -->
 <!-- 16 May 2019 KJE: Changed name of plug-in                          -->
+<!-- 30 Apr 2021 RDA: Conslidating plugins to one directory            -->
 <!--                                                                   -->
 <!-- ================================================================= -->  
 
-<project name="org.oasis-open.pdf" default="dita2oasis-pdf-committeeNote">
+<project name="org.oasis-open.dita.publishing.pdf" default="dita2oasis-pdf-committeeNote">
     
     <!-- Define a common dita2pdf2 for OASIS, which uses the custom preprocess
         in order to pick up topic numbering for TOC / Titles. -->
@@ -19,9 +20,9 @@
   
     <target name="pdf-committeeNote-init">
         <property name="customization.dir" 
-                    location="${dita.plugin.org.oasis-open.pdf.dir}/pdf"/>
+                    location="${dita.plugin.org.oasis-open.dita.publishing.dir}/pdf"/>
         <property name="args.xsl.pdf"
-                    location="${dita.plugin.org.oasis-open.pdf.dir}/pdf/fo/xsl/oasis-cn-topic2fo-shell.xsl"/>
+                    location="${dita.plugin.org.oasis-open.dita.publishing.dir}/pdf/fo/xsl/oasis-cn-topic2fo-shell.xsl"/>
         <property name="pdf.formatter" value="ah"/>
         <property name="args.chapter.layout" value="BASIC"/>
     </target>
@@ -31,13 +32,13 @@
         
     <target name="pdf-spec-init">
         <property name="customization.dir" 
-                  location="${dita.plugin.org.oasis-open.pdf.dir}/pdf"/>
+                  location="${dita.plugin.org.oasis-open.dita.publishing.dir}/pdf"/>
         <condition property="args.xsl.pdf" 
-                   value="${dita.plugin.org.oasis-open.pdf.dir}/pdf/fo/xsl/oasis-spec-topic2fo-fop-shell.xsl">
+                   value="${dita.plugin.org.oasis-open.dita.publishing.dir}/pdf/fo/xsl/oasis-spec-topic2fo-fop-shell.xsl">
             <equals arg1="${pdf.formatter}" arg2="fop"/>
         </condition>
         <property name="args.xsl.pdf"
-                  location="${dita.plugin.org.oasis-open.pdf.dir}/pdf/fo/xsl/oasis-spec-topic2fo-shell.xsl"/>
+                  location="${dita.plugin.org.oasis-open.dita.publishing.dir}/pdf/fo/xsl/oasis-spec-topic2fo-shell.xsl"/>
         <property name="pdf.formatter" value="ah"/>
         <property name="args.chapter.layout" value="BASIC"/>
     </target>
@@ -47,13 +48,13 @@
     
     <target name="oasis-generic-pdf-init">
         <property name="customization.dir" 
-                  location="${dita.plugin.org.oasis-open.pdf.dir}/pdf"/>
+                  location="${dita.plugin.org.oasis-open.dita.publishing.dir}/pdf"/>
         <condition property="args.xsl.pdf" 
-                   value="${dita.plugin.org.oasis-open.pdf.dir}/pdf/fo/xsl/oasis-tc-topic2fo-fop-shell.xsl">
+                   value="${dita.plugin.org.oasis-open.dita.publishing.dir}/pdf/fo/xsl/oasis-tc-topic2fo-fop-shell.xsl">
             <equals arg1="${pdf.formatter}" arg2="fop"/>
         </condition>
         <property name="args.xsl.pdf"
-                    location="${dita.plugin.org.oasis-open.pdf.dir}/pdf/fo/xsl/oasis-tc-topic2fo-shell.xsl"/>
+                    location="${dita.plugin.org.oasis-open.dita.publishing.dir}/pdf/fo/xsl/oasis-tc-topic2fo-shell.xsl"/>
         <property name="pdf.formatter" value="ah"/>
         <property name="args.chapter.layout" value="BASIC"/>
     </target>
