@@ -53,6 +53,7 @@
     <xsl:choose>
       <xsl:when test="*[contains(@class, ' topic/dlhead ')]">
         <fo:table xsl:use-attribute-sets="dl" id="{@id}">
+          <xsl:call-template name="commonattributes"/>
           <xsl:apply-templates select="*[contains(@class, ' topic/dlhead ')]"/>
           <fo:table-body xsl:use-attribute-sets="dl__body">
             <xsl:choose>
@@ -72,6 +73,7 @@
       </xsl:when>
       <xsl:otherwise>
         <fo:block xsl:use-attribute-sets="dl__as__list">
+          <xsl:call-template name="commonattributes"/>
           <xsl:apply-templates/>
         </fo:block>
       </xsl:otherwise>
@@ -81,6 +83,7 @@
   <xsl:template match="*[contains(@class, ' topic/dl ')]/*[contains(@class, ' topic/dlhead ')]">
     <fo:table-header xsl:use-attribute-sets="dl.dlhead" id="{@id}">
       <fo:table-row xsl:use-attribute-sets="dl.dlhead__row">
+        <xsl:call-template name="commonattributes"/>
         <xsl:apply-templates/>
       </fo:table-row>
     </fo:table-header>
@@ -89,6 +92,7 @@
   <xsl:template match="*[contains(@class, ' topic/dlhead ')]/*[contains(@class, ' topic/dthd ')]">
     <fo:table-cell xsl:use-attribute-sets="dlhead.dthd__cell" id="{@id}">
       <fo:block xsl:use-attribute-sets="dlhead.dthd__content">
+        <xsl:call-template name="commonattributes"/>
         <xsl:apply-templates/>
       </fo:block>
     </fo:table-cell>
@@ -97,6 +101,7 @@
   <xsl:template match="*[contains(@class, ' topic/dlhead ')]/*[contains(@class, ' topic/ddhd ')]">
     <fo:table-cell xsl:use-attribute-sets="dlhead.ddhd__cell" id="{@id}">
       <fo:block xsl:use-attribute-sets="dlhead.ddhd__content">
+        <xsl:call-template name="commonattributes"/>
         <xsl:apply-templates/>
       </fo:block>
     </fo:table-cell>
@@ -106,6 +111,7 @@
     <xsl:choose>
       <xsl:when test="preceding-sibling::*[contains(@class, ' topic/dlhead ')]">
         <fo:table-row xsl:use-attribute-sets="dlentry" id="{@id}">
+          <xsl:call-template name="commonattributes"/>
           <fo:table-cell xsl:use-attribute-sets="dlentry.dt" id="{@id}">
             <xsl:apply-templates select="*[contains(@class, ' topic/dt ')]"/>
           </fo:table-cell>
@@ -125,12 +131,14 @@
 
   <xsl:template match="*[contains(@class, ' topic/dt ')]">
     <fo:block xsl:use-attribute-sets="dt__block">
+      <xsl:call-template name="commonattributes"/>
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' topic/dd ')]">
     <fo:block xsl:use-attribute-sets="dd__block">
+      <xsl:call-template name="commonattributes"/>
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
