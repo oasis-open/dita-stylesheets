@@ -61,7 +61,7 @@
         scope="local" href="{concat($dotdots, $rfclist.dita.topic, '/', $rfcnum)}"
         xtrc="{@xtrc}" xtrf="{@xtrf}">
           <xsl:value-of select="$rfcnum"/>
-        <desc class="- topic/desc ">Conformance clause number <xsl:value-of select="$rfcnum"/></desc>
+        <desc class="- topic/desc ">Conformance item <xsl:value-of select="$rfcnum"/></desc>
       </xref>
     </xsl:variable>
     <xsl:choose>
@@ -107,7 +107,7 @@
     <xsl:param name="xtrf"/>
     <xsl:param name="xtrc"/>
     <xsl:if test="rfcitem">
-      <simpletable relcolwidth="1* 7*" class="- topic/simpletable " outputclass="collected-rfc-rules" id="collected-rfc-rules-as-table" frame="all">
+      <simpletable relcolwidth="1* 9*" class="- topic/simpletable " outputclass="collected-rfc-rules" id="collected-rfc-rules-as-table" frame="all">
         <sthead class="- topic/sthead ">
           <stentry class="- topic/stentry " dita-ot:y="1" dita-ot:x="1">Item</stentry>
           <stentry class="- topic/stentry " dita-ot:y="1" dita-ot:x="2">Conformance statement</stentry>
@@ -134,6 +134,7 @@
                 xtrf="{$xtrf}"
                 xtrc="{$xtrc}">
                   <xsl:value-of select="@rfcid"/>
+                <desc class="- topic/desc ">Conformance item <xsl:value-of select="@rfcid"/></desc>
               </xref>
             </stentry>
             <stentry class="- topic/stentry " dita-ot:y="{$rownum}" dita-ot:x="2">
