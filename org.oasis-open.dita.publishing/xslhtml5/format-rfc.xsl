@@ -8,16 +8,16 @@
     <table role="presentation" class="rfctable">
       <xsl:call-template name="setid"/>
       <colgroup>
-        <col width="15%"/>
-        <col width="85%"/>
+        <col width="10%"/>
+        <col width="90%"/>
       </colgroup>
       <tbody>
         <tr>
           <td class="rfcnum">
-            <xsl:apply-templates select="rfcnum/node()"/>
+            <xsl:apply-templates select="rfcnum"/>
           </td>
           <td class="rfctext">
-            <xsl:apply-templates select="rfctext/node()"/>
+            <xsl:apply-templates select="rfctext"/>
           </td>
         </tr>
       </tbody>

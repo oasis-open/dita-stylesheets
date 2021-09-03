@@ -79,7 +79,7 @@
 			</not>
 		</condition>
 		
-		<property name="rfc.conformance.prefix" value="DITA.CONF."/>
+		<property name="rfc.conformance.prefix" value=""/>
 		<property name="tempfile.with.rfc.file" value="${dita.temp.dir}/rfcfile.txt"/>
 		<makeurl property="store.dita.rfc.filename" file="${tempfile.with.rfc.file}" validate="no"/>
 		<property name="rfclist.file" value="${dita.temp.dir}/rfclist.xml"/>
