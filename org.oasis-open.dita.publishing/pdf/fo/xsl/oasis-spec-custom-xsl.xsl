@@ -54,5 +54,40 @@
          <xsl:apply-templates/>
       </fo:block>
    </xsl:template>
+   
+   <!-- Matches default simpletable, but with override to support default 10/90 column widths.
+   Also removed some bits that do not apply to this table, like checking for missing rows. -->
+   <xsl:template match="*[contains(@class, ' topic/simpletable ')][@outputclass='collected-rfc-rules']">
+      <xsl:variable name="number-cells" as="xs:integer">
+         <!-- Contains the number of cells in the widest row -->
+         <xsl:apply-templates select="*[1]" mode="count-max-simpletable-cells"/>
+      </xsl:variable>
+      <xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]" mode="outofline"/>
+      <xsl:apply-templates select="*[contains(@class, ' topic/title ')]"/>
+      <fo:table xsl:use-attribute-sets="simpletable">
+         <xsl:call-template name="commonattributes"/>
+         <xsl:call-template name="globalAtts"/>
+         <xsl:call-template name="displayAtts">
+            <xsl:with-param name="element" select="."/>
+         </xsl:call-template>
+         
+         <!-- Create FOP compatible column widths -->
+         <fo:table-column column-width="10%" column-number="1"/>
+         <fo:table-column column-width="90%" column-number="2"/>
+         
+         <!-- Toss processing to another template to process the simpletable
+                 heading, and/or create a default table heading row. -->
+         <xsl:apply-templates select="*[contains(@class, ' topic/sthead ')]">
+            <xsl:with-param name="number-cells" select="$number-cells" tunnel="yes"/>
+         </xsl:apply-templates>
+         
+         <fo:table-body xsl:use-attribute-sets="simpletable__body">
+            <xsl:apply-templates select="*[contains(@class, ' topic/strow ')]">
+               <xsl:with-param name="number-cells" select="$number-cells" tunnel="yes"/>
+            </xsl:apply-templates>
+         </fo:table-body>
+      </fo:table>
+      <xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-endprop ')]" mode="outofline"/>
+   </xsl:template>
 
 </xsl:stylesheet>
