@@ -15,7 +15,7 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   exclude-result-prefixes="ditaarch opentopic spdf dita-ot opentopic-mapmerge opentopic-func related-links xs">
 
-  <xsl:template match="*[contains(@class, ' topic/xref ')]" name="topic.xref">
+  <xsl:template match="*[contains(@class, ' topic/xref ')][not(@type='fn')]" name="topic.xref">
     <fo:inline>
       <xsl:call-template name="commonattributes"/>
     </fo:inline>
