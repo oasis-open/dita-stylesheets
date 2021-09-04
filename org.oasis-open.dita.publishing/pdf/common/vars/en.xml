@@ -16,11 +16,12 @@
     <!-- 16 May 2019 KJE: Added string for "OASIS TC document"             -->
     <!-- 17 May 2019 KJE: Added string for "OASIS TC"                      -->
     <!-- 01 Dec 2019 KJE: Added strings for task labels                    -->
+    <!-- 03 Sep 2021 KJE: Added v3.0 of OASIS logo                         -->
     <!--                                                                   -->
     <!-- ================================================================= -->
    
     <!-- Cover page logo-->
-    <variable id="logo Image Path">Customization/OpenTopic/common/artwork/OASISLogo-v2.0.jpg</variable>
+    <variable id="logo Image Path">Customization/OpenTopic/common/artwork/OASISLogo-v3.0.png</variable>
     
     <!-- Cover page header strings -->
     <variable id="OASIS committee note">OASIS Committee Note</variable>   
