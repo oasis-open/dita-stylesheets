@@ -21,6 +21,8 @@
 <!-- 17 May 2019 KJE: Modified attribute set for draft comment         -->
 <!-- 05 Jul 2019 KJE: Added attribute set for <pre>                    -->
 <!-- 23 Sep 2020 KJE: Removed attribute sets for RFC items             -->
+<!-- 03 Sep 2021 KJE: Made titles and sections bold, per new OASIS     -->
+<!--                  OASIS style tweak                                -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -37,6 +39,7 @@
         <xsl:attribute name="border-top-style">solid</xsl:attribute>
         <xsl:attribute name="border-top-width">1px</xsl:attribute>
         <xsl:attribute name="font-size">18pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="padding-top">16.8pt</xsl:attribute>
         <xsl:attribute name="space-after">14pt</xsl:attribute>
@@ -45,6 +48,7 @@
 
     <xsl:attribute-set name="topic.topic.title" use-attribute-sets="common.title">
         <xsl:attribute name="font-size">14pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="padding-top">0</xsl:attribute>
         <xsl:attribute name="space-before">12pt</xsl:attribute>
@@ -53,6 +57,7 @@
 
     <xsl:attribute-set name="topic.topic.topic.title" use-attribute-sets="common.title">
         <xsl:attribute name="font-size">13pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="space-after">2pt</xsl:attribute>
         <xsl:attribute name="space-before">10pt</xsl:attribute>
@@ -60,6 +65,7 @@
 
     <xsl:attribute-set name="topic.topic.topic.topic.title" use-attribute-sets="common.title">
         <xsl:attribute name="font-size">12pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="space-after">2pt</xsl:attribute>
         <xsl:attribute name="space-before">10pt</xsl:attribute>
@@ -67,6 +73,7 @@
 
     <xsl:attribute-set name="topic.topic.topic.topic.topic.title" use-attribute-sets="common.title">
         <xsl:attribute name="font-size">11pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="space-after">2pt</xsl:attribute>
         <xsl:attribute name="space-before">10pt</xsl:attribute>
@@ -75,6 +82,7 @@
     <xsl:attribute-set name="topic.topic.topic.topic.topic.topic.title"
         use-attribute-sets="common.title">
         <xsl:attribute name="font-size">10pt</xsl:attribute>
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="space-after">2pt</xsl:attribute>
         <xsl:attribute name="space-before">10pt</xsl:attribute>
@@ -82,7 +90,8 @@
 
     <xsl:attribute-set name="section.title" use-attribute-sets="common.title">
         <xsl:attribute name="font-size">11.5pt</xsl:attribute>
-        <!--<xsl:attribute name="font-style">italic</xsl:attribute>-->
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="font-style">normal</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="space-before">15pt</xsl:attribute>
     </xsl:attribute-set>
