@@ -3,6 +3,7 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 16 May 2019 KJE: Original creation                                -->
+<!-- 06 Sep 2021 KJE: Added import for task attributes                 -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -12,6 +13,7 @@
     <xsl:import href="plugin:org.oasis-open.dita.publishing:pdf/fo/xsl/oasis-cn-topic2fo-shell.xsl"/>
     
     <xsl:import href="plugin:org.oasis-open.dita.publishing:pdf/fo/xsl/oasis-tc-front-matter.xsl"/>
+    <xsl:import href="plugin:org.oasis-open.dita.publishing:pdf/fo/attrs/oasis-tc-task-elements-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.dita.publishing:pdf/fo/xsl/oasis-tc-static-content.xsl"/>
     <xsl:import href="plugin:org.oasis-open.dita.publishing:pdf/fo/attrs/oasis-tc-custom-attr.xsl"/>
     <xsl:import href="plugin:org.oasis-open.dita.publishing:pdf/fo/xsl/oasis-tc-footers.xsl"/>
