@@ -7,6 +7,7 @@
 <!-- 21 Jun 2015  BT: Added additional override for chapter titles,    -->
 <!--                  needed for more recent versions of DITA-OT.      -->
 <!-- 16 Aug 2015 KJE: Added additional override for appendix titles.   -->
+<!-- 08 Nov 2021 RDA: override indent, font size for link desc.        -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -20,6 +21,15 @@
                 xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
                 exclude-result-prefixes="ot-placeholder opentopic opentopic-index opentopic-func dita2xslfo xs"
                 version="2.0">
+    
+    <xsl:template match="fo:block/@start-indent|fo:block/@font-size" mode="dropCopiedIds">
+        <!-- start indent, font size get copied from <shortdesc> processing into
+      link description processing. Drop them and use settings from link__shortdesc.
+        
+        This processing comes from commons.xsl (thru topic.xsl) so override is here,
+        rather than in link module that actually processes topic/link + 
+        topic/desc + topic/shortdesc -->
+    </xsl:template>
 
     <!-- OVERRIDE FOR DRAFT COMMENTS -->
     
