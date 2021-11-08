@@ -3,6 +3,7 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 15 May 2019 KJE: Initial creation                                 -->
+<!-- 08 Nov 2021 RDA: Override link__shortdesc                         -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -27,6 +28,13 @@
   <xsl:attribute-set name="link">
     <!--<xsl:attribute name="color">red</xsl:attribute>-->
     <!--<xsl:attribute name="margin-left">20pt</xsl:atribute>-->
+  </xsl:attribute-set>
+  
+  <!-- Override link shortdesc so that start indent is inherited from
+       active indent for related links, rather than getting a new indent -->
+  <xsl:attribute-set name="link__shortdesc">
+    <xsl:attribute name="start-indent">inherit</xsl:attribute>
+    <xsl:attribute name="space-after">5pt</xsl:attribute>
   </xsl:attribute-set>
 
 </xsl:stylesheet>
