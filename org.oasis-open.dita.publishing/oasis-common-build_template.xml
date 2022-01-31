@@ -272,4 +272,16 @@
 		</copy>
 	</target>
 	
+	<!-- Generate an appendix topic with a summary of attributes,
+	     based on the latest RNG files. -->
+	<target name="dita2attribute-appendix-topic" depends="build-init">
+		<pipeline message="Generate appendix topic" taskname="appendix-topic">
+			<xslt style="${dita.plugin.org.oasis-open.dita.publishing.dir}/xsl/gather-attlists.xsl"
+				in="${dita.plugin.org.oasis-open.dita.v2_0.dir}/rng/base/basetopic.rng"
+				out="${output.dir}/generated-attlist.dita">
+				<xmlcatalog refid="dita.catalog"/>
+			</xslt>
+		</pipeline>
+	</target>
+	
 </project>
