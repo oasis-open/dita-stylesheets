@@ -28,8 +28,9 @@
         quotation marks, with the following exceptions:
           * On the cover page
           * Child of <dt>                          -->
-   
-   <xsl:template match="*[contains(@class,' topic/keyword ')]
+   <!-- Intentionally matching <keyword> but not specializations; we want
+    quotes around <keyword> itself when used in spec -->
+   <xsl:template match="keyword
                          [not(ancestor-or-self::*[contains(@class,' topic/topic ')][@outputclass='cover'])]
                          [not(ancestor-or-self::*[contains(@class,' topic/dt ')])]">
       <fo:inline>

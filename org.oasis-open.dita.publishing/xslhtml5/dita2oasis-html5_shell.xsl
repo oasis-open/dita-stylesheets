@@ -5,6 +5,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
+  <xsl:import href="oasis-html5_topic.xsl"/>
   <xsl:import href="oasis-html-footer.xsl"/>
   <xsl:import href="format-rfc.xsl"/>
 
