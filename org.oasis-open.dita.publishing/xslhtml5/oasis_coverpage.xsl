@@ -80,11 +80,11 @@
         <xsl:value-of select="$newline"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <xsl:value-of select="$newline"/>
-        <meta content="Copyright © OASIS Open 2016" name="copyright"/>
+        <meta content="Copyright © OASIS Open 2012" name="copyright"/>
         <xsl:value-of select="$newline"/>
-        <meta content=" Copyright © OASIS 2016" name="DC.rights.owner"/>
+        <meta content=" Copyright © OASIS 2012" name="DC.rights.owner"/>
         <xsl:value-of select="$newline"/>
-        <link href="http://docs.oasis-open.org/templates/css/OASIS_Specification_Template_v1-0.css"
+        <link href="https://docs.oasis-open.org/templates/css/OASIS_Specification_Template_v1-0.css"
           rel="stylesheet" type="text/css"/>
         <link href="oasis.css" rel="stylesheet" type="text/css"/>
         <link href="commonltr.css" rel="stylesheet" type="text/css"/>
