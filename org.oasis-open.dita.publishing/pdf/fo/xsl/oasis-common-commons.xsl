@@ -8,6 +8,8 @@
 <!--                  needed for more recent versions of DITA-OT.      -->
 <!-- 16 Aug 2015 KJE: Added additional override for appendix titles.   -->
 <!-- 08 Nov 2021 RDA: override indent, font size for link desc.        -->
+<!-- 20 Jun 2022 KJE: Added additional override for @dispostion on     --> 
+<!--                  <draft-comment>                                  -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -54,6 +56,15 @@
                     </xsl:choose>
                 </fo:block>
                 <xsl:apply-templates/>
+                <fo:block xsl:use-attribute-sets="draft-comment__label">
+                    <xsl:choose>
+                        <xsl:when test="normalize-space(@disposition)!=''">
+                            Disposition: 
+                            <xsl:value-of select="@disposition"/>                          
+                        </xsl:when>
+                        <xsl:otherwise/>
+                    </xsl:choose>
+                </fo:block>              
             </fo:block>
         </xsl:if>
     </xsl:template>
