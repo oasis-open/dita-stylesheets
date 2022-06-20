@@ -3,6 +3,8 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 01 Dec 2019 KJE: Original creation                                -->
+<!-- 20 Jun 2022 KJE: Add labels for <steptroubleshooting> and         -->
+<!--                  <tasktroubleshooting>                            -->
 <!--                                                                   -->
 <!-- ================================================================= --> 
 
@@ -29,6 +31,19 @@
             <fo:block xsl:use-attribute-sets="result__content">
               <xsl:apply-templates/>
             </fo:block>
+        </fo:block>
+    </xsl:template>
+  
+  <!-- Suppress heading for <steps> when a child of <remedy> -->
+  <xsl:template match="remedy/*" mode="dita2xslfo:task-heading"/>
+
+  
+  <!-- Add template for <steptroubleshooting> -->
+      <xsl:template match="*[contains(@class, ' task/steptroubleshooting ')]">
+        <fo:block xsl:use-attribute-sets="stepxmp">
+            <xsl:call-template name="commonattributes"/>
+            <fo:inline font-weight="bold">Trouble? </fo:inline>
+            <xsl:apply-templates/>
         </fo:block>
     </xsl:template>
 
