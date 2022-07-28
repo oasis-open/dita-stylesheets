@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <val>
-    <prop action="exclude" att="audience" val="dita-tc"/>
+  
+  <!-- Flags info specific to committee notes -->
+  <prop action="flag" att="deliveryTarget" val="committee-note" color="red">
+    <startflag>
+      <alt-text>Committee note</alt-text>
+    </startflag>
+    
+  <!-- Flags info specific to specifications -->  
+  </prop>
+    <prop action="flag" att="deliveryTarget" val="spec" color="green">
+    <startflag>
+      <alt-text>Spec</alt-text>
+    </startflag>
+  </prop>
+  
 </val>
