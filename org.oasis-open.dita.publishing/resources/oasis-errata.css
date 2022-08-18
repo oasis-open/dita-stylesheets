@@ -1,0 +1,23 @@
+
+/* =============================================================*/
+/* CSS for OASIS errata                                         */
+/*                                                              */
+/* ORIGINAL CREATION DATE:                                      */
+/*            28 July 2022                                      */
+/*                                                              */
+/* UPDATES:                                                     */
+/*   28 Jul 2022 KJE: Initial version                           */
+/*                                                              */
+/* =============================================================*/
+
+u {
+  text-decoration: underline;
+  color: green;
+}
+
+/* KJE: We'll need to change this if we publish another errata
+        since the spec now uses underline in some examples. */
+.line-through {
+  text-decoration: line-through;
+  color: red;
+}
