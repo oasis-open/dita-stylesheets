@@ -9,9 +9,14 @@
       <ul>
         <li>"Committee Note" rendered under the OASIS logo for the
           committee note. There is no such text string for the
-          specification.</li>
-        <li>Descriptive string on the cover page.</li>
-        <li>(PDF only) Descriptive string in the footers,</li>
+            specification.<image placement="break"
+            href="images/oasis-cn-under-logo.jpg" scale="60"/></li>
+        <li>Descriptive text string used on the cover page. The text is
+          different, but the formatting is identical. The text is defined
+          as a key reference specified in the DITA map.</li>
+        <li>(PDF only) Descriptive string in the footers. This is either
+          "Non-Standards Track" or  "Standards Track Work Product". This is
+          handled by the PDF transformation.</li>
       </ul>
       <p>When this document is rendered, content specific to an output
         format is displayed in the following ways:</p>
