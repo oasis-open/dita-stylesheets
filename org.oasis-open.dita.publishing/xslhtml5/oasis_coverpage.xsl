@@ -84,8 +84,8 @@
         <xsl:value-of select="$newline"/>
         <meta content=" Copyright © OASIS 2012" name="DC.rights.owner"/>
         <xsl:value-of select="$newline"/>
-        <link href="https://docs.oasis-open.org/templates/css/OASIS_Specification_Template_v1-0.css"
-          rel="stylesheet" type="text/css"/>
+        <!--<link href="https://docs.oasis-open.org/templates/css/OASIS_Specification_Template_v1-0.css"
+          rel="stylesheet" type="text/css"/>-->
         <link href="oasis.css" rel="stylesheet" type="text/css"/>
         <link href="commonltr.css" rel="stylesheet" type="text/css"/>
         <xsl:value-of select="$newline"/>
@@ -117,10 +117,13 @@
       <xsl:value-of select="$newline"/>
       <body>
         <xsl:value-of select="$newline"/>
-        <p>
-          <img src="http://docs.oasis-open.org/templates/OASISLogo.jpg" alt="OASIS logo" width="203"
-            height="54"/>
+        <!-- KJE 18 Aug 2022: Changed class name and image, removed width and height; added horizontal rule -->
+        <p class="logo">
+          <img src="http://docs.oasis-open.org/templates/OASISLogo-v2.0.jpg" alt="OASIS logo"/>
+            <!-- width="203"
+            height="54"-->
         </p>
+        <hr/>
         <xsl:value-of select="$newline"/>
 
         <div>
