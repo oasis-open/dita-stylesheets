@@ -84,10 +84,12 @@
         <xsl:value-of select="$newline"/>
         <meta content=" Copyright © OASIS 2012" name="DC.rights.owner"/>
         <xsl:value-of select="$newline"/>
+        <!-- KJE 18 August 2022: Commented out OASIS Template CSS -->
         <!--<link href="https://docs.oasis-open.org/templates/css/OASIS_Specification_Template_v1-0.css"
           rel="stylesheet" type="text/css"/>-->
-        <link href="oasis.css" rel="stylesheet" type="text/css"/>
+        <!-- KJE 18 Aug 2022: Switched order of CSS files -->
         <link href="commonltr.css" rel="stylesheet" type="text/css"/>
+        <link href="oasis.css" rel="stylesheet" type="text/css"/>
         <xsl:value-of select="$newline"/>
         <title>
           <xsl:value-of select="$newline"/>

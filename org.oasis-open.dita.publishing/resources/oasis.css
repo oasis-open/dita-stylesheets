@@ -1,17 +1,17 @@
 /* =============================================================*/
-/* CSS for OASIS committee note                                 */
+/* CSS for OASIS documents                                      */
 /*                                                              */
 /* ORIGINAL CREATION DATE:                                      */
 /*            Unknown                                           */
 /*                                                              */
 /*  UPDATES:                                                    */ 
-/*   28 Jul 2022 KJE: Organized CSS file                        */
+/*   18 Jul 2022 KJE: Organized CSS file                        */
 /* =============================================================*/
 
 /* =============================================================*/
 /* 1.0 Body                                                     */
 /* 2.0 Cover page                                               */
-/* 3.0 Basic DITA elements                                      */
+/* 3.0 Basic DITA and HTML elements                             */
 /* 4.0 Lists                                                    */
 /* 5.0 RFC-2119 rules formatting                                */
 /* 6.0 Tables                                                   */
@@ -33,12 +33,17 @@
 /* 1.0 Body                                                     */
 /* =============================================================*/
 
+html {
+  font-size: 100%;
+}
+
 body {
     background-repeat: no-repeat;
     background-position: top left;
     background-attachment: fixed;
     margin-left: 18pt;
     font-family:" Liberation Sans", arial, helvetica, sans-serif;
+    /*font-size: 80%;*/
 }
 
 /* Entry from spec CSS */
@@ -55,8 +60,12 @@ body {
 /*   All only in spec CSS                                       */
 /* =============================================================*/
 
+/*p.logo {
+  border-bottom: black
+}*/
+
 /* Styles publication titles */
-/* Different class name, but same content as CN styles */
+/* Different class name, but same descriptor block as CN styles */
 .title {
     font-family: "Liberation Sans", arial, helvetica, sans-serif;
     font-size: 200%;
@@ -66,10 +75,18 @@ body {
 }
 
 /* Styles This|Previous|Latest versions; all cover page sections */
-/* Different class name, but same content as CN styles */
+/* Different class name, but same descriptor block as CN styles */
 .titlepageinfo {
     font-family: "Liberation Sans", arial, helvetica, sans-serif;
     font-size: 100%;
+    font-weight: bold;
+    list-style-type: decimal;
+    color: #446CAA;
+}
+
+/* Styles "Table of contents" */
+p.heading1 {
+    font-size: 150%;
     font-weight: bold;
     list-style-type: decimal;
     color: #446CAA;
@@ -108,9 +125,9 @@ dd.oasis-style-reference {
 /* =============================================================*/
 
 pre, pre.codeblock {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Liberation Mono", Courier, monospace;
   /* font-size originally only in spec CSS */
-  font-size: 9pt;
+  font-size: 95%;
   background-color: #f0f0f0;
   margin-left: 2.8em;
   margin-right: 2.8em;
@@ -131,21 +148,47 @@ pre, pre.codeblock {
   padding: 5pt;
 }
 
-/* fOriginally only in spec CSS */
+/* Originally only in spec CSS */
 caption {
   margin-top: 1em;
   font-style: italic;
 }
 
-/* fOriginally only in spec CSS */
+caption span.title {
+  margin-top: 1em;
+  font-style: italic;
+  color: inherit;
+  font-size: inherit;
+}
+
+.codeph {
+  font-family: "Liberation Mono", Courier, monospace;
+}
+
+/* Originally only in spec CSS */
 .fig {
   margin-top: 1em;
 }
 
+/* Styles generated text for figure titles */
+.fig--title-label {
+  font-style: normal;
+}
+
+/* Styles content of figure title */
+figcaption {
+  font-size:95%;
+  font-style:italic;
+  margin-top: 1.5em;
+}
+
+.filepath {
+  font-family: "Liberation Mono", Courier, monospace;
+}
+
 /* font-size originally only in spec CSS */
-span.keyword {
-  /*font-family: Arial, Helvetica, sans-serif;*/
-  font-size: 10pt;
+.keyword {
+  font-family: "Liberation Mono", Courier, monospace;
 }
 
 /* Originally only in spec CSS */
@@ -173,13 +216,17 @@ span.underline {
 }
 
 /* Originally only in committee note CSS */
+/* Color is specified here to override declaration in commonltr.css */
 code.xmlatt {
+    color: black;
     font-family: "Liberation Mono", Courier, monospace;
     font-size: 90%;
 }
 
 /* Originally only in committee note CSS */
+/* Color is specified here to override declaration in commonltr.css */
 code.xmlelement {
+    color: black;
     font-family: "Liberation Mono", Courier, monospace;
     font-size: 90%;
 }
@@ -193,7 +240,15 @@ code.xmlelement {
 .dt > .parameterentity,
 .dt > .xmlatt,
 .dt > .xmlelement,
-.dt > .xmlpi{
+.dt > .xmlpi {
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+h1 > code.keyword.markupname.xmlatt {
+  color: inherit;
   font-family: inherit;
   font-weight: inherit;
   font-style: inherit;
@@ -261,31 +316,29 @@ td.rfctext {
 }
 
 .RFC-2119 {
-  font-style: italic;
+  font-weight: bold;
+  font-style: normal;
 }
 
 /* =============================================================*/
 /* 6.0 Tables                                                   */
-/*     Did not merge in committee note CSS rules                */
+/*     Spec CSS rules                                           */
 /* =============================================================*/
 
 .table {
   margin-bottom: 0.5em;
 }
 
-.thead {
-  background-color: #E8E8FF;
-}
-
 th {
-  background-color: #E8E8FF;
+  background-color: #cddbef;
 }
 
-.stentry {
-  border-left: none;
+.entry,.stentry {
+  /*border-left: none;
   border-top: none;
   border-right: solid 1px;
-  border-bottom: solid 1px
+  border-bottom: solid 1px*/
+  padding: 5px;
 }
 
 .simpletable {
@@ -294,6 +347,19 @@ th {
   margin-bottom: 0.5em;
 }
 
+/* =============================================================*/
+/* 4.0 Tables                                                   */
+/* Committee note styles                                        */
+/* =============================================================*/
+
+/*td, th {
+    text-align: left;
+}
+
+col, colgroup, table, tbody, td, thead, tfoot, th, tr {
+    border-color: #AFAFAF;
+}
+*/
 /* =============================================================*/
 /* 7.0 Titles                                                   */
 /*     Did not merge in committee note CSS rules                */
