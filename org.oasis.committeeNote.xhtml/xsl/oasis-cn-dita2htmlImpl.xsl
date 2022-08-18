@@ -171,7 +171,8 @@
       <span>OASIS Committee Note</span>
     </div>   
     <hr/>
-    <div class="committee-note-title">
+    <!-- KJE 18 Aug 2022: Changed class name to match spec XSL and CSS -->
+    <div class="title">
       <xsl:apply-templates select="$bookmap/bookmap/booktitle/mainbooktitle"/>
     </div>
     <div class="publication-level">
