@@ -11,6 +11,9 @@
 /* =============================================================*/
 /* 1.0 Body                                                     */
 /* 2.0 Cover page                                               */
+/*   2.1 Cover page: Commmittee Note                            */
+/*   2.2 Cover page: Specification                              */
+/*   2.2 Cover page: TOC                                        */
 /* 3.0 Basic DITA and HTML elements                             */
 /* 4.0 Lists                                                    */
 /* 5.0 RFC-2119 rules formatting                                */
@@ -38,65 +41,127 @@ html {
 }
 
 body {
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-attachment: fixed;
-    margin-left: 18pt;
+    background: #ffffff;
     font-family:" Liberation Sans", arial, helvetica, sans-serif;
-    /*font-size: 80%;*/
+    margin-left: 18pt;
 }
 
-/* Entry from spec CSS */
-/*body {
-  background: #ffffff;
-  color: #000000;
-  margin: 14px;
-  font-size: 10pt;
-  font-family: "Liberation Sans", Helvetica, Arial, sans-serif;
-}
-*/
 /* =============================================================*/
 /* 2.0 Cover page                                               */
-/*   All only in spec CSS                                       */
 /* =============================================================*/
 
-/*p.logo {
-  border-bottom: black
-}*/
+/* =============================================================*/
+/*   2.1 Cover page: Commmittee Note                            */
+/* =============================================================*/
 
-/* Styles publication titles */
-/* Different class name, but same descriptor block as CN styles */
-.title {
+/* Styles the "Committee Note" rendered under the logo */
+div.text-under-logo {
+    color: #707070;
+    font-family: "Liberation Sans", arial, helvetica, sans-serif;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+/* Styles the title of the document */
+div.title {
+    color: #446CAA;
     font-family: "Liberation Sans", arial, helvetica, sans-serif;
     font-size: 200%;
     font-weight: bold;
     list-style-type: decimal;
-    color: #446CAA;
+    margin-bottom: 15pt;
 }
 
-/* Styles This|Previous|Latest versions; all cover page sections */
-/* Different class name, but same descriptor block as CN styles */
+/* Styles the level of the document */
+div.publication-level > span.keyword {
+    color: #446CAA;
+    font-family: "Liberation Sans", arial, helvetica, sans-serif;
+    font-size: 125%;
+    font-weight: bold;
+    list-style-type: decimal;
+    margin-top: 5.0em;
+}
+
+/* Styles the date the document was produced */
+div.approval-date >span.keyword {
+    color: #446CAA;
+    font-family: "Liberation Sans", arial, helvetica, sans-serif;
+    font-size: 125%;
+    font-weight: bold;
+    list-style-type: decimal;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+
+h1.frontmatter-topic-title {
+ color: #446CAA;
+    font-family: "Liberation Sans", arial, helvetica, sans-serif;
+    font-size: 125%;
+    font-weight: bold;
+}
+
+/* Styles all the cover-page section titles */
+h2.frontmatter-section-title {
+    color: #446CAA;
+    font-family: "Liberation Sans", arial, helvetica, sans-serif;
+    font-size: 95%;
+    font-weight: bold;
+    /*list-style-type: decimal;*/
+    margin-top: -0.25em;
+    margin-bottom: -0.25em;
+}
+/* Adds a colon after all cover-page section titles */
+h2.frontmatter-section-title::after {
+    content:':';
+}
+
+/* KJE: Added margin-inline-start to prevent Chrome from addding
+        indentation */
+*.no-indent {
+    list-style-position: inside;
+    margin-inline-start: 0px;
+    padding-left: 0px;
+}
+
+dd.no-indent {
+    padding-top:.5em;
+}
+
+/* =============================================================*/
+/*   2.2 Cover page: Specification                              */
+/* =============================================================*/
+
+/* Styles publication titles */
+.title {
+    color: #446CAA;
+    font-family: "Liberation Sans", arial, helvetica, sans-serif;
+    font-size: 200%;
+    font-weight: bold;
+    list-style-type: decimal;
+}
+
+/* Styles all cover-page sections */
 .titlepageinfo {
+    color: #446CAA;
     font-family: "Liberation Sans", arial, helvetica, sans-serif;
     font-size: 100%;
     font-weight: bold;
     list-style-type: decimal;
-    color: #446CAA;
 }
 
 /* Styles "Table of contents" */
 p.heading1 {
+    color: #446CAA;
     font-size: 150%;
     font-weight: bold;
     list-style-type: decimal;
-    color: #446CAA;
 }
 
 dt.oasis-style-reference {
-  font-weight: bold;
   color: #66116D;
-  margin-left: 1.9em;
+  font-weight: bold;
   margin-bottom: 0.1em;
+  margin-left: 1.9em;
   margin-top: 0.2em;
 }
 
@@ -104,19 +169,33 @@ dd.oasis-style-reference {
   margin-left: 4em;
 }
 
-/*Tagsmiths: The coverpage is not processed by dita2html.xsl. Consequently,
-  flagging is not supported. This class emulates flagging. 22jul16*/
-  
-.revised::before {
-  content: "►";
+/* =============================================================*/
+/*   2.2 Cover page: TOC                                        */
+/* =============================================================*/
+
+/* KJE 19 August 2022: All styles originally only in the CN CSS */
+
+/*.toclinks {
+    -webkit-margin-before:0em;
+    -webkit-margin-after:0em;
+}*/
+
+p.toc1 {
+    margin-left:18pt;
 }
 
-.revised::after {
-  content: "◄";
+p.toc2 {
+    margin-left:36pt;
 }
 
-.revised, .red {
-  color: red !important;
+p.toc3 {
+    margin-left:54pt;
+}
+
+p.toc4 {
+/*    -webkit-margin-before:0.2em;
+    -webkit-margin-after:0.2em;*/
+    margin-left:72pt;
 }
 
 /* =============================================================*/
@@ -124,48 +203,30 @@ dd.oasis-style-reference {
 /*     Keep ordered by name of DITA element                     */
 /* =============================================================*/
 
-pre, pre.codeblock {
-  font-family: "Liberation Mono", Courier, monospace;
-  /* font-size originally only in spec CSS */
-  font-size: 95%;
-  background-color: #f0f0f0;
-  margin-left: 2.8em;
-  margin-right: 2.8em;
-  border-top-style: solid;
-  border-width: 1px;
-  border-right-style: none;
-  border-bottom-style: solid;
-  border-left-style: none;
-  border: #000000;
-  /* padding originally only in committee note CSS */
-  padding: 15px;
-  white-space: pre;
-}
-
-/* Originally only in committee note CSS */
 .draft-comment {
   background-color: #d8eef3;
   padding: 5pt;
 }
 
-/* Originally only in spec CSS */
+/* Styles X */
 caption {
   margin-top: 1em;
   font-style: italic;
 }
 
+/* Styles X */
 caption span.title {
-  margin-top: 1em;
-  font-style: italic;
   color: inherit;
   font-size: inherit;
+  font-style: italic;
+  margin-top: 1em;
 }
 
 .codeph {
   font-family: "Liberation Mono", Courier, monospace;
 }
 
-/* Originally only in spec CSS */
+
 .fig {
   margin-top: 1em;
 }
@@ -186,10 +247,10 @@ figcaption {
   font-family: "Liberation Mono", Courier, monospace;
 }
 
-/* font-size originally only in spec CSS */
-.keyword {
+/* KJE 18 August 2022: Wanted to style values for attributes */
+/*.keyword {
   font-family: "Liberation Mono", Courier, monospace;
-}
+}*/
 
 /* Originally only in spec CSS */
 div.note {
@@ -197,6 +258,21 @@ div.note {
   font-size: 10pt;
   margin-left: 2.1em;
   margin-right: 2.1em;
+}
+
+pre, pre.codeblock {
+  font-family: "Liberation Mono", Courier, monospace;
+  background-color: #f0f0f0;
+  margin-left: 2.8em;
+  margin-right: 2.8em;
+  border-top-style: solid;
+  border-width: 1px;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: none;
+  border: #000000;
+  padding: 15px;
+  white-space: pre;
 }
 
 /* Originally only in spec CSS */
@@ -215,24 +291,13 @@ span.underline {
     text-decoration: underline;
 }
 
-/* Originally only in committee note CSS */
 /* Color is specified here to override declaration in commonltr.css */
-code.xmlatt {
+code.xmlatt, code.xmlelement {
     color: black;
     font-family: "Liberation Mono", Courier, monospace;
-    font-size: 90%;
-}
-
-/* Originally only in committee note CSS */
-/* Color is specified here to override declaration in commonltr.css */
-code.xmlelement {
-    color: black;
-    font-family: "Liberation Mono", Courier, monospace;
-    font-size: 90%;
 }
 
 /* Override styles when XML mention elements are in titles or definition lists */
-/* Originally only in spec CSS */
 .title > .parameterentity,
 .title > .xmlatt,
 .title > .xmlelement,
@@ -255,7 +320,6 @@ h1 > code.keyword.markupname.xmlatt {
 }
 /* =============================================================*/
 /* 4.0 Lists                                                    */
-/*   All only in spec CSS                                       */
 /* =============================================================*/
 
 dd {
@@ -348,29 +412,29 @@ th {
 }
 
 /* =============================================================*/
-/* 4.0 Tables                                                   */
-/* Committee note styles                                        */
-/* =============================================================*/
-
-/*td, th {
-    text-align: left;
-}
-
-col, colgroup, table, tbody, td, thead, tfoot, th, tr {
-    border-color: #AFAFAF;
-}
-*/
-/* =============================================================*/
 /* 7.0 Titles                                                   */
-/*     Did not merge in committee note CSS rules                */
 /* =============================================================*/
 
 h1.topictitle1 {
-  /*font-family: Arial, Helvetica, sans-serif;*/
-  font-size: 18pt;
+  border-top: 1px solid black;
+  color:#446CAA;
+  font-size: 150%;
   font-weight: bold;
   list-style-type: decimal;
-  color: #446CAA;
+  margin-top: 2em;
+  padding-top: 10pt;
+}
+
+/* 18 Mar 2019: Added to style TOC with line above */
+h1.frontmatter-notices-title{
+    border-top:1px solid black;
+    margin-top:2em;
+    padding-top:10pt;
+    font-family: "Liberation Sans", arial, helvetica, sans-serif;
+    font-size:150%;
+    font-weight:bold;
+    list-style-type:decimal;
+    color:#446CAA;
 }
 
 h2.sectiontitle {
@@ -408,7 +472,7 @@ h2.sectiontitle {
 }
 
 /* =============================================================*/
-/* Not yet sorted                                                   */
+/* Are these styles needed?                                     */
 /* =============================================================*/
 
 .subtitle {
