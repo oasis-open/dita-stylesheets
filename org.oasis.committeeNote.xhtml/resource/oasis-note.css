@@ -18,214 +18,20 @@
 /*                    cover page and TOC; corrected styles for  */
 /*                    header-levels 3 and 4 to be normal;       */
 /*                    corrected some cover styles to be bold    */ 
-/*   28 Jul 2022 KJE: Organized CSS file                        */
+/*   17 Aug 2022 KJE: Organized CSS file                        */
+/*   19 Aug 2022 KJE: Reworked this file to ONLY contain        */
+/*                    overrides to oasis-css                    */
+/*                                                              */
 /* =============================================================*/
 
-/* =============================================================*/
-/* 1.0 Body                                                     */
-/* 2.0 Cover page                                               */
-/* 3.0 Basic DITA elements                                      */
-/* 4.0 Tables                                                   */
-/* 5.0 Titles                                                   */
-/* =============================================================*/
-
-/* =============================================================*/
-/* 1.0 Body                                                     */
-/* =============================================================*/
-
-body {
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-attachment: fixed;
-    margin-left: 18pt;
-    font-family:" Liberation Sans", arial, helvetica, sans-serif;
-}
-
-/* =============================================================*/
-/* 2.0 Cover page                                               */
-/* =============================================================*/
-
-div.text-under-logo {
-    color: #707070;
-    font-family: "Liberation Sans", arial, helvetica, sans-serif;
-    font-size: 150%;
-    font-weight: bold;
-}
-
-div.title {
-    font-family: "Liberation Sans", arial, helvetica, sans-serif;
-    font-size: 200%;
-    font-weight: bold;
-    list-style-type: decimal;
-    color: #446CAA;
-}
-
-div.publication-level {
-    margin-top: 0.83em;
-    font-family: "Liberation Sans", arial, helvetica, sans-serif;
-    font-size: 150%;
-    font-weight: bold;
-    list-style-type: decimal;
-    color: #446CAA;
-}
-
-div.approval-date {
-    margin-top: 0.83em;
-    margin-bottom: 0.83em;
-    font-family: "Liberation Sans", arial, helvetica, sans-serif;
-    font-size: 150%;
-    font-weight: bold;
-    list-style-type: decimal;
-    color: #446CAA;
-}
-
-/* This|Previous|Latest versions; all cover page sections */
-h2.frontmatter-section-title {
-    font-family: "Liberation Sans", arial, helvetica, sans-serif;
-    font-size: 100%;
-    font-weight: bold;
-    list-style-type: decimal;
-    color: #446CAA;
-}
-/* Add colon after "This|Previous|Latest" versions; all cover page sections */
-h2.frontmatter-section-title::after {
-    content:':';
-}
-
-/* KJE: Added margin-inline-start to prevent Chrome from addding
-        indentation */
-*.no-indent {
-    list-style-position: inside;
-    margin-inline-start: 0px;
-    padding-left: 0px;
-}
-
-dd.no-indent {
-    padding-top:.5em;
-}
-
-/* =============================================================*/
-/* 3.0 Basic DITA elements                                      */
-/*     Keeped ordered by name of DITA element                   */
-/* =============================================================*/
-
-pre, pre.codeblock {
-  font-family: "Courier New", Courier, monospace;
-  background-color: #f0f0f0;
-  margin-left: 2.8em;
-  margin-right: 2.8em;
-  border-top-style: solid;
-  border-width: 1px;
-  border-right-style: none;
-  border-bottom-style: solid;
-  border-left-style: none;
-  border: #000000;
-  padding: 15px;
-  white-space: pre;
-}
-
-.draft-comment {
-  background-color: #d8eef3;
-  padding: 5pt;
-}
-
-span.term {
-    font-weight: bold;
-}
-
-span.underline {
-    text-decoration: underline;
-}
-
-code.xmlatt {
-    font-family: "Liberation Mono", Courier, monospace;
-    font-size: 90%;
-}
-
-code.xmlelement {
-    font-family: "Liberation Mono", Courier, monospace;
-    font-size: 90%;
-}
-
-/* =============================================================*/
-/* 4.0 Tables                                                   */
-/* =============================================================*/
-
-tr {
-    border-color: #AFAFAF;
-}
-
-td {
-    border-color: #AFAFAF;
-    text-align: left;
-}
-
-th {
-    background-color: #edf1f8;
-    border-color: #AFAFAF;
-    text-align: left;
-}
-
-col {
-    border-color: #AFAFAF;
-}
-
-colgroup {
-    border-color: #AFAFAF;
-}
-
-table {
-    border-color: #AFAFAF;
-}
-
-tbody {
-    border-color: #AFAFAF;
-}
-
-thead {
-    border-color: #AFAFAF;
-}
-
-tfoot {
-    border-color: #AFAFAF;
-}
-
-/* =============================================================*/
-/* 5.0 Titles                                                   */
-/* =============================================================*/
-
-h1.topictitle1{
+h1.topictitle1 {
     border-top: 1px solid black;
-    margin-top: 2em;
-    padding-top: 10pt;
+    color:#446CAA;
     font-family: "Liberation Sans", arial, helvetica, sans-serif;
     font-size:150%;
     font-weight:normal;
-    list-style-type:decimal;
-    color:#446CAA;
-}
-
-/* 18 Mar 2019: Added to style TOC with line above */
-h1.frontmatter-notices-title{
-    border-top:1px solid black;
-    margin-top:2em;
-    padding-top:10pt;
-    font-family: "Liberation Sans", arial, helvetica, sans-serif;
-    font-size:150%;
-    font-weight:bold;
-    list-style-type:decimal;
-    color:#446CAA;
-}
-
-h1.frontmatter-topic-title{
-    /*border-top:1px solid black;
-    margin-top:2em;*/
-    padding-top:10pt;
-    font-family: "Liberation Sans", arial, helvetica, sans-serif;
-    font-size:150%;
-    font-weight:bold;
-    list-style-type:decimal;
-    color:#446CAA;
+    margin-top: 2em;
+    padding-top: 10pt;
 }
 
 *.sectiontitle {
@@ -234,73 +40,28 @@ h1.frontmatter-topic-title{
 }
 
 h2.sectiontitle {
+    color: #446CAA;
     font-family: "Liberation Sans", arial, helvetica, sans-serif;
     font-size: 100%;
     font-weight: normal;
-    list-style-type: decimal;
-    color: #446CAA;
 }
 
 h2.topictitle2 {
-    font-size: 120%;
     color: #446CAA;
+    font-size: 120%;
     font-weight: normal
 }
 
-
 .topictitle3 {
-    font-size: 110%;
     color: #446CAA;    
+    font-size: 110%;
     font-weight: normal
 }
 
 .topictitle4 {
-    font-size: 100%;
-    color: #446CAA;        
+    color: #446CAA;   
+    font-size: 100%;     
     font-weight: normal
-}
-
-/* =============================================================*/
-/* 6.0 Unknown whether used                                     */
-/* =============================================================*/
-
-/*.toclinks {
-    -webkit-margin-before:0em;
-    -webkit-margin-after:0em;
-}*/
-
-p.toc1 {
-    margin-left:18pt;
-}
-
-p.toc2 {
-    margin-left:36pt;
-}
-
-p.toc3 {
-
-    margin-left:54pt;
-}
-
-p.toc4 {
-/*    -webkit-margin-before:0.2em;
-    -webkit-margin-after:0.2em;*/
-    margin-left:72pt;
-}
-/* 05 Feb 2019 KJE: Not clear whether this is used */
-div.section h1.title{
-    padding-top:0in;
-    color:#A1985A;
-}
-/* 05 Feb 2019 KJE: Not clear whether this is used */
-div.article h1.title{
-    color:#A1985A;
-}
-
-@media screen{ /* hide from IE3 */
-    a[href]:hover{
-        background:#ffa
-    }
 }
 
 /* end of file */
