@@ -164,7 +164,7 @@
   <xsl:template name="committe-note-pubinfo">
     <p class="logo">
       <a href="http://www.oasis-open.org">
-        <img src="OASISLogo-v2.0.jpg" alt="OASIS logo"/>
+        <img src="OASISLogo-v3.0.png" alt="OASIS logo"/>
       </a>
     </p>
     <div class="text-under-logo">
