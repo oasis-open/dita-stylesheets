@@ -120,8 +120,9 @@
       <body>
         <xsl:value-of select="$newline"/>
         <!-- KJE 18 Aug 2022: Changed class name and image, removed width and height; added horizontal rule -->
+        <!-- KJE 23 Aug 2022: Updated image to version 3, per feedback from Paul Knight -->
         <p class="logo">
-          <img src="http://docs.oasis-open.org/templates/OASISLogo-v2.0.jpg" alt="OASIS logo"/>
+          <img src="https://docs.oasis-open.org/templates/OASISLogo-v3.0.png" alt="OASIS logo"/>
             <!-- width="203"
             height="54"-->
         </p>

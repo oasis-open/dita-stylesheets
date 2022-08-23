@@ -6,18 +6,34 @@
 /*            28 July 2022                                      */
 /*                                                              */
 /* UPDATES:                                                     */
-/*   28 Jul 2022 KJE: Initial version                           */
+/*   17 Aug 2022 KJE: Initial version                           */
+/*   19 Aug 2022 KJE: Added rev flagging for cover page         */
 /*                                                              */
 /* =============================================================*/
+
+/* KJE: We'll need to change this if we publish another errata
+        since the spec now uses line-through in some examples. */
+.line-through {
+  text-decoration: line-through;
+  color: red;
+}
 
 u {
   text-decoration: underline;
   color: green;
 }
 
-/* KJE: We'll need to change this if we publish another errata
-        since the spec now uses underline in some examples. */
-.line-through {
-  text-decoration: line-through;
-  color: red;
+/* The following styles emulate flagging. This is needed because
+ * the cover page is not processed by dita2html.xsl.*/
+
+.revised::before {
+  content: "►";
+}
+
+.revised::after {
+  content: "◄";
+}
+
+.revised, .red {
+  color: red !important;
 }
