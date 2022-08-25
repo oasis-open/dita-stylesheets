@@ -80,9 +80,9 @@
         <xsl:value-of select="$newline"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <xsl:value-of select="$newline"/>
-        <meta content="Copyright © OASIS Open 2012" name="copyright"/>
+        <meta content="Copyright © OASIS Open 2022" name="copyright"/>
         <xsl:value-of select="$newline"/>
-        <meta content=" Copyright © OASIS 2012" name="DC.rights.owner"/>
+        <meta content=" Copyright © OASIS 2022" name="DC.rights.owner"/>
         <xsl:value-of select="$newline"/>
         <!-- KJE 18 August 2022: Commented out OASIS Template CSS -->
         <!--<link href="https://docs.oasis-open.org/templates/css/OASIS_Specification_Template_v1-0.css"
