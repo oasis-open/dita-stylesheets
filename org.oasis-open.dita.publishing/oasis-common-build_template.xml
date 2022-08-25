@@ -216,7 +216,7 @@
 		<!-- Adding "oasislinks" as a link type ensures our custom
       next/previous links only end up affecting the OASIS html output.
       The maplink XSL is in there for other builds but does nothing. -->
-		<property name="include.rellinks" value="friend next previous oasislinks"/>
+		<property name="include.rellinks" value="parent child friend next previous oasislinks"/>
 		<property name="args.copycss" value="yes"/>
 		<property name="args.cssroot"
 			value="${dita.plugin.org.oasis-open.dita.publishing.dir}${file.separator}resources"/>
