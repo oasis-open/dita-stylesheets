@@ -15,7 +15,13 @@
   <xsl:template match="*[contains(@class, ' map/topicref ')]" mode="link-from">
     <xsl:choose>
       <xsl:when test="$include.roles = 'oasislinks'">
+        <xsl:if test="$include.roles = 'parent'">
+          <xsl:apply-templates select="." mode="link-to-parent"/>
+        </xsl:if>
         <xsl:apply-templates select="." mode="link-to-oasis-next-prev"/>
+        <xsl:if test="$include.roles = 'child'">
+          <xsl:apply-templates select="." mode="link-to-children"/>
+        </xsl:if>
       </xsl:when>
       <xsl:otherwise>
         <xsl:next-match/>
@@ -34,6 +40,10 @@
     <xsl:choose>
       <xsl:when test="preceding-sibling::*[contains(@class,' map/topicref ')][@href]">
         <xsl:apply-templates select="preceding-sibling::*[contains(@class,' map/topicref ')][@href][1]" mode="find-previous-oasis-link"/>
+      </xsl:when>
+      <xsl:when test="contains(@class,' bookmap/chapter ') or contains(@class,' bookmap/appendix ')">
+        <!-- Should only fire with first chapter, which does not have preceding siblings;
+          do not go up to map and then back down -->
       </xsl:when>
       <xsl:otherwise>
         <xsl:apply-templates select="parent::*" mode="link">
