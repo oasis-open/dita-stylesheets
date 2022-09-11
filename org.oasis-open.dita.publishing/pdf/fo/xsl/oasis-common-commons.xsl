@@ -68,6 +68,15 @@
             </fo:block>
         </xsl:if>
     </xsl:template>
+  
+    <!-- Add horizontal rule over <div> element in a draft comment -->
+      <xsl:template match="div[ancestor::draft-comment]">
+        <fo:block xsl:use-attribute-sets="stepxmp">
+          <hr/>
+            <xsl:call-template name="commonattributes"/>
+            <xsl:apply-templates/>
+        </fo:block>
+    </xsl:template>
     
     <!--  Override for bookmap chapter titles  -->
     <xsl:template name="processTopicChapter">

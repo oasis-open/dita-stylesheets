@@ -6,6 +6,7 @@
 /*                                                              */
 /*  UPDATES:                                                    */ 
 /*   18 Jul 2022 KJE: Organized CSS file                        */
+/*   11 Sep 2022 KJE: Updated background for link previews      */
 /* =============================================================*/
 
 /* =============================================================*/
@@ -349,9 +350,10 @@ dd > ul {
   padding-left: 1.4em;
 }
 
+/* Styles link previews */
 ul.ullinks,
 ul.linkpreviews{
-  background-color: #FFFCCC;
+  background-color: #d8eefe;
   border: none;
   border-width: thin;
   list-style-type: none;
