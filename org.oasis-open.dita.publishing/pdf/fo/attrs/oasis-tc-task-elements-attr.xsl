@@ -3,6 +3,7 @@
 <!-- ===================== CHANGE LOG ================================ -->
 <!--                                                                   -->
 <!-- 06 Sep 2021 KJE: Initial creation                                 -->
+<!-- 04 Jan 2023 KJE: Added padding for <choicetable> and <stepxmp>    -->
 <!--                                                                   -->
 <!-- ================================================================= -->
 
@@ -14,7 +15,7 @@
         <!--It is a table container -->
         <xsl:attribute name="width">100%</xsl:attribute>
         <xsl:attribute name="space-after">10pt</xsl:attribute>
-        <xsl:attribute name="space-before">10pt</xsl:attribute>
+        <xsl:attribute name="padding-bottom">10pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="chhead.choptionhd__content" use-attribute-sets="common.table.body.entry common.table.head.entry">
@@ -51,6 +52,10 @@
     <xsl:attribute name="font-size">
       <xsl:value-of select="$default-table-font-size"/>
     </xsl:attribute>
+    </xsl:attribute-set>
+  
+    <xsl:attribute-set name="stepxmp">
+      <xsl:attribute name="padding-top">10pt</xsl:attribute>
     </xsl:attribute-set>
 
 </xsl:stylesheet>

@@ -11,8 +11,8 @@
         <xsl:attribute name="color">green</xsl:attribute>
     </xsl:attribute-set>
   
-    <xsl:attribute-set name="line-through">
+    <!--<xsl:attribute-set name="line-through">
         <xsl:attribute name="color">red</xsl:attribute>
-    </xsl:attribute-set>
+    </xsl:attribute-set>-->
 
 </xsl:stylesheet>
