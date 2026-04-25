@@ -11,14 +11,14 @@
   <xsl:param name="oasis.spec.date" select="''"/>
   
   <xsl:variable name="path.to.landing.page">
-    <xsl:value-of select="/processing-instruction('path2mapdir-uri')"/>
+    <xsl:value-of select="/processing-instruction('path2project-uri')"/>
   </xsl:variable>
   
   <xsl:template name="processFTR">
     <footer role="contentinfo">
       <div>
         <p></p>
-        <p>Return to <a href="../../{$path.to.landing.page}{$oasis.landing.page}#{/*/*/resourceid[@appname='spectocid']/@appid}">main page</a>.</p>
+        <p>Return to <a href="{$path.to.landing.page}{$oasis.landing.page}#{/*/*/resourceid[@appname='spectocid']/@appid}">main page</a>.</p>
         <table class="footer-table" role="presentation">
           <colgroup>
             <col width="25%"/>

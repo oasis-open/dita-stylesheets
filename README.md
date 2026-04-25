@@ -46,13 +46,11 @@ d1: OASIS TC Open Repository: Developing style sheets and other resources that c
 </div>
 
 <div><h2><a id="ditaOtIntegration">Stylesheet plugin integration with DITA Open Toolkit</a></h2>
-<p>Plugin development is being done using dita-ot-3.5.3. Do the following to create the runtime environment:</p>
+<p>Plugin development is being done using dita-ot-4.4. Do the following to create the runtime environment:</p>
 <ol>
 <li>Install the version of DITA Open Toolkit (dita-ot) that is being used for development.</li>
-<li>Clone this repository to a temporary directory.</li>
-<li>Move the entire contents of the cloned directory (but not the cloned directory itself) to the dita-ot plugins directory. <b>Important:</b> Be sure to include hidden files and hidden directories in the move.</li>
-<li>If you are planning on contributing development work, update the .gitignore file in the plugins directory to exclude any additional
-plugins that you may have added after installing the dita-ot. This is important because we do not want those plugins being pushed back to GitHub.</li>
+<li>Clone this repository to your system.</li>
+<li>Copy each plugin folder from this repository (but not the cloned repository folder itself) to the dita-ot plugins directory.</li>
 <li>Run the dita command with the --install option.</li>
 </ol>
 </div>
@@ -70,12 +68,8 @@ plugins that you may have added after installing the dita-ot. This is important 
 
 <li><a href="mailto:kris@eberleinconsulting.com">Kristen James Eberlein</a>; GitHub ID: <a href="https://github.com/keberlein">keberlein</a>; WWW: <a href="http://eberleinconsulting.com/">Eberlein Consulting</a></li>
 
-<!--
-<li><a href="mailto:bob.thomas@tagsmiths.com">Bob Thomas</a>; GitHub ID: <a href="https://github.com/robertnthomas">robertnthomas</a>; OASIS Individual Member</li>
--->
+<li><a href="https://www.linkedin.com/in/robertdananderson/">Robert D Anderson</a>; GitHub ID: <a href="https://github.com/robander">robander</a></li>
 
-<!--
-<li><a href="mailto:luc.boutier@fastconnect.fr">Luc Boutier</a>; GitHub ID: <a href="https://github.com/lucboutier/">https://github.com/lucboutier/</a>; WWW: <a href="http://www.fastconnect.fr/">FastConnect SAS</a></li>  -->
 </ul>
 
 </div>
